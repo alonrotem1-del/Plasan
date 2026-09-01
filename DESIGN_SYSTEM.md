@@ -34,7 +34,9 @@ Adapted for an LTR English deck; nothing is copied literally.
   pattern), project label next to it, quiet right-aligned source line.
 - Tables: colored header bars (slate for data tables, petrol for profile
   snapshot bars), light-gray body cells separated by 2px white gutters —
-  the BDO table pattern.
+  the BDO table pattern. Header case is a deliberate marker: sentence case
+  on slate data-table headers; letterspaced caps on petrol profile fact
+  strips (repeat exactly on every profile slide).
 - Section bars on profile slides: petrol uppercase label over a 2px petrol
   rule (adapted from BDO's petrol section-header bars).
 - Chips: 3px radius, tinted petrol fills or thin outlines; status semantics —

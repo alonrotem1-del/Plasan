@@ -115,7 +115,7 @@ h1.title { font-size: var(--fs-title); font-weight: 700; color: var(--c-primary)
 .chip-fielded  { background: var(--c-primary); color: #fff; }
 .chip-comm     { background: none; color: var(--c-primary); box-shadow: inset 0 0 0 2px var(--c-primary-tint2); }
 .chip-dev      { background: none; color: #9A7002; box-shadow: inset 0 0 0 2px #EAD9A8; }
-.chip-proto    { background: var(--c-fill); color: var(--c-text-muted); }
+.chip-proto    { background: none; color: var(--c-text-muted); box-shadow: inset 0 0 0 2px #D5DADF; }
 
 /* ============================================================
    SLIDE 1 — SCREENING FUNNEL
@@ -126,14 +126,14 @@ h1.title { font-size: var(--fs-title); font-weight: 700; color: var(--c-primary)
 .fcol + .fcol { padding-left: 34px; border-left: 1px solid var(--c-hairline); }
 .fcol .fstep { font-size: 19px; font-weight: 700; color: var(--c-slate-mid); letter-spacing: .08em; margin-bottom: 12px; }
 .fcol .fname { font-size: 27px; font-weight: 600; color: var(--c-text); line-height: 1.25; min-height: 70px; }
-.fcol .fdesc { font-size: 20px; color: var(--c-text-muted); line-height: 1.4; margin-top: 10px; min-height: 118px; }
+.fcol .fdesc { font-size: 20px; color: var(--c-text-muted); line-height: 1.4; margin-top: 10px; min-height: 150px; }
 .fcol .fnum  { height: 140px; display: flex; align-items: flex-end; }
 .fcol .fnum .n { font-size: var(--fs-num-hero); font-weight: 700; color: var(--c-primary); line-height: 1.18; letter-spacing: -.01em; }
 .fcol .fnum .n-unit { font-size: 21px; color: var(--c-text-muted); font-weight: 500; margin: 0 0 12px 14px; }
 .fcol.f-final .fnum .n { color: #fff; }
 .fcol.f-final .fnum .n-unit { color: rgba(255,255,255,.85); }
 .fcol.f-final .fpanel {
-  position: absolute; left: 12px; right: -8px; top: -20px; height: 540px;
+  position: absolute; left: 12px; right: -8px; top: -20px; height: 572px;
   background: var(--c-primary); z-index: 0;
 }
 .fcol.f-final { padding-left: 40px; }
@@ -142,11 +142,11 @@ h1.title { font-size: var(--fs-title); font-weight: 700; color: var(--c-primary)
 .fcol.f-final .fname { color: #fff; }
 .fcol.f-final .fdesc { color: rgba(255,255,255,.82); }
 
-.funnel-wedge { position: absolute; left: var(--m-side); right: var(--m-side); top: 692px; height: 96px; }
+.funnel-wedge { position: absolute; left: var(--m-side); right: var(--m-side); top: 724px; height: 96px; }
 .funnel-wedge svg { width: 100%; height: 100%; display: block; }
 
-.sel-strip { position: absolute; left: var(--m-side); right: var(--m-side); top: 852px; }
-.sel-strip .lbl { font-size: 20px; font-weight: 600; color: var(--c-slate-mid); letter-spacing: .1em; text-transform: uppercase; margin-bottom: 18px; }
+.sel-strip { position: absolute; left: var(--m-side); right: var(--m-side); top: 872px; }
+.sel-strip .lbl { font-size: 20px; font-weight: 700; color: var(--c-primary); letter-spacing: .1em; text-transform: uppercase; border-bottom: 2px solid var(--c-primary); padding-bottom: 9px; margin-bottom: 20px; }
 .sel-strip .chips { display: flex; flex-wrap: wrap; gap: 12px 12px; }
 .sel-strip .cchip {
   font-size: 18px; font-weight: 600; color: var(--c-primary);
@@ -164,7 +164,7 @@ h1.title { font-size: var(--fs-title); font-weight: 700; color: var(--c-primary)
 }
 .ovw-table th:first-child { border-left: none; }
 .ovw-table td {
-  font-size: 21px; padding: 5px 16px; vertical-align: middle;
+  font-size: 21px; padding: 4px 16px; vertical-align: middle;
   background: var(--c-fill); border-left: 2px solid #fff; border-top: 2px solid #fff;
   line-height: 1.22;
 }
@@ -182,7 +182,7 @@ h1.title { font-size: var(--fs-title); font-weight: 700; color: var(--c-primary)
 .ovw-table .qual { color: var(--c-text-muted); font-size: 18px; }
 .ovw-table td.num { font-variant-numeric: tabular-nums; }
 .ovw-table .chip { font-size: 17px; padding: 6px 11px 7px; }
-.ovw-note { position: absolute; left: var(--m-side); right: var(--m-side); top: 986px; font-size: 17px; color: var(--c-text-faint); line-height: 1.4; white-space: nowrap; }
+.ovw-note { position: absolute; left: var(--m-side); right: var(--m-side); top: 990px; font-size: 17px; color: var(--c-text-faint); line-height: 1.4; white-space: nowrap; }
 
 /* ============================================================
    SLIDE 3 — COMPANY PROFILE (CBG SYSTEMS)
@@ -328,13 +328,13 @@ h1.title { font-size: var(--fs-title); font-weight: 700; color: var(--c-primary)
       <td class="muted">Camouflage systems</td>
       <td class="prod"><b>Black Fox</b> active thermal camouflage for land vehicles</td>
       <td>Thermal IR (MWIR / LWIR)</td>
-      <td><span class="chip chip-proto">Prototype / historical</span></td>
+      <td><span class="chip chip-proto">Prototype / historical</span><br><span class="qual">current status unclear</span></td>
       <td class="num">5</td>
     </tr>
     <tr>
       <td><div class="co">STG Defence<small>Ukraine</small></div></td>
       <td class="muted">Camouflage systems</td>
-      <td class="prod"><b>Thermal Signature Shelter</b> for vehicles &amp; equipment; personnel systems</td>
+      <td class="prod"><b>Thermal Signature Equipment Shelter</b> for vehicles &amp; platforms; personnel systems</td>
       <td>NIR / SWIR · MWIR / LWIR<br><span class="qual">radar: aviation / hangar lines</span></td>
       <td><span class="chip chip-fielded">Fielded / Commercial</span></td>
       <td class="num">51–200</td>
@@ -420,7 +420,7 @@ h1.title { font-size: var(--fs-title); font-weight: 700; color: var(--c-primary)
       <td>Australia</td>
       <td>Marine insulation, fire/protection systems &amp; defence signature management</td>
       <td>Major business line</td>
-      <td>Private — CBG Systems Pty Ltd</td>
+      <td>Private — CBG Systems Pty&nbsp;Ltd</td>
       <td>11–50</td>
       <td>≈US$6M <span class="q">(third-party estimate)</span></td>
     </tr>
@@ -472,7 +472,7 @@ h1.title { font-size: var(--fs-title); font-weight: 700; color: var(--c-primary)
       </div>
       <div class="ev-tile">
         <div class="elbl">CUSTOMER</div>
-        <div class="etxt"><b>Hanwha Defence Australia</b> — prime contractor for the Redback under LAND 400 Phase 3</div>
+        <div class="etxt"><b>Hanwha Defence Australia</b> — named customer for the Redback IFV under LAND 400 Phase 3</div>
       </div>
       <div class="ev-tile">
         <div class="elbl">FURTHER PROGRAM ASSOCIATION</div>
