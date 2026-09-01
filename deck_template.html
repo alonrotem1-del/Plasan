@@ -198,7 +198,7 @@ h1.title { font-size: var(--fs-title); font-weight: 700; color: var(--c-primary)
 
 .profile-main { position: absolute; left: var(--m-side); right: var(--m-side); top: 378px; display: grid; grid-template-columns: 1020px 1fr; column-gap: 56px; }
 
-.pf-products .prow { display: grid; grid-template-columns: 320px 1fr; column-gap: 28px; padding: 13px 0; border-bottom: 1px solid var(--c-hairline); }
+.pf-products .prow { display: grid; grid-template-columns: 360px 1fr; column-gap: 28px; padding: 11px 0; border-bottom: 1px solid var(--c-hairline); }
 .pf-products .prow:last-of-type { border-bottom: none; }
 .pf-products .pname { font-size: 23px; font-weight: 700; color: var(--c-primary); line-height: 1.22; }
 .pf-products .ptype { font-size: 17px; font-weight: 500; color: var(--c-slate-mid); margin-top: 5px; }
@@ -219,9 +219,62 @@ h1.title { font-size: var(--fs-title); font-weight: 700; color: var(--c-primary)
 .ev-tile .elbl { font-size: 18px; font-weight: 700; color: var(--c-primary); letter-spacing: .04em; margin-bottom: 7px; }
 .ev-tile .etxt { font-size: 20px; color: var(--c-text); line-height: 1.36; }
 .ev-tile .etxt b { font-weight: 600; }
+
+/* ============================================================
+   COVER
+   ============================================================ */
+.cv-body { position: absolute; left: var(--m-side); top: 330px; max-width: 1560px; }
+.cv-kicker { font-size: 22px; font-weight: 600; letter-spacing: .2em; color: var(--c-slate-mid); text-transform: uppercase; margin-bottom: 30px; }
+.cv-title { font-size: 86px; font-weight: 800; color: var(--c-primary); line-height: 1.12; letter-spacing: -.01em; }
+.cv-sub { font-size: 32px; color: var(--c-text-muted); margin-top: 30px; line-height: 1.35; }
+.cv-date { font-size: 22px; color: var(--c-text-faint); margin-top: 52px; font-weight: 500; }
+.cv-red { position: absolute; left: var(--m-side); bottom: 128px; width: 132px; height: 132px; background: var(--c-red); }
+.cv-slab { position: absolute; right: 0; top: 186px; width: 20px; height: 150px; background: var(--c-slate); }
+.cv-lockup { position: absolute; top: var(--m-top); left: var(--m-side); }
+
+/* ============================================================
+   SLIDE — PRODUCT & TECHNOLOGY LANDSCAPE (matrix)
+   ============================================================ */
+.mx-table { position: absolute; left: var(--m-side); right: var(--m-side); top: 214px; border-collapse: collapse; width: 1776px; table-layout: fixed; }
+.mx-table th { background: var(--c-slate); color: #fff; font-size: 18px; font-weight: 600; text-align: center; padding: 7px 8px; line-height: 1.22; border-left: 2px solid #fff; vertical-align: middle; }
+.mx-table th:first-child { border-left: none; text-align: left; padding-left: 16px; }
+.mx-table th .cnt { display: block; font-weight: 500; font-size: 15px; color: rgba(255,255,255,.72); margin-top: 2px; }
+.mx-table td { background: var(--c-fill); border-left: 2px solid #fff; border-top: 2px solid #fff; text-align: center; vertical-align: middle; padding: 5px 8px; }
+.mx-table td:first-child { border-left: none; }
+.mx-table td.co-cell { text-align: left; padding: 5px 16px; }
+.mx-table .co { font-weight: 700; color: var(--c-text); font-size: 21px; line-height: 1.2; }
+.mx-table .co small { display: block; font-weight: 500; color: var(--c-text-muted); font-size: 16px; margin-top: 2px; }
+.mx-table .dot { display: inline-block; width: 20px; height: 20px; background: var(--c-primary); border-radius: 2px; }
+.mx-table tr.grp td { background: var(--c-primary-tint); color: var(--c-primary); font-size: 19px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; padding: 4px 16px; text-align: left; }
+.mx-table tr.grp td span { font-weight: 500; text-transform: none; letter-spacing: 0; color: var(--c-slate-mid); margin-left: 14px; font-size: 18px; }
+.mx-note { position: absolute; left: var(--m-side); right: var(--m-side); top: 944px; font-size: 17px; color: var(--c-text-faint); line-height: 1.4; }
+
+/* ---------- profile extras ---------- */
+.pf-bands { flex-wrap: wrap; }
+.pf-bandqual { font-size: 17px; color: var(--c-text-faint); margin-top: 10px; line-height: 1.35; }
+.pf-note { background: var(--c-fill); padding: 16px 22px; margin-bottom: 16px; font-size: 20px; line-height: 1.4; color: var(--c-text); }
+.pf-note .nlbl { font-size: 15px; font-weight: 600; letter-spacing: .08em; color: var(--c-text-faint); text-transform: uppercase; margin-bottom: 8px; }
 </style>
 
-<!-- ================= SLIDE 1 : SCREENING FUNNEL ================= -->
+<!-- ================= SLIDE : COVER ================= -->
+<div class="slide-wrap"><section class="slide" id="s-cover">
+  <div class="cv-lockup"><div class="lockup"><span class="word">PLASAN</span><span class="bar"></span><span class="desc"><b>Signature Management</b>Company Landscape</span></div></div>
+  <div class="cv-slab"></div>
+  <div class="cv-body">
+    <div class="cv-kicker">Plasan Sasa — Strategy</div>
+    <h1 class="cv-title">Signature Management &amp;<br>Multispectral Camouflage</h1>
+    <div class="cv-sub">Company landscape deep dive — nine selected companies</div>
+    <div class="cv-date">September 2026</div>
+  </div>
+  <div class="cv-red"></div>
+  <div class="ftr">
+    <div class="pageno"></div>
+    <div class="proj">Plasan Sasa — Signature Management | Company Landscape</div>
+    <div class="src">Internal working document</div>
+  </div>
+</section></div>
+
+<!-- ================= SLIDE : SCREENING FUNNEL ================= -->
 <div class="slide-wrap"><section class="slide" id="s1">
   <div class="hdr">
     <div class="hdr-titles">
@@ -295,7 +348,7 @@ h1.title { font-size: var(--fs-title); font-weight: 700; color: var(--c-primary)
   </div>
 </section></div>
 
-<!-- ================= SLIDE 2 : SELECTED COMPANIES OVERVIEW ================= -->
+<!-- ================= SLIDE : SELECTED COMPANIES OVERVIEW ================= -->
 <div class="slide-wrap"><section class="slide" id="s2">
   <div class="hdr">
     <div class="hdr-titles">
@@ -400,11 +453,447 @@ h1.title { font-size: var(--fs-title); font-weight: 700; color: var(--c-primary)
   </div>
 </section></div>
 
-<!-- ================= SLIDE 3 : CBG SYSTEMS PROFILE ================= -->
+<!-- ================= SLIDE : PRODUCT & TECHNOLOGY LANDSCAPE ================= -->
+<div class="slide-wrap"><section class="slide" id="s-landscape">
+  <div class="hdr">
+    <div class="hdr-titles">
+      <div class="kicker">Product &amp; Technology Landscape</div>
+      <h1 class="title">Vehicle systems, nets and textiles dominate the set; active / adaptive signature control appears at only two companies</h1>
+    </div>
+    <div class="lockup"><span class="word">PLASAN</span><span class="bar"></span><span class="desc"><b>Signature Management</b>Company Landscape</span></div>
+  </div>
+  <table class="mx-table">
+    <colgroup><col style="width:400px"><col style="width:229px"><col style="width:229px"><col style="width:229px"><col style="width:229px"><col style="width:229px"><col style="width:231px"></colgroup>
+    <tr><th>Company</th><th>Vehicle camouflage systems<span class="cnt">5 of 9</span></th><th>Nets &amp; covers<span class="cnt">5 of 9</span></th><th>Textiles &amp; materials<span class="cnt">5 of 9</span></th><th>Coatings<span class="cnt">3 of 9</span></th><th>RAM &amp; composites<span class="cnt">2 of 9</span></th><th>Active / adaptive systems<span class="cnt">2 of 9</span></th></tr>
+    <tr class="grp"><td colspan="7">Core business<span>— signature management is the company's main activity</span></td></tr>
+    <tr><td class="co-cell"><div class="co">Ametrine Technologies<small>Flint™</small></div></td><td><span class="dot"></span></td><td><span class="dot"></span></td><td><span class="dot"></span></td><td><span class="dot"></span></td><td></td><td></td></tr>
+    <tr><td class="co-cell"><div class="co">Eltics / Black Fox<small>Black Fox</small></div></td><td><span class="dot"></span></td><td></td><td></td><td></td><td></td><td><span class="dot"></span></td></tr>
+    <tr><td class="co-cell"><div class="co">STG Defence<small>Thermal Signature Equipment Shelter</small></div></td><td></td><td><span class="dot"></span></td><td><span class="dot"></span></td><td></td><td></td><td></td></tr>
+    <tr><td class="co-cell"><div class="co">Sterlite Camotech<small>MSCN · MCS · IR paints</small></div></td><td><span class="dot"></span></td><td><span class="dot"></span></td><td><span class="dot"></span></td><td><span class="dot"></span></td><td></td><td></td></tr>
+    <tr class="grp"><td colspan="7">Major business line<span>— dedicated signature-management line within a broader business</span></td></tr>
+    <tr><td class="co-cell"><div class="co">Advanced Material Development<small>CHAM-NIR · ChamIR · ChamEM</small></div></td><td></td><td></td><td></td><td><span class="dot"></span></td><td><span class="dot"></span></td><td><span class="dot"></span></td></tr>
+    <tr><td class="co-cell"><div class="co">CBG Systems<small>SolarSigmaShield</small></div></td><td><span class="dot"></span></td><td><span class="dot"></span></td><td><span class="dot"></span></td><td></td><td></td><td></td></tr>
+    <tr><td class="co-cell"><div class="co">Ravelin Defense<small>TactiCam™ · Radar Reduction Shrouds</small></div></td><td><span class="dot"></span></td><td><span class="dot"></span></td><td></td><td></td><td></td><td></td></tr>
+    <tr class="grp"><td colspan="7">Adjacent offering<span>— signature management as an application of an adjacent technology</span></td></tr>
+    <tr><td class="co-cell"><div class="co">Permali<small>Dust Skirts</small></div></td><td></td><td></td><td></td><td></td><td><span class="dot"></span></td><td></td></tr>
+    <tr><td class="co-cell"><div class="co">Shieldex<small>Shieldex® Zell RS CR</small></div></td><td></td><td></td><td><span class="dot"></span></td><td></td><td></td><td></td></tr>
+  </table>
+  <div class="mx-note">A filled marker = the company offers products in that solution family, per the project dataset; flagship products shown under each company name. Family definitions follow the project classification guide.</div>
+  <div class="ftr">
+    <div class="pageno"></div>
+    <div class="proj">Plasan Sasa — Signature Management | Company Landscape</div>
+    <div class="src">Source: Plasan 9-company deep-dive dataset (product-family classification)</div>
+  </div>
+</section></div>
+
+<!-- ================= SLIDE : PROFILE AMETRINE ================= -->
+<div class="slide-wrap"><section class="slide" id="s-ametrine">
+  <div class="hdr">
+    <div class="hdr-titles">
+      <div class="kicker">Company Profile · Core Business</div>
+      <h1 class="title">Ametrine Technologies — a camouflage pure-play with fielded platform products and active U.S. government engagement</h1>
+    </div>
+    <div class="lockup"><span class="word">PLASAN</span><span class="bar"></span><span class="desc"><b>Signature Management</b>Company Landscape</span></div>
+  </div>
+  <table class="snap">
+    <colgroup>
+      <col style="width:200px"><col style="width:470px"><col style="width:300px">
+      <col style="width:330px"><col style="width:186px"><col style="width:290px">
+    </colgroup>
+    <tr><th>Country</th><th>Main business</th><th>Signature focus</th><th>Ownership</th><th>Employees</th><th>Revenue</th></tr>
+    <tr>
+      <td>Israel / United States</td>
+      <td>Camouflage &amp; multispectral signature management</td>
+      <td>Core business</td>
+      <td>Private — Ametrine Technologies Ltd / Inc.</td>
+      <td>11–50</td>
+      <td>$1–15M <span class="q">(third-party estimates)</span></td>
+    </tr>
+  </table>
+  <div class="profile-main">
+    <div class="pf-products">
+      <div class="sec-bar">Signature-management portfolio</div>
+      <div class="prow">
+        <div><div class="pname">Flint™</div><div class="ptype">Platform coating / skin — flagship</div></div>
+        <div class="pdesc">Multilayer coating / skin applied to mobile platforms to reduce detectable optical and thermal signatures</div>
+      </div>
+      <div class="prow">
+        <div><div class="pname">Multirole Concealment Covers</div><div class="ptype">Nets &amp; covers</div></div>
+        <div class="pdesc">Deployable concealment for equipment and platforms</div>
+      </div>
+      <div class="prow">
+        <div><div class="pname">Personnel systems</div><div class="ptype">Secondary</div></div>
+        <div class="pdesc">Poncho Elite and the Advanced Camouflage Combat Uniform™ System — secondary to the vehicle / platform focus of this review</div>
+      </div>
+      <div class="pf-bands">
+        <span class="blbl">Signature domains</span>
+        <span class="band-chip">Visual / Optical</span><span class="band-chip">Thermal IR</span>
+      </div>
+      <div class="pf-bandqual">Radar / RCS not verified in current product materials</div>
+    </div>
+    <div class="pf-imgs">
+      <div class="sec-bar">Product &amp; application</div>
+      <div class="islot">
+        <div class="itag">Official image — pending retrieval</div>
+        <div class="icap">Flint™ platform application</div>
+        <div class="isrc">ametrine.tech — official website</div>
+      </div>
+      <div class="islot">
+        <div class="itag">Official image — pending retrieval</div>
+        <div class="icap">Multirole Concealment Covers</div>
+        <div class="isrc">ametrine.tech — official website</div>
+      </div>
+    </div>
+  </div>
+  <div class="pf-evidence">
+    <div class="sec-bar">Commercial evidence</div>
+    <div class="ev-tiles">
+      <div class="ev-tile">
+        <div class="elbl">U.S. GOVERNMENT CUSTOMERS</div>
+        <div class="etxt"><b>Office of Naval Research</b>, U.S. Army RDECOM and USSOCOM</div>
+      </div>
+      <div class="ev-tile">
+        <div class="elbl">2024 — ONR ORDER</div>
+        <div class="etxt">≈$250k order for an X-hangar and <b>camouflage cover</b> — a direct product signal</div>
+      </div>
+      <div class="ev-tile">
+        <div class="elbl">2025 — ONR R&amp;D CONTRACT</div>
+        <div class="etxt"><b>$18M</b> R&amp;D contract; public scope not detailed — not attributable in full to camouflage</div>
+      </div>
+    </div>
+  </div>
+  <div class="ftr">
+    <div class="pageno"></div>
+    <div class="proj">Plasan Sasa — Signature Management | Company Landscape</div>
+    <div class="src">Source: Ametrine official website; U.S. federal contract records; Plasan 9-company dataset. Revenue range is a third-party estimate.</div>
+  </div>
+</section></div>
+
+<!-- ================= SLIDE : PROFILE ELTICS ================= -->
+<div class="slide-wrap"><section class="slide" id="s-eltics">
+  <div class="hdr">
+    <div class="hdr-titles">
+      <div class="kicker">Company Profile · Core Business</div>
+      <h1 class="title">Eltics / Black Fox — pioneering active thermal camouflage; evidence is largely historical and current status unclear</h1>
+    </div>
+    <div class="lockup"><span class="word">PLASAN</span><span class="bar"></span><span class="desc"><b>Signature Management</b>Company Landscape</span></div>
+  </div>
+  <table class="snap">
+    <colgroup>
+      <col style="width:200px"><col style="width:470px"><col style="width:300px">
+      <col style="width:330px"><col style="width:186px"><col style="width:290px">
+    </colgroup>
+    <tr><th>Country</th><th>Main business</th><th>Signature focus</th><th>Ownership</th><th>Employees</th><th>Revenue</th></tr>
+    <tr>
+      <td>Israel</td>
+      <td>Active thermal signature-management technology</td>
+      <td>Core business</td>
+      <td>Private</td>
+      <td>5</td>
+      <td>No reliable current figure</td>
+    </tr>
+  </table>
+  <div class="profile-main">
+    <div class="pf-products">
+      <div class="sec-bar">Signature-management portfolio</div>
+      <div class="prow">
+        <div><div class="pname">Black Fox</div><div class="ptype">Active / adaptive thermal system</div></div>
+        <div class="pdesc">Controlled surface panels manage the vehicle’s emitted thermal signature in the MWIR and LWIR bands</div>
+      </div>
+      <div class="prow">
+        <div><div class="pname">Demonstrations — context</div><div class="ptype">Land vehicles</div></div>
+        <div class="pdesc">Demonstrated on military vehicles; public evidence is prototype / demonstrator-era rather than current commercial fielding</div>
+      </div>
+      <div class="pf-bands">
+        <span class="blbl">Signature domains</span>
+        <span class="band-chip">MWIR</span><span class="band-chip">LWIR</span>
+      </div>
+      <div class="pf-bandqual">No radar / RCS capability identified</div>
+    </div>
+    <div class="pf-imgs">
+      <div class="sec-bar">Status notes</div>
+      <div class="pf-note"><div class="nlbl">Public footprint</div>Public product evidence is concentrated around Black Fox and is largely historical; no active official product channel identified</div>
+      <div class="pf-note"><div class="nlbl">Assessment posture</div>Technologically relevant active-camouflage know-how; current corporate and commercial status is unclear</div>
+    </div>
+  </div>
+  <div class="pf-evidence">
+    <div class="sec-bar">Commercial evidence</div>
+    <div class="ev-tiles">
+      <div class="ev-tile">
+        <div class="elbl">DEMONSTRATIONS</div>
+        <div class="etxt">Field demonstrations on military vehicles reported historically</div>
+      </div>
+      <div class="ev-tile">
+        <div class="elbl">CUSTOMERS</div>
+        <div class="etxt">No fielded customer confirmed</div>
+      </div>
+      <div class="ev-tile">
+        <div class="elbl">RECENT ACTIVITY</div>
+        <div class="etxt">No significant activity identified from 2023 onward</div>
+      </div>
+    </div>
+  </div>
+  <div class="ftr">
+    <div class="pageno"></div>
+    <div class="proj">Plasan Sasa — Signature Management | Company Landscape</div>
+    <div class="src">Source: Plasan 9-company dataset (historical public reporting). No active official company website identified.</div>
+  </div>
+</section></div>
+
+<!-- ================= SLIDE : PROFILE STG ================= -->
+<div class="slide-wrap"><section class="slide" id="s-stg">
+  <div class="hdr">
+    <div class="hdr-titles">
+      <div class="kicker">Company Profile · Core Business</div>
+      <h1 class="title">STG Defence — fielded thermal concealment for platforms and personnel; customer use is company-stated</h1>
+    </div>
+    <div class="lockup"><span class="word">PLASAN</span><span class="bar"></span><span class="desc"><b>Signature Management</b>Company Landscape</span></div>
+  </div>
+  <table class="snap">
+    <colgroup>
+      <col style="width:200px"><col style="width:470px"><col style="width:300px">
+      <col style="width:330px"><col style="width:186px"><col style="width:290px">
+    </colgroup>
+    <tr><th>Country</th><th>Main business</th><th>Signature focus</th><th>Ownership</th><th>Employees</th><th>Revenue</th></tr>
+    <tr>
+      <td>Ukraine</td>
+      <td>Camouflage &amp; protection against thermal and night-vision detection</td>
+      <td>Core business</td>
+      <td>Private — ownership not publicly disclosed</td>
+      <td>51–200</td>
+      <td>No reliable public figure</td>
+    </tr>
+  </table>
+  <div class="profile-main">
+    <div class="pf-products">
+      <div class="sec-bar">Signature-management portfolio</div>
+      <div class="prow">
+        <div><div class="pname">Thermal Signature Equipment Shelter</div><div class="ptype">Nets &amp; covers — flagship for platforms</div></div>
+        <div class="pdesc">Rapid concealment for vehicles, armored platforms, artillery and command / equipment positions</div>
+      </div>
+      <div class="prow">
+        <div><div class="pname">Thermal Signature Poncho</div><div class="ptype">Personnel — launched 2025</div></div>
+        <div class="pdesc">Personnel thermal concealment, launched and demonstrated in 2025</div>
+      </div>
+      <div class="prow">
+        <div><div class="pname">Thermal Signature Suit</div><div class="ptype">Personnel</div></div>
+        <div class="pdesc">Personnel thermal-concealment system</div>
+      </div>
+      <div class="pf-bands">
+        <span class="blbl">Signature domains</span>
+        <span class="band-chip">NIR / SWIR</span><span class="band-chip">MWIR / LWIR</span>
+      </div>
+      <div class="pf-bandqual">Radar-related reduction documented mainly in aviation / hangar solutions — not extended to every shelter product</div>
+    </div>
+    <div class="pf-imgs">
+      <div class="sec-bar">Product &amp; application</div>
+      <div class="islot">
+        <div class="itag">Official image — pending retrieval</div>
+        <div class="icap">Thermal Signature Equipment Shelter</div>
+        <div class="isrc">stg-defence.com — official website (products)</div>
+      </div>
+      <div class="islot">
+        <div class="itag">Official image — pending retrieval</div>
+        <div class="icap">Thermal-signature product line</div>
+        <div class="isrc">stg-defence.com — official website</div>
+      </div>
+    </div>
+  </div>
+  <div class="pf-evidence">
+    <div class="sec-bar">Commercial evidence</div>
+    <div class="ev-tiles">
+      <div class="ev-tile">
+        <div class="elbl">CUSTOMERS (COMPANY-STATED)</div>
+        <div class="etxt"><b>Armed Forces of Ukraine</b>, including Special Operations Forces</div>
+      </div>
+      <div class="ev-tile">
+        <div class="elbl">2025 — PRODUCT LAUNCH</div>
+        <div class="etxt"><b>Thermal Signature Poncho</b> launched and demonstrated</div>
+      </div>
+      <div class="ev-tile">
+        <div class="elbl">PROGRAM VISIBILITY</div>
+        <div class="etxt">No major named vehicle procurement program identified in the public evidence reviewed</div>
+      </div>
+    </div>
+  </div>
+  <div class="ftr">
+    <div class="pageno"></div>
+    <div class="proj">Plasan Sasa — Signature Management | Company Landscape</div>
+    <div class="src">Source: STG Defence official website; Plasan 9-company dataset. Customer use is company-stated.</div>
+  </div>
+</section></div>
+
+<!-- ================= SLIDE : PROFILE STERLITE ================= -->
+<div class="slide-wrap"><section class="slide" id="s-sterlite">
+  <div class="hdr">
+    <div class="hdr-titles">
+      <div class="kicker">Company Profile · Core Business</div>
+      <h1 class="title">Sterlite Camotech — a broad passive camouflage portfolio with company-stated supply experience across Indian forces</h1>
+    </div>
+    <div class="lockup"><span class="word">PLASAN</span><span class="bar"></span><span class="desc"><b>Signature Management</b>Company Landscape</span></div>
+  </div>
+  <table class="snap">
+    <colgroup>
+      <col style="width:200px"><col style="width:470px"><col style="width:300px">
+      <col style="width:330px"><col style="width:186px"><col style="width:290px">
+    </colgroup>
+    <tr><th>Country</th><th>Main business</th><th>Signature focus</th><th>Ownership</th><th>Employees</th><th>Revenue</th></tr>
+    <tr>
+      <td>India</td>
+      <td>Military camouflage equipment — nets, mobile systems, paints</td>
+      <td>Core business</td>
+      <td>Private / proprietorship</td>
+      <td>26–50</td>
+      <td>No reliable public figure</td>
+    </tr>
+  </table>
+  <div class="profile-main">
+    <div class="pf-products">
+      <div class="sec-bar">Signature-management portfolio</div>
+      <div class="prow">
+        <div><div class="pname">MSCN camouflage nets</div><div class="ptype">Multispectral Camouflage Nets — flagship</div></div>
+        <div class="pdesc">Multispectral concealment nets for military equipment and positions</div>
+      </div>
+      <div class="prow">
+        <div><div class="pname">MCS mobile camouflage</div><div class="ptype">Mobile Camouflage System — vehicle-fitted</div></div>
+        <div class="pdesc">Platform-fitted mobile camouflage for vehicles</div>
+      </div>
+      <div class="prow">
+        <div><div class="pname">Infrared Camouflage Paints</div><div class="ptype">Coatings</div></div>
+        <div class="pdesc">IR-reflective paints adding surface-treatment capability; further products broaden the portfolio</div>
+      </div>
+      <div class="pf-bands">
+        <span class="blbl">Signature domains</span>
+        <span class="band-chip">Visual</span><span class="band-chip">NIR</span><span class="band-chip">Thermal IR</span>
+      </div>
+      <div class="pf-bandqual">Radar coverage is company-claimed, not independently confirmed</div>
+    </div>
+    <div class="pf-imgs">
+      <div class="sec-bar">Product &amp; application</div>
+      <div class="islot">
+        <div class="itag">Official image — pending retrieval</div>
+        <div class="icap">MSCN multispectral camouflage net</div>
+        <div class="isrc">sterlitecamotech.com — official website (products)</div>
+      </div>
+      <div class="islot">
+        <div class="itag">Official image — pending retrieval</div>
+        <div class="icap">Mobile Camouflage System</div>
+        <div class="isrc">sterlitecamotech.com — official website (products)</div>
+      </div>
+    </div>
+  </div>
+  <div class="pf-evidence">
+    <div class="sec-bar">Commercial evidence</div>
+    <div class="ev-tiles">
+      <div class="ev-tile">
+        <div class="elbl">CUSTOMERS (COMPANY-STATED)</div>
+        <div class="etxt"><b>Indian Air Force, Indian Army</b>, paramilitary forces and DRDO establishments</div>
+      </div>
+      <div class="ev-tile">
+        <div class="elbl">2025 — PROCUREMENT</div>
+        <div class="etxt">Participated in Indian Army procurement for multispectral camouflage nets; award / value not publicly established</div>
+      </div>
+      <div class="ev-tile">
+        <div class="elbl">2024 — DOCUMENTATION</div>
+        <div class="etxt">Company brochure documents defence supply experience</div>
+      </div>
+    </div>
+  </div>
+  <div class="ftr">
+    <div class="pageno"></div>
+    <div class="proj">Plasan Sasa — Signature Management | Company Landscape</div>
+    <div class="src">Source: Sterlite Camotech official website and brochure; Plasan 9-company dataset. Revenue omitted — public estimates conflict.</div>
+  </div>
+</section></div>
+
+<!-- ================= SLIDE : PROFILE AMD ================= -->
+<div class="slide-wrap"><section class="slide" id="s-amd">
+  <div class="hdr">
+    <div class="hdr-titles">
+      <div class="kicker">Company Profile · Major Business Line</div>
+      <h1 class="title">Advanced Material Development — adaptive IR and radar-signature materials in active defence trials, not yet fielded</h1>
+    </div>
+    <div class="lockup"><span class="word">PLASAN</span><span class="bar"></span><span class="desc"><b>Signature Management</b>Company Landscape</span></div>
+  </div>
+  <table class="snap">
+    <colgroup>
+      <col style="width:200px"><col style="width:470px"><col style="width:300px">
+      <col style="width:330px"><col style="width:186px"><col style="width:290px">
+    </colgroup>
+    <tr><th>Country</th><th>Main business</th><th>Signature focus</th><th>Ownership</th><th>Employees</th><th>Revenue</th></tr>
+    <tr>
+      <td>US / UK</td>
+      <td>Nanomaterials &amp; advanced coatings — defence is one of several markets</td>
+      <td>Major business line</td>
+      <td>Private — U.S. defence subsidiary of AMD Ltd (UK)</td>
+      <td>2–10</td>
+      <td>No reliable public figure</td>
+    </tr>
+  </table>
+  <div class="profile-main">
+    <div class="pf-products">
+      <div class="sec-bar">Signature-management portfolio</div>
+      <div class="prow">
+        <div><div class="pname">CHAM-NIR</div><div class="ptype">Adaptive coating</div></div>
+        <div class="pdesc">Adaptive near-infrared signature-management coating / system</div>
+      </div>
+      <div class="prow">
+        <div><div class="pname">ChamIR</div><div class="ptype">Coating</div></div>
+        <div class="pdesc">Infrared / thermal signature control</div>
+      </div>
+      <div class="prow">
+        <div><div class="pname">ChamEM</div><div class="ptype">RAM / advanced materials</div></div>
+        <div class="pdesc">Electromagnetic / radar-signature reduction using advanced materials — a genuine radar application, not generic EMI shielding</div>
+      </div>
+      <div class="pf-bands">
+        <span class="blbl">Signature domains</span>
+        <span class="band-chip">NIR / MIR</span><span class="band-chip">Thermal IR</span><span class="band-chip">Radar / EM</span>
+      </div>
+      <div class="pf-bandqual">Cross-domain portfolio; not yet shown as one integrated fielded system</div>
+    </div>
+    <div class="pf-imgs">
+      <div class="sec-bar">Product &amp; application</div>
+      <div class="islot">
+        <div class="itag">Official image — pending retrieval</div>
+        <div class="icap">CHAM adaptive coating technology</div>
+        <div class="isrc">amdnano.com — official website</div>
+      </div>
+      <div class="islot">
+        <div class="itag">Official image — pending retrieval</div>
+        <div class="icap">Defence signature-management materials</div>
+        <div class="isrc">amdnano.com — official website</div>
+      </div>
+    </div>
+  </div>
+  <div class="pf-evidence">
+    <div class="sec-bar">Commercial evidence</div>
+    <div class="ev-tiles">
+      <div class="ev-tile">
+        <div class="elbl">TRIALS &amp; VALIDATION</div>
+        <div class="etxt">U.S. Army / OSD Foreign Comparative Testing associated with <b>ChamEM</b>; NPS JIFX 25-4 testing of adaptive NIR / MIR coatings (2025)</div>
+      </div>
+      <div class="ev-tile">
+        <div class="elbl">2025 — U.S. FOOTPRINT</div>
+        <div class="etxt">U.S. defence subsidiary launched — strengthens access to U.S. programs; not itself a customer order</div>
+      </div>
+      <div class="ev-tile">
+        <div class="elbl">MATURITY</div>
+        <div class="etxt">Development / trials stage; no broad field deployment identified</div>
+      </div>
+    </div>
+  </div>
+  <div class="ftr">
+    <div class="pageno"></div>
+    <div class="proj">Plasan Sasa — Signature Management | Company Landscape</div>
+    <div class="src">Source: AMD official website; NPS JIFX documentation; Plasan 9-company dataset.</div>
+  </div>
+</section></div>
+
+<!-- ================= SLIDE : PROFILE CBG SYSTEMS ================= -->
 <div class="slide-wrap"><section class="slide" id="s3">
   <div class="hdr">
     <div class="hdr-titles">
-      <div class="kicker">Company Profile</div>
+      <div class="kicker">Company Profile · Major Business Line</div>
       <h1 class="title">CBG Systems — a fielded multispectral vehicle-camouflage system inside a broader marine &amp; protection business</h1>
     </div>
     <div class="lockup"><span class="word">PLASAN</span><span class="bar"></span><span class="desc"><b>Signature Management</b>Company Landscape</span></div>
@@ -485,6 +974,243 @@ h1.title { font-size: var(--fs-title); font-weight: 700; color: var(--c-primary)
     <div class="pageno"></div>
     <div class="proj">Plasan Sasa — Signature Management | Company Landscape</div>
     <div class="src">Source: CBG Systems official website (Signature Management; LAND 400 Phase 3 announcement). Revenue is a third-party estimate, not company-reported.</div>
+  </div>
+</section></div>
+
+<!-- ================= SLIDE : PROFILE RAVELIN ================= -->
+<div class="slide-wrap"><section class="slide" id="s-ravelin">
+  <div class="hdr">
+    <div class="hdr-titles">
+      <div class="kicker">Company Profile · Major Business Line</div>
+      <h1 class="title">Ravelin Defense — signature management retained as a dedicated unit inside a scaled U.S. survivability group</h1>
+    </div>
+    <div class="lockup"><span class="word">PLASAN</span><span class="bar"></span><span class="desc"><b>Signature Management</b>Company Landscape</span></div>
+  </div>
+  <table class="snap">
+    <colgroup>
+      <col style="width:200px"><col style="width:470px"><col style="width:300px">
+      <col style="width:330px"><col style="width:186px"><col style="width:290px">
+    </colgroup>
+    <tr><th>Country</th><th>Main business</th><th>Signature focus</th><th>Ownership</th><th>Employees</th><th>Revenue</th></tr>
+    <tr>
+      <td>United States</td>
+      <td>Defence survivability — armor, seating, signature management, metal fabrication</td>
+      <td>Major business line</td>
+      <td>Littlejohn Capital portfolio company</td>
+      <td>201–500</td>
+      <td>Unverified post-integration</td>
+    </tr>
+  </table>
+  <div class="profile-main">
+    <div class="pf-products">
+      <div class="sec-bar">Signature-management portfolio</div>
+      <div class="prow">
+        <div><div class="pname">TactiCam™</div><div class="ptype">Vehicle camouflage system — flagship</div></div>
+        <div class="pdesc">Durable 3D vehicle camouflage / signature-management system for land platforms, positioned as multispectral with visual / IR relevance</div>
+      </div>
+      <div class="prow">
+        <div><div class="pname">Radar Reduction Shrouds</div><div class="ptype">Radar signature products</div></div>
+        <div class="pdesc">Signature-management products intended to reduce platform radar detectability</div>
+      </div>
+      <div class="pf-bands">
+        <span class="blbl">Signature domains</span>
+        <span class="band-chip">Visual / IR</span><span class="band-chip">Radar</span>
+      </div>
+      <div class="pf-bandqual">Exact spectral bands not fully disclosed publicly</div>
+    </div>
+    <div class="pf-imgs">
+      <div class="sec-bar">Product &amp; application</div>
+      <div class="islot">
+        <div class="itag">Official image — pending retrieval</div>
+        <div class="icap">TactiCam™ vehicle application</div>
+        <div class="isrc">ravelindefense.com — Signature Management (official)</div>
+      </div>
+      <div class="islot">
+        <div class="itag">Official image — pending retrieval</div>
+        <div class="icap">Signature-management product line</div>
+        <div class="isrc">ravelindefense.com — official website</div>
+      </div>
+    </div>
+  </div>
+  <div class="pf-evidence">
+    <div class="sec-bar">Commercial evidence</div>
+    <div class="ev-tiles">
+      <div class="ev-tile">
+        <div class="elbl">DEMONSTRATIONS</div>
+        <div class="etxt"><b>TactiCam</b> demonstrated on General Dynamics land-vehicle platforms</div>
+      </div>
+      <div class="ev-tile">
+        <div class="elbl">2026 — INTEGRATION</div>
+        <div class="etxt">ArmorWorks and Fox Valley Metal Tech unified under <b>Ravelin Defense</b>; Signature Management retained as a dedicated business unit</div>
+      </div>
+      <div class="ev-tile">
+        <div class="elbl">CUSTOMER BASE</div>
+        <div class="etxt">Broader customers include the U.S. military and major primes — not all attributable to signature management</div>
+      </div>
+    </div>
+  </div>
+  <div class="ftr">
+    <div class="pageno"></div>
+    <div class="proj">Plasan Sasa — Signature Management | Company Landscape</div>
+    <div class="src">Source: Ravelin Defense official website and announcements; Plasan 9-company dataset. Historical ArmorWorks revenue is not attributed to Ravelin.</div>
+  </div>
+</section></div>
+
+<!-- ================= SLIDE : PROFILE PERMALI ================= -->
+<div class="slide-wrap"><section class="slide" id="s-permali">
+  <div class="hdr">
+    <div class="hdr-titles">
+      <div class="kicker">Company Profile · Adjacent Offering</div>
+      <h1 class="title">Permali — defence composites with one fielded signature application: suppressing the armored vehicle’s dust plume</h1>
+    </div>
+    <div class="lockup"><span class="word">PLASAN</span><span class="bar"></span><span class="desc"><b>Signature Management</b>Company Landscape</span></div>
+  </div>
+  <table class="snap">
+    <colgroup>
+      <col style="width:200px"><col style="width:470px"><col style="width:300px">
+      <col style="width:330px"><col style="width:186px"><col style="width:290px">
+    </colgroup>
+    <tr><th>Country</th><th>Main business</th><th>Signature focus</th><th>Ownership</th><th>Employees</th><th>Revenue</th></tr>
+    <tr>
+      <td>United Kingdom</td>
+      <td>Advanced composites for defence &amp; engineered markets</td>
+      <td>Adjacent offering</td>
+      <td>Diamorph Group <span class="q">(acquired 2021)</span></td>
+      <td>370</td>
+      <td>£30M reported turnover</td>
+    </tr>
+  </table>
+  <div class="profile-main">
+    <div class="pf-products">
+      <div class="sec-bar">Signature-management portfolio</div>
+      <div class="prow">
+        <div><div class="pname">Dust Skirts / Dust Guards</div><div class="ptype">Composite application — adjacent</div></div>
+        <div class="pdesc">Installed around armored vehicles to suppress the visible dust plume created during movement and reduce the associated radar signature of the dust cloud — indirect signature reduction, not classic platform RAM</div>
+      </div>
+      <div class="prow">
+        <div><div class="pname">Composite engineering base — context</div><div class="ptype">Land-defence composites</div></div>
+        <div class="pdesc">The offering applies Permali’s defence composite know-how; the core proposition is material engineering rather than camouflage</div>
+      </div>
+      <div class="pf-bands">
+        <span class="blbl">Signature domains</span>
+        <span class="band-chip">Visual</span><span class="band-chip">Radar</span>
+      </div>
+      <div class="pf-bandqual">Dust-plume signature only; no broad thermal-IR claim</div>
+    </div>
+    <div class="pf-imgs">
+      <div class="sec-bar">Product &amp; application</div>
+      <div class="islot">
+        <div class="itag">Official image — pending retrieval</div>
+        <div class="icap">Dust Skirts on armored vehicle</div>
+        <div class="isrc">permali.co.uk — Land Defence Composites / Dust Skirts (official)</div>
+      </div>
+      <div class="islot">
+        <div class="itag">Official image — pending retrieval</div>
+        <div class="icap">Land-defence composite products</div>
+        <div class="isrc">permali.co.uk — official website</div>
+      </div>
+    </div>
+  </div>
+  <div class="pf-evidence">
+    <div class="sec-bar">Commercial evidence</div>
+    <div class="ev-tiles">
+      <div class="ev-tile">
+        <div class="elbl">SCALE (REPORTED)</div>
+        <div class="etxt">≈£30M turnover and ≈370 co-workers, as reported in current Diamorph publications</div>
+      </div>
+      <div class="ev-tile">
+        <div class="elbl">OWNERSHIP</div>
+        <div class="etxt">Acquired by <b>Diamorph Group</b> in 2021</div>
+      </div>
+      <div class="ev-tile">
+        <div class="elbl">RECENT ACTIVITY</div>
+        <div class="etxt">No significant signature-management-specific activity identified from 2023 onward — an established adjacent offering</div>
+      </div>
+    </div>
+  </div>
+  <div class="ftr">
+    <div class="pageno"></div>
+    <div class="proj">Plasan Sasa — Signature Management | Company Landscape</div>
+    <div class="src">Source: Permali official website; Diamorph publications; Plasan 9-company dataset.</div>
+  </div>
+</section></div>
+
+<!-- ================= SLIDE : PROFILE SHIELDEX ================= -->
+<div class="slide-wrap"><section class="slide" id="s-shieldex">
+  <div class="hdr">
+    <div class="hdr-titles">
+      <div class="kicker">Company Profile · Adjacent Offering</div>
+      <h1 class="title">Shieldex — a conductive-textile platform moving into defence multispectral applications as an enabling material</h1>
+    </div>
+    <div class="lockup"><span class="word">PLASAN</span><span class="bar"></span><span class="desc"><b>Signature Management</b>Company Landscape</span></div>
+  </div>
+  <table class="snap">
+    <colgroup>
+      <col style="width:200px"><col style="width:470px"><col style="width:300px">
+      <col style="width:330px"><col style="width:186px"><col style="width:290px">
+    </colgroup>
+    <tr><th>Country</th><th>Main business</th><th>Signature focus</th><th>Ownership</th><th>Employees</th><th>Revenue</th></tr>
+    <tr>
+      <td>Germany</td>
+      <td>Conductive &amp; metallized technical textiles</td>
+      <td>Adjacent offering</td>
+      <td>Family-owned — Robert Erichsen <span class="q">(CEO &amp; Owner)</span></td>
+      <td>~50</td>
+      <td>≈$31M <span class="q">(third-party estimate)</span></td>
+    </tr>
+  </table>
+  <div class="profile-main">
+    <div class="pf-products">
+      <div class="sec-bar">Signature-management portfolio</div>
+      <div class="prow">
+        <div><div class="pname">Shieldex® Zell RS CR</div><div class="ptype">Textiles &amp; materials — enabling material</div></div>
+        <div class="pdesc">Metallized textile used in military concealment and shielding applications — an enabling material rather than a complete vehicle camouflage system</div>
+      </div>
+      <div class="prow">
+        <div><div class="pname">Conductive-textile platform — context</div><div class="ptype">Shielding · heating · sensing</div></div>
+        <div class="pdesc">A broad portfolio of conductive / metallized textiles for electromagnetic shielding, heating and sensing underpins the defence offering</div>
+      </div>
+      <div class="pf-bands">
+        <span class="blbl">Signature domains</span>
+        <span class="band-chip">Thermal IR</span><span class="band-chip">RF / EMI shielding</span>
+      </div>
+      <div class="pf-bandqual">EMI / RF shielding is not radar-cross-section reduction; no product-specific RCS claim verified</div>
+    </div>
+    <div class="pf-imgs">
+      <div class="sec-bar">Product &amp; application</div>
+      <div class="islot">
+        <div class="itag">Official image — pending retrieval</div>
+        <div class="icap">Multispectral Shielding applications</div>
+        <div class="isrc">shieldex.de — Multispectral Shielding (official)</div>
+      </div>
+      <div class="islot">
+        <div class="itag">Official image — pending retrieval</div>
+        <div class="icap">Metallized textile products</div>
+        <div class="isrc">shieldex.de — official website</div>
+      </div>
+    </div>
+  </div>
+  <div class="pf-evidence">
+    <div class="sec-bar">Commercial evidence</div>
+    <div class="ev-tiles">
+      <div class="ev-tile">
+        <div class="elbl">2024 — POSITIONING</div>
+        <div class="etxt">Dedicated <b>Multispectral Shielding</b> solution family positioned for military and security applications — a market signal, not a disclosed contract</div>
+      </div>
+      <div class="ev-tile">
+        <div class="elbl">CUSTOMERS</div>
+        <div class="etxt">No named recent military signature-management customer identified</div>
+      </div>
+      <div class="ev-tile">
+        <div class="elbl">PLATFORM STRENGTH</div>
+        <div class="etxt">Established RF / EMI shielding expertise across industrial and defence applications</div>
+      </div>
+    </div>
+  </div>
+  <div class="ftr">
+    <div class="pageno"></div>
+    <div class="proj">Plasan Sasa — Signature Management | Company Landscape</div>
+    <div class="src">Source: Shieldex official website; Plasan 9-company dataset. Revenue is a third-party estimate.</div>
   </div>
 </section></div>
 

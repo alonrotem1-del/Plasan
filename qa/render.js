@@ -69,6 +69,37 @@ const path = require('path');
             issues.push(`content crosses footer line: "${(el.textContent || '').trim().slice(0, 40)}" bottom=${Math.round(r.bottom - sr.top)} footerTop=${Math.round(ft - sr.top)}`);
         });
       }
+      // 6. absolute-block collisions: profile-main / tables vs the section below them
+      const below = slide.querySelector('.pf-evidence');
+      if (below) {
+        const bt = below.getBoundingClientRect().top;
+        const main = slide.querySelector('.profile-main');
+        if (main) {
+          let low = 0, lowEl = '';
+          main.querySelectorAll('*').forEach((el) => {
+            if (!visible(el)) return;
+            const r = el.getBoundingClientRect();
+            if (r.bottom > low) { low = r.bottom; lowEl = (el.textContent || '').trim().slice(0, 40); }
+          });
+          if (low > bt - 6) issues.push(`profile-main crowds evidence section: lowest="${lowEl}" bottom=${Math.round(low - sr.top)} evidenceTop=${Math.round(bt - sr.top)}`);
+        }
+      }
+      const snap = slide.querySelector('.snap');
+      const pmain = slide.querySelector('.profile-main');
+      if (snap && pmain && snap.getBoundingClientRect().bottom > pmain.getBoundingClientRect().top - 4)
+        issues.push(`snapshot table crowds profile-main: snapBottom=${Math.round(snap.getBoundingClientRect().bottom - sr.top)} mainTop=${Math.round(pmain.getBoundingClientRect().top - sr.top)}`);
+      const hdr = slide.querySelector('.hdr');
+      if (hdr) {
+        const hb = [...hdr.querySelectorAll('*')].filter(visible).reduce((m, el) => Math.max(m, el.getBoundingClientRect().bottom), 0);
+        const first = slide.querySelector('.snap, .ovw-table, .mx-table, .funnel-zone');
+        if (first && hb > first.getBoundingClientRect().top - 4)
+          issues.push(`header crowds first content block: hdrBottom=${Math.round(hb - sr.top)} contentTop=${Math.round(first.getBoundingClientRect().top - sr.top)}`);
+      }
+      [['.ovw-table', '.ovw-note'], ['.mx-table', '.mx-note']].forEach(([a, b]) => {
+        const ea = slide.querySelector(a), eb = slide.querySelector(b);
+        if (ea && eb && ea.getBoundingClientRect().bottom > eb.getBoundingClientRect().top - 4)
+          issues.push(`${a} collides with ${b}`);
+      });
       out.push({
         slide: i + 1,
         issues,
