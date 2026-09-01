@@ -228,8 +228,8 @@ h1.title { font-size: var(--fs-title); font-weight: 700; color: var(--c-primary)
 .cv-title { font-size: 86px; font-weight: 800; color: var(--c-primary); line-height: 1.12; letter-spacing: -.01em; }
 .cv-sub { font-size: 32px; color: var(--c-text-muted); margin-top: 30px; line-height: 1.35; }
 .cv-date { font-size: 22px; color: var(--c-text-faint); margin-top: 52px; font-weight: 500; }
-.cv-red { position: absolute; left: var(--m-side); bottom: 128px; width: 132px; height: 132px; background: var(--c-red); }
-.cv-slab { position: absolute; right: 0; top: 186px; width: 20px; height: 150px; background: var(--c-slate); }
+.cv-red { position: absolute; left: var(--m-side); bottom: 58px; width: 120px; height: 120px; background: var(--c-red); }
+.cv-slab { position: absolute; right: 0; top: 330px; width: 20px; height: 208px; background: var(--c-slate); }
 .cv-lockup { position: absolute; top: var(--m-top); left: var(--m-side); }
 
 /* ============================================================
@@ -252,7 +252,7 @@ h1.title { font-size: var(--fs-title); font-weight: 700; color: var(--c-primary)
 /* ---------- profile extras ---------- */
 .pf-bands { flex-wrap: wrap; }
 .pf-bandqual { font-size: 17px; color: var(--c-text-faint); margin-top: 10px; line-height: 1.35; }
-.pf-note { background: var(--c-fill); padding: 16px 22px; margin-bottom: 16px; font-size: 20px; line-height: 1.4; color: var(--c-text); }
+.pf-note { background: var(--c-fill); padding: 16px 24px; margin-bottom: 16px; font-size: 20px; line-height: 1.4; color: var(--c-text); min-height: 148px; display: flex; flex-direction: column; justify-content: center; }
 .pf-note .nlbl { font-size: 15px; font-weight: 600; letter-spacing: .08em; color: var(--c-text-faint); text-transform: uppercase; margin-bottom: 8px; }
 </style>
 
@@ -415,7 +415,7 @@ h1.title { font-size: var(--fs-title); font-weight: 700; color: var(--c-primary)
       <td class="prod"><b>SolarSigmaShield</b> vehicle camouflage system; multispectral nets</td>
       <td>Visual · Thermal IR · Radar</td>
       <td><span class="chip chip-fielded">Fielded / Commercial</span></td>
-      <td class="num">11–50<br><span class="qual">~$6M (est.)</span></td>
+      <td class="num">11–50<br><span class="qual">≈$6M (est.)</span></td>
     </tr>
     <tr>
       <td><div class="co">Ravelin Defense<small>US · formerly ArmorWorks</small></div></td>
@@ -440,7 +440,7 @@ h1.title { font-size: var(--fs-title); font-weight: 700; color: var(--c-primary)
       <td class="prod"><b>Shieldex® Zell RS CR</b> metallized textile — enabling material</td>
       <td>Thermal IR · RF / EMI shield<br><span class="qual">not RCS reduction</span></td>
       <td><span class="chip chip-comm">Commercial</span></td>
-      <td class="num">~50<br><span class="qual">~$31M (est.)</span></td>
+      <td class="num">~50<br><span class="qual">≈$31M (est.)</span></td>
     </tr>
   </table>
 
@@ -574,7 +574,7 @@ h1.title { font-size: var(--fs-title); font-weight: 700; color: var(--c-primary)
   <div class="hdr">
     <div class="hdr-titles">
       <div class="kicker">Company Profile · Core Business</div>
-      <h1 class="title">Eltics / Black Fox — pioneering active thermal camouflage; evidence is largely historical and current status unclear</h1>
+      <h1 class="title">Eltics / Black Fox — active thermal-camouflage know-how; evidence is largely historical, current status unclear</h1>
     </div>
     <div class="lockup"><span class="word">PLASAN</span><span class="bar"></span><span class="desc"><b>Signature Management</b>Company Landscape</span></div>
   </div>
@@ -672,12 +672,8 @@ h1.title { font-size: var(--fs-title); font-weight: 700; color: var(--c-primary)
         <div class="pdesc">Rapid concealment for vehicles, armored platforms, artillery and command / equipment positions</div>
       </div>
       <div class="prow">
-        <div><div class="pname">Thermal Signature Poncho</div><div class="ptype">Personnel — launched 2025</div></div>
-        <div class="pdesc">Personnel thermal concealment, launched and demonstrated in 2025</div>
-      </div>
-      <div class="prow">
-        <div><div class="pname">Thermal Signature Suit</div><div class="ptype">Personnel</div></div>
-        <div class="pdesc">Personnel thermal-concealment system</div>
+        <div><div class="pname">Thermal Signature Poncho / Suit</div><div class="ptype">Personnel</div></div>
+        <div class="pdesc">Personnel thermal-concealment systems; the poncho was launched and demonstrated in 2025</div>
       </div>
       <div class="pf-bands">
         <span class="blbl">Signature domains</span>
@@ -811,7 +807,7 @@ h1.title { font-size: var(--fs-title); font-weight: 700; color: var(--c-primary)
   <div class="hdr">
     <div class="hdr-titles">
       <div class="kicker">Company Profile · Major Business Line</div>
-      <h1 class="title">Advanced Material Development — adaptive IR and radar-signature materials in active defence trials, not yet fielded</h1>
+      <h1 class="title">Advanced Material Development — adaptive IR and <span style="white-space:nowrap">radar-signature</span> materials in defence trials, not yet fielded</h1>
     </div>
     <div class="lockup"><span class="word">PLASAN</span><span class="bar"></span><span class="desc"><b>Signature Management</b>Company Landscape</span></div>
   </div>
@@ -825,7 +821,7 @@ h1.title { font-size: var(--fs-title); font-weight: 700; color: var(--c-primary)
       <td>US / UK</td>
       <td>Nanomaterials &amp; advanced coatings — defence is one of several markets</td>
       <td>Major business line</td>
-      <td>Private — U.S. defence subsidiary of AMD Ltd (UK)</td>
+      <td>Private — AMD Ltd (UK); U.S. arm AMD Inc.</td>
       <td>2–10</td>
       <td>No reliable public figure</td>
     </tr>
@@ -911,7 +907,7 @@ h1.title { font-size: var(--fs-title); font-weight: 700; color: var(--c-primary)
       <td>Major business line</td>
       <td>Private — CBG Systems Pty&nbsp;Ltd</td>
       <td>11–50</td>
-      <td>≈US$6M <span class="q">(third-party estimate)</span></td>
+      <td>≈$6M <span class="q">(third-party estimate)</span></td>
     </tr>
   </table>
 
@@ -1061,7 +1057,7 @@ h1.title { font-size: var(--fs-title); font-weight: 700; color: var(--c-primary)
   <div class="hdr">
     <div class="hdr-titles">
       <div class="kicker">Company Profile · Adjacent Offering</div>
-      <h1 class="title">Permali — defence composites with one fielded signature application: suppressing the armored vehicle’s dust plume</h1>
+      <h1 class="title">Permali — defence composites with an established signature application: suppressing the armored vehicle’s dust plume</h1>
     </div>
     <div class="lockup"><span class="word">PLASAN</span><span class="bar"></span><span class="desc"><b>Signature Management</b>Company Landscape</span></div>
   </div>
