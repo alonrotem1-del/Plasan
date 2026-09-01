@@ -58,6 +58,10 @@ body { font-family: var(--font); color: var(--c-text); -webkit-font-smoothing: a
 
 /* ---------- canvas & scaling ---------- */
 .slide-wrap { margin: 28px auto; width: 1920px; height: 1080px; }
+.slide::before {
+  content: ""; position: absolute; left: 0; top: 150px; bottom: 0; width: 18px;
+  background: #CED2DB; z-index: 0;
+}
 .slide {
   width: 1920px; height: 1080px;
   overflow: hidden; position: relative;
@@ -84,9 +88,11 @@ body { font-family: var(--font); color: var(--c-text); -webkit-font-smoothing: a
   font-size: var(--fs-kicker); font-weight: 600; letter-spacing: .18em;
   color: var(--c-slate-mid); text-transform: uppercase; margin-bottom: 14px;
 }
-h1.title { font-size: var(--fs-title); font-weight: 700; color: var(--c-primary); line-height: 1.22; }
+h1.title { font-size: var(--fs-title); font-weight: 700; color: var(--c-slate); line-height: 1.22; }
 .subtitle { font-size: var(--fs-subtitle); font-weight: 400; color: var(--c-text-muted); line-height: 1.35; margin-top: 12px; }
 
+.bdo-logo { height: 62px; width: auto; flex: none; padding-top: 4px; }
+.cv-lockup .bdo-logo { height: 92px; padding-top: 0; }
 .lockup { display: flex; align-items: center; gap: 18px; padding-top: 6px; flex: none; }
 .lockup .word { font-size: 34px; font-weight: 800; letter-spacing: .12em; color: var(--c-text); }
 .lockup .bar { width: 3px; height: 52px; background: var(--c-red); }
@@ -99,8 +105,8 @@ h1.title { font-size: var(--fs-title); font-weight: 700; color: var(--c-primary)
   border-top: 1px solid var(--c-hairline);
 }
 .ftr .pageno {
-  width: 58px; height: 100%; background: var(--c-fill);
-  color: var(--c-slate-mid); font-size: var(--fs-footer); font-weight: 600;
+  width: 58px; height: 100%; background: #97A4B2;
+  color: #fff; font-size: var(--fs-footer); font-weight: 600;
   display: flex; align-items: center; justify-content: center;
   border-right: 1px solid var(--c-hairline);
 }
@@ -228,8 +234,8 @@ h1.title { font-size: var(--fs-title); font-weight: 700; color: var(--c-primary)
 .cv-title { font-size: 86px; font-weight: 800; color: var(--c-primary); line-height: 1.12; letter-spacing: -.01em; }
 .cv-sub { font-size: 32px; color: var(--c-text-muted); margin-top: 30px; line-height: 1.35; }
 .cv-date { font-size: 22px; color: var(--c-text-faint); margin-top: 52px; font-weight: 500; }
-.cv-red { position: absolute; left: var(--m-side); bottom: 58px; width: 120px; height: 120px; background: var(--c-red); }
-.cv-slab { position: absolute; right: 0; top: 330px; width: 20px; height: 208px; background: var(--c-slate); }
+.cv-red { position: absolute; left: var(--m-side); bottom: 58px; width: 120px; height: 120px; background: var(--c-burgundy); }
+.cv-slab { position: absolute; right: 0; top: 230px; width: 20px; height: 160px; background: var(--c-slate); }
 .cv-lockup { position: absolute; top: var(--m-top); left: var(--m-side); }
 
 /* ============================================================
@@ -264,7 +270,7 @@ h1.title { font-size: var(--fs-title); font-weight: 700; color: var(--c-primary)
 
 <!-- ================= SLIDE : COVER ================= -->
 <div class="slide-wrap"><section class="slide" id="s-cover">
-  <div class="cv-lockup"><div class="lockup"><span class="word">PLASAN</span><span class="bar"></span><span class="desc"><b>Signature Management</b>Company Landscape</span></div></div>
+  <div class="cv-lockup"><img class="bdo-logo" src="@@IMG:bdo-logo.png@@" alt="BDO Consulting — Strategy Growth &amp; Innovation"></div>
   <div class="cv-slab"></div>
   <div class="cv-body">
     <div class="cv-kicker">Plasan Sasa — Strategy</div>
@@ -287,7 +293,7 @@ h1.title { font-size: var(--fs-title); font-weight: 700; color: var(--c-primary)
       <div class="kicker">Screening Approach</div>
       <h1 class="title">A broad company universe was narrowed to 9 through structured screening and Plasan expert review</h1>
     </div>
-    <div class="lockup"><span class="word">PLASAN</span><span class="bar"></span><span class="desc"><b>Signature Management</b>Company Landscape</span></div>
+    <img class="bdo-logo" src="@@IMG:bdo-logo.png@@" alt="BDO Consulting — Strategy Growth &amp; Innovation">
   </div>
 
   <div class="funnel-zone">
@@ -361,7 +367,7 @@ h1.title { font-size: var(--fs-title); font-weight: 700; color: var(--c-primary)
       <div class="kicker">Selected Companies — Executive Overview</div>
       <h1 class="title">Four camouflage pure-plays; five broader businesses with a dedicated or adjacent signature-management line</h1>
     </div>
-    <div class="lockup"><span class="word">PLASAN</span><span class="bar"></span><span class="desc"><b>Signature Management</b>Company Landscape</span></div>
+    <img class="bdo-logo" src="@@IMG:bdo-logo.png@@" alt="BDO Consulting — Strategy Growth &amp; Innovation">
   </div>
 
   <table class="ovw-table">
@@ -466,7 +472,7 @@ h1.title { font-size: var(--fs-title); font-weight: 700; color: var(--c-primary)
       <div class="kicker">Product &amp; Technology Landscape</div>
       <h1 class="title">Vehicle systems, nets and textiles dominate the set; active / adaptive signature control appears at only two companies</h1>
     </div>
-    <div class="lockup"><span class="word">PLASAN</span><span class="bar"></span><span class="desc"><b>Signature Management</b>Company Landscape</span></div>
+    <img class="bdo-logo" src="@@IMG:bdo-logo.png@@" alt="BDO Consulting — Strategy Growth &amp; Innovation">
   </div>
   <table class="mx-table">
     <colgroup><col style="width:400px"><col style="width:229px"><col style="width:229px"><col style="width:229px"><col style="width:229px"><col style="width:229px"><col style="width:231px"></colgroup>
@@ -499,7 +505,7 @@ h1.title { font-size: var(--fs-title); font-weight: 700; color: var(--c-primary)
       <div class="kicker">Company Profile · Core Business</div>
       <h1 class="title">Ametrine Technologies — a camouflage pure-play with fielded platform products and active U.S. government engagement</h1>
     </div>
-    <div class="lockup"><span class="word">PLASAN</span><span class="bar"></span><span class="desc"><b>Signature Management</b>Company Landscape</span></div>
+    <img class="bdo-logo" src="@@IMG:bdo-logo.png@@" alt="BDO Consulting — Strategy Growth &amp; Innovation">
   </div>
   <table class="snap">
     <colgroup>
@@ -580,7 +586,7 @@ h1.title { font-size: var(--fs-title); font-weight: 700; color: var(--c-primary)
       <div class="kicker">Company Profile · Core Business</div>
       <h1 class="title">Eltics / Black Fox — active thermal-camouflage know-how; evidence is largely historical, current status unclear</h1>
     </div>
-    <div class="lockup"><span class="word">PLASAN</span><span class="bar"></span><span class="desc"><b>Signature Management</b>Company Landscape</span></div>
+    <img class="bdo-logo" src="@@IMG:bdo-logo.png@@" alt="BDO Consulting — Strategy Growth &amp; Innovation">
   </div>
   <table class="snap">
     <colgroup>
@@ -654,7 +660,7 @@ h1.title { font-size: var(--fs-title); font-weight: 700; color: var(--c-primary)
       <div class="kicker">Company Profile · Core Business</div>
       <h1 class="title">STG Defence — fielded thermal concealment for platforms and personnel; customer use is company-stated</h1>
     </div>
-    <div class="lockup"><span class="word">PLASAN</span><span class="bar"></span><span class="desc"><b>Signature Management</b>Company Landscape</span></div>
+    <img class="bdo-logo" src="@@IMG:bdo-logo.png@@" alt="BDO Consulting — Strategy Growth &amp; Innovation">
   </div>
   <table class="snap">
     <colgroup>
@@ -731,7 +737,7 @@ h1.title { font-size: var(--fs-title); font-weight: 700; color: var(--c-primary)
       <div class="kicker">Company Profile · Core Business</div>
       <h1 class="title">Sterlite Camotech — a broad passive camouflage portfolio with company-stated supply experience across Indian forces</h1>
     </div>
-    <div class="lockup"><span class="word">PLASAN</span><span class="bar"></span><span class="desc"><b>Signature Management</b>Company Landscape</span></div>
+    <img class="bdo-logo" src="@@IMG:bdo-logo.png@@" alt="BDO Consulting — Strategy Growth &amp; Innovation">
   </div>
   <table class="snap">
     <colgroup>
@@ -812,7 +818,7 @@ h1.title { font-size: var(--fs-title); font-weight: 700; color: var(--c-primary)
       <div class="kicker">Company Profile · Major Business Line</div>
       <h1 class="title">Advanced Material Development — adaptive IR and <span style="white-space:nowrap">radar-signature</span> materials in defence trials, not yet fielded</h1>
     </div>
-    <div class="lockup"><span class="word">PLASAN</span><span class="bar"></span><span class="desc"><b>Signature Management</b>Company Landscape</span></div>
+    <img class="bdo-logo" src="@@IMG:bdo-logo.png@@" alt="BDO Consulting — Strategy Growth &amp; Innovation">
   </div>
   <table class="snap">
     <colgroup>
@@ -889,7 +895,7 @@ h1.title { font-size: var(--fs-title); font-weight: 700; color: var(--c-primary)
       <div class="kicker">Company Profile · Major Business Line</div>
       <h1 class="title">CBG Systems — a fielded multispectral vehicle-camouflage system inside a broader marine &amp; protection business</h1>
     </div>
-    <div class="lockup"><span class="word">PLASAN</span><span class="bar"></span><span class="desc"><b>Signature Management</b>Company Landscape</span></div>
+    <img class="bdo-logo" src="@@IMG:bdo-logo.png@@" alt="BDO Consulting — Strategy Growth &amp; Innovation">
   </div>
 
   <table class="snap">
@@ -975,7 +981,7 @@ h1.title { font-size: var(--fs-title); font-weight: 700; color: var(--c-primary)
       <div class="kicker">Company Profile · Major Business Line</div>
       <h1 class="title">Ravelin Defense — signature management retained as a dedicated unit inside a scaled U.S. survivability group</h1>
     </div>
-    <div class="lockup"><span class="word">PLASAN</span><span class="bar"></span><span class="desc"><b>Signature Management</b>Company Landscape</span></div>
+    <img class="bdo-logo" src="@@IMG:bdo-logo.png@@" alt="BDO Consulting — Strategy Growth &amp; Innovation">
   </div>
   <table class="snap">
     <colgroup>
@@ -1052,7 +1058,7 @@ h1.title { font-size: var(--fs-title); font-weight: 700; color: var(--c-primary)
       <div class="kicker">Company Profile · Adjacent Offering</div>
       <h1 class="title">Permali — defence composites with an established signature application: suppressing the armored vehicle’s dust plume</h1>
     </div>
-    <div class="lockup"><span class="word">PLASAN</span><span class="bar"></span><span class="desc"><b>Signature Management</b>Company Landscape</span></div>
+    <img class="bdo-logo" src="@@IMG:bdo-logo.png@@" alt="BDO Consulting — Strategy Growth &amp; Innovation">
   </div>
   <table class="snap">
     <colgroup>
@@ -1125,7 +1131,7 @@ h1.title { font-size: var(--fs-title); font-weight: 700; color: var(--c-primary)
       <div class="kicker">Company Profile · Adjacent Offering</div>
       <h1 class="title">Shieldex — a conductive-textile platform moving into defence multispectral applications as an enabling material</h1>
     </div>
-    <div class="lockup"><span class="word">PLASAN</span><span class="bar"></span><span class="desc"><b>Signature Management</b>Company Landscape</span></div>
+    <img class="bdo-logo" src="@@IMG:bdo-logo.png@@" alt="BDO Consulting — Strategy Growth &amp; Innovation">
   </div>
   <table class="snap">
     <colgroup>
