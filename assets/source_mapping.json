@@ -1,5 +1,5 @@
 {
-  "description": "Internal mapping of external data/imagery sources for the Plasan Signature Management deck. Twelve official images embedded across seven profiles; Ravelin pending (blocked CDN); Eltics has no official imagery source.",
+  "description": "Internal mapping of external data/imagery sources for the Plasan Signature Management deck. Fourteen official images embedded across eight profiles; Eltics has no official imagery source (third-party editorial hosts currently network-blocked).",
   "images": [
     {
       "slide": "s-permali (12)",
@@ -89,15 +89,24 @@
       "source_type": "official company website (official Signature Management / Mobile Camouflage page)"
     },
     {
-      "slide": "s-ravelin (11)",
-      "status": "pending — Ravelin's site images are hosted on Webflow's CDN (cdn.prod.website-files.com), which the environment network policy still blocks. Add that domain to retrieve TactiCam imagery.",
-      "intended_sources": [
-        "https://cdn.prod.website-files.com/.../TactiCam_desert camo.jpg (from ravelindefense.com/products/signature-management)"
-      ]
-    },
-    {
       "slide": "s-eltics (6)",
       "status": "not applicable — no active official company website identified; profile carries status-note panels instead of imagery"
+    },
+    {
+      "slide": "s-ravelin (11)",
+      "file": "assets/images/ravelin-tacticam-hmmwv.jpg",
+      "status": "embedded",
+      "source_url": "https://cdn.prod.website-files.com/6a16fe34637817a22a6797b7/6a32f5254c3d4a360cd4ad34_TactiCam_desert%20camo.jpg",
+      "source_page": "https://ravelindefense.com/products/signature-management",
+      "source_type": "official company website (Signature Management page; site assets hosted on Webflow CDN)"
+    },
+    {
+      "slide": "s-ravelin (11)",
+      "file": "assets/images/ravelin-tacticam-closeup.jpg",
+      "status": "embedded",
+      "source_url": "https://cdn.prod.website-files.com/6a16fe34637817a22a6797b7/6a16fe34637817a22a67992d_HMMWV%20TactiCam%20Close%20up%20shot%20at%20AUSA%202025%20(1)-p-800.jpg",
+      "source_page": "https://ravelindefense.com/products/signature-management",
+      "source_type": "official company website (Signature Management page; 'HMMWV TactiCam Close up shot at AUSA 2025')"
     }
   ],
   "data_sources": [
