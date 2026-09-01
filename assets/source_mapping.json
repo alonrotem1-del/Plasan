@@ -1,5 +1,5 @@
 {
-  "description": "Internal mapping of external data/imagery sources for the Plasan Signature Management deck. Fourteen official images embedded across eight profiles; Eltics has no official imagery source (third-party editorial hosts currently network-blocked).",
+  "description": "Internal mapping of external data/imagery sources for the Plasan Signature Management deck. All nine profiles now carry imagery: fourteen official images plus one user-approved third-party editorial image (Eltics).",
   "images": [
     {
       "slide": "s-permali (12)",
@@ -89,10 +89,6 @@
       "source_type": "official company website (official Signature Management / Mobile Camouflage page)"
     },
     {
-      "slide": "s-eltics (6)",
-      "status": "not applicable — no active official company website identified; profile carries status-note panels instead of imagery"
-    },
-    {
       "slide": "s-ravelin (11)",
       "file": "assets/images/ravelin-tacticam-hmmwv.jpg",
       "status": "embedded",
@@ -107,6 +103,14 @@
       "source_url": "https://cdn.prod.website-files.com/6a16fe34637817a22a6797b7/6a16fe34637817a22a67992d_HMMWV%20TactiCam%20Close%20up%20shot%20at%20AUSA%202025%20(1)-p-800.jpg",
       "source_page": "https://ravelindefense.com/products/signature-management",
       "source_type": "official company website (Signature Management page; 'HMMWV TactiCam Close up shot at AUSA 2025')"
+    },
+    {
+      "slide": "s-eltics (6)",
+      "file": "assets/images/eltics-blackfox-demo.jpg",
+      "status": "embedded",
+      "source_url": "https://soldiersystems.net/wp-content/uploads/2012/02/eltics_stealth_test1.jpg",
+      "source_page": "https://soldiersystems.net/2012/02/05/eltics-black-fox-thermal-mimicry-system/",
+      "source_type": "THIRD-PARTY EDITORIAL image (Soldier Systems Daily, 2012) — exception to the official-sources-only rule, explicitly approved by the project owner on 2026-09-01; credited on-slide. Image carries an ELTICS watermark and originates from the company's historical demonstration material. defense-update.com (the dataset's cited source) is behind a Cloudflare challenge and was not retrievable."
     }
   ],
   "data_sources": [

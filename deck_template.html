@@ -255,6 +255,7 @@ h1.title { font-size: var(--fs-title); font-weight: 700; color: var(--c-primary)
 .ifig { margin-bottom: 12px; }
 .ifig .iimg { height: 116px; border: 1px solid var(--c-border); background-position: center; background-size: cover; background-color: var(--c-fill); }
 .ifig.tall .iimg { height: 280px; }
+.ifig.fit .iimg { height: 136px; background-size: contain; background-repeat: no-repeat; background-color: #fff; }
 .ifig .icap2 { font-size: 15px; color: var(--c-text-faint); margin-top: 6px; line-height: 1.3; }
 .ifig .icap2 b { color: var(--c-slate); font-weight: 600; }
 .pf-note { background: var(--c-fill); padding: 16px 24px; margin-bottom: 16px; font-size: 20px; line-height: 1.4; color: var(--c-text); min-height: 148px; display: flex; flex-direction: column; justify-content: center; }
@@ -614,9 +615,12 @@ h1.title { font-size: var(--fs-title); font-weight: 700; color: var(--c-primary)
       <div class="pf-bandqual">No radar / RCS capability identified</div>
     </div>
     <div class="pf-imgs">
-      <div class="sec-bar">Status notes</div>
-      <div class="pf-note"><div class="nlbl">Public footprint</div>Public product evidence is concentrated around Black Fox and is largely historical; no active official product channel identified</div>
-      <div class="pf-note"><div class="nlbl">Assessment posture</div>Technologically relevant active-camouflage know-how; current corporate and commercial status is unclear</div>
+      <div class="sec-bar">Product &amp; status</div>
+      <div class="ifig fit">
+        <div class="iimg" style="background-image:url('@@IMG:eltics-blackfox-demo.jpg@@')"></div>
+        <div class="icap2"><b>Black Fox demonstrator with active thermal panels; inset: "fake signature" thermal view.</b> Third-party editorial image — Soldier Systems Daily (2012)</div>
+      </div>
+      <div class="pf-note"><div class="nlbl">Status</div>Public product evidence is concentrated around Black Fox and is largely historical — no active official product channel identified; current corporate and commercial status is unclear</div>
     </div>
   </div>
   <div class="pf-evidence">
@@ -639,7 +643,7 @@ h1.title { font-size: var(--fs-title); font-weight: 700; color: var(--c-primary)
   <div class="ftr">
     <div class="pageno"></div>
     <div class="proj">Plasan Sasa — Signature Management | Company Landscape</div>
-    <div class="src">Source: Plasan 9-company dataset (historical public reporting). No active official company website identified.</div>
+    <div class="src">Source: Plasan 9-company dataset (historical public reporting). No active official website; product image is third-party editorial (Soldier Systems Daily, 2012).</div>
   </div>
 </section></div>
 
