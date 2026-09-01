@@ -3,6 +3,13 @@
 Prototype phase: 3 slides (screening funnel, 9-company executive overview,
 CBG Systems company profile) as a self-contained HTML deck exportable to PDF.
 
+**Review workflow:** HTML is the primary format during development; the PDF is
+a secondary export for QA and sharing (no PowerPoint in the pipeline). The
+live review URL — republished on every revision, same link — is the claude.ai
+artifact; for a local preview, `python3 -m http.server 8000` in the repo root
+and open `http://localhost:8000/deck.html` (the file is fully self-contained,
+so opening it directly in a browser also works).
+
 ## Files
 
 | Path | Purpose |
