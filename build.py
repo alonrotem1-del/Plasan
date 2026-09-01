@@ -17,6 +17,12 @@ tpl = (root / "deck_template.html").read_text()
 assert "@@FONT_B64@@" in tpl, "font token missing from template"
 html = tpl.replace("@@FONT_B64@@", b64)
 
+# inline referenced images as data URIs (keeps deck.html self-contained)
+def img_token(m):
+    p = root / "assets" / "images" / m.group(1)
+    return "data:image/jpeg;base64," + base64.b64encode(p.read_bytes()).decode()
+html = re.sub(r"@@IMG:([\w.-]+)@@", img_token, html)
+
 counter = 0
 def number(_m):
     global counter

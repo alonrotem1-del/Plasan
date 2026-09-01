@@ -1,29 +1,58 @@
 {
-  "description": "Internal mapping of external data/imagery sources used in the Plasan Signature Management prototype deck. Image files are not yet present: the build environment's network egress policy blocks access to company websites, so official imagery could not be downloaded in this phase. Slots on the CBG profile slide reference the exact official pages below.",
+  "description": "Internal mapping of external data/imagery sources for the Plasan Signature Management deck. Three official images embedded (Permali, Shieldex x2); remaining profiles carry labeled pending slots because their domains are blocked by the environment's network egress policy.",
   "images": [
     {
-      "slide": 3,
-      "slot": "SolarSigmaShield on the Redback IFV",
-      "status": "pending download (network egress blocked in build environment)",
-      "intended_source_url": "https://cbgsystems.com/land-400-phase-3-solarsigmashield-for-redback/",
-      "source_type": "official company website (news / program announcement)"
+      "slide": "s-permali (12)",
+      "file": "assets/images/permali-dust-guards.jpg",
+      "status": "embedded",
+      "source_url": "https://www.permali.co.uk/wp-content/smush-webp/2023/07/Asset-1.png.webp",
+      "source_page": "https://www.permali.co.uk/products/land-defence-composites/dust-skirts/",
+      "source_type": "official company website (product page); alt text: 'Dust Guards Mud Flaps Mud Guards'"
     },
     {
-      "slide": 3,
-      "slot": "SolarSigmaShield mobile camouflage",
-      "status": "pending download (network egress blocked in build environment)",
-      "intended_source_url": "https://cbgsystems.com/signature-management/mobile-camouflage/",
-      "source_type": "official company website (product page)"
+      "slide": "s-shieldex (13)",
+      "file": "assets/images/shieldex-metallized-textile.jpg",
+      "status": "embedded",
+      "source_url": "https://www.shieldex.de/wp-content/uploads/2021/05/C-1-19-featured.png",
+      "source_page": "https://www.shieldex.de/en/applications/multispectral-shielding/",
+      "source_type": "official company website (Multispectral Shielding application page, product preview)"
+    },
+    {
+      "slide": "s-shieldex (13)",
+      "file": "assets/images/shieldex-shielding-tent.jpg",
+      "status": "embedded",
+      "source_url": "https://www.shieldex.de/wp-content/uploads/2021/04/Shieldex-EMV-Zelt.png",
+      "source_page": "https://www.shieldex.de/en/applications/multispectral-shielding/",
+      "source_type": "official company website (Multispectral Shielding application page, product preview)"
+    },
+    {
+      "slides": "s-cbg (10), s-ametrine (5), s-stg (7), s-sterlite (8), s-amd (9), s-ravelin (11)",
+      "status": "pending — domains still blocked by environment network policy as of 2026-09-01: cbgsystems.com, ametrine.tech, stg-defence.com, sterlitecamotech.com, amdnano-usa.com (AMD defence content), ravelindefense.com. amdnano.com main site is reachable but hosts no defence product imagery (defence line lives on amdnano-usa.com).",
+      "intended_sources": [
+        "https://cbgsystems.com/land-400-phase-3-solarsigmashield-for-redback/",
+        "https://cbgsystems.com/signature-management/mobile-camouflage/",
+        "https://ametrine.tech/",
+        "https://stg-defence.com/en/produkcija/",
+        "https://sterlitecamotech.com/our-products/",
+        "https://ravelindefense.com/products/signature-management",
+        "https://amdnano-usa.com/"
+      ]
     }
   ],
   "data_sources": [
     {
-      "slides": [1, 2, 3],
+      "slides": [
+        1,
+        2,
+        3
+      ],
       "source": "Plasan_Signature_Management_9_Companies_Claude_Input_v2.xlsx",
       "role": "primary source of truth for all company-level facts (sheet 'Company Map' incl. detail columns; sheet 'Sources & Notes')"
     },
     {
-      "slides": [1],
+      "slides": [
+        1
+      ],
       "source": "Plasan_Signature_Management_Company_Map_v5.xlsx",
       "role": "screening-stage universe: 37 companies in the structured screening map (rows 5–41 of sheet 'Company Map')"
     }

@@ -252,6 +252,11 @@ h1.title { font-size: var(--fs-title); font-weight: 700; color: var(--c-primary)
 /* ---------- profile extras ---------- */
 .pf-bands { flex-wrap: wrap; }
 .pf-bandqual { font-size: 17px; color: var(--c-text-faint); margin-top: 10px; line-height: 1.35; }
+.ifig { margin-bottom: 16px; }
+.ifig .iimg { height: 130px; border: 1px solid var(--c-border); background-position: center; background-size: cover; background-color: var(--c-fill); }
+.ifig.tall .iimg { height: 280px; }
+.ifig .icap2 { font-size: 16px; color: var(--c-text-faint); margin-top: 7px; line-height: 1.3; }
+.ifig .icap2 b { color: var(--c-slate); font-weight: 600; }
 .pf-note { background: var(--c-fill); padding: 16px 24px; margin-bottom: 16px; font-size: 20px; line-height: 1.4; color: var(--c-text); min-height: 148px; display: flex; flex-direction: column; justify-content: center; }
 .pf-note .nlbl { font-size: 15px; font-weight: 600; letter-spacing: .08em; color: var(--c-text-faint); text-transform: uppercase; margin-bottom: 8px; }
 </style>
@@ -1095,15 +1100,9 @@ h1.title { font-size: var(--fs-title); font-weight: 700; color: var(--c-primary)
     </div>
     <div class="pf-imgs">
       <div class="sec-bar">Product &amp; application</div>
-      <div class="islot">
-        <div class="itag">Official image — pending retrieval</div>
-        <div class="icap">Dust Skirts on armored vehicle</div>
-        <div class="isrc">permali.co.uk — Land Defence Composites / Dust Skirts (official)</div>
-      </div>
-      <div class="islot">
-        <div class="itag">Official image — pending retrieval</div>
-        <div class="icap">Land-defence composite products</div>
-        <div class="isrc">permali.co.uk — official website</div>
+      <div class="ifig tall">
+        <div class="iimg" style="background-image:url('@@IMG:permali-dust-guards.jpg@@')"></div>
+        <div class="icap2"><b>Dust Guards — official product illustration.</b> Source: permali.co.uk, Land Defence Composites / Dust Skirts</div>
       </div>
     </div>
   </div>
@@ -1174,15 +1173,13 @@ h1.title { font-size: var(--fs-title); font-weight: 700; color: var(--c-primary)
     </div>
     <div class="pf-imgs">
       <div class="sec-bar">Product &amp; application</div>
-      <div class="islot">
-        <div class="itag">Official image — pending retrieval</div>
-        <div class="icap">Multispectral Shielding applications</div>
-        <div class="isrc">shieldex.de — Multispectral Shielding (official)</div>
+      <div class="ifig">
+        <div class="iimg" style="background-image:url('@@IMG:shieldex-metallized-textile.jpg@@')"></div>
+        <div class="icap2"><b>Metallized textile — product preview.</b> Source: shieldex.de, Multispectral Shielding</div>
       </div>
-      <div class="islot">
-        <div class="itag">Official image — pending retrieval</div>
-        <div class="icap">Metallized textile products</div>
-        <div class="isrc">shieldex.de — official website</div>
+      <div class="ifig">
+        <div class="iimg" style="background-image:url('@@IMG:shieldex-shielding-tent.jpg@@')"></div>
+        <div class="icap2"><b>RF / EMI shielding tent — shielding application.</b> Source: shieldex.de, Multispectral Shielding</div>
       </div>
     </div>
   </div>
