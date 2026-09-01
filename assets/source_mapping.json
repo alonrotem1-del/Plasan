@@ -1,5 +1,5 @@
 {
-  "description": "Internal mapping of external data/imagery sources for the Plasan Signature Management deck. Three official images embedded (Permali, Shieldex x2); remaining profiles carry labeled pending slots because their domains are blocked by the environment's network egress policy.",
+  "description": "Internal mapping of external data/imagery sources for the Plasan Signature Management deck. Twelve official images embedded across seven profiles; Ravelin pending (blocked CDN); Eltics has no official imagery source.",
   "images": [
     {
       "slide": "s-permali (12)",
@@ -26,17 +26,78 @@
       "source_type": "official company website (Multispectral Shielding application page, product preview)"
     },
     {
-      "slides": "s-cbg (10), s-ametrine (5), s-stg (7), s-sterlite (8), s-amd (9), s-ravelin (11)",
-      "status": "pending — domains still blocked by environment network policy as of 2026-09-01: cbgsystems.com, ametrine.tech, stg-defence.com, sterlitecamotech.com, amdnano-usa.com (AMD defence content), ravelindefense.com. amdnano.com main site is reachable but hosts no defence product imagery (defence line lives on amdnano-usa.com).",
+      "slide": "s-ametrine (5)",
+      "file": "assets/images/ametrine-flint-jltv.jpg",
+      "status": "embedded",
+      "source_url": "https://ametrine.tech/wp-content/uploads/2026/04/flint-jltv.jpg",
+      "source_type": "official company website (official WordPress media library, title 'flint jltv')"
+    },
+    {
+      "slide": "s-ametrine (5)",
+      "file": "assets/images/ametrine-gmv-cover.jpg",
+      "status": "embedded",
+      "source_url": "https://ametrine.tech/wp-content/uploads/2024/05/GMV-Cover.jpg",
+      "source_type": "official company website (official WordPress media library, title 'GMV Cover')"
+    },
+    {
+      "slide": "s-stg (7)",
+      "file": "assets/images/stg-equipment-shelter.jpg",
+      "status": "embedded",
+      "source_url": "https://stg-defence.com/wp-content/uploads/2025/07/ukrittja_perevagy_en.jpg",
+      "source_type": "official company website (official equipment-shelter page; alt 'Thermal Signature Equipment Shelter')"
+    },
+    {
+      "slide": "s-stg (7)",
+      "file": "assets/images/stg-thermal-view.jpg",
+      "status": "embedded",
+      "source_url": "https://stg-defence.com/wp-content/uploads/2026/06/ukrittja_1_864x916-scaled.jpg",
+      "source_type": "official company website (official equipment-shelter page (thermal-imager demonstration))"
+    },
+    {
+      "slide": "s-sterlite (8)",
+      "file": "assets/images/sterlite-mscn-net.jpg",
+      "status": "embedded",
+      "source_url": "https://sterlitecamotech.com/wp-content/uploads/2024/11/Row-1-MSCN.1-1-min.png",
+      "source_type": "official company website (official products page, MSCN row)"
+    },
+    {
+      "slide": "s-sterlite (8)",
+      "file": "assets/images/sterlite-paint-application.jpg",
+      "status": "embedded",
+      "source_url": "https://sterlitecamotech.com/wp-content/uploads/2024/11/Row-4-Paint.1-min.png",
+      "source_type": "official company website (official products page, camouflage-paints row)"
+    },
+    {
+      "slide": "s-amd (9)",
+      "file": "assets/images/amd-chamir-news.jpg",
+      "status": "embedded",
+      "source_url": "https://amdnano-usa.com/images/news/chamIR-patent.jpg",
+      "source_type": "official company website (official news imagery (ChamIR patent announcement))"
+    },
+    {
+      "slide": "s-cbg (10)",
+      "file": "assets/images/cbg-redback-solarsigmashield.jpg",
+      "status": "embedded",
+      "source_url": "https://www.cbgsystems.com/wp-content/uploads/2024/07/RedBack-IFV-with-SolarSigmaShield-MCS.jpg",
+      "source_type": "official company website (official LAND 400 Phase 3 announcement page)"
+    },
+    {
+      "slide": "s-cbg (10)",
+      "file": "assets/images/cbg-solarsigmashield-vehicle.jpg",
+      "status": "embedded",
+      "source_url": "https://assets.cbgsystems.com/uploads/2017/05/Solarshield-on-vehicle_DSC01063.jpg",
+      "source_type": "official company website (official Signature Management / Mobile Camouflage page)"
+    },
+    {
+      "slide": "s-ravelin (11)",
+      "status": "pending — Ravelin's site images are hosted on Webflow's CDN (cdn.prod.website-files.com), which the environment network policy still blocks. Add that domain to retrieve TactiCam imagery.",
       "intended_sources": [
-        "https://cbgsystems.com/land-400-phase-3-solarsigmashield-for-redback/",
-        "https://cbgsystems.com/signature-management/mobile-camouflage/",
-        "https://ametrine.tech/",
-        "https://stg-defence.com/en/produkcija/",
-        "https://sterlitecamotech.com/our-products/",
-        "https://ravelindefense.com/products/signature-management",
-        "https://amdnano-usa.com/"
+        "https://cdn.prod.website-files.com/.../TactiCam_desert camo.jpg (from ravelindefense.com/products/signature-management)"
       ]
+    },
+    {
+      "slide": "s-eltics (6)",
+      "status": "not applicable — no active official company website identified; profile carries status-note panels instead of imagery"
     }
   ],
   "data_sources": [
