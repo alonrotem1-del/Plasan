@@ -35,6 +35,18 @@ node qa/render.js         # screenshots + automated checks + deck.pdf
 Playwright uses the pre-installed Chromium at `/opt/pw-browsers/chromium`.
 `deck.html?flat=1` disables browser scaling (used by automation).
 
+## Working protocol (per the project's deck-builder playbook)
+
+- Slide numbers are injected by `build.py` from actual slide order — never
+  hardcoded in the template.
+- `deck.pdf` is generated output and is gitignored; it is exported and sent
+  on request, not committed.
+- After every revision round: rebuild → QA (`qa/render.js`) → republish the
+  same artifact URL → push → report a short table of changes by slide number.
+- Fix lists by slide number are processed item-by-item and confirmed in a
+  closing table; unclear items are asked about at the end, never block the rest.
+- Contradictions with earlier decisions are surfaced, not silently applied.
+
 ## Data rules honored
 
 - The 9-company Excel workbook is the single source of truth; the company-map
