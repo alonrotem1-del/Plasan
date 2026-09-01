@@ -1,0 +1,40 @@
+{
+  "description": "Internal mapping of external data/imagery sources used in the Plasan Signature Management prototype deck. Image files are not yet present: the build environment's network egress policy blocks access to company websites, so official imagery could not be downloaded in this phase. Slots on the CBG profile slide reference the exact official pages below.",
+  "images": [
+    {
+      "slide": 3,
+      "slot": "SolarSigmaShield on the Redback IFV",
+      "status": "pending download (network egress blocked in build environment)",
+      "intended_source_url": "https://cbgsystems.com/land-400-phase-3-solarsigmashield-for-redback/",
+      "source_type": "official company website (news / program announcement)"
+    },
+    {
+      "slide": 3,
+      "slot": "SolarSigmaShield mobile camouflage",
+      "status": "pending download (network egress blocked in build environment)",
+      "intended_source_url": "https://cbgsystems.com/signature-management/mobile-camouflage/",
+      "source_type": "official company website (product page)"
+    }
+  ],
+  "data_sources": [
+    {
+      "slides": [1, 2, 3],
+      "source": "Plasan_Signature_Management_9_Companies_Claude_Input_v2.xlsx",
+      "role": "primary source of truth for all company-level facts (sheet 'Company Map' incl. detail columns; sheet 'Sources & Notes')"
+    },
+    {
+      "slides": [1],
+      "source": "Plasan_Signature_Management_Company_Map_v5.xlsx",
+      "role": "screening-stage universe: 37 companies in the structured screening map (rows 5–41 of sheet 'Company Map')"
+    }
+  ],
+  "fonts": [
+    {
+      "family": "Inter (variable, latin subset, weights 400–800)",
+      "file": "assets/fonts/inter-latin.woff2",
+      "source_url": "https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7.woff2",
+      "license": "SIL Open Font License 1.1",
+      "note": "embedded base64 in deck.html; chosen as the closest freely-licensed equivalent to the reference deck's Almoni Neue grotesque"
+    }
+  ]
+}

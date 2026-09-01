@@ -1,0 +1,23 @@
+{
+  "name": "plasan",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alonrotem1-del/Plasan.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alonrotem1-del/Plasan/issues"
+  },
+  "homepage": "https://github.com/alonrotem1-del/Plasan#readme",
+  "dependencies": {
+    "playwright": "^1.62.1"
+  }
+}
