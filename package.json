@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/alonrotem1-del/Plasan#readme",
   "dependencies": {
-    "playwright": "^1.62.1"
+    "playwright": "^1.62.1",
+    "pptxgenjs": "^4.0.1"
   }
 }
