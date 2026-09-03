@@ -15,6 +15,16 @@ const C = {
   border: 'C9D0D6', hairline: 'DDE2E6', strip: 'CED2DB', tab: '97A4B2',
 };
 const IMG = (f) => path.join(__dirname, '..', 'assets', 'images', f);
+const DIMS = {
+  'ametrine-flint-jltv.jpg': [863, 1013], 'ametrine-gmv-cover.jpg': [334, 271],
+  'stg-equipment-shelter.jpg': [1200, 773], 'stg-thermal-view.jpg': [1100, 1037],
+  'sterlite-mscn-net.jpg': [800, 624], 'sterlite-paint-application.jpg': [800, 624],
+  'amd-chamir-news.jpg': [1200, 675], 'cbg-redback-solarsigmashield.jpg': [1400, 782],
+  'cbg-solarsigmashield-vehicle.jpg': [1100, 825], 'ravelin-tacticam-hmmwv.jpg': [1200, 904],
+  'ravelin-tacticam-closeup.jpg': [800, 602], 'permali-dust-guards.jpg': [1100, 708],
+  'shieldex-metallized-textile.jpg': [1400, 700], 'shieldex-shielding-tent.jpg': [1000, 667],
+  'eltics-blackfox-demo.jpg': [396, 263],
+};
 const W = 13.333, H = 7.5, MX = 0.5, CW = W - 2 * MX;
 const FT = 7.097; // footer top
 const px = (v) => v / 144;
@@ -77,25 +87,24 @@ function chip(s, text, x, y, style) {
 {
   const s = P.addSlide();
   chrome(s, { kicker: 'Screening Approach', pageno: 2,
-    title: 'A broad company universe was narrowed to 9 through structured screening and Plasan expert review',
-    src: 'Source: Plasan Signature Management screening workbooks (company map; 9-company deep-dive dataset)' });
+    title: 'Criteria-driven screening surfaced 37 companies, narrowed to 18 in management review and 9 in expert selection',
+    src: 'Source: Plasan screening process (project team); Signature Management company map workbook' });
   const stages = [
-    ['01', 'Broad market discovery', 'Global scan of signature-management and multispectral-camouflage providers — systems, nets, textiles, coatings and materials', null, null],
-    ['02', 'Size & relevance screen', 'Companies profiled in a structured map — signature domain, spectral coverage, solution type, land-platform relevance, maturity', '37', 'companies mapped'],
-    ['03', 'Plasan management review', 'Screening map reviewed with project leadership; candidates prioritized for expert assessment', null, null],
-    ['04', 'Technical expert review', 'Plasan signature-management experts assessed technical substance and fit', null, null],
-    ['05', 'Selected for deep dive', 'Companies carried into detailed company-level analysis', '9', 'companies'],
+    ['01', 'Criteria definition', 'Kickoff with Arit and Binny — the precise search criteria for relevant signature-management companies were defined', null, null],
+    ['02', 'Market scan & size screen', 'Companies matching the criteria identified for Plasan review; companies above ~US$100M revenue screened out', '37', 'companies identified'],
+    ['03', 'Management review', 'Binny reviewed all 37 companies', '18', 'kept for review'],
+    ['04', 'Expert selection', 'Arit reviewed the remaining companies and made the final selection', '9', 'selected for deep dive'],
   ];
-  const top = px(268), colW = CW / 5;
-  // final petrol panel (behind col 5 text, meets wedge bottom)
-  const panX = MX + 4 * colW + px(12);
+  const top = px(268), colW = CW / 4;
+  // final petrol panel (behind last column, meets wedge bottom)
+  const panX = MX + 3 * colW + px(12);
   s.addShape('rect', { x: panX, y: px(248), w: W - MX + px(8) - panX, h: px(820 - 248), fill: { color: C.petrol } });
   // light wedge: taper (rtTriangle) + base rect, ending at the panel edge
   s.addShape('rect', { x: MX, y: px(776), w: panX - MX, h: px(44), fill: { color: C.petrol, transparency: 90 } });
   s.addShape('rtTriangle', { x: MX, y: px(724), w: panX - MX, h: px(52), fill: { color: C.petrol, transparency: 90 } });
   stages.forEach((st, i) => {
-    const x = MX + i * colW + (i ? px(34) : 0), wcol = colW - px(34) - (i === 4 ? px(10) : px(20));
-    const dark = i === 4;
+    const x = MX + i * colW + (i ? px(34) : 0), wcol = colW - px(34) - (i === 3 ? px(10) : px(20));
+    const dark = i === 3;
     if (i) s.addShape('line', { x: MX + i * colW, y: top, w: 0, h: px(560), line: { color: C.hairline, width: 0.75 } });
     s.addText(st[0], { x, y: top, w: wcol, h: 0.25, fontFace: F, fontSize: 9.5, bold: true, color: dark ? 'BFD2DA' : C.slateMid, charSpacing: 2, margin: 0, isTextBox: true });
     s.addText(st[1], { x, y: top + 0.30, w: wcol, h: 0.62, fontFace: F, fontSize: 13.5, bold: true, color: dark ? 'FFFFFF' : C.text, margin: 0, isTextBox: true, lineSpacingMultiple: 1.1 });
@@ -103,7 +112,7 @@ function chip(s, text, x, y, style) {
     if (st[3]) {
       s.addText([{ text: st[3], options: { fontSize: 48, bold: true, color: dark ? 'FFFFFF' : C.petrol } },
                  { text: '  ' + st[4], options: { fontSize: 10.5, color: dark ? 'D3E0E6' : C.muted } }],
-        { x, y: top + 2.2, w: Math.min(3.1, W - MX - x), h: 0.85, fontFace: F, valign: 'bottom', margin: 0, isTextBox: true });
+        { x, y: top + 2.2, w: Math.min(3.3, W - MX - 0.05 - x), h: 0.85, fontFace: F, valign: 'bottom', margin: 0, isTextBox: true });
     }
   });
   secBar(s, 'Selected for deep dive', MX, px(872), CW);
@@ -192,8 +201,8 @@ const PROFILES = [
       ['Multirole Concealment Covers', 'Nets & covers', 'Deployable concealment for equipment and platforms'],
       ['Personnel systems', 'Secondary', 'Poncho Elite and the Advanced Camouflage Combat Uniform™ System — secondary to the vehicle / platform focus of this review']],
     bands: ['Visual / Optical', 'Thermal IR'], bandqual: 'Radar / RCS not verified in current product materials',
-    imgs: [['ametrine-flint-jltv.jpg', 'Flint™ on a JLTV. Source: ametrine.tech — official media library'],
-           ['ametrine-gmv-cover.jpg', 'GMV vehicle concealment cover. Source: ametrine.tech — official media library']],
+    imgs: [['ametrine-flint-jltv.jpg', 'Flint™ on a JLTV. Source: ametrine.tech — official media library', 1.556],
+           ['ametrine-gmv-cover.jpg', 'GMV vehicle concealment cover. Source: ametrine.tech — official media library', 0.778]],
     tiles: [['U.S. GOVERNMENT CUSTOMERS', 'Office of Naval Research, U.S. Army RDECOM and USSOCOM'],
       ['2024 — ONR ORDER', '≈$250k order for an X-hangar and camouflage cover — a direct product signal'],
       ['2025 — ONR R&D CONTRACT', '$18M R&D contract; public scope not detailed — not attributable in full to camouflage']],
@@ -322,12 +331,15 @@ for (const p of PROFILES) {
   const RX = MX + px(1020) + px(56), RW = CW - px(1020) - px(56);
   secBar(s, p.rightTitle || 'Product & application', RX, py0, RW);
   let iy = py0 + 0.42;
-  for (const [img, cap] of p.imgs) {
-    const ih = p.tallImg ? 1.95 : p.fitImg ? 0.95 : 0.81;
-    if (p.fitImg) s.addImage({ path: IMG(img), x: RX, y: iy, w: RW, h: ih, sizing: { type: 'contain', w: RW, h: ih } });
-    else s.addImage({ path: IMG(img), x: RX, y: iy, w: RW, h: ih, sizing: { type: 'cover', w: RW, h: ih } });
-    s.addText(cap, { x: RX, y: iy + ih + 0.04, w: RW, h: 0.42, fontFace: F, fontSize: 7.5, color: C.faint, margin: 0, isTextBox: true, lineSpacingMultiple: 1.1 });
-    iy += ih + 0.52;
+  for (const [img, cap, hOverride] of p.imgs) {
+    const fh = hOverride || (p.tallImg ? 2.48 : 1.167);
+    s.addShape('rect', { x: RX, y: iy, w: RW, h: fh, fill: { color: C.fill }, line: { color: C.border, width: 0.75 } });
+    const capH = 0.34, bw = RW - 0.16, bh = fh - 0.1 - capH;
+    const d = DIMS[img], k = Math.min(bw / d[0], bh / d[1]);
+    const iw = d[0] * k, ihh = d[1] * k;
+    s.addImage({ path: IMG(img), x: RX + 0.08 + (bw - iw) / 2, y: iy + 0.05 + (bh - ihh) / 2, w: iw, h: ihh });
+    s.addText(cap, { x: RX + 0.1, y: iy + fh - capH - 0.02, w: RW - 0.2, h: capH, fontFace: F, fontSize: 7.5, color: C.muted, margin: 0, isTextBox: true, lineSpacingMultiple: 1.05, fit: 'shrink' });
+    iy += fh + 0.12;
   }
   if (p.note) {
     s.addShape('rect', { x: RX, y: iy, w: RW, h: 1.05, fill: { color: C.fill } });

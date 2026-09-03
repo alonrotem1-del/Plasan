@@ -127,7 +127,7 @@ h1.title { font-size: var(--fs-title); font-weight: 700; color: var(--c-slate); 
    SLIDE 1 — SCREENING FUNNEL
    ============================================================ */
 .funnel-zone { position: absolute; left: var(--m-side); right: var(--m-side); top: 268px; }
-.funnel-cols { display: grid; grid-template-columns: repeat(5, 1fr); }
+.funnel-cols { display: grid; grid-template-columns: repeat(4, 1fr); }
 .fcol { padding: 0 30px 0 0; position: relative; }
 .fcol + .fcol { padding-left: 34px; border-left: 1px solid var(--c-hairline); }
 .fcol .fstep { font-size: 19px; font-weight: 700; color: var(--c-slate-mid); letter-spacing: .08em; margin-bottom: 12px; }
@@ -258,11 +258,13 @@ h1.title { font-size: var(--fs-title); font-weight: 700; color: var(--c-slate); 
 /* ---------- profile extras ---------- */
 .pf-bands { flex-wrap: wrap; }
 .pf-bandqual { font-size: 17px; color: var(--c-text-faint); margin-top: 10px; line-height: 1.35; }
-.ifig { margin-bottom: 12px; }
-.ifig .iimg { height: 116px; border: 1px solid var(--c-border); background-position: center; background-size: cover; background-color: var(--c-fill); }
-.ifig.tall .iimg { height: 280px; }
-.ifig.fit .iimg { height: 136px; background-size: contain; background-repeat: no-repeat; background-color: #fff; }
-.ifig .icap2 { font-size: 15px; color: var(--c-text-faint); margin-top: 6px; line-height: 1.3; }
+.ifig { background: var(--c-fill); border: 1px solid var(--c-border); padding: 8px 10px 7px; margin-bottom: 13px; height: 168px; display: flex; flex-direction: column; }
+.ifig .iimg { flex: 1; min-height: 0; background-position: center; background-size: contain; background-repeat: no-repeat; }
+.ifig.tall { height: 357px; }
+.ifig .icap2 { font-size: 15px; color: var(--c-text-muted); margin-top: 7px; line-height: 1.3; }
+.pf-imgs .ifig:last-child { margin-bottom: 0; }
+.ifig.h224 { height: 224px; }
+.ifig.h112 { height: 112px; }
 .ifig .icap2 b { color: var(--c-slate); font-weight: 600; }
 .pf-note { background: var(--c-fill); padding: 16px 24px; margin-bottom: 16px; font-size: 20px; line-height: 1.4; color: var(--c-text); min-height: 148px; display: flex; flex-direction: column; justify-content: center; }
 .pf-note .nlbl { font-size: 15px; font-weight: 600; letter-spacing: .08em; color: var(--c-text-faint); text-transform: uppercase; margin-bottom: 8px; }
@@ -291,7 +293,7 @@ h1.title { font-size: var(--fs-title); font-weight: 700; color: var(--c-slate); 
   <div class="hdr">
     <div class="hdr-titles">
       <div class="kicker">Screening Approach</div>
-      <h1 class="title">A broad company universe was narrowed to 9 through structured screening and Plasan expert review</h1>
+      <h1 class="title">Criteria-driven screening surfaced 37 companies, narrowed to 18 in management review and 9 in expert selection</h1>
     </div>
     <img class="bdo-logo" src="@@IMG:bdo-logo.png@@" alt="BDO Consulting — Strategy Growth &amp; Innovation">
   </div>
@@ -300,41 +302,35 @@ h1.title { font-size: var(--fs-title); font-weight: 700; color: var(--c-slate); 
     <div class="funnel-cols">
       <div class="fcol">
         <div class="fstep">01</div>
-        <div class="fname">Broad market discovery</div>
-        <div class="fdesc">Global scan of signature-management and multispectral-camouflage providers — systems, nets, textiles, coatings and materials</div>
+        <div class="fname">Criteria definition</div>
+        <div class="fdesc">Kickoff with Arit and Binny — the precise search criteria for relevant signature-management companies were defined</div>
         <div class="fnum"></div>
       </div>
       <div class="fcol">
         <div class="fstep">02</div>
-        <div class="fname">Size &amp; relevance screen</div>
-        <div class="fdesc">Companies profiled in a structured map — signature domain, spectral coverage, solution type, land-platform relevance, maturity</div>
-        <div class="fnum"><span class="n">37</span><span class="n-unit">companies mapped</span></div>
+        <div class="fname">Market scan &amp; size screen</div>
+        <div class="fdesc">Companies matching the criteria identified for Plasan review; companies above ~US$100M revenue screened out</div>
+        <div class="fnum"><span class="n">37</span><span class="n-unit">companies identified</span></div>
       </div>
       <div class="fcol">
         <div class="fstep">03</div>
-        <div class="fname">Plasan management review</div>
-        <div class="fdesc">Screening map reviewed with project leadership; candidates prioritized for expert assessment</div>
-        <div class="fnum"></div>
-      </div>
-      <div class="fcol">
-        <div class="fstep">04</div>
-        <div class="fname">Technical expert review</div>
-        <div class="fdesc">Plasan signature-management experts assessed technical substance and fit</div>
-        <div class="fnum"></div>
+        <div class="fname">Management review</div>
+        <div class="fdesc">Binny reviewed all 37 companies</div>
+        <div class="fnum"><span class="n">18</span><span class="n-unit">kept for review</span></div>
       </div>
       <div class="fcol f-final">
         <div class="fpanel"></div>
-        <div class="fstep">05</div>
-        <div class="fname">Selected for deep dive</div>
-        <div class="fdesc">Companies carried into detailed company-level analysis</div>
-        <div class="fnum"><span class="n">9</span><span class="n-unit">companies</span></div>
+        <div class="fstep">04</div>
+        <div class="fname">Expert selection</div>
+        <div class="fdesc">Arit reviewed the remaining companies and made the final selection</div>
+        <div class="fnum"><span class="n">9</span><span class="n-unit">selected for deep dive</span></div>
       </div>
     </div>
   </div>
 
   <div class="funnel-wedge">
     <svg viewBox="0 0 1776 96" preserveAspectRatio="none">
-      <polygon points="0,0 1433,52 1433,96 0,96" fill="#014C67" opacity="0.10"/>
+      <polygon points="0,0 1344,52 1344,96 0,96" fill="#014C67" opacity="0.10"/>
     </svg>
   </div>
 
@@ -356,7 +352,7 @@ h1.title { font-size: var(--fs-title); font-weight: 700; color: var(--c-slate); 
   <div class="ftr">
     <div class="pageno"></div>
     <div class="proj">Plasan Sasa — Signature Management | Company Landscape</div>
-    <div class="src">Source: Plasan Signature Management screening workbooks (company map; 9-company deep-dive dataset)</div>
+    <div class="src">Source: Plasan screening process (project team); Signature Management company map workbook</div>
   </div>
 </section></div>
 
@@ -545,11 +541,11 @@ h1.title { font-size: var(--fs-title); font-weight: 700; color: var(--c-slate); 
     </div>
     <div class="pf-imgs">
       <div class="sec-bar">Product &amp; application</div>
-      <div class="ifig">
+      <div class="ifig h224">
         <div class="iimg" style="background-image:url('@@IMG:ametrine-flint-jltv.jpg@@')"></div>
         <div class="icap2"><b>Flint™ on a JLTV.</b> Source: ametrine.tech — official media library</div>
       </div>
-      <div class="ifig">
+      <div class="ifig h112">
         <div class="iimg" style="background-image:url('@@IMG:ametrine-gmv-cover.jpg@@')"></div>
         <div class="icap2"><b>GMV vehicle concealment cover.</b> Source: ametrine.tech — official media library</div>
       </div>
