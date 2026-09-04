@@ -3,58 +3,62 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
 /* ============================================================
-   PLASAN — SIGNATURE MANAGEMENT DECK
+   PLASAN — SIGNATURE MANAGEMENT DECK (Hebrew / RTL)
    Design system derived from BDO Strategy reference deck:
    petrol structural color, slate table headers, red reserved
    as brand accent, light-gray fills, quiet footer, hairlines.
+   RTL: titles read from the right, logo sits top-left, the
+   gray edge strip and pageno tab stay on the physical left.
    ============================================================ */
 
 @font-face {
-  font-family: 'Inter';
+  font-family: 'Heebo';
   font-style: normal;
-  font-weight: 100 900;
-  src: url(data:font/woff2;base64,@@FONT_B64@@) format('woff2');
+  font-weight: 300 800;
+  src: url(data:font/woff2;base64,@@FONT:heebo-hebrew.woff2@@) format('woff2');
+  unicode-range: U+0307-0308, U+0590-05FF, U+200C-2010, U+20AA, U+25CC, U+FB1D-FB4F;
+}
+@font-face {
+  font-family: 'Heebo';
+  font-style: normal;
+  font-weight: 300 800;
+  src: url(data:font/woff2;base64,@@FONT:heebo-latin.woff2@@) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
 :root {
-  /* -- color tokens (BDO-derived) -- */
-  --c-primary: #014C67;        /* petrol — structure, titles, key numbers */
-  --c-primary-tint: #E6EEF1;   /* petrol 8% on white */
-  --c-primary-tint2: #CFDEE4;  /* petrol 18% */
-  --c-slate: #46586A;          /* dark slate — table header rows */
-  --c-slate-mid: #657C91;      /* theme lt2 — secondary structure */
-  --c-red: #ED1A3B;            /* BDO red — brand accent only */
-  --c-burgundy: #98002E;       /* deep red — reserved */
-  --c-amber: #D49802;          /* qualification accent (trials) */
+  --c-primary: #014C67;
+  --c-primary-tint: #E6EEF1;
+  --c-primary-tint2: #CFDEE4;
+  --c-slate: #46586A;
+  --c-slate-mid: #657C91;
+  --c-red: #ED1A3B;
+  --c-burgundy: #98002E;
+  --c-amber: #D49802;
   --c-text: #1A2530;
   --c-text-muted: #5A6B7A;
   --c-text-faint: #8595A3;
   --c-bg: #FFFFFF;
-  --c-fill: #EDF0F2;           /* light table cell fill */
-  --c-fill-2: #E2E6EA;         /* alternate fill */
+  --c-fill: #EDF0F2;
+  --c-fill-2: #E2E6EA;
   --c-border: #C9D0D6;
   --c-hairline: #DDE2E6;
 
-  /* -- spacing -- */
-  --m-side: 72px;              /* slide side margin */
+  --m-side: 72px;
   --m-top: 56px;
-  --gap: 24px;
 
-  /* -- typography scale -- */
   --fs-title: 44px;
   --fs-subtitle: 26px;
   --fs-body: 24px;
-  --fs-table: 22px;
   --fs-small: 19px;
-  --fs-kicker: 17px;
+  --fs-kicker: 19px;
   --fs-footer: 16px;
-  --fs-num-hero: 96px;
-  --font: 'Inter', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  --font: 'Heebo', 'Segoe UI', Arial, sans-serif;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html, body { background: #3E464D; }
-body { font-family: var(--font); color: var(--c-text); -webkit-font-smoothing: antialiased; }
+body { font-family: var(--font); color: var(--c-text); direction: rtl; -webkit-font-smoothing: antialiased; }
 
 /* ---------- canvas & scaling ---------- */
 .slide-wrap { margin: 28px auto; width: 1920px; height: 1080px; }
@@ -78,30 +82,24 @@ body { font-family: var(--font); color: var(--c-text); -webkit-font-smoothing: a
   .slide-wrap:last-child { break-after: auto; }
 }
 
-/* ---------- shared chrome ---------- */
+/* ---------- shared chrome (RTL) ---------- */
 .hdr {
-  position: absolute; top: var(--m-top); left: var(--m-side); right: var(--m-side);
+  position: absolute; top: var(--m-top); right: var(--m-side); left: var(--m-side);
   display: flex; justify-content: space-between; align-items: flex-start;
 }
 .hdr-titles { max-width: 1340px; }
 .kicker {
-  font-size: var(--fs-kicker); font-weight: 600; letter-spacing: .18em;
-  color: var(--c-slate-mid); text-transform: uppercase; margin-bottom: 14px;
+  font-size: var(--fs-kicker); font-weight: 700;
+  color: var(--c-slate-mid); margin-bottom: 12px;
 }
-h1.title { font-size: var(--fs-title); font-weight: 700; color: var(--c-slate); line-height: 1.22; }
-.subtitle { font-size: var(--fs-subtitle); font-weight: 400; color: var(--c-text-muted); line-height: 1.35; margin-top: 12px; }
+h1.title { font-size: var(--fs-title); font-weight: 700; color: var(--c-slate); line-height: 1.35; }
+sup { font-size: 15px; line-height: 0; }
 
 .bdo-logo { height: 62px; width: auto; flex: none; padding-top: 4px; }
-.cv-lockup .bdo-logo { height: 92px; padding-top: 0; }
-.lockup { display: flex; align-items: center; gap: 18px; padding-top: 6px; flex: none; }
-.lockup .word { font-size: 34px; font-weight: 800; letter-spacing: .12em; color: var(--c-text); }
-.lockup .bar { width: 3px; height: 52px; background: var(--c-red); }
-.lockup .desc { font-size: 16px; line-height: 1.3; color: var(--c-text-muted); font-weight: 500; }
-.lockup .desc b { display: block; color: var(--c-red); font-weight: 600; }
 
 .ftr {
   position: absolute; left: 0; right: 0; bottom: 0; height: 58px;
-  display: flex; align-items: center;
+  display: flex; align-items: center; direction: ltr;
   border-top: 1px solid var(--c-hairline);
 }
 .ftr .pageno {
@@ -110,164 +108,155 @@ h1.title { font-size: var(--fs-title); font-weight: 700; color: var(--c-slate); 
   display: flex; align-items: center; justify-content: center;
   border-right: 1px solid var(--c-hairline);
 }
-.ftr .proj { font-size: var(--fs-footer); color: var(--c-text-faint); margin-left: 24px; font-weight: 500; }
-.ftr .src { font-size: var(--fs-footer); color: var(--c-text-faint); margin-left: auto; margin-right: var(--m-side); text-align: right; }
+.ftr .src { direction: rtl; font-size: var(--fs-footer); color: var(--c-text-faint); margin-left: 24px; text-align: left; }
+.ftr .proj { direction: rtl; font-size: var(--fs-footer); color: var(--c-text-faint); margin-left: auto; margin-right: var(--m-side); font-weight: 500; }
 
-/* ---------- chips & tags ---------- */
-.chip {
-  display: inline-block; font-size: 20px; font-weight: 600; line-height: 1;
-  padding: 9px 16px 10px; border-radius: 3px; white-space: nowrap;
-}
-.chip-fielded  { background: var(--c-primary); color: #fff; }
-.chip-comm     { background: none; color: var(--c-primary); box-shadow: inset 0 0 0 2px var(--c-primary-tint2); }
-.chip-dev      { background: none; color: #9A7002; box-shadow: inset 0 0 0 2px #EAD9A8; }
-.chip-proto    { background: none; color: var(--c-text-muted); box-shadow: inset 0 0 0 2px #D5DADF; }
-
-/* ============================================================
-   SLIDE 1 — SCREENING FUNNEL
-   ============================================================ */
-.funnel-zone { position: absolute; left: var(--m-side); right: var(--m-side); top: 268px; }
-.funnel-cols { display: grid; grid-template-columns: repeat(4, 1fr); }
-.fcol { padding: 0 30px 0 0; position: relative; }
-.fcol + .fcol { padding-left: 34px; border-left: 1px solid var(--c-hairline); }
-.fcol .fstep { font-size: 19px; font-weight: 700; color: var(--c-slate-mid); letter-spacing: .08em; margin-bottom: 12px; }
-.fcol .fname { font-size: 27px; font-weight: 600; color: var(--c-text); line-height: 1.25; min-height: 70px; }
-.fcol .fdesc { font-size: 20px; color: var(--c-text-muted); line-height: 1.4; margin-top: 10px; min-height: 150px; }
-.fcol .fnum  { height: 140px; display: flex; align-items: flex-end; }
-.fcol .fnum .n { font-size: var(--fs-num-hero); font-weight: 700; color: var(--c-primary); line-height: 1.18; letter-spacing: -.01em; }
-.fcol .fnum .n-unit { font-size: 21px; color: var(--c-text-muted); font-weight: 500; margin: 0 0 12px 14px; }
-.fcol.f-final .fnum .n { color: #fff; }
-.fcol.f-final .fnum .n-unit { color: rgba(255,255,255,.85); }
-.fcol.f-final .fpanel {
-  position: absolute; left: 12px; right: -8px; top: -20px; height: 572px;
-  background: var(--c-primary); z-index: 0;
-}
-.fcol.f-final { padding-left: 40px; }
-.fcol.f-final > div:not(.fpanel) { position: relative; z-index: 1; }
-.fcol.f-final .fstep { color: rgba(255,255,255,.75); }
-.fcol.f-final .fname { color: #fff; }
-.fcol.f-final .fdesc { color: rgba(255,255,255,.82); }
-
-.funnel-wedge { position: absolute; left: var(--m-side); right: var(--m-side); top: 724px; height: 96px; }
-.funnel-wedge svg { width: 100%; height: 100%; display: block; }
-
-.sel-strip { position: absolute; left: var(--m-side); right: var(--m-side); top: 872px; }
-.sel-strip .lbl { font-size: 20px; font-weight: 700; color: var(--c-primary); letter-spacing: .1em; text-transform: uppercase; border-bottom: 2px solid var(--c-primary); padding-bottom: 9px; margin-bottom: 20px; }
-.sel-strip .chips { display: flex; flex-wrap: wrap; gap: 12px 12px; }
-.sel-strip .cchip {
-  font-size: 18px; font-weight: 600; color: var(--c-primary);
-  background: var(--c-primary-tint); padding: 10px 14px; border-radius: 3px;
-  white-space: nowrap;
-}
-
-/* ============================================================
-   SLIDE 2 — SELECTED COMPANIES OVERVIEW
-   ============================================================ */
-.ovw-table { position: absolute; left: var(--m-side); right: var(--m-side); top: 214px; border-collapse: collapse; width: 1776px; table-layout: fixed; }
-.ovw-table th {
-  background: var(--c-slate); color: #fff; font-size: 20px; font-weight: 600;
-  text-align: left; padding: 8px 16px; line-height: 1.2; border-left: 2px solid #fff;
-}
-.ovw-table th:first-child { border-left: none; }
-.ovw-table td {
-  font-size: 21px; padding: 4px 16px; vertical-align: middle;
-  background: var(--c-fill); border-left: 2px solid #fff; border-top: 2px solid #fff;
-  line-height: 1.22;
-}
-.ovw-table td:first-child { border-left: none; }
-.ovw-table tr.grp td {
-  background: var(--c-primary-tint); color: var(--c-primary);
-  font-size: 19px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase;
-  padding: 4px 16px;
-}
-.ovw-table tr.grp td span { font-weight: 500; text-transform: none; letter-spacing: 0; color: var(--c-slate-mid); margin-left: 14px; font-size: 18px; }
-.ovw-table .co { font-weight: 700; color: var(--c-text); font-size: 22px; line-height: 1.2; }
-.ovw-table .co small { display: block; font-weight: 500; color: var(--c-text-muted); font-size: 18px; margin-top: 2px; }
-.ovw-table .muted { color: var(--c-text-muted); }
-.ovw-table .prod b { font-weight: 600; color: var(--c-primary); }
-.ovw-table .qual { color: var(--c-text-muted); font-size: 18px; }
-.ovw-table td.num { font-variant-numeric: tabular-nums; }
-.ovw-table .chip { font-size: 17px; padding: 6px 11px 7px; }
-.ovw-note { position: absolute; left: var(--m-side); right: var(--m-side); top: 990px; font-size: 17px; color: var(--c-text-faint); line-height: 1.4; white-space: nowrap; }
-
-/* ============================================================
-   SLIDE 3 — COMPANY PROFILE (CBG SYSTEMS)
-   ============================================================ */
-.snap { position: absolute; left: var(--m-side); right: var(--m-side); top: 232px; border-collapse: collapse; width: 1776px; table-layout: fixed; }
-.snap th { background: var(--c-primary); color: #fff; font-size: 18px; font-weight: 600; letter-spacing: .05em; text-transform: uppercase; text-align: left; padding: 9px 18px; border-left: 2px solid #fff; }
-.snap th:first-child { border-left: none; }
-.snap td { background: var(--c-fill); font-size: 22px; padding: 12px 18px; border-left: 2px solid #fff; border-top: 2px solid #fff; line-height: 1.3; vertical-align: top; }
-.snap td:first-child { border-left: none; }
-.snap td .q { color: var(--c-text-muted); font-size: 19px; }
-
-.sec-bar { font-size: 20px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--c-primary); border-bottom: 2px solid var(--c-primary); padding-bottom: 9px; margin-bottom: 18px; }
-
-.profile-main { position: absolute; left: var(--m-side); right: var(--m-side); top: 378px; display: grid; grid-template-columns: 1020px 1fr; column-gap: 56px; }
-
-.pf-products .prow { display: grid; grid-template-columns: 360px 1fr; column-gap: 28px; padding: 11px 0; border-bottom: 1px solid var(--c-hairline); }
-.pf-products .prow:last-of-type { border-bottom: none; }
-.pf-products .pname { font-size: 23px; font-weight: 700; color: var(--c-primary); line-height: 1.22; }
-.pf-products .ptype { font-size: 17px; font-weight: 500; color: var(--c-slate-mid); margin-top: 5px; }
-.pf-products .pdesc { font-size: 20px; color: var(--c-text); line-height: 1.38; }
-
-.pf-bands { margin-top: 18px; display: flex; align-items: center; gap: 14px; }
-.pf-bands .blbl { font-size: 18px; font-weight: 600; color: var(--c-text-muted); letter-spacing: .06em; text-transform: uppercase; margin-right: 6px; }
-.band-chip { font-size: 19px; font-weight: 600; color: var(--c-primary); background: var(--c-primary-tint); padding: 9px 16px; border-radius: 3px; }
-
-.pf-imgs .islot { background: var(--c-fill); border: 1px solid var(--c-border); height: 148px; margin-bottom: 16px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 14px 28px; }
-.pf-imgs .islot .icap { font-size: 20px; font-weight: 600; color: var(--c-slate); line-height: 1.3; }
-.pf-imgs .islot .isrc { font-size: 16px; color: var(--c-text-faint); margin-top: 7px; line-height: 1.35; }
-.pf-imgs .islot .itag { font-size: 15px; font-weight: 600; letter-spacing: .08em; color: var(--c-text-faint); text-transform: uppercase; margin-bottom: 10px; }
-
-.pf-evidence { position: absolute; left: var(--m-side); right: var(--m-side); top: 802px; }
-.ev-tiles { display: grid; grid-template-columns: repeat(3, 1fr); column-gap: 24px; }
-.ev-tile { background: var(--c-fill); padding: 16px 22px 18px; border-top: 3px solid var(--c-primary); }
-.ev-tile .elbl { font-size: 18px; font-weight: 700; color: var(--c-primary); letter-spacing: .04em; margin-bottom: 7px; }
-.ev-tile .etxt { font-size: 20px; color: var(--c-text); line-height: 1.36; }
-.ev-tile .etxt b { font-weight: 600; }
+.sec-bar { font-size: 20px; font-weight: 700; color: var(--c-primary); border-bottom: 2px solid var(--c-primary); padding-bottom: 9px; margin-bottom: 18px; }
 
 /* ============================================================
    COVER
    ============================================================ */
-.cv-body { position: absolute; left: var(--m-side); top: 330px; max-width: 1560px; }
-.cv-kicker { font-size: 22px; font-weight: 600; letter-spacing: .2em; color: var(--c-slate-mid); text-transform: uppercase; margin-bottom: 30px; }
-.cv-title { font-size: 86px; font-weight: 800; color: var(--c-primary); line-height: 1.12; letter-spacing: -.01em; }
-.cv-sub { font-size: 32px; color: var(--c-text-muted); margin-top: 30px; line-height: 1.35; }
+.cv-lockup { position: absolute; top: var(--m-top); left: var(--m-side); }
+.cv-lockup .bdo-logo { height: 92px; padding-top: 0; }
+.cv-slab { position: absolute; right: 0; top: 230px; width: 20px; height: 160px; background: var(--c-slate); }
+.cv-body { position: absolute; right: var(--m-side); top: 330px; max-width: 1560px; text-align: right; }
+.cv-kicker { font-size: 24px; font-weight: 700; color: var(--c-slate-mid); margin-bottom: 28px; }
+.cv-title { font-size: 88px; font-weight: 800; color: var(--c-primary); line-height: 1.16; }
+.cv-sub { font-size: 32px; color: var(--c-text-muted); margin-top: 30px; line-height: 1.4; }
 .cv-date { font-size: 22px; color: var(--c-text-faint); margin-top: 52px; font-weight: 500; }
 .cv-red { position: absolute; left: var(--m-side); bottom: 58px; width: 120px; height: 120px; background: var(--c-burgundy); }
-.cv-slab { position: absolute; right: 0; top: 230px; width: 20px; height: 160px; background: var(--c-slate); }
-.cv-lockup { position: absolute; top: var(--m-top); left: var(--m-side); }
 
 /* ============================================================
-   SLIDE — PRODUCT & TECHNOLOGY LANDSCAPE (matrix)
+   SLIDE — PROJECT SCOPE + FUNNEL
    ============================================================ */
-.mx-table { position: absolute; left: var(--m-side); right: var(--m-side); top: 214px; border-collapse: collapse; width: 1776px; table-layout: fixed; }
-.mx-table th { background: var(--c-slate); color: #fff; font-size: 18px; font-weight: 600; text-align: center; padding: 7px 8px; line-height: 1.22; border-left: 2px solid #fff; vertical-align: middle; }
-.mx-table th:first-child { border-left: none; text-align: left; padding-left: 16px; }
-.mx-table th .cnt { display: block; font-weight: 500; font-size: 15px; color: rgba(255,255,255,.72); margin-top: 2px; }
+.scope-grid {
+  position: absolute; right: var(--m-side); left: var(--m-side); top: 252px;
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;
+}
+.sc-tile { background: var(--c-fill); border-top: 3px solid var(--c-primary); padding: 18px 24px 20px; min-height: 178px; }
+.sc-tile .slbl { font-size: 18px; font-weight: 700; color: var(--c-primary); margin-bottom: 9px; }
+.sc-tile .stxt { font-size: 20px; line-height: 1.42; color: var(--c-text); }
+.sc-tile .stxt b { font-weight: 600; }
+.sc-tile .stxt .dim { color: var(--c-text-muted); }
+
+.method-band {
+  position: absolute; right: var(--m-side); left: var(--m-side); top: 662px;
+  background: var(--c-primary-tint); padding: 15px 24px;
+  font-size: 21px; font-weight: 500; color: var(--c-primary); line-height: 1.35;
+}
+
+.fun-strip { position: absolute; right: var(--m-side); left: var(--m-side); top: 772px; display: grid; grid-template-columns: 1fr 54px 1fr 54px 1.04fr; align-items: stretch; }
+.fun-box { padding: 20px 26px 22px; background: var(--c-fill); }
+.fun-box .fn { font-size: 78px; font-weight: 700; color: var(--c-primary); line-height: 1.42; }
+.fun-box .fl { font-size: 21px; font-weight: 600; color: var(--c-text); margin-top: 6px; }
+.fun-box .fd { font-size: 18px; color: var(--c-text-muted); line-height: 1.35; margin-top: 6px; }
+.fun-box.final { background: var(--c-primary); }
+.fun-box.final .fn { color: #fff; }
+.fun-box.final .fl { color: #fff; }
+.fun-box.final .fd { color: rgba(255,255,255,.85); }
+.fun-arrow { display: flex; align-items: center; justify-content: center; font-size: 40px; color: var(--c-slate-mid); font-weight: 300; }
+
+/* ============================================================
+   SLIDE — FLAT COMPARATIVE TABLE
+   ============================================================ */
+.ovw-table { position: absolute; right: var(--m-side); left: var(--m-side); top: 222px; border-collapse: collapse; width: 1776px; table-layout: fixed; }
+.ovw-table th {
+  background: var(--c-slate); color: #fff; font-size: 17px; font-weight: 600;
+  text-align: right; padding: 9px 12px; line-height: 1.2; border-left: 2px solid #fff;
+}
+.ovw-table th:last-child { border-left: none; }
+.ovw-table td {
+  font-size: 18px; padding: 7px 12px; vertical-align: middle;
+  background: var(--c-fill); border-left: 2px solid #fff; border-top: 2px solid #fff;
+  line-height: 1.28;
+}
+.ovw-table td:last-child { border-left: none; }
+.ovw-table .co { font-weight: 700; color: var(--c-text); font-size: 19px; line-height: 1.2; }
+.ovw-table .co small { display: block; font-weight: 500; color: var(--c-text-muted); font-size: 15px; margin-top: 2px; }
+.ovw-table .muted { color: var(--c-text-muted); }
+.ovw-table .prod b { font-weight: 600; color: var(--c-primary); }
+.ovw-table .qual { color: var(--c-text-muted); font-size: 15px; }
+.ovw-table td.num { font-variant-numeric: tabular-nums; }
+.ovw-table td.imp { font-weight: 600; color: var(--c-primary); }
+.ovw-note { position: absolute; right: var(--m-side); left: var(--m-side); top: 962px; font-size: 17px; color: var(--c-text-faint); line-height: 1.45; }
+
+/* ============================================================
+   SLIDE — SPECTRUM MATRIX
+   ============================================================ */
+.sx-table { position: absolute; right: var(--m-side); left: var(--m-side); top: 224px; border-collapse: collapse; width: 1776px; table-layout: fixed; }
+.sx-table th { background: var(--c-slate); color: #fff; font-size: 20px; font-weight: 600; text-align: center; padding: 10px 8px; line-height: 1.25; border-left: 2px solid #fff; vertical-align: middle; }
+.sx-table th:first-child { text-align: right; padding-right: 16px; }
+.sx-table th:last-child { border-left: none; }
+.sx-table th .rng { display: block; font-weight: 400; font-size: 15px; color: rgba(255,255,255,.75); margin-top: 3px; }
+.sx-table td { background: var(--c-fill); border-left: 2px solid #fff; border-top: 2px solid #fff; text-align: center; vertical-align: middle; padding: 8px; height: 62px; }
+.sx-table td:last-child { border-left: none; }
+.sx-table td.co-cell { text-align: right; padding: 8px 16px; }
+.sx-table .co { font-weight: 700; color: var(--c-text); font-size: 21px; }
+.sx-table .d { display: inline-block; width: 22px; height: 22px; background: var(--c-primary); border-radius: 3px; vertical-align: middle; }
+.sx-table .o { display: inline-block; width: 22px; height: 22px; border: 3px solid var(--c-slate-mid); border-radius: 3px; vertical-align: middle; background: none; }
+.sx-table sup { font-size: 15px; color: var(--c-text-muted); margin-right: 5px; vertical-align: super; }
+.sx-legend { position: absolute; right: var(--m-side); left: var(--m-side); top: 880px; font-size: 18px; color: var(--c-text-muted); line-height: 1.5; }
+.sx-legend .d, .sx-legend .o { vertical-align: -4px; margin-left: 8px; }
+.sx-legend .d { display: inline-block; width: 20px; height: 20px; background: var(--c-primary); border-radius: 3px; }
+.sx-legend .o { display: inline-block; width: 20px; height: 20px; border: 3px solid var(--c-slate-mid); border-radius: 3px; }
+.sx-notes { position: absolute; right: var(--m-side); left: var(--m-side); top: 946px; font-size: 16px; color: var(--c-text-faint); line-height: 1.5; }
+
+/* ============================================================
+   SLIDE — PRODUCT-FAMILY LANDSCAPE
+   ============================================================ */
+.mx-table { position: absolute; right: var(--m-side); left: var(--m-side); top: 224px; border-collapse: collapse; width: 1776px; table-layout: fixed; }
+.mx-table th { background: var(--c-slate); color: #fff; font-size: 18px; font-weight: 600; text-align: center; padding: 7px 8px; line-height: 1.25; border-left: 2px solid #fff; vertical-align: middle; }
+.mx-table th:first-child { text-align: right; padding-right: 16px; }
+.mx-table th:last-child { border-left: none; }
+.mx-table th .cnt { display: block; font-weight: 400; font-size: 15px; color: rgba(255,255,255,.72); margin-top: 2px; }
 .mx-table td { background: var(--c-fill); border-left: 2px solid #fff; border-top: 2px solid #fff; text-align: center; vertical-align: middle; padding: 5px 8px; }
-.mx-table td:first-child { border-left: none; }
-.mx-table td.co-cell { text-align: left; padding: 5px 16px; }
+.mx-table td:last-child { border-left: none; }
+.mx-table td.co-cell { text-align: right; padding: 5px 16px; }
 .mx-table .co { font-weight: 700; color: var(--c-text); font-size: 21px; line-height: 1.2; }
 .mx-table .co small { display: block; font-weight: 500; color: var(--c-text-muted); font-size: 16px; margin-top: 2px; }
 .mx-table .dot { display: inline-block; width: 20px; height: 20px; background: var(--c-primary); border-radius: 2px; }
-.mx-table tr.grp td { background: var(--c-primary-tint); color: var(--c-primary); font-size: 19px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; padding: 4px 16px; text-align: left; }
-.mx-table tr.grp td span { font-weight: 500; text-transform: none; letter-spacing: 0; color: var(--c-slate-mid); margin-left: 14px; font-size: 18px; }
-.mx-note { position: absolute; left: var(--m-side); right: var(--m-side); top: 944px; font-size: 17px; color: var(--c-text-faint); line-height: 1.4; }
+.mx-table tr.grp td { background: var(--c-primary-tint); color: var(--c-primary); font-size: 19px; font-weight: 700; padding: 5px 16px; text-align: right; }
+.mx-table tr.grp td span { font-weight: 400; color: var(--c-slate-mid); margin-right: 14px; font-size: 17px; }
+.mx-note { position: absolute; right: var(--m-side); left: var(--m-side); top: 966px; font-size: 17px; color: var(--c-text-faint); line-height: 1.4; }
 
-/* ---------- profile extras ---------- */
-.pf-bands { flex-wrap: wrap; }
+/* ============================================================
+   PROFILE SLIDES
+   ============================================================ */
+.snap { position: absolute; right: var(--m-side); left: var(--m-side); top: 222px; border-collapse: collapse; width: 1776px; table-layout: fixed; }
+.snap th { background: var(--c-primary); color: #fff; font-size: 18px; font-weight: 600; text-align: right; padding: 9px 18px; border-left: 2px solid #fff; }
+.snap th:last-child { border-left: none; }
+.snap td { background: var(--c-fill); font-size: 21px; padding: 12px 18px; border-left: 2px solid #fff; border-top: 2px solid #fff; line-height: 1.3; vertical-align: top; }
+.snap td:last-child { border-left: none; }
+.snap td .q { color: var(--c-text-muted); font-size: 17px; }
+
+.profile-main { position: absolute; right: var(--m-side); left: var(--m-side); top: 362px; display: grid; grid-template-columns: 900px 1fr; column-gap: 44px; }
+
+ul.story { list-style: none; }
+ul.story li { position: relative; font-size: 20px; line-height: 1.4; color: var(--c-text); padding-right: 26px; margin-bottom: 12px; }
+ul.story li::before { content: ""; position: absolute; right: 0; top: 10px; width: 10px; height: 10px; background: var(--c-primary); }
+ul.story li b { font-weight: 600; color: var(--c-primary); }
+ul.story li .dim { color: var(--c-text-muted); }
+
+.pf-bands { margin-top: 14px; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.pf-bands .blbl { font-size: 18px; font-weight: 600; color: var(--c-text-muted); margin-left: 6px; }
+.band-chip { font-size: 19px; font-weight: 600; color: var(--c-primary); background: var(--c-primary-tint); padding: 8px 15px; border-radius: 3px; }
 .pf-bandqual { font-size: 17px; color: var(--c-text-faint); margin-top: 10px; line-height: 1.35; }
-.ifig { background: var(--c-fill); border: 1px solid var(--c-border); padding: 8px 10px 7px; margin-bottom: 13px; height: 168px; display: flex; flex-direction: column; }
-.ifig .iimg { flex: 1; min-height: 0; background-position: center; background-size: contain; background-repeat: no-repeat; }
-.ifig.tall { height: 357px; }
-.ifig .icap2 { font-size: 15px; color: var(--c-text-muted); margin-top: 7px; line-height: 1.3; }
-.pf-imgs .ifig:last-child { margin-bottom: 0; }
-.ifig.h224 { height: 224px; }
-.ifig.h112 { height: 112px; }
-.ifig .icap2 b { color: var(--c-slate); font-weight: 600; }
-.pf-note { background: var(--c-fill); padding: 16px 24px; margin-bottom: 16px; font-size: 20px; line-height: 1.4; color: var(--c-text); min-height: 148px; display: flex; flex-direction: column; justify-content: center; }
-.pf-note .nlbl { font-size: 15px; font-weight: 600; letter-spacing: .08em; color: var(--c-text-faint); text-transform: uppercase; margin-bottom: 8px; }
+
+.pf-imgs .ifig { background: var(--c-fill); border: 1px solid var(--c-border); padding: 10px 12px 8px; display: flex; flex-direction: column; height: 392px; }
+.pf-imgs .ifig .iimg { flex: 1; min-height: 0; background-position: center; background-size: contain; background-repeat: no-repeat; }
+.pf-imgs .ifig .icap2 { font-size: 15px; color: var(--c-text-muted); margin-top: 7px; line-height: 1.3; }
+.pf-imgs .ifig .icap2 b { color: var(--c-slate); font-weight: 600; }
+.pf-imgs .figrow { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.pf-imgs .ifig.h300 { height: 300px; }
+.pf-note { background: var(--c-fill); padding: 14px 22px; margin-top: 14px; font-size: 19px; line-height: 1.42; color: var(--c-text); }
+.pf-note .nlbl { font-size: 15px; font-weight: 700; color: var(--c-text-faint); margin-bottom: 6px; }
+
+.pf-evidence { position: absolute; right: var(--m-side); left: var(--m-side); top: 826px; }
+.ev-tiles { display: grid; grid-template-columns: repeat(3, 1fr); column-gap: 24px; }
+.ev-tile { background: var(--c-fill); padding: 14px 22px 16px; border-top: 3px solid var(--c-primary); }
+.ev-tile .elbl { font-size: 17px; font-weight: 700; color: var(--c-primary); margin-bottom: 6px; }
+.ev-tile .etxt { font-size: 19px; color: var(--c-text); line-height: 1.36; }
+.ev-tile .etxt b { font-weight: 600; }
 </style>
 
 <!-- ================= SLIDE : COVER ================= -->
@@ -275,222 +264,342 @@ h1.title { font-size: var(--fs-title); font-weight: 700; color: var(--c-slate); 
   <div class="cv-lockup"><img class="bdo-logo" src="@@IMG:bdo-logo.png@@" alt="BDO Consulting — Strategy Growth &amp; Innovation"></div>
   <div class="cv-slab"></div>
   <div class="cv-body">
-    <div class="cv-kicker">Plasan Sasa — Strategy</div>
-    <h1 class="cv-title">Signature Management &amp;<br>Multispectral Camouflage</h1>
-    <div class="cv-sub">Company landscape deep dive — nine selected companies</div>
-    <div class="cv-date">September 2026</div>
+    <div class="cv-kicker">פלסן סאסא — אסטרטגיה</div>
+    <h1 class="cv-title">ניהול חתימה<br>והסוואה רב-ספקטרלית</h1>
+    <div class="cv-sub">מיפוי חברות ממוקד — ניתוח עומק של תשע חברות נבחרות</div>
+    <div class="cv-date">ספטמבר 2026</div>
   </div>
   <div class="cv-red"></div>
   <div class="ftr">
     <div class="pageno"></div>
-    <div class="proj">Plasan Sasa — Signature Management | Company Landscape</div>
-    <div class="src">Internal working document</div>
+    <div class="src">מסמך עבודה פנימי</div>
+    <div class="proj">פלסן סאסא — ניהול חתימה | מיפוי חברות</div>
   </div>
 </section></div>
 
-<!-- ================= SLIDE : SCREENING FUNNEL ================= -->
-<div class="slide-wrap"><section class="slide" id="s1">
+<!-- ================= SLIDE : SCOPE + FUNNEL ================= -->
+<div class="slide-wrap"><section class="slide" id="s-scope">
   <div class="hdr">
     <div class="hdr-titles">
-      <div class="kicker">Screening Approach</div>
-      <h1 class="title">Criteria-driven screening surfaced 37 companies, narrowed to 18 in management review and 9 in expert selection</h1>
+      <div class="kicker">מסגרת הפרויקט ותהליך הסינון</div>
+      <h1 class="title">בניית בנק חברות מטרה בניהול חתימה — מ-37 חברות רלוונטיות לתשע נבחרות לניתוח עומק</h1>
     </div>
     <img class="bdo-logo" src="@@IMG:bdo-logo.png@@" alt="BDO Consulting — Strategy Growth &amp; Innovation">
   </div>
 
-  <div class="funnel-zone">
-    <div class="funnel-cols">
-      <div class="fcol">
-        <div class="fstep">01</div>
-        <div class="fname">Criteria definition</div>
-        <div class="fdesc">Kickoff with Arit and Binny — the precise search criteria for relevant signature-management companies were defined</div>
-        <div class="fnum"></div>
-      </div>
-      <div class="fcol">
-        <div class="fstep">02</div>
-        <div class="fname">Market scan &amp; size screen</div>
-        <div class="fdesc">Companies matching the criteria identified for Plasan review; companies above ~US$100M revenue screened out</div>
-        <div class="fnum"><span class="n">37</span><span class="n-unit">companies identified</span></div>
-      </div>
-      <div class="fcol">
-        <div class="fstep">03</div>
-        <div class="fname">Management review</div>
-        <div class="fdesc">Binny reviewed all 37 companies</div>
-        <div class="fnum"><span class="n">18</span><span class="n-unit">kept for review</span></div>
-      </div>
-      <div class="fcol f-final">
-        <div class="fpanel"></div>
-        <div class="fstep">04</div>
-        <div class="fname">Expert selection</div>
-        <div class="fdesc">Arit reviewed the remaining companies and made the final selection</div>
-        <div class="fnum"><span class="n">9</span><span class="n-unit">selected for deep dive</span></div>
-      </div>
+  <div class="scope-grid">
+    <div class="sc-tile">
+      <div class="slbl">המשימה</div>
+      <div class="stxt">בניית <b>בנק חברות מטרה</b> עבור פלסן בתחום ניהול החתימה וההסוואה הרב-ספקטרלית</div>
+    </div>
+    <div class="sc-tile">
+      <div class="slbl">טכנולוגיות בהיקף</div>
+      <div class="stxt">הפחתת חתימה אלקטרומגנטית / מכ״ם · הסוואה אופטית ורב-ספקטרלית · הפחתת חתימה תרמית <span dir="ltr">(IR)</span></div>
+    </div>
+    <div class="sc-tile">
+      <div class="slbl">פלטפורמות</div>
+      <div class="stxt"><b>יבשתיות</b> — הפוקוס העיקרי; <b>ימיות</b> — רלוונטיות אפשרית <span class="dim">· מחוץ להיקף: חברות בפוקוס תעופתי בלבד או ללוחם הבודד בלבד</span></div>
+    </div>
+    <div class="sc-tile">
+      <div class="slbl">שאלת המחקר</div>
+      <div class="stxt">אילו מוצרים קיימים בשוק ניהול החתימה, ואילו חלקים של הספקטרום כל אחד מהם מכסה</div>
+    </div>
+    <div class="sc-tile">
+      <div class="slbl">גיאוגרפיה</div>
+      <div class="stxt">ישראל · מזרח אירופה · ארה״ב · מערב אירופה <span class="dim">· למיפוי ערך גם בהיעדר יעד מיידי</span></div>
+    </div>
+    <div class="sc-tile">
+      <div class="slbl">פרופיל גודל</div>
+      <div class="stxt">מכירות עד <span dir="ltr">~$20M</span> — פרופיל היעד העיקרי · גדולות יותר — רלוונטיות להשקעת מיעוט ללא שליטה <span class="dim">· גדולות מאוד — ייחוס שוק בלבד</span></div>
     </div>
   </div>
 
-  <div class="funnel-wedge">
-    <svg viewBox="0 0 1776 96" preserveAspectRatio="none">
-      <polygon points="0,0 1344,52 1344,96 0,96" fill="#014C67" opacity="0.10"/>
-    </svg>
-  </div>
+  <div class="method-band">המתודולוגיה, קריטריוני הסינון והבחירה גובשו בעבודה משותפת עם מומחה ניהול החתימה של פלסן</div>
 
-  <div class="sel-strip">
-    <div class="lbl">Selected for deep dive</div>
-    <div class="chips">
-      <span class="cchip">Advanced Material Development</span>
-      <span class="cchip">Ametrine Technologies</span>
-      <span class="cchip">CBG Systems</span>
-      <span class="cchip">Eltics / Black Fox</span>
-      <span class="cchip">Permali</span>
-      <span class="cchip">Ravelin Defense</span>
-      <span class="cchip">Shieldex</span>
-      <span class="cchip">STG Defence</span>
-      <span class="cchip">Sterlite Camotech</span>
+  <div class="fun-strip">
+    <div class="fun-box">
+      <div class="fn">37</div>
+      <div class="fl">חברות רלוונטיות זוהו</div>
+      <div class="fd">מיפוי שוק מבוסס-קריטריונים; חברות עם מכירות מעל <span dir="ltr">~$100M</span> סוננו החוצה</div>
+    </div>
+    <div class="fun-arrow">&#10096;</div>
+    <div class="fun-box">
+      <div class="fn">18</div>
+      <div class="fl">נותרו לבחינה מעמיקה</div>
+      <div class="fd">לאחר סקירת הנהלת הפרויקט</div>
+    </div>
+    <div class="fun-arrow">&#10096;</div>
+    <div class="fun-box final">
+      <div class="fn">9</div>
+      <div class="fl">נבחרו לניתוח עומק</div>
+      <div class="fd">בסקירת המומחים — והן מושא מסמך זה</div>
     </div>
   </div>
 
   <div class="ftr">
     <div class="pageno"></div>
-    <div class="proj">Plasan Sasa — Signature Management | Company Landscape</div>
-    <div class="src">Source: Plasan screening process (project team); Signature Management company map workbook</div>
+    <div class="src">מקור: תהליך הסינון של צוות הפרויקט; חוברות המיפוי של פלסן (מפת החברות; מאגר תשע החברות)</div>
+    <div class="proj">פלסן סאסא — ניהול חתימה | מיפוי חברות</div>
   </div>
 </section></div>
 
-<!-- ================= SLIDE : SELECTED COMPANIES OVERVIEW ================= -->
-<div class="slide-wrap"><section class="slide" id="s2">
+<!-- ================= SLIDE : FLAT COMPARATIVE TABLE ================= -->
+<div class="slide-wrap"><section class="slide" id="s-table">
   <div class="hdr">
     <div class="hdr-titles">
-      <div class="kicker">Selected Companies — Executive Overview</div>
-      <h1 class="title">Four camouflage pure-plays; five broader businesses with a dedicated or adjacent signature-management line</h1>
+      <div class="kicker">תמונת-על השוואתית</div>
+      <h1 class="title">תשע החברות במבט אחד — ארבע שחקניות הסוואה ייעודיות לצד חמש קבוצות עם פעילות ניהול חתימה</h1>
     </div>
     <img class="bdo-logo" src="@@IMG:bdo-logo.png@@" alt="BDO Consulting — Strategy Growth &amp; Innovation">
   </div>
 
   <table class="ovw-table">
     <colgroup>
-      <col style="width:284px"><col style="width:252px"><col style="width:434px">
-      <col style="width:318px"><col style="width:252px"><col style="width:236px">
+      <col style="width:236px"><col style="width:112px"><col style="width:206px">
+      <col style="width:132px"><col style="width:168px"><col style="width:348px">
+      <col style="width:204px"><col style="width:94px"><col style="width:130px"><col style="width:146px">
     </colgroup>
     <tr>
-      <th>Company</th><th>Main business</th><th>Key signature-management offering</th>
-      <th>Signature domains</th><th>Market status</th><th>Employees · Revenue</th>
-    </tr>
-    <tr class="grp"><td colspan="6">Core business<span>— signature management is the company's main activity</span></td></tr>
-    <tr>
-      <td><div class="co">Ametrine Technologies<small>Israel / US</small></div></td>
-      <td class="muted">Camouflage systems</td>
-      <td class="prod"><b>Flint™</b> platform coating/skin; multirole concealment covers</td>
-      <td>Visual · Thermal IR</td>
-      <td><span class="chip chip-fielded">Fielded / Commercial</span></td>
-      <td class="num">11–50<br><span class="qual">$1–15M (est.)</span></td>
+      <th>חברה</th><th>מדינה</th><th>עיסוק עיקרי</th><th>חשיבות ניהול החתימה</th><th>קטגוריית פתרון</th>
+      <th>הצעה מרכזית בניהול חתימה</th><th>ספקטרום</th><th>עובדים</th><th>הכנסות</th><th>בעלות</th>
     </tr>
     <tr>
-      <td><div class="co">Eltics / Black Fox<small>Israel</small></div></td>
-      <td class="muted">Camouflage systems</td>
-      <td class="prod"><b>Black Fox</b> active thermal camouflage for land vehicles</td>
-      <td>Thermal IR (MWIR / LWIR)</td>
-      <td><span class="chip chip-proto">Prototype / historical</span><br><span class="qual">current status unclear</span></td>
-      <td class="num">5</td>
+      <td><div class="co">Ametrine Technologies</div></td>
+      <td>ישראל / ארה״ב</td>
+      <td class="muted">מערכות הסוואה רב-ספקטרליות</td>
+      <td class="imp">ליבת העסק</td>
+      <td class="muted">ציפויים · כיסויים</td>
+      <td class="prod"><b><span dir="ltr">Flint™</span></b> — ציפוי / מעטה פלטפורמה; כיסויי הסתרה רב-ייעודיים</td>
+      <td><span dir="ltr">VIS</span> · תרמי<sup>1</sup></td>
+      <td class="num"><span dir="ltr">~40</span></td>
+      <td class="num"><span dir="ltr">$1–15M</span><br><span class="qual">הערכה</span></td>
+      <td class="muted">פרטית</td>
     </tr>
     <tr>
-      <td><div class="co">STG Defence<small>Ukraine</small></div></td>
-      <td class="muted">Camouflage systems</td>
-      <td class="prod"><b>Thermal Signature Equipment Shelter</b> for vehicles &amp; platforms; personnel systems</td>
-      <td>NIR / SWIR · MWIR / LWIR<br><span class="qual">radar: aviation / hangar lines</span></td>
-      <td><span class="chip chip-fielded">Fielded / Commercial</span></td>
-      <td class="num">51–200</td>
+      <td><div class="co">Eltics / Black Fox</div></td>
+      <td>ישראל</td>
+      <td class="muted">הסוואה תרמית אקטיבית</td>
+      <td class="imp">ליבת העסק</td>
+      <td class="muted">מערכת אקטיבית</td>
+      <td class="prod"><b>Black Fox</b> — הסוואה תרמית אקטיבית לרכב יבשתי</td>
+      <td><span dir="ltr">MWIR · LWIR</span></td>
+      <td class="num"><span dir="ltr">~5</span></td>
+      <td class="muted">אין נתון</td>
+      <td class="muted">פרטית</td>
     </tr>
     <tr>
-      <td><div class="co">Sterlite Camotech<small>India</small></div></td>
-      <td class="muted">Camouflage systems</td>
-      <td class="prod"><b>MSCN</b> multispectral nets; <b>MCS</b> mobile camouflage; IR paints</td>
-      <td>Visual · NIR · Thermal IR<br><span class="qual">radar: company-claimed</span></td>
-      <td><span class="chip chip-fielded">Fielded / Commercial</span></td>
-      <td class="num">26–50</td>
-    </tr>
-    <tr class="grp"><td colspan="6">Major business line<span>— dedicated signature-management line within a broader business</span></td></tr>
-    <tr>
-      <td><div class="co">Advanced Material Development<small>US / UK</small></div></td>
-      <td class="muted">Nanomaterials &amp; advanced coatings</td>
-      <td class="prod"><b>CHAM-NIR / ChamIR</b> adaptive IR coatings; <b>ChamEM</b> radar materials</td>
-      <td>NIR / MIR · Radar / EM</td>
-      <td><span class="chip chip-dev">Development / Trials</span></td>
-      <td class="num">2–10</td>
+      <td><div class="co">STG Defence</div></td>
+      <td>אוקראינה</td>
+      <td class="muted">מערכות הסוואה והגנה מגילוי</td>
+      <td class="imp">ליבת העסק</td>
+      <td class="muted">רשתות · כיסויים</td>
+      <td class="prod"><b>Thermal Signature Equipment Shelter</b> לפלטפורמות; מערכות ללוחם</td>
+      <td><span dir="ltr" style="white-space:nowrap">NIR·SWIR·MWIR·LWIR</span><sup>2</sup></td>
+      <td class="num"><span dir="ltr">51–200</span></td>
+      <td class="muted">אין נתון</td>
+      <td class="muted">פרטית</td>
     </tr>
     <tr>
-      <td><div class="co">CBG Systems<small>Australia</small></div></td>
-      <td class="muted">Marine &amp; defence protection systems</td>
-      <td class="prod"><b>SolarSigmaShield</b> vehicle camouflage system; multispectral nets</td>
-      <td>Visual · Thermal IR · Radar</td>
-      <td><span class="chip chip-fielded">Fielded / Commercial</span></td>
-      <td class="num">11–50<br><span class="qual">≈$6M (est.)</span></td>
+      <td><div class="co">Sterlite Camotech</div></td>
+      <td>הודו</td>
+      <td class="muted">ציוד הסוואה צבאי</td>
+      <td class="imp">ליבת העסק</td>
+      <td class="muted">רשתות · צבעים</td>
+      <td class="prod">רשתות <b>MSCN</b> רב-ספקטרליות; הסוואה ניידת <b>MCS</b>; צבעי <span dir="ltr">IR</span></td>
+      <td><span dir="ltr">VIS · NIR</span> · תרמי<sup>3</sup></td>
+      <td class="num"><span dir="ltr">26–50</span></td>
+      <td class="muted">אין נתון</td>
+      <td class="muted">פרטית</td>
     </tr>
     <tr>
-      <td><div class="co">Ravelin Defense<small>US · formerly ArmorWorks</small></div></td>
-      <td class="muted">Defence survivability &amp; manufacturing</td>
-      <td class="prod"><b>TactiCam™</b> 3D vehicle camouflage; radar-reduction shrouds</td>
-      <td>Visual / IR · Radar</td>
-      <td><span class="chip chip-comm">Commercial</span></td>
-      <td class="num">201–500</td>
-    </tr>
-    <tr class="grp"><td colspan="6">Adjacent offering<span>— signature management as an application of an adjacent technology</span></td></tr>
-    <tr>
-      <td><div class="co">Permali<small>UK · Diamorph Group</small></div></td>
-      <td class="muted">Defence composites</td>
-      <td class="prod"><b>Dust Skirts</b> suppressing the dust plume of moving armored vehicles</td>
-      <td>Visual · Radar<br><span class="qual">dust-plume signature only</span></td>
-      <td><span class="chip chip-comm">Commercial</span></td>
-      <td class="num">370<br><span class="qual">£30M reported</span></td>
+      <td><div class="co">Advanced Material Development</div></td>
+      <td>ארה״ב / בריטניה</td>
+      <td class="muted">ננו-חומרים וציפויים מתקדמים</td>
+      <td class="imp">קו עסקי מרכזי</td>
+      <td class="muted">ציפויים · <span dir="ltr">RAM</span></td>
+      <td class="prod">ציפויי <b>CHAM-NIR / ChamIR</b>; חומרי <b>ChamEM</b> למכ״ם</td>
+      <td><span dir="ltr">NIR · MWIR</span> · מכ״ם<sup>4</sup></td>
+      <td class="num"><span dir="ltr">~15</span></td>
+      <td class="muted">אין נתון</td>
+      <td class="muted">פרטית</td>
     </tr>
     <tr>
-      <td><div class="co">Shieldex<small>Germany · family-owned</small></div></td>
-      <td class="muted">Conductive &amp; shielding textiles</td>
-      <td class="prod"><b>Shieldex® Zell RS CR</b> metallized textile — enabling material</td>
-      <td>Thermal IR · RF / EMI shield<br><span class="qual">not RCS reduction</span></td>
-      <td><span class="chip chip-comm">Commercial</span></td>
-      <td class="num">~50<br><span class="qual">≈$31M (est.)</span></td>
+      <td><div class="co">CBG Systems</div></td>
+      <td>אוסטרליה</td>
+      <td class="muted">מערכות הגנה ימיות-ביטחוניות</td>
+      <td class="imp">קו עסקי מרכזי</td>
+      <td class="muted">מערכת רכב · רשתות</td>
+      <td class="prod"><b>SolarSigmaShield</b> — הסוואת פלטפורמה רב-ספקטרלית; רשתות</td>
+      <td><span dir="ltr">VIS</span> · תרמי<sup>1</sup> · מכ״ם</td>
+      <td class="num"><span dir="ltr">~20</span></td>
+      <td class="num"><span dir="ltr">≈$6M</span><br><span class="qual">הערכה</span></td>
+      <td class="muted">פרטית</td>
+    </tr>
+    <tr>
+      <td><div class="co">Ravelin Defense<small>לשעבר ArmorWorks</small></div></td>
+      <td>ארה״ב</td>
+      <td class="muted">שרידות ביטחונית וייצור</td>
+      <td class="imp">קו עסקי מרכזי</td>
+      <td class="muted">מערכת רכב · כיסויים</td>
+      <td class="prod"><b><span dir="ltr">TactiCam™</span></b> — הסוואת רכב תלת-ממדית; כיסויי הפחתת מכ״ם</td>
+      <td><span dir="ltr">VIS / IR</span> · מכ״ם</td>
+      <td class="num"><span dir="ltr">201–500</span></td>
+      <td class="muted">לא מאומת</td>
+      <td class="muted"><span dir="ltr">Littlejohn Capital</span></td>
+    </tr>
+    <tr>
+      <td><div class="co">Permali</div></td>
+      <td>בריטניה</td>
+      <td class="muted">קומפוזיטים ביטחוניים</td>
+      <td class="imp">הצעה משיקה</td>
+      <td class="muted">קומפוזיטים</td>
+      <td class="prod"><b>Dust Skirts</b> — דיכוי ענן האבק של רק״ם בתנועה</td>
+      <td><span dir="ltr">VIS</span> · מכ״ם<sup>5</sup></td>
+      <td class="num"><span dir="ltr">~270</span></td>
+      <td class="num"><span dir="ltr">£30M</span><br><span class="qual">מדווח</span></td>
+      <td class="muted">קבוצת <span dir="ltr">Diamorph</span></td>
+    </tr>
+    <tr>
+      <td><div class="co">Shieldex</div></td>
+      <td>גרמניה</td>
+      <td class="muted">טקסטיל טכני מוליך</td>
+      <td class="imp">הצעה משיקה</td>
+      <td class="muted">טקסטיל · חומרים</td>
+      <td class="prod"><b>Shieldex® Zell RS CR</b> — טקסטיל מצופה-מתכת כחומר מאפשר</td>
+      <td>תרמי<sup>1</sup> · <span dir="ltr">EMI</span><sup>6</sup></td>
+      <td class="num"><span dir="ltr">~50</span></td>
+      <td class="num"><span dir="ltr">≈$31M</span><br><span class="qual">הערכה</span></td>
+      <td class="muted">משפחתית <span dir="ltr">(Statex)</span></td>
     </tr>
   </table>
 
-  <div class="ovw-note">Employee counts are working ranges; "est." figures are unvalidated third-party estimates, not reported revenue; radar coverage is qualified where not independently substantiated.</div>
+  <div class="ovw-note">
+    <sup>1</sup> תת-התחום התרמי אינו מפורט במקורות · <sup>2</sup> מכ״ם — בקווי תעופה / האנגרים בלבד · <sup>3</sup> מכ״ם — טענת חברה, לא אומתה עצמאית · <sup>4</sup> המקור מציין <span dir="ltr">"NIR / MIR"</span> · <sup>5</sup> חתימת ענן האבק בלבד · <sup>6</sup> סיכוך <span dir="ltr">RF / EMI</span> — אינו הפחתת <span dir="ltr">RCS</span> · נתוני עובדים: אומדנים ממאגרי חברות חיצוניים היכן שנמצא בסיס מהימן; אחרת טווחים · נתוני "הערכה" — אומדני צד-שלישי, לא הכנסות מדווחות
+  </div>
 
   <div class="ftr">
     <div class="pageno"></div>
-    <div class="proj">Plasan Sasa — Signature Management | Company Landscape</div>
-    <div class="src">Source: Plasan 9-company deep-dive dataset (company websites, program announcements, third-party estimates)</div>
+    <div class="src">מקור: מאגר תשע החברות של פלסן (אתרי חברות, הודעות תוכנית, הערכות צד-שלישי); מאגרי חברות חיצוניים</div>
+    <div class="proj">פלסן סאסא — ניהול חתימה | מיפוי חברות</div>
   </div>
 </section></div>
 
-<!-- ================= SLIDE : PRODUCT & TECHNOLOGY LANDSCAPE ================= -->
+<!-- ================= SLIDE : SPECTRUM MATRIX ================= -->
+<div class="slide-wrap"><section class="slide" id="s-spectrum">
+  <div class="hdr">
+    <div class="hdr-titles">
+      <div class="kicker">כיסוי ספקטרלי</div>
+      <h1 class="title">כיסוי אופטי-תרמי הוא המכנה המשותף; יכולת מכ״ם מגיעה משש חברות — חלקה מסויג או ממוקד-יישום</h1>
+    </div>
+    <img class="bdo-logo" src="@@IMG:bdo-logo.png@@" alt="BDO Consulting — Strategy Growth &amp; Innovation">
+  </div>
+
+  <table class="sx-table">
+    <colgroup>
+      <col style="width:380px"><col style="width:232px"><col style="width:232px"><col style="width:232px">
+      <col style="width:232px"><col style="width:232px"><col style="width:236px">
+    </colgroup>
+    <tr>
+      <th>חברה</th>
+      <th>אופטי <span dir="ltr">VIS</span><span class="rng" dir="ltr">≈0.4–0.7µm</span></th>
+      <th><span dir="ltr">NIR</span><span class="rng" dir="ltr">≈0.7–1.4µm</span></th>
+      <th><span dir="ltr">SWIR</span><span class="rng" dir="ltr">≈1–3µm</span></th>
+      <th><span dir="ltr">MWIR</span><span class="rng" dir="ltr">≈3–5µm</span></th>
+      <th><span dir="ltr">LWIR</span><span class="rng" dir="ltr">≈8–14µm</span></th>
+      <th>מכ״ם / <span dir="ltr">RCS</span></th>
+    </tr>
+    <tr>
+      <td class="co-cell"><span class="co">Ametrine Technologies</span></td>
+      <td><span class="d"></span></td><td></td><td></td>
+      <td><span class="o"></span></td><td><span class="o"></span></td><td><sup>1</sup></td>
+    </tr>
+    <tr>
+      <td class="co-cell"><span class="co">Eltics / Black Fox</span></td>
+      <td></td><td></td><td></td>
+      <td><span class="d"></span></td><td><span class="d"></span></td><td></td>
+    </tr>
+    <tr>
+      <td class="co-cell"><span class="co">STG Defence</span></td>
+      <td></td><td><span class="d"></span></td><td><span class="d"></span></td>
+      <td><span class="d"></span></td><td><span class="d"></span></td><td><span class="o"></span><sup>2</sup></td>
+    </tr>
+    <tr>
+      <td class="co-cell"><span class="co">Sterlite Camotech</span></td>
+      <td><span class="d"></span></td><td><span class="d"></span></td><td></td>
+      <td><span class="o"></span></td><td><span class="o"></span></td><td><span class="o"></span><sup>3</sup></td>
+    </tr>
+    <tr>
+      <td class="co-cell"><span class="co">Advanced Material Development</span></td>
+      <td></td><td><span class="d"></span></td><td></td>
+      <td><span class="d"></span><sup>4</sup></td><td></td><td><span class="d"></span></td>
+    </tr>
+    <tr>
+      <td class="co-cell"><span class="co">CBG Systems</span></td>
+      <td><span class="d"></span></td><td></td><td></td>
+      <td><span class="o"></span></td><td><span class="o"></span></td><td><span class="d"></span></td>
+    </tr>
+    <tr>
+      <td class="co-cell"><span class="co">Ravelin Defense</span></td>
+      <td><span class="d"></span></td><td></td><td></td>
+      <td><span class="o"></span></td><td><span class="o"></span></td><td><span class="d"></span></td>
+    </tr>
+    <tr>
+      <td class="co-cell"><span class="co">Permali</span></td>
+      <td><span class="d"></span></td><td></td><td></td>
+      <td></td><td></td><td><span class="d"></span><sup>5</sup></td>
+    </tr>
+    <tr>
+      <td class="co-cell"><span class="co">Shieldex</span></td>
+      <td></td><td></td><td></td>
+      <td><span class="o"></span><sup>6</sup></td><td><span class="o"></span><sup>6</sup></td><td><sup>6</sup></td>
+    </tr>
+  </table>
+
+  <div class="sx-legend">
+    <span class="d"></span> מתועד במקורות החברה או בתיעוד תוכנית&nbsp;&nbsp;&nbsp;
+    <span class="o"></span> מסויג — תחום תרמי ללא פירוט תת-תחום (מסומן על <span dir="ltr">MWIR</span> ו-<span dir="ltr">LWIR</span>) או כפוף להערה
+  </div>
+  <div class="sx-notes">
+    <sup>1</sup> יכולת מכ״ם / <span dir="ltr">RCS</span> לא מאומתת בחומרי המוצר הנוכחיים · <sup>2</sup> מתועד בעיקר בקווי תעופה / האנגרים · <sup>3</sup> טענת חברה, לא אומתה עצמאית · <sup>4</sup> המקור מציין <span dir="ltr">"NIR / MIR"</span> · <sup>5</sup> חתימת ענן האבק של רק״ם נע בלבד · <sup>6</sup> על בסיס יישומי הסתרה של טקסטיל מצופה-מתכת; סיכוך <span dir="ltr">RF / EMI</span> אינו נספר כיכולת מכ״ם / <span dir="ltr">RCS</span> · תחומים מוצגים רק כאשר קיימת עדות מוצר; אין הערכת ביצועים
+  </div>
+
+  <div class="ftr">
+    <div class="pageno"></div>
+    <div class="src">מקור: מאגר תשע החברות של פלסן — פירוט ספקטרלי ברמת מוצר; סיווג צוות הפרויקט</div>
+    <div class="proj">פלסן סאסא — ניהול חתימה | מיפוי חברות</div>
+  </div>
+</section></div>
+
+<!-- ================= SLIDE : PRODUCT-FAMILY LANDSCAPE ================= -->
 <div class="slide-wrap"><section class="slide" id="s-landscape">
   <div class="hdr">
     <div class="hdr-titles">
-      <div class="kicker">Product &amp; Technology Landscape</div>
-      <h1 class="title">Vehicle systems, nets and textiles dominate the set; active / adaptive signature control appears at only two companies</h1>
+      <div class="kicker">נוף מוצרים וטכנולוגיות</div>
+      <h1 class="title">מערכות רכב, רשתות וטקסטיל מרכיבים את עיקר ההיצע; יכולת אקטיבית / אדפטיבית קיימת בשתי חברות בלבד</h1>
     </div>
     <img class="bdo-logo" src="@@IMG:bdo-logo.png@@" alt="BDO Consulting — Strategy Growth &amp; Innovation">
   </div>
   <table class="mx-table">
     <colgroup><col style="width:400px"><col style="width:229px"><col style="width:229px"><col style="width:229px"><col style="width:229px"><col style="width:229px"><col style="width:231px"></colgroup>
-    <tr><th>Company</th><th>Vehicle camouflage systems<span class="cnt">5 of 9</span></th><th>Nets &amp; covers<span class="cnt">5 of 9</span></th><th>Textiles &amp; materials<span class="cnt">5 of 9</span></th><th>Coatings<span class="cnt">3 of 9</span></th><th>RAM &amp; composites<span class="cnt">2 of 9</span></th><th>Active / adaptive systems<span class="cnt">2 of 9</span></th></tr>
-    <tr class="grp"><td colspan="7">Core business<span>— signature management is the company's main activity</span></td></tr>
-    <tr><td class="co-cell"><div class="co">Ametrine Technologies<small>Flint™</small></div></td><td><span class="dot"></span></td><td><span class="dot"></span></td><td><span class="dot"></span></td><td><span class="dot"></span></td><td></td><td></td></tr>
+    <tr><th>חברה</th><th>מערכות הסוואה לרכב<span class="cnt">5 מתוך 9</span></th><th>רשתות וכיסויים<span class="cnt">5 מתוך 9</span></th><th>טקסטיל וחומרים<span class="cnt">5 מתוך 9</span></th><th>ציפויים<span class="cnt">3 מתוך 9</span></th><th><span dir="ltr">RAM</span> וקומפוזיטים<span class="cnt">2 מתוך 9</span></th><th>מערכות אקטיביות / אדפטיביות<span class="cnt">2 מתוך 9</span></th></tr>
+    <tr class="grp"><td colspan="7">ליבת העסק<span>— ניהול חתימה הוא עיסוקה המרכזי של החברה</span></td></tr>
+    <tr><td class="co-cell"><div class="co">Ametrine Technologies<small><span dir="ltr">Flint™</span></small></div></td><td><span class="dot"></span></td><td><span class="dot"></span></td><td><span class="dot"></span></td><td><span class="dot"></span></td><td></td><td></td></tr>
     <tr><td class="co-cell"><div class="co">Eltics / Black Fox<small>Black Fox</small></div></td><td><span class="dot"></span></td><td></td><td></td><td></td><td></td><td><span class="dot"></span></td></tr>
     <tr><td class="co-cell"><div class="co">STG Defence<small>Thermal Signature Equipment Shelter</small></div></td><td></td><td><span class="dot"></span></td><td><span class="dot"></span></td><td></td><td></td><td></td></tr>
     <tr><td class="co-cell"><div class="co">Sterlite Camotech<small>MSCN · MCS · IR paints</small></div></td><td><span class="dot"></span></td><td><span class="dot"></span></td><td><span class="dot"></span></td><td><span class="dot"></span></td><td></td><td></td></tr>
-    <tr class="grp"><td colspan="7">Major business line<span>— dedicated signature-management line within a broader business</span></td></tr>
+    <tr class="grp"><td colspan="7">קו עסקי מרכזי<span>— פעילות ניהול חתימה ייעודית בתוך עסק רחב יותר</span></td></tr>
     <tr><td class="co-cell"><div class="co">Advanced Material Development<small>CHAM-NIR · ChamIR · ChamEM</small></div></td><td></td><td></td><td></td><td><span class="dot"></span></td><td><span class="dot"></span></td><td><span class="dot"></span></td></tr>
     <tr><td class="co-cell"><div class="co">CBG Systems<small>SolarSigmaShield</small></div></td><td><span class="dot"></span></td><td><span class="dot"></span></td><td><span class="dot"></span></td><td></td><td></td><td></td></tr>
-    <tr><td class="co-cell"><div class="co">Ravelin Defense<small>TactiCam™ · Radar Reduction Shrouds</small></div></td><td><span class="dot"></span></td><td><span class="dot"></span></td><td></td><td></td><td></td><td></td></tr>
-    <tr class="grp"><td colspan="7">Adjacent offering<span>— signature management as an application of an adjacent technology</span></td></tr>
+    <tr><td class="co-cell"><div class="co">Ravelin Defense<small><span dir="ltr">TactiCam™ · Radar Reduction Shrouds</span></small></div></td><td><span class="dot"></span></td><td><span class="dot"></span></td><td></td><td></td><td></td><td></td></tr>
+    <tr class="grp"><td colspan="7">הצעה משיקה<span>— ניהול חתימה כיישום של טכנולוגיה משיקה</span></td></tr>
     <tr><td class="co-cell"><div class="co">Permali<small>Dust Skirts</small></div></td><td></td><td></td><td></td><td></td><td><span class="dot"></span></td><td></td></tr>
     <tr><td class="co-cell"><div class="co">Shieldex<small>Shieldex® Zell RS CR</small></div></td><td></td><td></td><td><span class="dot"></span></td><td></td><td></td><td></td></tr>
   </table>
-  <div class="mx-note">A filled marker = the company offers products in that solution family, per the project dataset; flagship products shown under each company name. Family definitions follow the project classification guide.</div>
+  <div class="mx-note">סימון מלא = לחברה מוצרים במשפחת הפתרון, לפי מאגר הפרויקט; מוצרי הדגל מוצגים מתחת לשם כל חברה. הגדרות המשפחות — לפי מדריך הסיווג של הפרויקט.</div>
   <div class="ftr">
     <div class="pageno"></div>
-    <div class="proj">Plasan Sasa — Signature Management | Company Landscape</div>
-    <div class="src">Source: Plasan 9-company deep-dive dataset (product-family classification)</div>
+    <div class="src">מקור: מאגר תשע החברות של פלסן (סיווג משפחות מוצר)</div>
+    <div class="proj">פלסן סאסא — ניהול חתימה | מיפוי חברות</div>
   </div>
 </section></div>
 
@@ -498,80 +607,71 @@ h1.title { font-size: var(--fs-title); font-weight: 700; color: var(--c-slate); 
 <div class="slide-wrap"><section class="slide" id="s-ametrine">
   <div class="hdr">
     <div class="hdr-titles">
-      <div class="kicker">Company Profile · Core Business</div>
-      <h1 class="title">Ametrine Technologies — a camouflage pure-play with fielded platform products and active U.S. government engagement</h1>
+      <div class="kicker">פרופיל חברה · ליבת העסק</div>
+      <h1 class="title">Ametrine Technologies — שחקנית הסוואה ייעודית עם מוצרי פלטפורמה בשטח ופעילות מול לקוחות ממשל בארה״ב</h1>
     </div>
     <img class="bdo-logo" src="@@IMG:bdo-logo.png@@" alt="BDO Consulting — Strategy Growth &amp; Innovation">
   </div>
   <table class="snap">
     <colgroup>
-      <col style="width:200px"><col style="width:470px"><col style="width:300px">
-      <col style="width:330px"><col style="width:186px"><col style="width:290px">
+      <col style="width:210px"><col style="width:440px"><col style="width:240px">
+      <col style="width:400px"><col style="width:170px"><col style="width:316px">
     </colgroup>
-    <tr><th>Country</th><th>Main business</th><th>Signature focus</th><th>Ownership</th><th>Employees</th><th>Revenue</th></tr>
+    <tr><th>מדינה</th><th>עיסוק עיקרי</th><th>חשיבות ניהול החתימה</th><th>בעלות</th><th>עובדים</th><th>הכנסות</th></tr>
     <tr>
-      <td>Israel / United States</td>
-      <td>Camouflage &amp; multispectral signature management</td>
-      <td>Core business</td>
-      <td>Private — Ametrine Technologies Ltd / Inc.</td>
-      <td>11–50</td>
-      <td>$1–15M <span class="q">(third-party estimates)</span></td>
+      <td>ישראל / ארה״ב</td>
+      <td>הסוואה וניהול חתימה רב-ספקטרלי</td>
+      <td>ליבת העסק</td>
+      <td>פרטית — <span dir="ltr" style="white-space:nowrap">Ametrine Technologies Ltd / Inc.</span></td>
+      <td><span dir="ltr">~40</span></td>
+      <td><span dir="ltr">$1–15M</span> <span class="q">(הערכות צד-שלישי)</span></td>
     </tr>
   </table>
   <div class="profile-main">
-    <div class="pf-products">
-      <div class="sec-bar">Signature-management portfolio</div>
-      <div class="prow">
-        <div><div class="pname">Flint™</div><div class="ptype">Platform coating / skin — flagship</div></div>
-        <div class="pdesc">Multilayer coating / skin applied to mobile platforms to reduce detectable optical and thermal signatures</div>
-      </div>
-      <div class="prow">
-        <div><div class="pname">Multirole Concealment Covers</div><div class="ptype">Nets &amp; covers</div></div>
-        <div class="pdesc">Deployable concealment for equipment and platforms</div>
-      </div>
-      <div class="prow">
-        <div><div class="pname">Personnel systems</div><div class="ptype">Secondary</div></div>
-        <div class="pdesc">Poncho Elite and the Advanced Camouflage Combat Uniform™ System — secondary to the vehicle / platform focus of this review</div>
-      </div>
+    <div class="pf-story">
+      <div class="sec-bar">הסיפור בקצרה</div>
+      <ul class="story">
+        <li>חברת ניהול חתימה <b>ייעודית</b> — כל העסק ממוקד בהסוואה רב-ספקטרלית לפלטפורמות ולציוד</li>
+        <li><b><span dir="ltr">Flint™</span></b> — ציפוי / מעטה רב-שכבתי לפלטפורמות ניידות להפחתת החתימה האופטית והתרמית; לצדו כיסויי הסתרה רב-ייעודיים ומערכות ללוחם <span class="dim">(Poncho Elite, ACCUS — משניים לפוקוס הרכב של סקירה זו)</span></li>
+        <li>פעילות מול לקוחות ממשל בארה״ב: <b>ONR</b>, זרוע המחקר של צבא ארה״ב <span dir="ltr">(RDECOM)</span> ו-<span dir="ltr">USSOCOM</span> — כולל הזמנת כיסוי הסוואה ב-2024 וחוזה מו״פ של <span dir="ltr">$18M</span> ב-2025</li>
+        <li>הפורטפוליו ממוקד אופטי-תרמי; יכולת מכ״ם / <span dir="ltr">RCS</span> לא מאומתת בחומרי המוצר הנוכחיים</li>
+        <li>רלוונטיות לפלסן: פוקוס דומה בפלטפורמות יבשתיות, בסדר גודל קטן — כ-40 עובדים ומכירות מוערכות של <span dir="ltr">$1–15M</span></li>
+      </ul>
       <div class="pf-bands">
-        <span class="blbl">Signature domains</span>
-        <span class="band-chip">Visual / Optical</span><span class="band-chip">Thermal IR</span>
+        <span class="blbl">תחומי חתימה</span>
+        <span class="band-chip">אופטי (VIS)</span><span class="band-chip">תרמי (IR)</span>
       </div>
-      <div class="pf-bandqual">Radar / RCS not verified in current product materials</div>
+      <div class="pf-bandqual">תת-התחום התרמי אינו מפורט במקורות; מכ״ם / RCS לא מאומת</div>
     </div>
     <div class="pf-imgs">
-      <div class="sec-bar">Product &amp; application</div>
-      <div class="ifig h224">
+      <div class="sec-bar">מוצר ויישום</div>
+      <div class="ifig">
         <div class="iimg" style="background-image:url('@@IMG:ametrine-flint-jltv.jpg@@')"></div>
-        <div class="icap2"><b>Flint™ on a JLTV.</b> Source: ametrine.tech — official media library</div>
-      </div>
-      <div class="ifig h112">
-        <div class="iimg" style="background-image:url('@@IMG:ametrine-gmv-cover.jpg@@')"></div>
-        <div class="icap2"><b>GMV vehicle concealment cover.</b> Source: ametrine.tech — official media library</div>
+        <div class="icap2"><b><span dir="ltr">Flint™</span> על רכב JLTV.</b> מקור: <span dir="ltr" style="white-space:nowrap">ametrine.tech</span> — ספריית המדיה הרשמית</div>
       </div>
     </div>
   </div>
   <div class="pf-evidence">
-    <div class="sec-bar">Commercial evidence</div>
+    <div class="sec-bar">עדות מסחרית</div>
     <div class="ev-tiles">
       <div class="ev-tile">
-        <div class="elbl">U.S. GOVERNMENT CUSTOMERS</div>
-        <div class="etxt"><b>Office of Naval Research</b>, U.S. Army RDECOM and USSOCOM</div>
+        <div class="elbl">לקוחות ממשל בארה״ב</div>
+        <div class="etxt"><b>ONR</b>, זרוע המחקר של צבא ארה״ב <span dir="ltr">(RDECOM)</span> ו-<span dir="ltr">USSOCOM</span></div>
       </div>
       <div class="ev-tile">
-        <div class="elbl">2024 — ONR ORDER</div>
-        <div class="etxt">≈$250k order for an X-hangar and <b>camouflage cover</b> — a direct product signal</div>
+        <div class="elbl">2024 — הזמנת ONR</div>
+        <div class="etxt">הזמנה של <span dir="ltr">≈$250K</span> הכוללת <b>כיסוי הסוואה</b> — אות מוצר ישיר</div>
       </div>
       <div class="ev-tile">
-        <div class="elbl">2025 — ONR R&amp;D CONTRACT</div>
-        <div class="etxt"><b>$18M</b> R&amp;D contract; public scope not detailed — not attributable in full to camouflage</div>
+        <div class="elbl">2025 — חוזה מו״פ מ-ONR</div>
+        <div class="etxt"><b><span dir="ltr">$18M</span></b>; התכולה לא פורטה פומבית — לא ניתן לייחסו במלואו להסוואה</div>
       </div>
     </div>
   </div>
   <div class="ftr">
     <div class="pageno"></div>
-    <div class="proj">Plasan Sasa — Signature Management | Company Landscape</div>
-    <div class="src">Source: Ametrine official website; U.S. federal contract records; Plasan 9-company dataset. Revenue range is a third-party estimate.</div>
+    <div class="src">מקור: אתר Ametrine הרשמי; רישומי חוזים פדרליים בארה״ב; מאגר תשע החברות של פלסן. טווח ההכנסות — הערכת צד-שלישי.</div>
+    <div class="proj">פלסן סאסא — ניהול חתימה | מיפוי חברות</div>
   </div>
 </section></div>
 
@@ -579,73 +679,71 @@ h1.title { font-size: var(--fs-title); font-weight: 700; color: var(--c-slate); 
 <div class="slide-wrap"><section class="slide" id="s-eltics">
   <div class="hdr">
     <div class="hdr-titles">
-      <div class="kicker">Company Profile · Core Business</div>
-      <h1 class="title">Eltics / Black Fox — active thermal-camouflage know-how; evidence is largely historical, current status unclear</h1>
+      <div class="kicker">פרופיל חברה · ליבת העסק</div>
+      <h1 class="title">Eltics / Black Fox — ידע ייחודי בהסוואה תרמית אקטיבית; העדויות ברובן היסטוריות והסטטוס הנוכחי אינו ברור</h1>
     </div>
     <img class="bdo-logo" src="@@IMG:bdo-logo.png@@" alt="BDO Consulting — Strategy Growth &amp; Innovation">
   </div>
   <table class="snap">
     <colgroup>
-      <col style="width:200px"><col style="width:470px"><col style="width:300px">
-      <col style="width:330px"><col style="width:186px"><col style="width:290px">
+      <col style="width:210px"><col style="width:440px"><col style="width:240px">
+      <col style="width:400px"><col style="width:170px"><col style="width:316px">
     </colgroup>
-    <tr><th>Country</th><th>Main business</th><th>Signature focus</th><th>Ownership</th><th>Employees</th><th>Revenue</th></tr>
+    <tr><th>מדינה</th><th>עיסוק עיקרי</th><th>חשיבות ניהול החתימה</th><th>בעלות</th><th>עובדים</th><th>הכנסות</th></tr>
     <tr>
-      <td>Israel</td>
-      <td>Active thermal signature-management technology</td>
-      <td>Core business</td>
-      <td>Private</td>
-      <td>5</td>
-      <td>No reliable current figure</td>
+      <td>ישראל</td>
+      <td>טכנולוגיית ניהול חתימה תרמית אקטיבית</td>
+      <td>ליבת העסק</td>
+      <td>פרטית</td>
+      <td><span dir="ltr">~5</span></td>
+      <td>אין נתון עדכני מהימן</td>
     </tr>
   </table>
   <div class="profile-main">
-    <div class="pf-products">
-      <div class="sec-bar">Signature-management portfolio</div>
-      <div class="prow">
-        <div><div class="pname">Black Fox</div><div class="ptype">Active / adaptive thermal system</div></div>
-        <div class="pdesc">Controlled surface panels manage the vehicle’s emitted thermal signature in the MWIR and LWIR bands</div>
-      </div>
-      <div class="prow">
-        <div><div class="pname">Demonstrations — context</div><div class="ptype">Land vehicles</div></div>
-        <div class="pdesc">Demonstrated on military vehicles; public evidence is prototype / demonstrator-era rather than current commercial fielding</div>
-      </div>
+    <div class="pf-story">
+      <div class="sec-bar">הסיפור בקצרה</div>
+      <ul class="story">
+        <li>חברה ישראלית קטנה שפיתחה את <b>Black Fox</b> — מערכת הסוואה תרמית <b>אקטיבית</b> לרכב קרבי</li>
+        <li>לוחות שטח מבוקרים מעצבים את החתימה התרמית הנפלטת בתחומי <span dir="ltr">MWIR</span> ו-<span dir="ltr">LWIR</span> — יכולת אקטיבית שקיימת רק בשתי חברות במיפוי</li>
+        <li>הודגמה על כלי רכב צבאיים; העדויות הפומביות הן מעידן האב-טיפוס <span class="dim">(סביב 2012)</span> — לא זוהתה פעילות משמעותית מ-2023 ואילך</li>
+        <li>אין ערוץ מוצר רשמי פעיל; הסטטוס התאגידי והמסחרי הנוכחי אינו ברור</li>
+      </ul>
       <div class="pf-bands">
-        <span class="blbl">Signature domains</span>
+        <span class="blbl">תחומי חתימה</span>
         <span class="band-chip">MWIR</span><span class="band-chip">LWIR</span>
       </div>
-      <div class="pf-bandqual">No radar / RCS capability identified</div>
+      <div class="pf-bandqual">לא זוהתה יכולת מכ״ם / RCS</div>
     </div>
     <div class="pf-imgs">
-      <div class="sec-bar">Product &amp; status</div>
-      <div class="ifig fit">
+      <div class="sec-bar">מוצר וסטטוס</div>
+      <div class="ifig h300">
         <div class="iimg" style="background-image:url('@@IMG:eltics-blackfox-demo.jpg@@')"></div>
-        <div class="icap2"><b>Black Fox demonstrator with active thermal panels; inset: "fake signature" thermal view.</b> Third-party editorial image — Soldier Systems Daily (2012)</div>
+        <div class="icap2"><b>מדגים Black Fox עם לוחות תרמיים אקטיביים; במסגרת: מבט מצלמה תרמית עם "חתימה מזויפת".</b> תמונה מערוץ עיתונאי צד-שלישי — Soldier Systems Daily (2012)</div>
       </div>
-      <div class="pf-note"><div class="nlbl">Status</div>Public product evidence is concentrated around Black Fox and is largely historical — no active official product channel identified; current corporate and commercial status is unclear</div>
+      <div class="pf-note"><div class="nlbl">סטטוס</div>עדויות המוצר הפומביות מתרכזות סביב Black Fox וברובן היסטוריות — לא זוהה ערוץ מוצר רשמי פעיל</div>
     </div>
   </div>
   <div class="pf-evidence">
-    <div class="sec-bar">Commercial evidence</div>
+    <div class="sec-bar">עדות מסחרית</div>
     <div class="ev-tiles">
       <div class="ev-tile">
-        <div class="elbl">DEMONSTRATIONS</div>
-        <div class="etxt">Field demonstrations on military vehicles reported historically</div>
+        <div class="elbl">הדגמות</div>
+        <div class="etxt">הדגמות שדה על רכב צבאי דווחו בעבר</div>
       </div>
       <div class="ev-tile">
-        <div class="elbl">CUSTOMERS</div>
-        <div class="etxt">No fielded customer confirmed</div>
+        <div class="elbl">לקוחות</div>
+        <div class="etxt">אין לקוח מאומת בשטח</div>
       </div>
       <div class="ev-tile">
-        <div class="elbl">RECENT ACTIVITY</div>
-        <div class="etxt">No significant activity identified from 2023 onward</div>
+        <div class="elbl">פעילות אחרונה</div>
+        <div class="etxt">לא זוהתה פעילות משמעותית מ-2023 ואילך</div>
       </div>
     </div>
   </div>
   <div class="ftr">
     <div class="pageno"></div>
-    <div class="proj">Plasan Sasa — Signature Management | Company Landscape</div>
-    <div class="src">Source: Plasan 9-company dataset (historical public reporting). No active official website; product image is third-party editorial (Soldier Systems Daily, 2012).</div>
+    <div class="src">מקור: מאגר תשע החברות של פלסן (דיווח פומבי היסטורי). אין אתר רשמי פעיל; התמונה — ערוץ עיתונאי צד-שלישי (Soldier Systems Daily, 2012).</div>
+    <div class="proj">פלסן סאסא — ניהול חתימה | מיפוי חברות</div>
   </div>
 </section></div>
 
@@ -653,76 +751,77 @@ h1.title { font-size: var(--fs-title); font-weight: 700; color: var(--c-slate); 
 <div class="slide-wrap"><section class="slide" id="s-stg">
   <div class="hdr">
     <div class="hdr-titles">
-      <div class="kicker">Company Profile · Core Business</div>
-      <h1 class="title">STG Defence — fielded thermal concealment for platforms and personnel; customer use is company-stated</h1>
+      <div class="kicker">פרופיל חברה · ליבת העסק</div>
+      <h1 class="title">STG Defence — הסתרה תרמית מבצעית לפלטפורמות וללוחם, עם ולידציה עדכנית משדה הקרב באוקראינה</h1>
     </div>
     <img class="bdo-logo" src="@@IMG:bdo-logo.png@@" alt="BDO Consulting — Strategy Growth &amp; Innovation">
   </div>
   <table class="snap">
     <colgroup>
-      <col style="width:200px"><col style="width:470px"><col style="width:300px">
-      <col style="width:330px"><col style="width:186px"><col style="width:290px">
+      <col style="width:210px"><col style="width:440px"><col style="width:240px">
+      <col style="width:400px"><col style="width:170px"><col style="width:316px">
     </colgroup>
-    <tr><th>Country</th><th>Main business</th><th>Signature focus</th><th>Ownership</th><th>Employees</th><th>Revenue</th></tr>
+    <tr><th>מדינה</th><th>עיסוק עיקרי</th><th>חשיבות ניהול החתימה</th><th>בעלות</th><th>עובדים</th><th>הכנסות</th></tr>
     <tr>
-      <td>Ukraine</td>
-      <td>Camouflage &amp; protection against thermal and night-vision detection</td>
-      <td>Core business</td>
-      <td>Private — ownership not publicly disclosed</td>
-      <td>51–200</td>
-      <td>No reliable public figure</td>
+      <td>אוקראינה</td>
+      <td>הסוואה והגנה מפני גילוי תרמי וראיית לילה</td>
+      <td>ליבת העסק</td>
+      <td>פרטית — הבעלות לא פורסמה</td>
+      <td><span dir="ltr">51–200</span></td>
+      <td>אין נתון פומבי מהימן</td>
     </tr>
   </table>
   <div class="profile-main">
-    <div class="pf-products">
-      <div class="sec-bar">Signature-management portfolio</div>
-      <div class="prow">
-        <div><div class="pname">Thermal Signature Equipment Shelter</div><div class="ptype">Nets &amp; covers — flagship for platforms</div></div>
-        <div class="pdesc">Rapid concealment for vehicles, armored platforms, artillery and command / equipment positions</div>
-      </div>
-      <div class="prow">
-        <div><div class="pname">Thermal Signature Poncho / Suit</div><div class="ptype">Personnel</div></div>
-        <div class="pdesc">Personnel thermal-concealment systems; the poncho was launched and demonstrated in 2025</div>
-      </div>
+    <div class="pf-story">
+      <div class="sec-bar">הסיפור בקצרה</div>
+      <ul class="story">
+        <li>חברה אוקראינית המתמחה בבדים ובמערכות הגנה מפני גילוי תרמי ואמצעי ראיית לילה — עם שימוש מבצעי שוטף בעימות הנוכחי</li>
+        <li><b>Thermal Signature Equipment Shelter</b> — הסתרה מהירה לרכב, רק״ם, ארטילריה ועמדות; ב-2025 הושק גם פונצ׳ו הסתרה תרמית ללוחם</li>
+        <li>כיסוי ספקטרלי רחב במיפוי: <span dir="ltr">NIR</span>, <span dir="ltr">SWIR</span>, <span dir="ltr">MWIR</span> ו-<span dir="ltr">LWIR</span>; הפחתה הקשורה למכ״ם מתועדת בעיקר בפתרונות תעופה / האנגרים</li>
+        <li>לקוחות <span class="dim">(בדיווח החברה)</span>: הכוחות המזוינים של אוקראינה, כולל כוחות מיוחדים</li>
+        <li>רלוונטיות לפלסן: ולידציה מבצעית עדכנית בעימות בעצימות גבוהה, בתוך הגיאוגרפיה שהוגדרה (מזרח אירופה)</li>
+      </ul>
       <div class="pf-bands">
-        <span class="blbl">Signature domains</span>
+        <span class="blbl">תחומי חתימה</span>
         <span class="band-chip">NIR / SWIR</span><span class="band-chip">MWIR / LWIR</span>
       </div>
-      <div class="pf-bandqual">Radar-related reduction documented mainly in aviation / hangar solutions — not extended to every shelter product</div>
+      <div class="pf-bandqual">מכ״ם — מתועד בעיקר בקווי תעופה / האנגרים; אינו מורחב לכל מוצרי ההסתרה</div>
     </div>
     <div class="pf-imgs">
-      <div class="sec-bar">Product &amp; application</div>
-      <div class="ifig">
-        <div class="iimg" style="background-image:url('@@IMG:stg-equipment-shelter.jpg@@')"></div>
-        <div class="icap2"><b>Thermal Signature Equipment Shelter.</b> Source: stg-defence.com — equipment-shelter page</div>
-      </div>
-      <div class="ifig">
-        <div class="iimg" style="background-image:url('@@IMG:stg-thermal-view.jpg@@')"></div>
-        <div class="icap2"><b>Thermal-imager view of a concealed vehicle.</b> Source: stg-defence.com — equipment-shelter page</div>
+      <div class="sec-bar">מוצר ויישום</div>
+      <div class="figrow">
+        <div class="ifig">
+          <div class="iimg" style="background-image:url('@@IMG:stg-equipment-shelter.jpg@@')"></div>
+          <div class="icap2"><b>Thermal Signature Equipment Shelter.</b> מקור: <span dir="ltr" style="white-space:nowrap">stg-defence.com</span></div>
+        </div>
+        <div class="ifig">
+          <div class="iimg" style="background-image:url('@@IMG:stg-thermal-view.jpg@@')"></div>
+          <div class="icap2"><b>מבט מצלמה תרמית על רכב מוסתר.</b> מקור: <span dir="ltr" style="white-space:nowrap">stg-defence.com</span></div>
+        </div>
       </div>
     </div>
   </div>
   <div class="pf-evidence">
-    <div class="sec-bar">Commercial evidence</div>
+    <div class="sec-bar">עדות מסחרית</div>
     <div class="ev-tiles">
       <div class="ev-tile">
-        <div class="elbl">CUSTOMERS (COMPANY-STATED)</div>
-        <div class="etxt"><b>Armed Forces of Ukraine</b>, including Special Operations Forces</div>
+        <div class="elbl">לקוחות (בדיווח החברה)</div>
+        <div class="etxt"><b>הכוחות המזוינים של אוקראינה</b>, כולל כוחות מיוחדים</div>
       </div>
       <div class="ev-tile">
-        <div class="elbl">2025 — PRODUCT LAUNCH</div>
-        <div class="etxt"><b>Thermal Signature Poncho</b> launched and demonstrated</div>
+        <div class="elbl">2025 — השקת מוצר</div>
+        <div class="etxt"><b>פונצ׳ו החתימה התרמית</b> הושק והודגם</div>
       </div>
       <div class="ev-tile">
-        <div class="elbl">PROGRAM VISIBILITY</div>
-        <div class="etxt">No major named vehicle procurement program identified in the public evidence reviewed</div>
+        <div class="elbl">נראות תוכניתית</div>
+        <div class="etxt">לא זוהתה תוכנית רכש רכב גדולה בשם בעדויות הפומביות שנסקרו</div>
       </div>
     </div>
   </div>
   <div class="ftr">
     <div class="pageno"></div>
-    <div class="proj">Plasan Sasa — Signature Management | Company Landscape</div>
-    <div class="src">Source: STG Defence official website; Plasan 9-company dataset. Customer use is company-stated.</div>
+    <div class="src">מקור: אתר STG Defence הרשמי; מאגר תשע החברות של פלסן. השימוש אצל הלקוח — בדיווח החברה.</div>
+    <div class="proj">פלסן סאסא — ניהול חתימה | מיפוי חברות</div>
   </div>
 </section></div>
 
@@ -730,80 +829,77 @@ h1.title { font-size: var(--fs-title); font-weight: 700; color: var(--c-slate); 
 <div class="slide-wrap"><section class="slide" id="s-sterlite">
   <div class="hdr">
     <div class="hdr-titles">
-      <div class="kicker">Company Profile · Core Business</div>
-      <h1 class="title">Sterlite Camotech — a broad passive camouflage portfolio with company-stated supply experience across Indian forces</h1>
+      <div class="kicker">פרופיל חברה · ליבת העסק</div>
+      <h1 class="title">Sterlite Camotech — פורטפוליו הסוואה פסיבית רחב וניסיון אספקה מדווח לזרועות הביטחון בהודו</h1>
     </div>
     <img class="bdo-logo" src="@@IMG:bdo-logo.png@@" alt="BDO Consulting — Strategy Growth &amp; Innovation">
   </div>
   <table class="snap">
     <colgroup>
-      <col style="width:200px"><col style="width:470px"><col style="width:300px">
-      <col style="width:330px"><col style="width:186px"><col style="width:290px">
+      <col style="width:210px"><col style="width:440px"><col style="width:240px">
+      <col style="width:400px"><col style="width:170px"><col style="width:316px">
     </colgroup>
-    <tr><th>Country</th><th>Main business</th><th>Signature focus</th><th>Ownership</th><th>Employees</th><th>Revenue</th></tr>
+    <tr><th>מדינה</th><th>עיסוק עיקרי</th><th>חשיבות ניהול החתימה</th><th>בעלות</th><th>עובדים</th><th>הכנסות</th></tr>
     <tr>
-      <td>India</td>
-      <td>Military camouflage equipment — nets, mobile systems, paints</td>
-      <td>Core business</td>
-      <td>Private / proprietorship</td>
-      <td>26–50</td>
-      <td>No reliable public figure</td>
+      <td>הודו</td>
+      <td>ציוד הסוואה צבאי — רשתות, מערכות רכב וצבעים</td>
+      <td>ליבת העסק</td>
+      <td>פרטית</td>
+      <td><span dir="ltr">26–50</span></td>
+      <td>אין נתון פומבי מהימן</td>
     </tr>
   </table>
   <div class="profile-main">
-    <div class="pf-products">
-      <div class="sec-bar">Signature-management portfolio</div>
-      <div class="prow">
-        <div><div class="pname">MSCN camouflage nets</div><div class="ptype">Multispectral Camouflage Nets — flagship</div></div>
-        <div class="pdesc">Multispectral concealment nets for military equipment and positions</div>
-      </div>
-      <div class="prow">
-        <div><div class="pname">MCS mobile camouflage</div><div class="ptype">Mobile Camouflage System — vehicle-fitted</div></div>
-        <div class="pdesc">Platform-fitted mobile camouflage for vehicles</div>
-      </div>
-      <div class="prow">
-        <div><div class="pname">Infrared Camouflage Paints</div><div class="ptype">Coatings</div></div>
-        <div class="pdesc">IR-reflective paints adding surface-treatment capability; further products broaden the portfolio</div>
-      </div>
+    <div class="pf-story">
+      <div class="sec-bar">הסיפור בקצרה</div>
+      <ul class="story">
+        <li>יצרנית הודית של ציוד הסוואה צבאי <span class="dim">(הוקמה 2016, פרידאבאד)</span> — רשתות, מערכות רכב וצבעים</li>
+        <li>רשתות <b>MSCN</b> רב-ספקטרליות — מוצר הדגל; <b>MCS</b> — הסוואה ניידת מותקנת-פלטפורמה; וצבעי הסוואה <span dir="ltr">IR</span></li>
+        <li>כיסוי אופטי, <span dir="ltr">NIR</span> ותרמי; יכולת מכ״ם — טענת חברה שלא אומתה עצמאית</li>
+        <li>לקוחות <span class="dim">(בדיווח החברה)</span>: חיל האוויר והצבא ההודי, כוחות משמר ומתקני <span dir="ltr">DRDO</span>; ייצוא מדווח לבריטניה, מלזיה ומצרים</li>
+        <li>ב-2025 השתתפה ברכש של הצבא ההודי לרשתות רב-ספקטרליות — זכייה והיקף לא פורסמו</li>
+      </ul>
       <div class="pf-bands">
-        <span class="blbl">Signature domains</span>
-        <span class="band-chip">Visual</span><span class="band-chip">NIR</span><span class="band-chip">Thermal IR</span>
+        <span class="blbl">תחומי חתימה</span>
+        <span class="band-chip">אופטי (VIS)</span><span class="band-chip">NIR</span><span class="band-chip">תרמי (IR)</span>
       </div>
-      <div class="pf-bandqual">Radar coverage is company-claimed, not independently confirmed</div>
+      <div class="pf-bandqual">מכ״ם — טענת חברה, לא אומתה עצמאית; תת-התחום התרמי אינו מפורט</div>
     </div>
     <div class="pf-imgs">
-      <div class="sec-bar">Product &amp; application</div>
-      <div class="ifig">
-        <div class="iimg" style="background-image:url('@@IMG:sterlite-mscn-net.jpg@@')"></div>
-        <div class="icap2"><b>Multispectral camouflage net — MSCN.</b> Source: sterlitecamotech.com — products</div>
-      </div>
-      <div class="ifig">
-        <div class="iimg" style="background-image:url('@@IMG:sterlite-paint-application.jpg@@')"></div>
-        <div class="icap2"><b>Camouflage-paint application.</b> Source: sterlitecamotech.com — products</div>
+      <div class="sec-bar">מוצר ויישום</div>
+      <div class="figrow">
+        <div class="ifig">
+          <div class="iimg" style="background-image:url('@@IMG:sterlite-mscn-net.jpg@@')"></div>
+          <div class="icap2"><b>רשת הסוואה רב-ספקטרלית — MSCN.</b> מקור: <span dir="ltr" style="white-space:nowrap">sterlitecamotech.com</span></div>
+        </div>
+        <div class="ifig">
+          <div class="iimg" style="background-image:url('@@IMG:sterlite-paint-application.jpg@@')"></div>
+          <div class="icap2"><b>יישום צבע הסוואה.</b> מקור: <span dir="ltr" style="white-space:nowrap">sterlitecamotech.com</span></div>
+        </div>
       </div>
     </div>
   </div>
   <div class="pf-evidence">
-    <div class="sec-bar">Commercial evidence</div>
+    <div class="sec-bar">עדות מסחרית</div>
     <div class="ev-tiles">
       <div class="ev-tile">
-        <div class="elbl">CUSTOMERS (COMPANY-STATED)</div>
-        <div class="etxt"><b>Indian Air Force, Indian Army</b>, paramilitary forces and DRDO establishments</div>
+        <div class="elbl">לקוחות (בדיווח החברה)</div>
+        <div class="etxt"><b>חיל האוויר והצבא בהודו</b>, כוחות משמר ומתקני <span dir="ltr">DRDO</span></div>
       </div>
       <div class="ev-tile">
-        <div class="elbl">2025 — PROCUREMENT</div>
-        <div class="etxt">Participated in Indian Army procurement for multispectral camouflage nets; award / value not publicly established</div>
+        <div class="elbl">2025 — רכש</div>
+        <div class="etxt">השתתפות ברכש הצבא ההודי לרשתות רב-ספקטרליות; זכייה / היקף לא פורסמו</div>
       </div>
       <div class="ev-tile">
-        <div class="elbl">2024 — DOCUMENTATION</div>
-        <div class="etxt">Company brochure documents defence supply experience</div>
+        <div class="elbl">2024 — תיעוד</div>
+        <div class="etxt">חוברת החברה מתעדת ניסיון אספקה ביטחוני</div>
       </div>
     </div>
   </div>
   <div class="ftr">
     <div class="pageno"></div>
-    <div class="proj">Plasan Sasa — Signature Management | Company Landscape</div>
-    <div class="src">Source: Sterlite Camotech official website and brochure; Plasan 9-company dataset. Revenue omitted — public estimates conflict.</div>
+    <div class="src">מקור: אתר Sterlite Camotech וחוברת החברה; מאגר תשע החברות של פלסן. הכנסות הושמטו — אומדנים פומביים סותרים.</div>
+    <div class="proj">פלסן סאסא — ניהול חתימה | מיפוי חברות</div>
   </div>
 </section></div>
 
@@ -811,162 +907,155 @@ h1.title { font-size: var(--fs-title); font-weight: 700; color: var(--c-slate); 
 <div class="slide-wrap"><section class="slide" id="s-amd">
   <div class="hdr">
     <div class="hdr-titles">
-      <div class="kicker">Company Profile · Major Business Line</div>
-      <h1 class="title">Advanced Material Development — adaptive IR and <span style="white-space:nowrap">radar-signature</span> materials in defence trials, not yet fielded</h1>
+      <div class="kicker">פרופיל חברה · קו עסקי מרכזי</div>
+      <h1 class="title">Advanced Material Development — חומרים אדפטיביים לחתימת IR ומכ״ם בשלב ניסויים ביטחוניים; טרם בפריסה</h1>
     </div>
     <img class="bdo-logo" src="@@IMG:bdo-logo.png@@" alt="BDO Consulting — Strategy Growth &amp; Innovation">
   </div>
   <table class="snap">
     <colgroup>
-      <col style="width:200px"><col style="width:470px"><col style="width:300px">
-      <col style="width:330px"><col style="width:186px"><col style="width:290px">
+      <col style="width:210px"><col style="width:440px"><col style="width:240px">
+      <col style="width:400px"><col style="width:170px"><col style="width:316px">
     </colgroup>
-    <tr><th>Country</th><th>Main business</th><th>Signature focus</th><th>Ownership</th><th>Employees</th><th>Revenue</th></tr>
+    <tr><th>מדינה</th><th>עיסוק עיקרי</th><th>חשיבות ניהול החתימה</th><th>בעלות</th><th>עובדים</th><th>הכנסות</th></tr>
     <tr>
-      <td>US / UK</td>
-      <td>Nanomaterials &amp; advanced coatings — defence is one of several markets</td>
-      <td>Major business line</td>
-      <td>Private — AMD Ltd (UK); U.S. arm AMD Inc.</td>
-      <td>2–10</td>
-      <td>No reliable public figure</td>
+      <td>ארה״ב / בריטניה</td>
+      <td>ננו-חומרים וציפויים מתקדמים — הביטחון הוא אחד מכמה שווקים</td>
+      <td>קו עסקי מרכזי</td>
+      <td>פרטית — <span dir="ltr">AMD Ltd</span> (בריטניה); <span dir="ltr">AMD Inc.</span> (ארה״ב)</td>
+      <td><span dir="ltr">~15</span></td>
+      <td>אין נתון פומבי מהימן</td>
     </tr>
   </table>
   <div class="profile-main">
-    <div class="pf-products">
-      <div class="sec-bar">Signature-management portfolio</div>
-      <div class="prow">
-        <div><div class="pname">CHAM-NIR</div><div class="ptype">Adaptive coating</div></div>
-        <div class="pdesc">Adaptive near-infrared signature-management coating / system</div>
-      </div>
-      <div class="prow">
-        <div><div class="pname">ChamIR</div><div class="ptype">Coating</div></div>
-        <div class="pdesc">Infrared / thermal signature control</div>
-      </div>
-      <div class="prow">
-        <div><div class="pname">ChamEM</div><div class="ptype">RAM / advanced materials</div></div>
-        <div class="pdesc">Electromagnetic / radar-signature reduction using advanced materials — a genuine radar application, not generic EMI shielding</div>
-      </div>
+    <div class="pf-story">
+      <div class="sec-bar">הסיפור בקצרה</div>
+      <ul class="story">
+        <li>חברת ננו-חומרים בריטית שצמחה מאוניברסיטת סאסקס, עם זרוע ביטחונית אמריקאית שהושקה ב-2025</li>
+        <li>משפחת <span dir="ltr">Cham</span>: ציפוי אדפטיבי <b>CHAM-NIR</b>, בקרת חתימה תרמית <b>ChamIR</b>, וחומרי <b>ChamEM</b> להפחתת חתימת מכ״ם — יישום מכ״ם אמיתי, לא סיכוך <span dir="ltr">EMI</span></li>
+        <li>נבחנה במסגרות אמריקאיות: פעילות <span dir="ltr">FCT</span> של צבא ארה״ב / <span dir="ltr">OSD</span> בזיקה ל-<span dir="ltr">ChamEM</span>; ניסויי <span dir="ltr">NPS JIFX 25-4</span> לציפויים אדפטיביים <span class="dim">(2025)</span></li>
+        <li>שלב בשלות: פיתוח / ניסויים — לא זוהתה פריסה רחבה בשטח</li>
+        <li>צוות קטן <span class="dim">(כ-15 עובדים)</span> — פורטפוליו חוצה-תחומים שטרם הוצג כמערכת משולבת אחת</li>
+      </ul>
       <div class="pf-bands">
-        <span class="blbl">Signature domains</span>
-        <span class="band-chip">NIR / MIR</span><span class="band-chip">Thermal IR</span><span class="band-chip">Radar / EM</span>
+        <span class="blbl">תחומי חתימה</span>
+        <span class="band-chip">NIR / MWIR</span><span class="band-chip">תרמי (IR)</span><span class="band-chip">מכ״ם / EM</span>
       </div>
-      <div class="pf-bandqual">Cross-domain portfolio; not yet shown as one integrated fielded system</div>
+      <div class="pf-bandqual">המקורות מציינים "NIR / MIR"; הפורטפוליו טרם נפרס כמערכת אחת</div>
     </div>
     <div class="pf-imgs">
-      <div class="sec-bar">Product &amp; application</div>
-      <div class="ifig tall">
+      <div class="sec-bar">מוצר ויישום</div>
+      <div class="ifig">
         <div class="iimg" style="background-image:url('@@IMG:amd-chamir-news.jpg@@')"></div>
-        <div class="icap2"><b>ChamIR patent announcement — official news imagery.</b> Source: amdnano-usa.com — news</div>
+        <div class="icap2"><b>הודעת הפטנט של ChamIR — תמונת החדשות הרשמית.</b> מקור: <span dir="ltr" style="white-space:nowrap">amdnano-usa.com</span> — חדשות</div>
       </div>
     </div>
   </div>
   <div class="pf-evidence">
-    <div class="sec-bar">Commercial evidence</div>
+    <div class="sec-bar">עדות מסחרית</div>
     <div class="ev-tiles">
       <div class="ev-tile">
-        <div class="elbl">TRIALS &amp; VALIDATION</div>
-        <div class="etxt">U.S. Army / OSD Foreign Comparative Testing associated with <b>ChamEM</b>; NPS JIFX 25-4 testing of adaptive NIR / MIR coatings (2025)</div>
+        <div class="elbl">ניסויים ואימות</div>
+        <div class="etxt">פעילות <span dir="ltr">FCT</span> של צבא ארה״ב / <span dir="ltr">OSD</span> בזיקה ל-<b>ChamEM</b>; ניסויי <span dir="ltr">NPS JIFX 25-4</span> לציפויים אדפטיביים (2025)</div>
       </div>
       <div class="ev-tile">
-        <div class="elbl">2025 — U.S. FOOTPRINT</div>
-        <div class="etxt">U.S. defence subsidiary launched — strengthens access to U.S. programs; not itself a customer order</div>
+        <div class="elbl">2025 — דריסת רגל בארה״ב</div>
+        <div class="etxt">הושקה חברת-בת ביטחונית אמריקאית — מחזקת גישה לתוכניות; אינה כשלעצמה הזמנת לקוח</div>
       </div>
       <div class="ev-tile">
-        <div class="elbl">MATURITY</div>
-        <div class="etxt">Development / trials stage; no broad field deployment identified</div>
+        <div class="elbl">בשלות</div>
+        <div class="etxt">שלב פיתוח / ניסויים; לא זוהתה פריסה רחבה בשטח</div>
       </div>
     </div>
   </div>
   <div class="ftr">
     <div class="pageno"></div>
-    <div class="proj">Plasan Sasa — Signature Management | Company Landscape</div>
-    <div class="src">Source: AMD official website; NPS JIFX documentation; Plasan 9-company dataset.</div>
+    <div class="src">מקור: אתר AMD הרשמי; תיעוד NPS JIFX; מאגרי חברות חיצוניים (מצבת עובדים); מאגר תשע החברות של פלסן.</div>
+    <div class="proj">פלסן סאסא — ניהול חתימה | מיפוי חברות</div>
   </div>
 </section></div>
 
 <!-- ================= SLIDE : PROFILE CBG SYSTEMS ================= -->
-<div class="slide-wrap"><section class="slide" id="s3">
+<div class="slide-wrap"><section class="slide" id="s-cbg">
   <div class="hdr">
     <div class="hdr-titles">
-      <div class="kicker">Company Profile · Major Business Line</div>
-      <h1 class="title">CBG Systems — a fielded multispectral vehicle-camouflage system inside a broader marine &amp; protection business</h1>
+      <div class="kicker">פרופיל חברה · קו עסקי מרכזי</div>
+      <h1 class="title">CBG Systems — מערכת הסוואת רכב רב-ספקטרלית עם זכייה תוכניתית, בתוך עסק ימי-ביטחוני רחב</h1>
     </div>
     <img class="bdo-logo" src="@@IMG:bdo-logo.png@@" alt="BDO Consulting — Strategy Growth &amp; Innovation">
   </div>
 
   <table class="snap">
     <colgroup>
-      <col style="width:200px"><col style="width:470px"><col style="width:300px">
-      <col style="width:330px"><col style="width:186px"><col style="width:290px">
+      <col style="width:210px"><col style="width:440px"><col style="width:240px">
+      <col style="width:400px"><col style="width:170px"><col style="width:316px">
     </colgroup>
-    <tr><th>Country</th><th>Main business</th><th>Signature focus</th><th>Ownership</th><th>Employees</th><th>Revenue</th></tr>
+    <tr><th>מדינה</th><th>עיסוק עיקרי</th><th>חשיבות ניהול החתימה</th><th>בעלות</th><th>עובדים</th><th>הכנסות</th></tr>
     <tr>
-      <td>Australia</td>
-      <td>Marine insulation, fire/protection systems &amp; defence signature management</td>
-      <td>Major business line</td>
-      <td>Private — CBG Systems Pty&nbsp;Ltd</td>
-      <td>11–50</td>
-      <td>≈$6M <span class="q">(third-party estimate)</span></td>
+      <td>אוסטרליה</td>
+      <td>בידוד ימי, מערכות הגנה מאש וניהול חתימה ביטחוני</td>
+      <td>קו עסקי מרכזי</td>
+      <td>פרטית — <span dir="ltr">CBG Systems Pty Ltd</span></td>
+      <td><span dir="ltr">~20</span></td>
+      <td><span dir="ltr">≈$6M</span> <span class="q">(הערכת צד-שלישי)</span></td>
     </tr>
   </table>
 
   <div class="profile-main">
-    <div class="pf-products">
-      <div class="sec-bar">Signature-management portfolio</div>
-      <div class="prow">
-        <div><div class="pname">SolarSigmaShield</div><div class="ptype">Vehicle camouflage system — flagship</div></div>
-        <div class="pdesc">Tailored, layered multispectral camouflage for military platforms — reduces visual / optical, thermal-IR and radar signatures in one integrated vehicle solution</div>
-      </div>
-      <div class="prow">
-        <div><div class="pname">Multispectral Net System</div><div class="ptype">Nets &amp; covers</div></div>
-        <div class="pdesc">Deployable multispectral concealment for equipment and platforms</div>
-      </div>
-      <div class="prow">
-        <div><div class="pname">Individual Camouflage System</div><div class="ptype">Personnel — secondary</div></div>
-        <div class="pdesc">Personal concealment; secondary to the vehicle / platform portfolio</div>
-      </div>
+    <div class="pf-story">
+      <div class="sec-bar">הסיפור בקצרה</div>
+      <ul class="story">
+        <li>חברה אוסטרלית ותיקה <span class="dim">(40+ שנים; הובארט ואדלייד)</span> — בידוד ימי ומערכות הגנה מאש, עם ניהול חתימה כקו עסקי ייעודי</li>
+        <li><b>SolarSigmaShield</b> — הסוואת פלטפורמה רב-שכבתית מותאמת: אופטי, תרמי ומכ״ם בפתרון רכב משולב אחד; לצדה רשתות רב-ספקטרליות ומערכת ללוחם</li>
+        <li>2024 — נבחרה לספק את המערכת עבור ה-<b>Redback IFV</b> בתוכנית <span dir="ltr">LAND 400 Phase 3</span>; הלקוח: <span dir="ltr">Hanwha Defence Australia</span></li>
+        <li>זיקה תוכניתית נוספת: התותחים המתנייעים <span dir="ltr">AS9 / AS10</span> בתוכנית <span dir="ltr">LAND 8116</span></li>
+        <li>צוות קטן <span class="dim">(כ-20 עובדים; מכירות ≈$6M בהערכת צד-שלישי)</span> — יכולת תוכניתית גבוהה ביחס לגודל</li>
+      </ul>
       <div class="pf-bands">
-        <span class="blbl">Signature domains</span>
-        <span class="band-chip">Visual / Optical</span>
-        <span class="band-chip">Thermal IR</span>
-        <span class="band-chip">Radar</span>
+        <span class="blbl">תחומי חתימה</span>
+        <span class="band-chip">אופטי (VIS)</span>
+        <span class="band-chip">תרמי (IR)</span>
+        <span class="band-chip">מכ״ם</span>
       </div>
+      <div class="pf-bandqual">תת-התחום התרמי אינו מפורט במקורות</div>
     </div>
     <div class="pf-imgs">
-      <div class="sec-bar">Product &amp; application</div>
-      <div class="ifig">
-        <div class="iimg" style="background-image:url('@@IMG:cbg-redback-solarsigmashield.jpg@@')"></div>
-        <div class="icap2"><b>Redback IFV with SolarSigmaShield MCS.</b> Source: cbgsystems.com — LAND 400 Phase 3 announcement</div>
-      </div>
-      <div class="ifig">
-        <div class="iimg" style="background-image:url('@@IMG:cbg-solarsigmashield-vehicle.jpg@@')"></div>
-        <div class="icap2"><b>SolarSigmaShield on vehicle.</b> Source: cbgsystems.com — Mobile Camouflage</div>
+      <div class="sec-bar">מוצר ויישום</div>
+      <div class="figrow">
+        <div class="ifig">
+          <div class="iimg" style="background-image:url('@@IMG:cbg-redback-solarsigmashield.jpg@@')"></div>
+          <div class="icap2"><b>Redback IFV עם SolarSigmaShield MCS.</b> מקור: <span dir="ltr" style="white-space:nowrap">cbgsystems.com</span> — הודעת LAND 400 Phase 3</div>
+        </div>
+        <div class="ifig">
+          <div class="iimg" style="background-image:url('@@IMG:cbg-solarsigmashield-vehicle.jpg@@')"></div>
+          <div class="icap2"><b>SolarSigmaShield על רכב.</b> מקור: <span dir="ltr" style="white-space:nowrap">cbgsystems.com</span> — Mobile Camouflage</div>
+        </div>
       </div>
     </div>
   </div>
 
   <div class="pf-evidence">
-    <div class="sec-bar">Commercial evidence</div>
+    <div class="sec-bar">עדות מסחרית</div>
     <div class="ev-tiles">
       <div class="ev-tile">
-        <div class="elbl">2024 — LAND 400 PHASE 3</div>
-        <div class="etxt">Contracted to supply <b>SolarSigmaShield</b> for the <b>Redback IFV</b> — named customer, major armored-vehicle program</div>
+        <div class="elbl">2024 — LAND 400 Phase 3</div>
+        <div class="etxt">נבחרה לספק <b>SolarSigmaShield</b> עבור ה-<b>Redback IFV</b> — לקוח בשם, תוכנית רק״ם מרכזית</div>
       </div>
       <div class="ev-tile">
-        <div class="elbl">CUSTOMER</div>
-        <div class="etxt"><b>Hanwha Defence Australia</b> — named customer for the Redback IFV under LAND 400 Phase 3</div>
+        <div class="elbl">לקוח</div>
+        <div class="etxt"><b><span dir="ltr">Hanwha Defence Australia</span></b> — הלקוח בתוכנית <span dir="ltr">LAND 400 Phase 3</span></div>
       </div>
       <div class="ev-tile">
-        <div class="elbl">FURTHER PROGRAM ASSOCIATION</div>
-        <div class="etxt">Associated with Australia's <b>AS9 / AS10</b> vehicles under <b>LAND 8116</b></div>
+        <div class="elbl">זיקה תוכניתית נוספת</div>
+        <div class="etxt">נקשרה לתותחים המתנייעים <span dir="ltr">AS9 / AS10</span> בתוכנית <span dir="ltr">LAND 8116</span></div>
       </div>
     </div>
   </div>
 
   <div class="ftr">
     <div class="pageno"></div>
-    <div class="proj">Plasan Sasa — Signature Management | Company Landscape</div>
-    <div class="src">Source: CBG Systems official website (Signature Management; LAND 400 Phase 3 announcement). Revenue is a third-party estimate, not company-reported.</div>
+    <div class="src">מקור: אתר CBG Systems הרשמי (ניהול חתימה; הודעת LAND 400 Phase 3). ההכנסות — הערכת צד-שלישי, לא דיווח חברה.</div>
+    <div class="proj">פלסן סאסא — ניהול חתימה | מיפוי חברות</div>
   </div>
 </section></div>
 
@@ -974,76 +1063,77 @@ h1.title { font-size: var(--fs-title); font-weight: 700; color: var(--c-slate); 
 <div class="slide-wrap"><section class="slide" id="s-ravelin">
   <div class="hdr">
     <div class="hdr-titles">
-      <div class="kicker">Company Profile · Major Business Line</div>
-      <h1 class="title">Ravelin Defense — signature management retained as a dedicated unit inside a scaled U.S. survivability group</h1>
+      <div class="kicker">פרופיל חברה · קו עסקי מרכזי</div>
+      <h1 class="title">Ravelin Defense — ניהול חתימה כיחידה ייעודית בקבוצת שרידות אמריקאית שהשלימה איחוד ב-2026</h1>
     </div>
     <img class="bdo-logo" src="@@IMG:bdo-logo.png@@" alt="BDO Consulting — Strategy Growth &amp; Innovation">
   </div>
   <table class="snap">
     <colgroup>
-      <col style="width:200px"><col style="width:470px"><col style="width:300px">
-      <col style="width:330px"><col style="width:186px"><col style="width:290px">
+      <col style="width:210px"><col style="width:440px"><col style="width:240px">
+      <col style="width:400px"><col style="width:170px"><col style="width:316px">
     </colgroup>
-    <tr><th>Country</th><th>Main business</th><th>Signature focus</th><th>Ownership</th><th>Employees</th><th>Revenue</th></tr>
+    <tr><th>מדינה</th><th>עיסוק עיקרי</th><th>חשיבות ניהול החתימה</th><th>בעלות</th><th>עובדים</th><th>הכנסות</th></tr>
     <tr>
-      <td>United States</td>
-      <td>Defence survivability — armor, seating, signature management, metal fabrication</td>
-      <td>Major business line</td>
-      <td>Littlejohn Capital portfolio company</td>
-      <td>201–500</td>
-      <td>Unverified post-integration</td>
+      <td>ארה״ב</td>
+      <td>שרידות ביטחונית — מיגון, ישיבה ממוגנת, ניהול חתימה וייצור מתכת</td>
+      <td>קו עסקי מרכזי</td>
+      <td>חברת פורטפוליו של <span dir="ltr">Littlejohn Capital</span></td>
+      <td><span dir="ltr">201–500</span></td>
+      <td>לא מאומת לאחר האיחוד</td>
     </tr>
   </table>
   <div class="profile-main">
-    <div class="pf-products">
-      <div class="sec-bar">Signature-management portfolio</div>
-      <div class="prow">
-        <div><div class="pname">TactiCam™</div><div class="ptype">Vehicle camouflage system — flagship</div></div>
-        <div class="pdesc">Durable 3D vehicle camouflage / signature-management system for land platforms, positioned as multispectral with visual / IR relevance</div>
-      </div>
-      <div class="prow">
-        <div><div class="pname">Radar Reduction Shrouds</div><div class="ptype">Radar signature products</div></div>
-        <div class="pdesc">Signature-management products intended to reduce platform radar detectability</div>
-      </div>
+    <div class="pf-story">
+      <div class="sec-bar">הסיפור בקצרה</div>
+      <ul class="story">
+        <li>נוצרה מאיחוד <b>ArmorWorks</b> — שלושה עשורים של פתרונות שרידות <span class="dim">(מיגון, הגנת צוות, שיכוך הדף)</span> — ו-<b><span dir="ltr" style="white-space:nowrap">Fox Valley Metal Tech</span></b>, יצרנית מתכת מדויקת לתוכניות הצי האמריקאי</li>
+        <li><span dir="ltr">Littlejohn Capital</span> רכשה את ArmorWorks בדצמבר 2014; ArmorWorks רכשה את FVMT ב-2024; ביוני 2026 אוחדו החברות תחת המותג <b>Ravelin Defense</b></li>
+        <li>ניהול החתימה נשמר כיחידה עסקית ייעודית: <b><span dir="ltr">TactiCam™</span></b> — הסוואת רכב תלת-ממדית עמידה, ולצדה כיסויים להפחתת חתימת מכ״ם</li>
+        <li>TactiCam הודגמה על פלטפורמות רכב של <span dir="ltr">General Dynamics</span>; בסיס הלקוחות הרחב כולל את צבא ארה״ב וקבלניות-על — לא כולו מיוחס לניהול חתימה</li>
+        <li>הכנסות לאחר האיחוד טרם דווחו; נתון ArmorWorks ההיסטורי אינו מיוחס ל-Ravelin</li>
+      </ul>
       <div class="pf-bands">
-        <span class="blbl">Signature domains</span>
-        <span class="band-chip">Visual / IR</span><span class="band-chip">Radar</span>
+        <span class="blbl">תחומי חתימה</span>
+        <span class="band-chip">VIS / IR</span><span class="band-chip">מכ״ם</span>
       </div>
-      <div class="pf-bandqual">Exact spectral bands not fully disclosed publicly</div>
+      <div class="pf-bandqual">התחומים הספקטרליים המדויקים אינם מפורטים פומבית</div>
     </div>
     <div class="pf-imgs">
-      <div class="sec-bar">Product &amp; application</div>
-      <div class="ifig">
-        <div class="iimg" style="background-image:url('@@IMG:ravelin-tacticam-hmmwv.jpg@@')"></div>
-        <div class="icap2"><b>TactiCam™ desert scheme on a HMMWV.</b> Source: ravelindefense.com — Signature Management</div>
-      </div>
-      <div class="ifig">
-        <div class="iimg" style="background-image:url('@@IMG:ravelin-tacticam-closeup.jpg@@')"></div>
-        <div class="icap2"><b>TactiCam™ 3D surface, close-up (AUSA 2025).</b> Source: ravelindefense.com — Signature Management</div>
+      <div class="sec-bar">מוצר ויישום</div>
+      <div class="figrow">
+        <div class="ifig">
+          <div class="iimg" style="background-image:url('@@IMG:ravelin-tacticam-hmmwv.jpg@@')"></div>
+          <div class="icap2"><b><span dir="ltr">TactiCam™</span> בגוון מדברי על <span dir="ltr">HMMWV</span>.</b> מקור: <span dir="ltr" style="white-space:nowrap">ravelindefense.com</span> — Signature Management</div>
+        </div>
+        <div class="ifig">
+          <div class="iimg" style="background-image:url('@@IMG:ravelin-tacticam-closeup.jpg@@')"></div>
+          <div class="icap2"><b>משטח <span dir="ltr">TactiCam™</span> תלת-ממדי מקרוב (AUSA 2025).</b> מקור: <span dir="ltr" style="white-space:nowrap">ravelindefense.com</span></div>
+        </div>
       </div>
     </div>
   </div>
   <div class="pf-evidence">
-    <div class="sec-bar">Commercial evidence</div>
+    <div class="sec-bar">עדות מסחרית</div>
     <div class="ev-tiles">
       <div class="ev-tile">
-        <div class="elbl">DEMONSTRATIONS</div>
-        <div class="etxt"><b>TactiCam</b> demonstrated on General Dynamics land-vehicle platforms</div>
+        <div class="elbl">הדגמות</div>
+        <div class="etxt"><b>TactiCam</b> הודגמה על פלטפורמות רכב יבשתיות של <span dir="ltr">General Dynamics</span></div>
       </div>
       <div class="ev-tile">
-        <div class="elbl">2026 — INTEGRATION</div>
-        <div class="etxt">ArmorWorks and Fox Valley Metal Tech unified under <b>Ravelin Defense</b>; Signature Management retained as a dedicated business unit</div>
+        <div class="elbl">2026 — איחוד</div>
+        <div class="etxt">ArmorWorks ו-<span dir="ltr">Fox Valley Metal Tech</span> אוחדו תחת <b>Ravelin Defense</b>; ניהול החתימה נשמר כיחידה ייעודית</div>
       </div>
       <div class="ev-tile">
-        <div class="elbl">CUSTOMER BASE</div>
-        <div class="etxt">Broader customers include the U.S. military and major primes — not all attributable to signature management</div>
+        <div class="elbl">בסיס לקוחות</div>
+        <div class="etxt">הלקוחות הרחבים כוללים את צבא ארה״ב וקבלניות-על — לא כולם מיוחסים לניהול חתימה</div>
       </div>
     </div>
   </div>
   <div class="ftr">
     <div class="pageno"></div>
-    <div class="proj">Plasan Sasa — Signature Management | Company Landscape</div>
-    <div class="src">Source: Ravelin Defense official website and announcements; Plasan 9-company dataset. Historical ArmorWorks revenue is not attributed to Ravelin.</div>
+    <div class="src">מקור: אתר Ravelin Defense והודעות רשמיות; מאגר תשע החברות של פלסן. הכנסות ArmorWorks ההיסטוריות אינן מיוחסות ל-Ravelin.</div>
+    <div class="proj">פלסן סאסא — ניהול חתימה | מיפוי חברות</div>
   </div>
 </section></div>
 
@@ -1051,72 +1141,71 @@ h1.title { font-size: var(--fs-title); font-weight: 700; color: var(--c-slate); 
 <div class="slide-wrap"><section class="slide" id="s-permali">
   <div class="hdr">
     <div class="hdr-titles">
-      <div class="kicker">Company Profile · Adjacent Offering</div>
-      <h1 class="title">Permali — defence composites with an established signature application: suppressing the armored vehicle’s dust plume</h1>
+      <div class="kicker">פרופיל חברה · הצעה משיקה</div>
+      <h1 class="title">Permali — קומפוזיטים ביטחוניים עם יישום חתימה מבוסס: דיכוי ענן האבק של רק״ם בתנועה</h1>
     </div>
     <img class="bdo-logo" src="@@IMG:bdo-logo.png@@" alt="BDO Consulting — Strategy Growth &amp; Innovation">
   </div>
   <table class="snap">
     <colgroup>
-      <col style="width:200px"><col style="width:470px"><col style="width:300px">
-      <col style="width:330px"><col style="width:186px"><col style="width:290px">
+      <col style="width:210px"><col style="width:440px"><col style="width:240px">
+      <col style="width:400px"><col style="width:170px"><col style="width:316px">
     </colgroup>
-    <tr><th>Country</th><th>Main business</th><th>Signature focus</th><th>Ownership</th><th>Employees</th><th>Revenue</th></tr>
+    <tr><th>מדינה</th><th>עיסוק עיקרי</th><th>חשיבות ניהול החתימה</th><th>בעלות</th><th>עובדים</th><th>הכנסות</th></tr>
     <tr>
-      <td>United Kingdom</td>
-      <td>Advanced composites for defence &amp; engineered markets</td>
-      <td>Adjacent offering</td>
-      <td>Diamorph Group <span class="q">(acquired 2021)</span></td>
-      <td>370</td>
-      <td>£30M reported turnover</td>
+      <td>בריטניה</td>
+      <td>קומפוזיטים מתקדמים לביטחון ולשווקים הנדסיים</td>
+      <td>הצעה משיקה</td>
+      <td>קבוצת <span dir="ltr">Diamorph</span> <span class="q">(נרכשה 2021)</span></td>
+      <td><span dir="ltr">~270</span></td>
+      <td>מחזור מדווח <span dir="ltr">£30M</span></td>
     </tr>
   </table>
   <div class="profile-main">
-    <div class="pf-products">
-      <div class="sec-bar">Signature-management portfolio</div>
-      <div class="prow">
-        <div><div class="pname">Dust Skirts / Dust Guards</div><div class="ptype">Composite application — adjacent</div></div>
-        <div class="pdesc">Installed around armored vehicles to suppress the visible dust plume created during movement and reduce the associated radar signature of the dust cloud — indirect signature reduction, not classic platform RAM</div>
-      </div>
-      <div class="prow">
-        <div><div class="pname">Composite engineering base — context</div><div class="ptype">Land-defence composites</div></div>
-        <div class="pdesc">The offering applies Permali’s defence composite know-how; the core proposition is material engineering rather than camouflage</div>
-      </div>
+    <div class="pf-story">
+      <div class="sec-bar">הסיפור בקצרה</div>
+      <ul class="story">
+        <li>יצרנית קומפוזיטים בריטית ותיקה <span class="dim">(גלוסטר)</span>; נרכשה על-ידי קבוצת <span dir="ltr">Diamorph</span> ב-2021</li>
+        <li><b>Dust Skirts / Dust Guards</b> — מותקנים סביב רק״ם לדיכוי ענן האבק הנראה בתנועה ולהפחתת חתימת המכ״ם של ענן האבק — הפחתת חתימה עקיפה, לא <span dir="ltr">RAM</span> קלאסי</li>
+        <li>ההצעה נשענת על ידע הקומפוזיטים הביטחוני של החברה — הצעת הליבה היא הנדסת חומרים, לא הסוואה</li>
+        <li>סדר גודל: מחזור מדווח של <span dir="ltr">£30M</span>; כ-270 עובדים <span class="dim">(מאגרי חברות; פרסומי הקבוצה מציינים ~370)</span></li>
+        <li>לא זוהתה פעילות ייעודית חדשה בניהול חתימה מ-2023 ואילך — הצעה משיקה מבוססת</li>
+      </ul>
       <div class="pf-bands">
-        <span class="blbl">Signature domains</span>
-        <span class="band-chip">Visual</span><span class="band-chip">Radar</span>
+        <span class="blbl">תחומי חתימה</span>
+        <span class="band-chip">אופטי (VIS)</span><span class="band-chip">מכ״ם</span>
       </div>
-      <div class="pf-bandqual">Dust-plume signature only; no broad thermal-IR claim</div>
+      <div class="pf-bandqual">חתימת ענן האבק בלבד; אין טענה תרמית רחבה</div>
     </div>
     <div class="pf-imgs">
-      <div class="sec-bar">Product &amp; application</div>
-      <div class="ifig tall">
+      <div class="sec-bar">מוצר ויישום</div>
+      <div class="ifig">
         <div class="iimg" style="background-image:url('@@IMG:permali-dust-guards.jpg@@')"></div>
-        <div class="icap2"><b>Dust Guards — official product illustration.</b> Source: permali.co.uk, Land Defence Composites / Dust Skirts</div>
+        <div class="icap2"><b>Dust Guards — איור המוצר הרשמי.</b> מקור: <span dir="ltr" style="white-space:nowrap">permali.co.uk</span> — Land Defence Composites / Dust Skirts</div>
       </div>
     </div>
   </div>
   <div class="pf-evidence">
-    <div class="sec-bar">Commercial evidence</div>
+    <div class="sec-bar">עדות מסחרית</div>
     <div class="ev-tiles">
       <div class="ev-tile">
-        <div class="elbl">SCALE (REPORTED)</div>
-        <div class="etxt">≈£30M turnover and ≈370 co-workers, as reported in current Diamorph publications</div>
+        <div class="elbl">סדר גודל (מדווח)</div>
+        <div class="etxt">מחזור <span dir="ltr">≈£30M</span>; כ-270 עובדים <span class="q">(מאגרי חברות; פרסומי הקבוצה: ~370)</span></div>
       </div>
       <div class="ev-tile">
-        <div class="elbl">OWNERSHIP</div>
-        <div class="etxt">Acquired by <b>Diamorph Group</b> in 2021</div>
+        <div class="elbl">בעלות</div>
+        <div class="etxt">נרכשה על-ידי קבוצת <b>Diamorph</b> ב-2021</div>
       </div>
       <div class="ev-tile">
-        <div class="elbl">RECENT ACTIVITY</div>
-        <div class="etxt">No significant signature-management-specific activity identified from 2023 onward — an established adjacent offering</div>
+        <div class="elbl">פעילות אחרונה</div>
+        <div class="etxt">לא זוהתה פעילות ייעודית בניהול חתימה מ-2023 ואילך — הצעה משיקה מבוססת</div>
       </div>
     </div>
   </div>
   <div class="ftr">
     <div class="pageno"></div>
-    <div class="proj">Plasan Sasa — Signature Management | Company Landscape</div>
-    <div class="src">Source: Permali official website; Diamorph publications; Plasan 9-company dataset.</div>
+    <div class="src">מקור: אתר Permali הרשמי; פרסומי Diamorph; מאגרי חברות חיצוניים; מאגר תשע החברות של פלסן.</div>
+    <div class="proj">פלסן סאסא — ניהול חתימה | מיפוי חברות</div>
   </div>
 </section></div>
 
@@ -1124,76 +1213,77 @@ h1.title { font-size: var(--fs-title); font-weight: 700; color: var(--c-slate); 
 <div class="slide-wrap"><section class="slide" id="s-shieldex">
   <div class="hdr">
     <div class="hdr-titles">
-      <div class="kicker">Company Profile · Adjacent Offering</div>
-      <h1 class="title">Shieldex — a conductive-textile platform moving into defence multispectral applications as an enabling material</h1>
+      <div class="kicker">פרופיל חברה · הצעה משיקה</div>
+      <h1 class="title">Shieldex — פלטפורמת טקסטיל מוליך שנעה ליישומים ביטחוניים רב-ספקטרליים כחומר מאפשר</h1>
     </div>
     <img class="bdo-logo" src="@@IMG:bdo-logo.png@@" alt="BDO Consulting — Strategy Growth &amp; Innovation">
   </div>
   <table class="snap">
     <colgroup>
-      <col style="width:200px"><col style="width:470px"><col style="width:300px">
-      <col style="width:330px"><col style="width:186px"><col style="width:290px">
+      <col style="width:210px"><col style="width:440px"><col style="width:240px">
+      <col style="width:400px"><col style="width:170px"><col style="width:316px">
     </colgroup>
-    <tr><th>Country</th><th>Main business</th><th>Signature focus</th><th>Ownership</th><th>Employees</th><th>Revenue</th></tr>
+    <tr><th>מדינה</th><th>עיסוק עיקרי</th><th>חשיבות ניהול החתימה</th><th>בעלות</th><th>עובדים</th><th>הכנסות</th></tr>
     <tr>
-      <td>Germany</td>
-      <td>Conductive &amp; metallized technical textiles</td>
-      <td>Adjacent offering</td>
-      <td>Family-owned — Robert Erichsen <span class="q">(CEO &amp; Owner)</span></td>
-      <td>~50</td>
-      <td>≈$31M <span class="q">(third-party estimate)</span></td>
+      <td>גרמניה</td>
+      <td>טקסטיל טכני מוליך ומצופה-מתכת</td>
+      <td>הצעה משיקה</td>
+      <td>עסק משפחתי — <span dir="ltr">Statex GmbH</span></td>
+      <td><span dir="ltr">~50</span></td>
+      <td><span dir="ltr">≈$31M</span> <span class="q">(הערכת צד-שלישי)</span></td>
     </tr>
   </table>
   <div class="profile-main">
-    <div class="pf-products">
-      <div class="sec-bar">Signature-management portfolio</div>
-      <div class="prow">
-        <div><div class="pname">Shieldex® Zell RS CR</div><div class="ptype">Textiles &amp; materials — enabling material</div></div>
-        <div class="pdesc">Metallized textile used in military concealment and shielding applications — an enabling material rather than a complete vehicle camouflage system</div>
-      </div>
-      <div class="prow">
-        <div><div class="pname">Conductive-textile platform — context</div><div class="ptype">Shielding · heating · sensing</div></div>
-        <div class="pdesc">A broad portfolio of conductive / metallized textiles for electromagnetic shielding, heating and sensing underpins the defence offering</div>
-      </div>
+    <div class="pf-story">
+      <div class="sec-bar">הסיפור בקצרה</div>
+      <ul class="story">
+        <li>עסק משפחתי גרמני <span class="dim">(Statex, ברמן; המותג — Shieldex)</span> — מוביל עולמי בחוטים ובדים מצופי כסף מאז 1978</li>
+        <li><b>Shieldex® Zell RS CR</b> — טקסטיל מצופה-מתכת המשמש ביישומי הסתרה וסיכוך צבאיים — חומר מאפשר, לא מערכת הסוואת רכב שלמה</li>
+        <li>2024 — מיצוב משפחת פתרונות <b>Multispectral Shielding</b> ייעודית לשוק הצבאי — אות שוק, לא חוזה שנחשף</li>
+        <li>הבחנה מהותית: סיכוך <span dir="ltr">RF / EMI</span> אינו הפחתת חתך מכ״ם <span dir="ltr">(RCS)</span> — לא אומתה טענת <span dir="ltr">RCS</span> ברמת מוצר</li>
+        <li>לא זוהה לקוח צבאי עדכני בשמו בתחום ניהול החתימה</li>
+      </ul>
       <div class="pf-bands">
-        <span class="blbl">Signature domains</span>
-        <span class="band-chip">Thermal IR</span><span class="band-chip">RF / EMI shielding</span>
+        <span class="blbl">תחומי חתימה</span>
+        <span class="band-chip">תרמי (IR)</span><span class="band-chip">סיכוך RF / EMI</span>
       </div>
-      <div class="pf-bandqual">EMI / RF shielding is not radar-cross-section reduction; no product-specific RCS claim verified</div>
+      <div class="pf-bandqual">סיכוך EMI / RF אינו הפחתת חתך מכ״ם (RCS); לא אומתה טענת RCS ברמת מוצר</div>
     </div>
     <div class="pf-imgs">
-      <div class="sec-bar">Product &amp; application</div>
-      <div class="ifig">
-        <div class="iimg" style="background-image:url('@@IMG:shieldex-metallized-textile.jpg@@')"></div>
-        <div class="icap2"><b>Metallized textile — product preview.</b> Source: shieldex.de, Multispectral Shielding</div>
-      </div>
-      <div class="ifig">
-        <div class="iimg" style="background-image:url('@@IMG:shieldex-shielding-tent.jpg@@')"></div>
-        <div class="icap2"><b>RF / EMI shielding tent — shielding application.</b> Source: shieldex.de, Multispectral Shielding</div>
+      <div class="sec-bar">מוצר ויישום</div>
+      <div class="figrow">
+        <div class="ifig">
+          <div class="iimg" style="background-image:url('@@IMG:shieldex-metallized-textile.jpg@@')"></div>
+          <div class="icap2"><b>טקסטיל מצופה-מתכת — תצוגת מוצר.</b> מקור: <span dir="ltr" style="white-space:nowrap">shieldex.de</span> — Multispectral Shielding</div>
+        </div>
+        <div class="ifig">
+          <div class="iimg" style="background-image:url('@@IMG:shieldex-shielding-tent.jpg@@')"></div>
+          <div class="icap2"><b>אוהל סיכוך RF / EMI — יישום סיכוך.</b> מקור: <span dir="ltr" style="white-space:nowrap">shieldex.de</span> — Multispectral Shielding</div>
+        </div>
       </div>
     </div>
   </div>
   <div class="pf-evidence">
-    <div class="sec-bar">Commercial evidence</div>
+    <div class="sec-bar">עדות מסחרית</div>
     <div class="ev-tiles">
       <div class="ev-tile">
-        <div class="elbl">2024 — POSITIONING</div>
-        <div class="etxt">Dedicated <b>Multispectral Shielding</b> solution family positioned for military and security applications — a market signal, not a disclosed contract</div>
+        <div class="elbl">2024 — מיצוב</div>
+        <div class="etxt">משפחת פתרונות <b>Multispectral Shielding</b> ייעודית לשוק הצבאי — אות שוק, לא חוזה שנחשף</div>
       </div>
       <div class="ev-tile">
-        <div class="elbl">CUSTOMERS</div>
-        <div class="etxt">No named recent military signature-management customer identified</div>
+        <div class="elbl">לקוחות</div>
+        <div class="etxt">לא זוהה לקוח צבאי עדכני בשמו בתחום ניהול החתימה</div>
       </div>
       <div class="ev-tile">
-        <div class="elbl">PLATFORM STRENGTH</div>
-        <div class="etxt">Established RF / EMI shielding expertise across industrial and defence applications</div>
+        <div class="elbl">חוזק הפלטפורמה</div>
+        <div class="etxt">מומחיות סיכוך <span dir="ltr">RF / EMI</span> מבוססת ביישומים תעשייתיים וביטחוניים</div>
       </div>
     </div>
   </div>
   <div class="ftr">
     <div class="pageno"></div>
-    <div class="proj">Plasan Sasa — Signature Management | Company Landscape</div>
-    <div class="src">Source: Shieldex official website; Plasan 9-company dataset. Revenue is a third-party estimate.</div>
+    <div class="src">מקור: אתר Shieldex הרשמי; מאגרי חברות חיצוניים; מאגר תשע החברות של פלסן. ההכנסות — הערכת צד-שלישי.</div>
+    <div class="proj">פלסן סאסא — ניהול חתימה | מיפוי חברות</div>
   </div>
 </section></div>
 

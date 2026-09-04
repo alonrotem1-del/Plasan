@@ -11,11 +11,16 @@ import pathlib
 import re
 
 root = pathlib.Path(__file__).parent
-font = root / "assets" / "fonts" / "inter-latin.woff2"
-b64 = base64.b64encode(font.read_bytes()).decode()
 tpl = (root / "deck_template.html").read_text()
-assert "@@FONT_B64@@" in tpl, "font token missing from template"
-html = tpl.replace("@@FONT_B64@@", b64)
+
+# inline fonts: @@FONT:name.woff2@@ -> base64 (legacy @@FONT_B64@@ = inter-latin)
+def font_token(m):
+    p = root / "assets" / "fonts" / m.group(1)
+    return base64.b64encode(p.read_bytes()).decode()
+html = re.sub(r"@@FONT:([\w.-]+)@@", font_token, tpl)
+if "@@FONT_B64@@" in html:
+    b64 = base64.b64encode((root / "assets" / "fonts" / "inter-latin.woff2").read_bytes()).decode()
+    html = html.replace("@@FONT_B64@@", b64)
 
 # inline referenced images as data URIs (keeps deck.html self-contained)
 def img_token(m):

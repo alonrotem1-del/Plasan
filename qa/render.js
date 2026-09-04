@@ -91,11 +91,11 @@ const path = require('path');
       const hdr = slide.querySelector('.hdr');
       if (hdr) {
         const hb = [...hdr.querySelectorAll('*')].filter(visible).reduce((m, el) => Math.max(m, el.getBoundingClientRect().bottom), 0);
-        const first = slide.querySelector('.snap, .ovw-table, .mx-table, .funnel-zone');
+        const first = slide.querySelector('.snap, .ovw-table, .mx-table, .sx-table, .scope-grid, .funnel-zone');
         if (first && hb > first.getBoundingClientRect().top - 4)
           issues.push(`header crowds first content block: hdrBottom=${Math.round(hb - sr.top)} contentTop=${Math.round(first.getBoundingClientRect().top - sr.top)}`);
       }
-      [['.ovw-table', '.ovw-note'], ['.mx-table', '.mx-note']].forEach(([a, b]) => {
+      [['.ovw-table', '.ovw-note'], ['.mx-table', '.mx-note'], ['.sx-table', '.sx-legend'], ['.sx-legend', '.sx-notes'], ['.scope-grid', '.method-band'], ['.method-band', '.fun-strip']].forEach(([a, b]) => {
         const ea = slide.querySelector(a), eb = slide.querySelector(b);
         if (ea && eb && ea.getBoundingClientRect().bottom > eb.getBoundingClientRect().top - 4)
           issues.push(`${a} collides with ${b}`);
