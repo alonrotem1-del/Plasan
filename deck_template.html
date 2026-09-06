@@ -92,7 +92,7 @@ body { font-family: var(--font); color: var(--c-text); direction: rtl; -webkit-f
   font-size: var(--fs-kicker); font-weight: 700;
   color: var(--c-slate-mid); margin-bottom: 12px;
 }
-h1.title { font-size: var(--fs-title); font-weight: 700; color: var(--c-slate); line-height: 1.35; }
+h1.title { font-size: var(--fs-title); font-weight: 700; color: var(--c-slate); line-height: 1.35; padding-bottom: 3px; }
 sup { font-size: 15px; line-height: 0; }
 
 .bdo-logo { height: 62px; width: auto; flex: none; padding-top: 4px; }
@@ -125,6 +125,56 @@ sup { font-size: 15px; line-height: 0; }
 .cv-sub { font-size: 32px; color: var(--c-text-muted); margin-top: 30px; line-height: 1.4; }
 .cv-date { font-size: 22px; color: var(--c-text-faint); margin-top: 52px; font-weight: 500; }
 .cv-red { position: absolute; left: var(--m-side); bottom: 58px; width: 120px; height: 120px; background: var(--c-burgundy); }
+
+/* ============================================================
+   VEHICLE CHAPTER — SAM BARS, SOM DIAGRAM, APPENDIX TABLES
+   ============================================================ */
+.link-band { position: absolute; right: var(--m-side); left: var(--m-side); top: 762px; background: var(--c-primary-tint); padding: 24px 28px; display: flex; align-items: center; gap: 22px; flex-wrap: wrap; }
+.link-band .lb-t { font-size: 23px; font-weight: 600; color: var(--c-primary); }
+.link-band .lb-chip { font-size: 21px; font-weight: 700; color: #fff; background: var(--c-primary); padding: 10px 20px; border-radius: 3px; }
+
+.sam-wrap { position: absolute; right: var(--m-side); left: var(--m-side); top: 246px; display: grid; grid-template-columns: 520px 1fr; column-gap: 56px; }
+.sam-hero { background: var(--c-fill); border-top: 4px solid var(--c-primary); padding: 30px 34px; align-self: start; }
+.sam-hero .hl { font-size: 20px; font-weight: 700; color: var(--c-slate-mid); }
+.sam-hero .hn { font-size: 92px; font-weight: 800; color: var(--c-primary); line-height: 1.35; }
+.sam-hero .hu { font-size: 26px; font-weight: 600; color: var(--c-text); margin-top: -8px; }
+.sam-hero .hs { font-size: 21px; color: var(--c-text-muted); margin-top: 14px; padding-top: 14px; border-top: 1px solid var(--c-border); line-height: 1.45; }
+.sam-hero .hs b { color: var(--c-primary); font-weight: 600; }
+.sam-rows { padding-top: 4px; }
+.sam-row { display: flex; align-items: center; gap: 20px; padding: 10px 0; border-top: 1px solid var(--c-hairline); }
+.sam-row:first-child { border-top: none; }
+.sam-row .lbl { flex: none; width: 250px; font-size: 22px; color: var(--c-text); }
+.sam-row .barzone { flex: 1; }
+.sam-row .bar { height: 32px; background: var(--c-primary); border-radius: 4px 0 0 4px; }
+.sam-row .val { flex: none; width: 160px; }
+.sam-row .val .v1 { font-size: 25px; font-weight: 700; color: var(--c-primary); }
+.sam-row .val .v2 { font-size: 15px; color: var(--c-text-faint); margin-top: 1px; }
+.sam-note { position: absolute; right: var(--m-side); left: var(--m-side); top: 964px; font-size: 17px; color: var(--c-text-faint); line-height: 1.4; }
+
+.som-seg { position: absolute; right: var(--m-side); left: var(--m-side); top: 244px; background: var(--c-fill); border-top: 3px solid var(--c-primary); padding: 20px 28px; }
+.som-seg .sl { font-size: 18px; font-weight: 700; color: var(--c-primary); margin-bottom: 7px; }
+.som-seg .sx { font-size: 23px; color: var(--c-text); line-height: 1.4; }
+.som-mid { position: absolute; right: var(--m-side); left: var(--m-side); top: 424px; }
+.som-mid .ml { font-size: 20px; font-weight: 700; color: var(--c-slate-mid); margin-bottom: 16px; }
+.som-cols { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.som-col { background: var(--c-fill); padding: 24px 28px; }
+.som-col .cl { font-size: 21px; font-weight: 600; color: var(--c-text-muted); }
+.som-col .cn { font-size: 44px; font-weight: 800; color: var(--c-primary); line-height: 1.4; }
+.som-col .cm { font-size: 26px; font-weight: 600; color: var(--c-text); }
+.som-col .cs { display: inline-block; margin-top: 16px; font-size: 19px; font-weight: 600; color: var(--c-primary); background: var(--c-primary-tint); padding: 8px 15px; border-radius: 3px; }
+.som-total { position: absolute; right: var(--m-side); left: var(--m-side); top: 830px; background: var(--c-primary); color: #fff; padding: 26px 32px; font-size: 30px; font-weight: 600; }
+.som-total b { font-weight: 800; }
+.som-note { position: absolute; right: var(--m-side); left: var(--m-side); top: 964px; font-size: 17px; color: var(--c-text-faint); }
+
+.vx-table { position: absolute; right: var(--m-side); left: var(--m-side); top: 216px; border-collapse: collapse; width: 1776px; table-layout: fixed; }
+.vx-table th { background: var(--c-slate); color: #fff; font-size: 17px; font-weight: 600; text-align: right; padding: 8px 12px; line-height: 1.2; border-left: 2px solid #fff; }
+.vx-table th:last-child { border-left: none; }
+.vx-table td { font-size: 18px; padding: 6px 12px; vertical-align: middle; background: var(--c-fill); border-left: 2px solid #fff; border-top: 2px solid #fff; line-height: 1.25; }
+.vx-table td:last-child { border-left: none; }
+.vx-table td.n { font-variant-numeric: tabular-nums; }
+.vx-table tr.tot td { background: var(--c-primary-tint); color: var(--c-primary); font-weight: 700; }
+.vx-table .co { font-weight: 600; color: var(--c-text); }
+.vx-note2 { position: absolute; right: var(--m-side); left: var(--m-side); top: 972px; font-size: 17px; color: var(--c-text-faint); }
 
 /* ============================================================
    MASTER DECK — CONTENTS MAP + SECTION / SUBSECTION DIVIDERS
@@ -323,6 +373,43 @@ ul.story li .dim { color: var(--c-text-muted); }
   </div>
 </section></div>
 
+
+<!-- ================= SLIDE : STRATEGIC FRAMING ================= -->
+<div class="slide-wrap"><section class="slide" id="s-strategy">
+  <div class="hdr">
+    <div class="hdr-titles">
+      <div class="kicker">הקשר אסטרטגי</div>
+      <h1 class="title">העבודה הנוכחית ממשיכה את אסטרטגיית הצמיחה של פלסן — בחינה אנליטית של כיווני ההתרחבות סביב הליבה</h1>
+    </div>
+    <img class="bdo-logo" src="@@IMG:bdo-logo.png@@" alt="BDO Consulting — Strategy Growth &amp; Innovation">
+  </div>
+  <div class="scope-grid" style="grid-template-columns: repeat(3, 1fr); top: 260px;">
+    <div class="sc-tile" style="min-height:400px">
+      <div class="slbl">החזון</div>
+      <div class="stxt"><b>"מובילה עולמית בפתרונות שרידות ורכב ממוגן"</b> — חברה עסקית גלובלית המספקת פתרונות חדשניים ופורצי דרך לעולם השרידות בשדה הקרב העתידי</div>
+    </div>
+    <div class="sc-tile" style="min-height:400px">
+      <div class="slbl">לוגיקת הצמיחה</div>
+      <div class="stxt">לצד הצמיחה האורגנית — <b>התפתחות לא-אורגנית</b>: רכישת שוק באמצעות חברות בטריטוריות נוספות, השלמת יכולות טכנולוגיות, ושותפויות אסטרטגיות</div>
+    </div>
+    <div class="sc-tile" style="min-height:400px">
+      <div class="slbl">מיקודי המאמץ הרלוונטיים לעבודה זו</div>
+      <div class="stxt">הובלת פתרונות שרידות ביבשה, בים ובאוויר · רכב ממוגן <span dir="ltr">Best Value for Money</span> לשווקי <span dir="ltr">Tier 2–3</span> · בחינת חלופות שת״פ עם חברות בתחום ההסוואה</div>
+    </div>
+  </div>
+  <div class="link-band">
+    <span class="lb-t">מסמך זה מרכז את השלב האנליטי של הכיוונים הללו בשלושה צירי עבודה:</span>
+    <span class="lb-chip">01 · שרידות</span>
+    <span class="lb-chip">02 · ניהול חתימה</span>
+    <span class="lb-chip">03 · רכב</span>
+  </div>
+  <div class="ftr">
+    <div class="pageno"></div>
+    <div class="src">מקור: פלסן — אסטרטגיית 2T, דיון הנהלה (מרץ 2025). משמש כמסגרת הקשר בלבד — ללא נתוני שוק היסטוריים.</div>
+    <div class="proj">פלסן סאסא — אסטרטגיה | מצגת עבודה</div>
+  </div>
+</section></div>
+
 <!-- ================= SLIDE : CONTENTS / PROJECT MAP ================= -->
 <div class="slide-wrap"><section class="slide" id="s-toc">
   <div class="hdr">
@@ -353,7 +440,7 @@ ul.story li .dim { color: var(--c-text-muted); }
       <div class="tnum">03</div>
       <div class="tname">רכב</div>
       <div class="tdesc">גודל השוק, הפוטנציאל והשחקנים בתחום הרכב</div>
-      <div class="toc-item todo"><span class="m"></span>גודל שוק ופוטנציאל <span dir="ltr">(SAM / SOM)</span><span class="tag">בהמשך</span></div>
+      <div class="toc-item done"><span class="m"></span>גודל שוק ופוטנציאל <span dir="ltr">(SAM / SOM)</span><span class="tag">כלול</span></div>
       <div class="toc-item todo"><span class="m"></span>מיפוי חברות<span class="tag">בהמשך</span></div>
     </div>
   </div>
@@ -1446,13 +1533,346 @@ ul.story li .dim { color: var(--c-text-muted); }
     <div class="sd-line"></div>
     <div class="sd-desc">גודל השוק, הפוטנציאל והשחקנים בתחום הרכב</div>
     <div class="sd-subs">
-    <div class="sd-sub todo"><span>גודל שוק ופוטנציאל (SAM / SOM)</span><span class="st">בהמשך</span></div>
+    <div class="sd-sub done"><span>גודל שוק ופוטנציאל (SAM / SOM)</span><span class="st">בפרק זה</span></div>
     <div class="sd-sub todo"><span>מיפוי חברות</span><span class="st">בהמשך</span></div>
     </div>
   </div>
   <div class="ftr">
     <div class="pageno"></div>
     <div class="src">מסמך עבודה פנימי</div>
+    <div class="proj">פלסן סאסא — אסטרטגיה | מצגת עבודה</div>
+  </div>
+</section></div>
+
+
+<!-- ================= SLIDE : SUBSECTION DIVIDER 03.A ================= -->
+<div class="slide-wrap"><section class="slide" id="s-sub-veh-market">
+  <div class="ssd">
+    <div class="k">ציר עבודה 03 · רכב</div>
+    <div class="bar"></div>
+    <h2>גודל שוק ופוטנציאל</h2>
+    <div class="q">הערכת <span dir="ltr">Bottom-up</span> של הזדמנות הרכב הרלוונטית — מהסגמנטים והגיאוגרפיות ועד לנתח האפשרי לפלסן</div>
+    <div class="scope">משפך ההערכה · SAM לפי גיאוגרפיה · SOM לפלסן · אתגרי ההערכה · נספח פרויקטים מפורט</div>
+  </div>
+  <div class="ftr">
+    <div class="pageno"></div>
+    <div class="src">מסמך עבודה פנימי</div>
+    <div class="proj">פלסן סאסא — אסטרטגיה | מצגת עבודה</div>
+  </div>
+</section></div>
+
+<!-- ================= SLIDE : VEHICLE — APPROACH FUNNEL ================= -->
+<div class="slide-wrap"><section class="slide" id="s-veh-approach">
+  <div class="hdr">
+    <div class="hdr-titles">
+      <div class="kicker">03 | רכב · גודל שוק ופוטנציאל</div>
+      <h1 class="title">משפך הערכת השוק — מהגדרת הסגמנטים הרלוונטיים ל-SAM מזוהה ולנתח הרלוונטי לפלסן</h1>
+    </div>
+    <img class="bdo-logo" src="@@IMG:bdo-logo.png@@" alt="BDO Consulting — Strategy Growth &amp; Innovation">
+  </div>
+  <div class="fun-strip" style="top: 380px;">
+    <div class="fun-box" style="min-height: 300px;">
+      <div class="fn" style="font-size:44px; color: var(--c-slate-mid);">1</div>
+      <div class="fl">הגדרת הסגמנטים הרלוונטיים</div>
+      <div class="fd" style="font-size:20px; height:auto;">בסיס אזרחי (פורד 550) · סגמנטי משקל: עד 5 טון, 5–10 טון, 11 טון ומעלה</div>
+    </div>
+    <div class="fun-arrow">&#10096;</div>
+    <div class="fun-box" style="min-height: 300px;">
+      <div class="fn" style="font-size:44px; color: var(--c-slate-mid);">2</div>
+      <div class="fl">פוטנציאל שוק מזוהה <span dir="ltr">Bottom-up</span> (SAM)</div>
+      <div class="fd" style="font-size:20px; height:auto;">לפי אזורים גיאוגרפיים וסגמנטים — על בסיס המכרזים והעסקאות המזוהים בכל טריטוריה</div>
+    </div>
+    <div class="fun-arrow">&#10096;</div>
+    <div class="fun-box final" style="min-height: 300px;">
+      <div class="fn" style="font-size:44px;">3</div>
+      <div class="fl">הערכת הנתח הרלוונטי לפלסן (SOM)</div>
+      <div class="fd" style="font-size:20px; height:auto;">יעד מכירות שנתי הנגזר מהנחות נתח שוק — בעולם, בישראל ובאלביט / רפאל</div>
+    </div>
+  </div>
+  <div class="ftr">
+    <div class="pageno"></div>
+    <div class="src">מקור: "גודל שוק ופוטנציאל שוק הרכב" — ניתוח ה-Bottom-up העדכני. ההערכה בוצעה על בסיס המכרזים המזוהים בכל טריטוריה.</div>
+    <div class="proj">פלסן סאסא — אסטרטגיה | מצגת עבודה</div>
+  </div>
+</section></div>
+
+<!-- ================= SLIDE : VEHICLE — SAM BY GEOGRAPHY ================= -->
+<div class="slide-wrap"><section class="slide" id="s-veh-sam">
+  <div class="hdr">
+    <div class="hdr-titles">
+      <div class="kicker">03 | רכב · גודל שוק ופוטנציאל</div>
+      <h1 class="title">SAM מזוהה <span dir="ltr">Bottom-up</span> — כ-1,450 רכבים רלוונטיים בשנה; מרכז ומזרח אירופה הם התורם הגדול ביותר</h1>
+    </div>
+    <img class="bdo-logo" src="@@IMG:bdo-logo.png@@" alt="BDO Consulting — Strategy Growth &amp; Innovation">
+  </div>
+  <div class="sam-wrap">
+    <div class="sam-hero">
+      <div class="hl">סה״כ פוטנציאל שנתי מזוהה</div>
+      <div class="hn"><span dir="ltr">~1,450</span></div>
+      <div class="hu">רכבים רלוונטיים בשנה</div>
+      <div class="hs">כ-<b><span dir="ltr">4,350</span></b> רכבים בשלוש שנים · מתוכם כ-<b><span dir="ltr">90–100</span></b> בישראל · הטריטוריות המסומנות ב-* כוללות יחד גם כ-<b><span dir="ltr">100</span></b> רכבים בשנה של אלביט ורפאל (רכבי מערכות מזוהים)</div>
+    </div>
+    <div class="sam-rows">
+      <div class="sam-row">
+        <div class="lbl">מרכז ומזרח אירופה*</div>
+        <div class="barzone"><div class="bar" style="width:100.0%"></div></div>
+        <div class="val"><div class="v1"><span dir="ltr">458</span></div><div class="v2"><span dir="ltr">1,374</span> בשלוש שנים</div></div>
+      </div>
+      <div class="sam-row">
+        <div class="lbl">אחר</div>
+        <div class="barzone"><div class="bar" style="width:52.2%"></div></div>
+        <div class="val"><div class="v1"><span dir="ltr">239</span></div><div class="v2"><span dir="ltr">716</span> בשלוש שנים</div></div>
+      </div>
+      <div class="sam-row">
+        <div class="lbl">מערב אירופה*</div>
+        <div class="barzone"><div class="bar" style="width:49.6%"></div></div>
+        <div class="val"><div class="v1"><span dir="ltr">227</span></div><div class="v2"><span dir="ltr">680</span> בשלוש שנים</div></div>
+      </div>
+      <div class="sam-row">
+        <div class="lbl">צפון אמריקה</div>
+        <div class="barzone"><div class="bar" style="width:45.9%"></div></div>
+        <div class="val"><div class="v1"><span dir="ltr">210</span></div><div class="v2"><span dir="ltr">630</span> בשלוש שנים</div></div>
+      </div>
+      <div class="sam-row">
+        <div class="lbl">דרום אמריקה*</div>
+        <div class="barzone"><div class="bar" style="width:38.6%"></div></div>
+        <div class="val"><div class="v1"><span dir="ltr">177</span></div><div class="v2"><span dir="ltr">530</span> בשלוש שנים</div></div>
+      </div>
+      <div class="sam-row">
+        <div class="lbl">ישראל</div>
+        <div class="barzone"><div class="bar" style="width:19.7%"></div></div>
+        <div class="val"><div class="v1"><span dir="ltr">90</span></div><div class="v2"><span dir="ltr">270</span> בשלוש שנים</div></div>
+      </div>
+      <div class="sam-row">
+        <div class="lbl">מיוחדות*</div>
+        <div class="barzone"><div class="bar" style="width:10.9%"></div></div>
+        <div class="val"><div class="v1"><span dir="ltr">50</span></div><div class="v2"><span dir="ltr">150</span> בשלוש שנים</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="sam-note">רכבים לשנה, לפי טריטוריה; המספר המשני — סה״כ לשלוש שנים · ההערכה בוצעה על בסיס המכרזים המזוהים בכל טריטוריה · פירוט הפרויקטים — בנספח</div>
+  <div class="ftr">
+    <div class="pageno"></div>
+    <div class="src">מקור: "גודל שוק ופוטנציאל שוק הרכב" — ניתוח ה-Bottom-up העדכני. ההערכה בוצעה על בסיס המכרזים המזוהים בכל טריטוריה.</div>
+    <div class="proj">פלסן סאסא — אסטרטגיה | מצגת עבודה</div>
+  </div>
+</section></div>
+
+<!-- ================= SLIDE : VEHICLE — PLASAN SOM ================= -->
+<div class="slide-wrap"><section class="slide" id="s-veh-som">
+  <div class="hdr">
+    <div class="hdr-titles">
+      <div class="kicker">03 | רכב · גודל שוק ופוטנציאל</div>
+      <h1 class="title">הפוטנציאל לפלסן (SOM) — כ-180 רכבים בשנה בהיקף של כ-60 מיליון $</h1>
+    </div>
+    <img class="bdo-logo" src="@@IMG:bdo-logo.png@@" alt="BDO Consulting — Strategy Growth &amp; Innovation">
+  </div>
+  <div class="som-seg">
+    <div class="sl">הסגמנט הרלוונטי</div>
+    <div class="sx">סוג הרכבים הרלוונטי לפלסן — כ-<b><span dir="ltr">1,450</span></b> רכבים לשנה, מתוכם כ-<span dir="ltr">100</span> בישראל וכ-<span dir="ltr">100</span> רכבי מערכות מזוהים לאלביט ורפאל</div>
+  </div>
+  <div class="som-mid">
+    <div class="ml">יעד מכירות שנתי לפלסן</div>
+    <div class="som-cols">
+      <div class="som-col">
+        <div class="cl">בעולם</div>
+        <div class="cn"><span dir="ltr">70–80</span> רכבים</div>
+        <div class="cm"><span dir="ltr">$26M</span> בשנה</div>
+        <div class="cs">נתח שוק: כ-<span dir="ltr">6%</span></div>
+      </div>
+      <div class="som-col">
+        <div class="cl">בישראל</div>
+        <div class="cn"><span dir="ltr">50–60</span> רכבים</div>
+        <div class="cm"><span dir="ltr">$21M</span> בשנה</div>
+        <div class="cs">נתח שוק: כ-<span dir="ltr">50%–60%</span></div>
+      </div>
+      <div class="som-col">
+        <div class="cl">רכבי מערכות לאלביט ורפאל</div>
+        <div class="cn"><span dir="ltr">50–60</span> רכבים</div>
+        <div class="cm"><span dir="ltr">$21M</span> בשנה</div>
+        <div class="cs">נתח שוק: כ-<span dir="ltr">50%–60%</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="som-total">בסה״כ: פוטנציאל לכ-<b><span dir="ltr">180</span> רכבים</b> בהיקף של כ-<b><span dir="ltr">60</span> מיליון $</b> בשנה <span style="font-weight:400">(כ-<span dir="ltr">350</span> אלף $ לרכב בממוצע)</span></div>
+  <div class="som-note">הערה: המספרים מתייחסים לפוטנציאל כללי רב-שנתי ולא לאירוע נקודתי</div>
+  <div class="ftr">
+    <div class="pageno"></div>
+    <div class="src">מקור: "גודל שוק ופוטנציאל שוק הרכב" — ניתוח ה-Bottom-up העדכני. ההערכה בוצעה על בסיס המכרזים המזוהים בכל טריטוריה.</div>
+    <div class="proj">פלסן סאסא — אסטרטגיה | מצגת עבודה</div>
+  </div>
+</section></div>
+
+<!-- ================= SLIDE : VEHICLE — CHALLENGES ================= -->
+<div class="slide-wrap"><section class="slide" id="s-veh-challenges">
+  <div class="hdr">
+    <div class="hdr-titles">
+      <div class="kicker">03 | רכב · גודל שוק ופוטנציאל</div>
+      <h1 class="title">אתגרים בהערכת הפוטנציאל — נתחי השוק שבבסיס ה-SOM הם הנחות עבודה שאפתניות</h1>
+    </div>
+    <img class="bdo-logo" src="@@IMG:bdo-logo.png@@" alt="BDO Consulting — Strategy Growth &amp; Innovation">
+  </div>
+  <div class="scope-grid" style="grid-template-columns: repeat(3, 1fr); top: 300px;">
+    <div class="sc-tile" style="min-height:360px">
+      <div class="slbl">נתח שוק עולמי</div>
+      <div class="stxt">הגעה לנתח שוק של כ-<b><span dir="ltr">6%</span></b> בעולם — בעוד קיימים לפחות כ-<b><span dir="ltr">30</span></b> מתחרים רלוונטיים המתחרים באותם סגמנטים</div>
+    </div>
+    <div class="sc-tile" style="min-height:360px">
+      <div class="slbl">ישראל</div>
+      <div class="stxt">הגעה ל<b>מעל <span dir="ltr">50%</span></b> מהמכירות לצה״ל</div>
+    </div>
+    <div class="sc-tile" style="min-height:360px">
+      <div class="slbl">אלביט ורפאל</div>
+      <div class="stxt">הגעה ל<b>מעל <span dir="ltr">50%</span></b> מהמכירות לאלביט ורפאל — כאשר גם הן עדיין לא זכו בכל הפרויקטים <span class="dim">(מאידך, ייתכן שיזכו בפרויקטים נוספים)</span></div>
+    </div>
+  </div>
+  <div class="method-band" style="top: 730px;">הערה: המספרים מתייחסים לפוטנציאל כללי רב-שנתי ולא לאירוע נקודתי — אלו הנחות המחשה של הפוטנציאל, לא המלצה</div>
+  <div class="ftr">
+    <div class="pageno"></div>
+    <div class="src">מקור: "גודל שוק ופוטנציאל שוק הרכב" — ניתוח ה-Bottom-up העדכני. ההערכה בוצעה על בסיס המכרזים המזוהים בכל טריטוריה.</div>
+    <div class="proj">פלסן סאסא — אסטרטגיה | מצגת עבודה</div>
+  </div>
+</section></div>
+
+<!-- ================= SLIDE : VEHICLE — APPENDIX DIVIDER ================= -->
+<div class="slide-wrap"><section class="slide" id="s-sub-veh-appendix">
+  <div class="ssd">
+    <div class="k">ציר עבודה 03 · רכב — נספח</div>
+    <div class="bar"></div>
+    <h2>פירוט פרויקטים מזוהים לפי אזורים</h2>
+    <div class="q">טבלאות ה-<span dir="ltr">Bottom-up</span> המלאות שבבסיס הערכת ה-SAM — מכרז, לקוח, כמויות, מחיר ושווי מוערך</div>
+    <div class="scope">צפון אמריקה · מרכז ומזרח אירופה · מערב אירופה · מיוחדות · דרום אמריקה</div>
+  </div>
+  <div class="ftr">
+    <div class="pageno"></div>
+    <div class="src">מסמך עבודה פנימי</div>
+    <div class="proj">פלסן סאסא — אסטרטגיה | מצגת עבודה</div>
+  </div>
+</section></div>
+
+<!-- ================= SLIDE : VEHICLE APPENDIX — s-vapp-na ================= -->
+<div class="slide-wrap"><section class="slide" id="s-vapp-na">
+  <div class="hdr">
+    <div class="hdr-titles">
+      <div class="kicker">03 | רכב · נספח — פירוט פרויקטים</div>
+      <h1 class="title">צפון אמריקה — 630 רכבים מזוהים בשלוש שנים, כ-210 בשנה</h1>
+    </div>
+    <img class="bdo-logo" src="@@IMG:bdo-logo.png@@" alt="BDO Consulting — Strategy Growth &amp; Innovation">
+  </div>
+  <table class="vx-table">
+    <colgroup><col style="width:170px"><col style="width:450px"><col style="width:160px"><col style="width:135px"><col style="width:120px"><col style="width:165px"><col style="width:195px"><col style="width:165px"><col style="width:216px"></colgroup>
+    <tr><th>מדינה</th><th>שם מכרז / עסקה פוטנציאלית</th><th>מזמין / לקוח</th><th>רכבים בהזמנה</th><th>רכבים לשנה</th><th>מחיר ליחידה ($)</th><th>שווי מוערך ($)</th><th>ממוגן</th><th>מוצר בפלסן / פיתוח</th></tr>
+    <tr><td class="co">ארה״ב</td><td>רכבים טקטיים ממוגנים למשטרות</td><td>משטרה</td><td class="n"><span dir="ltr">150</span></td><td class="n"><span dir="ltr">50</span></td><td class="n"><span dir="ltr">300,000</span></td><td class="n"><span dir="ltr">45,000,000</span></td><td>כן</td><td>כן</td></tr><tr><td class="co">קנדה</td><td>LUVP</td><td>צבא</td><td class="n"><span dir="ltr">200</span></td><td class="n"><span dir="ltr">67</span></td><td class="n"><span dir="ltr">250,000</span></td><td class="n"><span dir="ltr">50,000,000</span></td><td>כן</td><td>כן</td></tr><tr><td class="co">קנדה</td><td>LFE</td><td>צבא</td><td class="n"><span dir="ltr">220</span></td><td class="n"><span dir="ltr">73</span></td><td class="n"><span dir="ltr">200,000</span></td><td class="n"><span dir="ltr">44,000,000</span></td><td>לא</td><td>כן</td></tr><tr><td class="co">קנדה</td><td>רכבים טקטיים ממוגנים למשטרות</td><td>משטרה</td><td class="n"><span dir="ltr">60</span></td><td class="n"><span dir="ltr">20</span></td><td class="n"><span dir="ltr">300,000</span></td><td class="n"><span dir="ltr">18,000,000</span></td><td>כן</td><td>כן</td></tr><tr class="tot"><td class="co">סה״כ</td><td>—</td><td>—</td><td class="n"><span dir="ltr">630</span></td><td class="n"><span dir="ltr">210</span></td><td class="n">—</td><td class="n">—</td><td>—</td><td>—</td></tr>
+  </table>
+  <div class="ftr">
+    <div class="pageno"></div>
+    <div class="src">מקור: "גודל שוק ופוטנציאל שוק הרכב" — ניתוח ה-Bottom-up העדכני. ההערכה בוצעה על בסיס המכרזים המזוהים בכל טריטוריה.</div>
+    <div class="proj">פלסן סאסא — אסטרטגיה | מצגת עבודה</div>
+  </div>
+</section></div>
+
+<!-- ================= SLIDE : VEHICLE APPENDIX — s-vapp-cee ================= -->
+<div class="slide-wrap"><section class="slide" id="s-vapp-cee">
+  <div class="hdr">
+    <div class="hdr-titles">
+      <div class="kicker">03 | רכב · נספח — פירוט פרויקטים</div>
+      <h1 class="title">מרכז ומזרח אירופה — 1,374 רכבים מזוהים בשלוש שנים, כ-458 בשנה</h1>
+    </div>
+    <img class="bdo-logo" src="@@IMG:bdo-logo.png@@" alt="BDO Consulting — Strategy Growth &amp; Innovation">
+  </div>
+  <table class="vx-table">
+    <colgroup><col style="width:170px"><col style="width:450px"><col style="width:160px"><col style="width:135px"><col style="width:120px"><col style="width:165px"><col style="width:195px"><col style="width:165px"><col style="width:216px"></colgroup>
+    <tr><th>מדינה</th><th>שם מכרז / עסקה פוטנציאלית</th><th>מזמין / לקוח</th><th>רכבים בהזמנה</th><th>רכבים לשנה</th><th>מחיר ליחידה ($)</th><th>שווי מוערך ($)</th><th>ממוגן</th><th>מוצר בפלסן / פיתוח</th></tr>
+    <tr><td class="co">Czechia</td><td>Future Special Forces Mobility Expansion</td><td>צבא</td><td class="n"><span dir="ltr">80</span></td><td class="n"><span dir="ltr">40</span></td><td class="n"><span dir="ltr">200,000</span></td><td class="n"><span dir="ltr">16,000,000</span></td><td>כן, קל</td><td>דורש פיתוח</td></tr><tr><td class="co">Czechia</td><td>Heavy Protected Mobility Vehicle Requirement (Potential)</td><td>צבא</td><td class="n"><span dir="ltr">150</span></td><td class="n"><span dir="ltr">50</span></td><td class="n"><span dir="ltr">450,000</span></td><td class="n"><span dir="ltr">67,500,000</span></td><td>כן</td><td>דורש פיתוח</td></tr><tr><td class="co">Hungary</td><td>Airborne / SOF LTV Program</td><td>צבא</td><td class="n"><span dir="ltr">100</span></td><td class="n"><span dir="ltr">33</span></td><td class="n"><span dir="ltr">200,000</span></td><td class="n"><span dir="ltr">20,000,000</span></td><td>Optional</td><td>דורש פיתוח</td></tr><tr><td class="co">Poland</td><td>Future Airborne / Reconnaissance Vehicle</td><td>צבא</td><td class="n"><span dir="ltr">200</span></td><td class="n"><span dir="ltr">50</span></td><td class="n"><span dir="ltr">200,000</span></td><td class="n"><span dir="ltr">40,000,000</span></td><td>Mixed</td><td>דורש פיתוח</td></tr><tr><td class="co">Poland</td><td>GLADIUS UAV System</td><td>צבא</td><td class="n"><span dir="ltr">192</span></td><td class="n"><span dir="ltr">64</span></td><td class="n"><span dir="ltr">500,000</span></td><td class="n"><span dir="ltr">96,000,000</span></td><td>כן</td><td>דורש פיתוח</td></tr><tr><td class="co">Poland</td><td>PEGAZ Re-Launch</td><td>צבא</td><td class="n"><span dir="ltr">200</span></td><td class="n"><span dir="ltr">50</span></td><td class="n"><span dir="ltr">350,000</span></td><td class="n"><span dir="ltr">70,000,000</span></td><td>כן</td><td>מוצר קיים</td></tr><tr><td class="co">Poland</td><td>Sat-Com Vehicle</td><td>צבא</td><td class="n"><span dir="ltr">140</span></td><td class="n"><span dir="ltr">47</span></td><td class="n"><span dir="ltr">300,000</span></td><td class="n"><span dir="ltr">42,000,000</span></td><td>כן</td><td>מוצר קיים</td></tr><tr><td class="co">Slovakia</td><td>Future Protected Mobility Requirement</td><td>צבא</td><td class="n"><span dir="ltr">150</span></td><td class="n"><span dir="ltr">50</span></td><td class="n"><span dir="ltr">350,000</span></td><td class="n"><span dir="ltr">52,500,000</span></td><td>כן</td><td>דורש פיתוח</td></tr><tr><td class="co">Romania</td><td>SOF Air-Mobile Anti-Tank Vehicle Expansion</td><td>צבא</td><td class="n"><span dir="ltr">100</span></td><td class="n"><span dir="ltr">33</span></td><td class="n"><span dir="ltr">200,000</span></td><td class="n"><span dir="ltr">20,000,000</span></td><td>כן (מיגון קל)</td><td>דורש פיתוח</td></tr><tr><td class="co">Romania</td><td>SPYDER VSHORAD</td><td>צבא</td><td class="n"><span dir="ltr">62</span></td><td class="n"><span dir="ltr">21</span></td><td class="n"><span dir="ltr">450,000</span></td><td class="n"><span dir="ltr">27,900,000</span></td><td>לא</td><td>מוצר קיים</td></tr><tr class="tot"><td class="co">סה״כ</td><td>—</td><td>—</td><td class="n"><span dir="ltr">1,374</span></td><td class="n"><span dir="ltr">458</span></td><td class="n">—</td><td class="n">—</td><td>—</td><td>—</td></tr>
+  </table>
+  <div class="ftr">
+    <div class="pageno"></div>
+    <div class="src">מקור: "גודל שוק ופוטנציאל שוק הרכב" — ניתוח ה-Bottom-up העדכני. ההערכה בוצעה על בסיס המכרזים המזוהים בכל טריטוריה.</div>
+    <div class="proj">פלסן סאסא — אסטרטגיה | מצגת עבודה</div>
+  </div>
+</section></div>
+
+<!-- ================= SLIDE : VEHICLE APPENDIX — s-vapp-we ================= -->
+<div class="slide-wrap"><section class="slide" id="s-vapp-we">
+  <div class="hdr">
+    <div class="hdr-titles">
+      <div class="kicker">03 | רכב · נספח — פירוט פרויקטים</div>
+      <h1 class="title">מערב אירופה — 680 רכבים מזוהים בשלוש שנים, כ-227 בשנה</h1>
+    </div>
+    <img class="bdo-logo" src="@@IMG:bdo-logo.png@@" alt="BDO Consulting — Strategy Growth &amp; Innovation">
+  </div>
+  <table class="vx-table">
+    <colgroup><col style="width:170px"><col style="width:450px"><col style="width:160px"><col style="width:135px"><col style="width:120px"><col style="width:165px"><col style="width:195px"><col style="width:165px"><col style="width:216px"></colgroup>
+    <tr><th>מדינה</th><th>שם מכרז / עסקה פוטנציאלית</th><th>מזמין / לקוח</th><th>רכבים בהזמנה</th><th>רכבים לשנה</th><th>מחיר ליחידה ($)</th><th>שווי מוערך ($)</th><th>ממוגן</th><th>מוצר בפלסן / פיתוח</th></tr>
+    <tr><td class="co">UK</td><td>PSNI Landrover replacement</td><td>PSNI</td><td class="n"><span dir="ltr">100</span></td><td class="n"><span dir="ltr">50</span></td><td class="n"><span dir="ltr">125,000</span></td><td class="n"><span dir="ltr">12,500,000</span></td><td>—</td><td>דורש פיתוח</td></tr><tr><td class="co">UK</td><td>Civil Nuclear Constabulary</td><td>CNC</td><td class="n"><span dir="ltr">10</span></td><td class="n"><span dir="ltr">3</span></td><td class="n"><span dir="ltr">400,000</span></td><td class="n"><span dir="ltr">4,000,000</span></td><td>PAS 300</td><td>מוצר קיים</td></tr><tr><td class="co">UK</td><td>UK Marines — Nuclear protection</td><td>MOD</td><td class="n"><span dir="ltr">20</span></td><td class="n"><span dir="ltr">5</span></td><td class="n"><span dir="ltr">400,000</span></td><td class="n"><span dir="ltr">8,000,000</span></td><td>STANAG L2?</td><td>מוצר קיים</td></tr><tr><td class="co">UK</td><td>UK SF</td><td>MOD</td><td class="n"><span dir="ltr">4</span></td><td class="n"><span dir="ltr">1</span></td><td class="n"><span dir="ltr">400,000</span></td><td class="n"><span dir="ltr">1,600,000</span></td><td>PAS 300 L2?</td><td>מוצר קיים</td></tr><tr><td class="co">UK</td><td>UK Police Counter Terrorist</td><td>משטרה</td><td class="n"><span dir="ltr">6</span></td><td class="n"><span dir="ltr">2</span></td><td class="n"><span dir="ltr">400,000</span></td><td class="n"><span dir="ltr">2,400,000</span></td><td>PAS 300 (כמו Met Police)</td><td>מוצר קיים</td></tr><tr><td class="co">פינלנד</td><td>אטמוס</td><td>צבא</td><td class="n"><span dir="ltr">12</span></td><td class="n"><span dir="ltr">4</span></td><td class="n"><span dir="ltr">350,000</span></td><td class="n"><span dir="ltr">4,200,000</span></td><td>כן</td><td>מוצר קיים</td></tr><tr><td class="co">פינלנד</td><td>40 המשך</td><td>צבא</td><td class="n"><span dir="ltr">12</span></td><td class="n"><span dir="ltr">4</span></td><td class="n"><span dir="ltr">600,000</span></td><td class="n"><span dir="ltr">7,200,000</span></td><td>כן</td><td>מוצר קיים</td></tr><tr><td class="co">Greece</td><td>New Wheeled General Purpose Vehicle Program (Agenda 2030)</td><td>צבא</td><td class="n"><span dir="ltr">400</span></td><td class="n"><span dir="ltr">100</span></td><td class="n"><span dir="ltr">400,000</span></td><td class="n"><span dir="ltr">160,000,000</span></td><td>Mixed</td><td>מוצר קיים</td></tr><tr><td class="co">Greece</td><td>4x4 to Hellenic Army SF</td><td>צבא</td><td class="n"><span dir="ltr">55</span></td><td class="n"><span dir="ltr">27</span></td><td class="n"><span dir="ltr">350,000</span></td><td class="n"><span dir="ltr">19,250,000</span></td><td>כן</td><td>מוצר קיים</td></tr><tr><td class="co">Greece</td><td>NMT2</td><td>צבא</td><td class="n"><span dir="ltr">51</span></td><td class="n"><span dir="ltr">17</span></td><td class="n"><span dir="ltr">500,000</span></td><td class="n"><span dir="ltr">25,500,000</span></td><td>כן</td><td>מוצר קיים</td></tr><tr><td class="co">Greece</td><td>ברקים</td><td>צבא</td><td class="n"><span dir="ltr">10</span></td><td class="n"><span dir="ltr">3</span></td><td class="n"><span dir="ltr">480,000</span></td><td class="n"><span dir="ltr">4,800,000</span></td><td>כן</td><td>דורש פיתוח</td></tr><tr class="tot"><td class="co">סה״כ</td><td>—</td><td>—</td><td class="n"><span dir="ltr">680</span></td><td class="n"><span dir="ltr">227</span></td><td class="n">—</td><td class="n">—</td><td>—</td><td>—</td></tr>
+  </table>
+  <div class="ftr">
+    <div class="pageno"></div>
+    <div class="src">מקור: "גודל שוק ופוטנציאל שוק הרכב" — ניתוח ה-Bottom-up העדכני. ההערכה בוצעה על בסיס המכרזים המזוהים בכל טריטוריה.</div>
+    <div class="proj">פלסן סאסא — אסטרטגיה | מצגת עבודה</div>
+  </div>
+</section></div>
+
+<!-- ================= SLIDE : VEHICLE APPENDIX — s-vapp-sp ================= -->
+<div class="slide-wrap"><section class="slide" id="s-vapp-sp">
+  <div class="hdr">
+    <div class="hdr-titles">
+      <div class="kicker">03 | רכב · נספח — פירוט פרויקטים</div>
+      <h1 class="title">מיוחדות — 150 רכבים מזוהים בשלוש שנים</h1>
+    </div>
+    <img class="bdo-logo" src="@@IMG:bdo-logo.png@@" alt="BDO Consulting — Strategy Growth &amp; Innovation">
+  </div>
+  <table class="vx-table">
+    <colgroup><col style="width:170px"><col style="width:450px"><col style="width:160px"><col style="width:135px"><col style="width:120px"><col style="width:165px"><col style="width:195px"><col style="width:165px"><col style="width:216px"></colgroup>
+    <tr><th>מדינה</th><th>שם מכרז / עסקה פוטנציאלית</th><th>מזמין / לקוח</th><th>רכבים בהזמנה</th><th>רכבים לשנה</th><th>מחיר ליחידה ($)</th><th>שווי מוערך ($)</th><th>ממוגן</th><th>מוצר בפלסן / פיתוח</th></tr>
+    <tr><td class="co">אמינות</td><td>תקשוב</td><td>צבא</td><td class="n"><span dir="ltr">96</span></td><td class="n"><span dir="ltr">32</span></td><td class="n"><span dir="ltr">300,000</span></td><td class="n"><span dir="ltr">28,800,000</span></td><td>כן</td><td>מוצר קיים</td></tr><tr><td class="co">אמינות</td><td>מערכת רדאר</td><td>צבא</td><td class="n"><span dir="ltr">29</span></td><td class="n"><span dir="ltr">15</span></td><td class="n"><span dir="ltr">349,000</span></td><td class="n"><span dir="ltr">10,121,000</span></td><td>כן</td><td>דורש פיתוח</td></tr><tr><td class="co">סולן</td><td>שריון אבירים</td><td>צבא</td><td class="n"><span dir="ltr">25</span></td><td class="n"><span dir="ltr">8</span></td><td class="n"><span dir="ltr">630,000</span></td><td class="n"><span dir="ltr">15,750,000</span></td><td>כן</td><td>מוצר קיים</td></tr><tr class="tot"><td class="co">סה״כ</td><td>—</td><td>—</td><td class="n"><span dir="ltr">150</span></td><td class="n"><span dir="ltr">55</span></td><td class="n">—</td><td class="n">—</td><td>—</td><td>—</td></tr>
+  </table>
+  <div class="ftr">
+    <div class="pageno"></div>
+    <div class="src">מקור: "גודל שוק ופוטנציאל שוק הרכב" — ניתוח ה-Bottom-up העדכני. ההערכה בוצעה על בסיס המכרזים המזוהים בכל טריטוריה.</div>
+    <div class="proj">פלסן סאסא — אסטרטגיה | מצגת עבודה</div>
+  </div>
+</section></div>
+
+<!-- ================= SLIDE : VEHICLE APPENDIX — s-vapp-sa1 ================= -->
+<div class="slide-wrap"><section class="slide" id="s-vapp-sa1">
+  <div class="hdr">
+    <div class="hdr-titles">
+      <div class="kicker">03 | רכב · נספח — פירוט פרויקטים</div>
+      <h1 class="title">דרום אמריקה (1/2) — פרויקטים מזוהים</h1>
+    </div>
+    <img class="bdo-logo" src="@@IMG:bdo-logo.png@@" alt="BDO Consulting — Strategy Growth &amp; Innovation">
+  </div>
+  <table class="vx-table">
+    <colgroup><col style="width:170px"><col style="width:450px"><col style="width:160px"><col style="width:135px"><col style="width:120px"><col style="width:165px"><col style="width:195px"><col style="width:165px"><col style="width:216px"></colgroup>
+    <tr><th>מדינה</th><th>שם מכרז / עסקה פוטנציאלית</th><th>מזמין / לקוח</th><th>רכבים בהזמנה</th><th>רכבים לשנה</th><th>מחיר ליחידה ($)</th><th>שווי מוערך ($)</th><th>ממוגן</th><th>מוצר בפלסן / פיתוח</th></tr>
+    <tr><td class="co">אקוודור</td><td>רכב ממוגן 4X4</td><td>צבא</td><td class="n"><span dir="ltr">120</span></td><td class="n"><span dir="ltr">40</span></td><td class="n"><span dir="ltr">600,000</span></td><td class="n"><span dir="ltr">72,000,000</span></td><td>כן</td><td>מוצר קיים</td></tr><tr><td class="co">אקוודור</td><td>רכב ממוגן 4X4</td><td>צבא</td><td class="n"><span dir="ltr">120</span></td><td class="n"><span dir="ltr">40</span></td><td class="n"><span dir="ltr">600,000</span></td><td class="n"><span dir="ltr">72,000,000</span></td><td>כן</td><td>מוצר קיים</td></tr><tr><td class="co">ארגנטינה</td><td>IBEX</td><td>משטרה</td><td class="n"><span dir="ltr">20</span></td><td class="n"><span dir="ltr">7</span></td><td class="n"><span dir="ltr">330,000</span></td><td class="n"><span dir="ltr">6,600,000</span></td><td>כן</td><td>מוצר קיים</td></tr><tr><td class="co">ארגנטינה</td><td>טיגריס</td><td>משטרה</td><td class="n"><span dir="ltr">10</span></td><td class="n"><span dir="ltr">3</span></td><td class="n"><span dir="ltr">420,000</span></td><td class="n"><span dir="ltr">4,200,000</span></td><td>כן</td><td>מוצר קיים</td></tr><tr><td class="co">ברזיל</td><td>אטמוס</td><td>צבא</td><td class="n"><span dir="ltr">36</span></td><td class="n"><span dir="ltr">12</span></td><td class="n"><span dir="ltr">350,000</span></td><td class="n"><span dir="ltr">12,600,000</span></td><td>כן</td><td>מוצר קיים</td></tr><tr><td class="co">ברזיל</td><td>רכב ממוגן 4X4</td><td>משטרה צבאית</td><td class="n"><span dir="ltr">10</span></td><td class="n"><span dir="ltr">3</span></td><td class="n"><span dir="ltr">500,000</span></td><td class="n"><span dir="ltr">5,000,000</span></td><td>כן</td><td>מוצר קיים</td></tr><tr><td class="co">ברזיל</td><td>רכב מיגון מיקוש</td><td>משטרה צבאית</td><td class="n"><span dir="ltr">8</span></td><td class="n"><span dir="ltr">3</span></td><td class="n"><span dir="ltr">1,000,000</span></td><td class="n"><span dir="ltr">8,000,000</span></td><td>כן</td><td>דורש פיתוח</td></tr><tr><td class="co">ברזיל</td><td>רכב רמה 3</td><td>משטרה צבאית</td><td class="n"><span dir="ltr">20</span></td><td class="n"><span dir="ltr">7</span></td><td class="n"><span dir="ltr">600,000</span></td><td class="n"><span dir="ltr">12,000,000</span></td><td>כן</td><td>דורש פיתוח</td></tr><tr><td class="co">ברזיל</td><td>קיט לרכב ממוגן (IBEX)</td><td>משטרה</td><td class="n"><span dir="ltr">240</span></td><td class="n"><span dir="ltr">80</span></td><td class="n"><span dir="ltr">80,000</span></td><td class="n"><span dir="ltr">19,200,000</span></td><td>—</td><td>מוצר קיים</td></tr>
+  </table>
+  <div class="ftr">
+    <div class="pageno"></div>
+    <div class="src">מקור: "גודל שוק ופוטנציאל שוק הרכב" — ניתוח ה-Bottom-up העדכני. ההערכה בוצעה על בסיס המכרזים המזוהים בכל טריטוריה.</div>
+    <div class="proj">פלסן סאסא — אסטרטגיה | מצגת עבודה</div>
+  </div>
+</section></div>
+
+<!-- ================= SLIDE : VEHICLE APPENDIX — s-vapp-sa2 ================= -->
+<div class="slide-wrap"><section class="slide" id="s-vapp-sa2">
+  <div class="hdr">
+    <div class="hdr-titles">
+      <div class="kicker">03 | רכב · נספח — פירוט פרויקטים</div>
+      <h1 class="title">דרום אמריקה (2/2) — פרויקטים מזוהים</h1>
+    </div>
+    <img class="bdo-logo" src="@@IMG:bdo-logo.png@@" alt="BDO Consulting — Strategy Growth &amp; Innovation">
+  </div>
+  <table class="vx-table">
+    <colgroup><col style="width:170px"><col style="width:450px"><col style="width:160px"><col style="width:135px"><col style="width:120px"><col style="width:165px"><col style="width:195px"><col style="width:165px"><col style="width:216px"></colgroup>
+    <tr><th>מדינה</th><th>שם מכרז / עסקה פוטנציאלית</th><th>מזמין / לקוח</th><th>רכבים בהזמנה</th><th>רכבים לשנה</th><th>מחיר ליחידה ($)</th><th>שווי מוערך ($)</th><th>ממוגן</th><th>מוצר בפלסן / פיתוח</th></tr>
+    <tr><td class="co">מקסיקו</td><td>IBEX</td><td>משטרה</td><td class="n"><span dir="ltr">50</span></td><td class="n"><span dir="ltr">17</span></td><td class="n"><span dir="ltr">300,000</span></td><td class="n"><span dir="ltr">15,000,000</span></td><td>כן</td><td>מוצר קיים</td></tr><tr><td class="co">מקסיקו</td><td>טיגריס</td><td>משטרה</td><td class="n"><span dir="ltr">30</span></td><td class="n"><span dir="ltr">10</span></td><td class="n"><span dir="ltr">400,000</span></td><td class="n"><span dir="ltr">12,000,000</span></td><td>כן</td><td>מוצר קיים</td></tr><tr><td class="co">מקסיקו</td><td>רכב מיגון מיקוש</td><td>צבא</td><td class="n"><span dir="ltr">30</span></td><td class="n"><span dir="ltr">10</span></td><td class="n"><span dir="ltr">750,000</span></td><td class="n"><span dir="ltr">22,500,000</span></td><td>כן</td><td>מוצר קיים</td></tr><tr><td class="co">מקסיקו</td><td>רכב ממוגן</td><td>צבא</td><td class="n"><span dir="ltr">40</span></td><td class="n"><span dir="ltr">13</span></td><td class="n"><span dir="ltr">480,000</span></td><td class="n"><span dir="ltr">19,200,000</span></td><td>כן</td><td>מוצר קיים</td></tr><tr><td class="co">פרו</td><td>רכבי פיזור הפגנות</td><td>משטרה</td><td class="n"><span dir="ltr">44</span></td><td class="n"><span dir="ltr">15</span></td><td class="n"><span dir="ltr">681,000</span></td><td class="n"><span dir="ltr">29,964,000</span></td><td>—</td><td>דורש פיתוח</td></tr><tr><td class="co">פרו</td><td>משאיות 6X6</td><td>צבא</td><td class="n"><span dir="ltr">7</span></td><td class="n"><span dir="ltr">2</span></td><td class="n"><span dir="ltr">350,000</span></td><td class="n"><span dir="ltr">2,450,000</span></td><td>לא</td><td>לא קיים</td></tr><tr><td class="co">פרו</td><td>משאיות 6X6</td><td>צבא</td><td class="n"><span dir="ltr">30</span></td><td class="n"><span dir="ltr">10</span></td><td class="n"><span dir="ltr">350,000</span></td><td class="n"><span dir="ltr">10,500,000</span></td><td>לא</td><td>לא קיים</td></tr><tr><td class="co">פרו</td><td>טיגריס + GPK</td><td>משטרה</td><td class="n"><span dir="ltr">10</span></td><td class="n"><span dir="ltr">3</span></td><td class="n"><span dir="ltr">530,000</span></td><td class="n"><span dir="ltr">5,300,000</span></td><td>—</td><td>מוצר קיים</td></tr><tr><td class="co">פרו</td><td>EX12</td><td>משטרה</td><td class="n"><span dir="ltr">14</span></td><td class="n"><span dir="ltr">5</span></td><td class="n"><span dir="ltr">550,000</span></td><td class="n"><span dir="ltr">7,700,000</span></td><td>—</td><td>מוצר קיים</td></tr><tr><td class="co">פרו</td><td>רכב מיגון מיקוש 2A2B</td><td>משטרה</td><td class="n"><span dir="ltr">10</span></td><td class="n"><span dir="ltr">3</span></td><td class="n"><span dir="ltr">740,000</span></td><td class="n"><span dir="ltr">7,400,000</span></td><td>—</td><td>סיום פיתוח</td></tr><tr><td class="co">פרו</td><td>רכבי שינוע לוחמים</td><td>צבא</td><td class="n"><span dir="ltr">70</span></td><td class="n"><span dir="ltr">23</span></td><td class="n"><span dir="ltr">500,000</span></td><td class="n"><span dir="ltr">35,000,000</span></td><td>כן</td><td>—</td></tr><tr><td class="co">פרו</td><td>רכבי מיגון מיקוש</td><td>צבא</td><td class="n"><span dir="ltr">40</span></td><td class="n"><span dir="ltr">13</span></td><td class="n"><span dir="ltr">750,000</span></td><td class="n"><span dir="ltr">30,000,000</span></td><td>כן</td><td>סיום פיתוח</td></tr><tr><td class="co">פרו</td><td>רכבי שו״ב</td><td>צבא</td><td class="n"><span dir="ltr">30</span></td><td class="n"><span dir="ltr">10</span></td><td class="n"><span dir="ltr">300,000</span></td><td class="n"><span dir="ltr">9,000,000</span></td><td>כן</td><td>—</td></tr><tr><td class="co">צ׳ילה</td><td>אמבולנס ממוגן</td><td>צבא</td><td class="n"><span dir="ltr">25</span></td><td class="n"><span dir="ltr">8</span></td><td class="n"><span dir="ltr">540,000</span></td><td class="n"><span dir="ltr">13,500,000</span></td><td>כן</td><td>דורש פיתוח</td></tr><tr><td class="co">קולומביה</td><td>רכב ממוגן 4X4</td><td>צבא</td><td class="n"><span dir="ltr">100</span></td><td class="n"><span dir="ltr">33</span></td><td class="n"><span dir="ltr">550,000</span></td><td class="n"><span dir="ltr">55,000,000</span></td><td>כן</td><td>מוצר קיים</td></tr><tr class="tot"><td class="co">סה״כ</td><td>—</td><td>—</td><td class="n"><span dir="ltr">530</span></td><td class="n"><span dir="ltr">137</span></td><td class="n">—</td><td class="n">—</td><td>—</td><td>—</td></tr>
+  </table>
+  <div class="vx-note2">שורת הסה״כ — כפי שמופיעה במקור</div>
+  <div class="ftr">
+    <div class="pageno"></div>
+    <div class="src">מקור: "גודל שוק ופוטנציאל שוק הרכב" — ניתוח ה-Bottom-up העדכני. ההערכה בוצעה על בסיס המכרזים המזוהים בכל טריטוריה.</div>
     <div class="proj">פלסן סאסא — אסטרטגיה | מצגת עבודה</div>
   </div>
 </section></div>
