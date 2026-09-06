@@ -1,4 +1,4 @@
-<title>Plasan Signature Management</title>
+<title>Plasan Master Deck</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
@@ -125,6 +125,51 @@ sup { font-size: 15px; line-height: 0; }
 .cv-sub { font-size: 32px; color: var(--c-text-muted); margin-top: 30px; line-height: 1.4; }
 .cv-date { font-size: 22px; color: var(--c-text-faint); margin-top: 52px; font-weight: 500; }
 .cv-red { position: absolute; left: var(--m-side); bottom: 58px; width: 120px; height: 120px; background: var(--c-burgundy); }
+
+/* ============================================================
+   MASTER DECK — CONTENTS MAP + SECTION / SUBSECTION DIVIDERS
+   ============================================================ */
+.cv-streams { display: flex; gap: 26px; align-items: center; margin-top: 42px; font-size: 27px; font-weight: 600; color: var(--c-primary); }
+.cv-streams .sep { width: 7px; height: 7px; background: var(--c-slate-mid); border-radius: 50%; }
+
+.toc { position: absolute; right: var(--m-side); left: var(--m-side); top: 252px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+.toc-col { background: var(--c-fill); border-top: 4px solid var(--c-primary); padding: 28px 34px 24px; }
+.toc-col .tnum { font-size: 36px; font-weight: 700; color: var(--c-slate-mid); line-height: 1.4; }
+.toc-col .tname { font-size: 44px; font-weight: 800; color: var(--c-primary); margin: 6px 0 10px; }
+.toc-col .tdesc { font-size: 20px; color: var(--c-text-muted); line-height: 1.4; min-height: 88px; }
+.toc-item { display: flex; align-items: center; gap: 14px; padding: 15px 2px; border-top: 1px solid #D8DDE2; font-size: 22px; color: var(--c-text); }
+.toc-item .m { flex: none; width: 16px; height: 16px; border-radius: 3px; }
+.toc-item.done .m { background: var(--c-primary); }
+.toc-item.todo .m { background: none; box-shadow: inset 0 0 0 2.5px var(--c-border); }
+.toc-item.todo { color: var(--c-text-faint); }
+.toc-item .tag { margin-inline-start: auto; font-size: 16px; font-weight: 600; padding: 4px 11px; border-radius: 3px; }
+.toc-item.done .tag { background: var(--c-primary-tint); color: var(--c-primary); }
+.toc-item.todo .tag { box-shadow: inset 0 0 0 1.5px var(--c-hairline); color: var(--c-text-faint); }
+.toc-legend { position: absolute; right: var(--m-side); left: var(--m-side); top: 968px; font-size: 18px; color: var(--c-text-faint); }
+.toc-legend .d { display: inline-block; width: 15px; height: 15px; background: var(--c-primary); border-radius: 3px; vertical-align: -2px; margin-left: 8px; }
+.toc-legend .o { display: inline-block; width: 15px; height: 15px; box-shadow: inset 0 0 0 2.5px var(--c-border); border-radius: 3px; vertical-align: -2px; margin-left: 8px; }
+
+.sd { position: absolute; left: 0; right: 0; top: 0; bottom: 58px; background: var(--c-primary); }
+.sd-num { position: absolute; left: 100px; bottom: 90px; font-size: 300px; font-weight: 800; color: rgba(255,255,255,.10); line-height: 1.45; }
+.sd-body { position: absolute; right: 140px; top: 250px; left: 140px; }
+.sd-kick { font-size: 24px; font-weight: 600; color: rgba(255,255,255,.65); margin-bottom: 22px; }
+.sd-title { font-size: 104px; font-weight: 800; color: #fff; line-height: 1.45; }
+.sd-line { width: 120px; height: 6px; background: var(--c-red); margin-top: 34px; }
+.sd-desc { font-size: 28px; color: rgba(255,255,255,.85); margin-top: 30px; line-height: 1.4; }
+.sd-subs { margin-top: 60px; max-width: 980px; }
+.sd-sub { display: flex; align-items: center; gap: 16px; padding: 15px 2px; border-top: 1px solid rgba(255,255,255,.25); font-size: 25px; color: #fff; }
+.sd-sub.todo { color: rgba(255,255,255,.55); }
+.sd-sub .st { margin-inline-start: auto; font-size: 16px; font-weight: 600; padding: 5px 13px; border-radius: 3px; }
+.sd-sub.done .st { background: #fff; color: var(--c-primary); }
+.sd-sub.todo .st { box-shadow: inset 0 0 0 1.5px rgba(255,255,255,.4); color: rgba(255,255,255,.6); }
+.sd + .ftr .pageno { background: var(--c-slate); }
+
+.ssd { position: absolute; right: var(--m-side); left: var(--m-side); top: 330px; }
+.ssd .k { font-size: 24px; font-weight: 700; color: var(--c-slate-mid); margin-bottom: 24px; }
+.ssd .bar { width: 90px; height: 6px; background: var(--c-primary); margin-bottom: 34px; }
+.ssd h2 { font-size: 76px; font-weight: 800; color: var(--c-primary); line-height: 1.45; }
+.ssd .q { font-size: 28px; color: var(--c-text-muted); margin-top: 26px; line-height: 1.42; max-width: 1500px; }
+.ssd .scope { font-size: 20px; color: var(--c-text-faint); margin-top: 46px; }
 
 /* ============================================================
    SLIDE — PROJECT SCOPE + FUNNEL
@@ -265,15 +310,118 @@ ul.story li .dim { color: var(--c-text-muted); }
   <div class="cv-slab"></div>
   <div class="cv-body">
     <div class="cv-kicker">פלסן סאסא — אסטרטגיה</div>
-    <h1 class="cv-title">ניהול חתימה<br>והסוואה רב-ספקטרלית</h1>
-    <div class="cv-sub">מיפוי חברות ממוקד — ניתוח עומק של תשע חברות נבחרות</div>
+    <h1 class="cv-title">הזדמנויות צמיחה<br>ומיפוי חברות</h1>
+    <div class="cv-streams"><span>שרידות</span><span class="sep"></span><span>ניהול חתימה</span><span class="sep"></span><span>רכב</span></div>
+    <div class="cv-sub">מצגת עבודה מתעדכנת — מיפוי שווקים, חברות והזדמנויות סביב פעילויות הליבה</div>
     <div class="cv-date">ספטמבר 2026</div>
   </div>
   <div class="cv-red"></div>
   <div class="ftr">
     <div class="pageno"></div>
     <div class="src">מסמך עבודה פנימי</div>
-    <div class="proj">פלסן סאסא — ניהול חתימה | מיפוי חברות</div>
+    <div class="proj">פלסן סאסא — אסטרטגיה | מצגת עבודה</div>
+  </div>
+</section></div>
+
+<!-- ================= SLIDE : CONTENTS / PROJECT MAP ================= -->
+<div class="slide-wrap"><section class="slide" id="s-toc">
+  <div class="hdr">
+    <div class="hdr-titles">
+      <div class="kicker">מפת העבודה</div>
+      <h1 class="title">שלושה צירי עבודה אנליטיים — מה כלול בגרסה הנוכחית ומה יתווסף בהמשך</h1>
+    </div>
+    <img class="bdo-logo" src="@@IMG:bdo-logo.png@@" alt="BDO Consulting — Strategy Growth &amp; Innovation">
+  </div>
+  <div class="toc">
+    <div class="toc-col">
+      <div class="tnum">01</div>
+      <div class="tname">שרידות</div>
+      <div class="tdesc">מיפוי שוק וחברות סביב פעילות המיגון של פלסן</div>
+      <div class="toc-item todo"><span class="m"></span>מיגון פלטפורמות<span class="tag">בהמשך</span></div>
+      <div class="toc-item todo"><span class="m"></span>מיגון ימי<span class="tag">בהמשך</span></div>
+      <div class="toc-item todo"><span class="m"></span>מיגון אישי<span class="tag">בהמשך</span></div>
+      <div class="toc-item todo"><span class="m"></span>מיגון שקוף<span class="tag">בהמשך</span></div>
+    </div>
+    <div class="toc-col">
+      <div class="tnum">02</div>
+      <div class="tname">ניהול חתימה</div>
+      <div class="tdesc">השוק והחברות בתחום ניהול החתימה וההסוואה הרב-ספקטרלית</div>
+      <div class="toc-item done"><span class="m"></span>מיפוי חברות<span class="tag">כלול</span></div>
+      <div class="toc-item todo"><span class="m"></span>מומנטום שוק — <span dir="ltr">2023</span> מול <span dir="ltr">2026</span><span class="tag">בהמשך</span></div>
+    </div>
+    <div class="toc-col">
+      <div class="tnum">03</div>
+      <div class="tname">רכב</div>
+      <div class="tdesc">גודל השוק, הפוטנציאל והשחקנים בתחום הרכב</div>
+      <div class="toc-item todo"><span class="m"></span>גודל שוק ופוטנציאל <span dir="ltr">(SAM / SOM)</span><span class="tag">בהמשך</span></div>
+      <div class="toc-item todo"><span class="m"></span>מיפוי חברות<span class="tag">בהמשך</span></div>
+    </div>
+  </div>
+  <div class="toc-legend"><span class="d"></span> כלול בגרסה הנוכחית &nbsp;&nbsp;&nbsp; <span class="o"></span> יתווסף בהמשך העבודה</div>
+  <div class="ftr">
+    <div class="pageno"></div>
+    <div class="src">מסמך עבודה פנימי — המבנה יתעדכן עם השלמת הניתוחים</div>
+    <div class="proj">פלסן סאסא — אסטרטגיה | מצגת עבודה</div>
+  </div>
+</section></div>
+
+<!-- ================= SLIDE : SECTION DIVIDER 01 ================= -->
+<div class="slide-wrap"><section class="slide" id="s-div-surv">
+  <div class="sd"></div>
+  <div class="sd-num">01</div>
+  <div class="sd-body">
+    <div class="sd-kick">ציר עבודה 01</div>
+    <div class="sd-title">שרידות</div>
+    <div class="sd-line"></div>
+    <div class="sd-desc">מיפוי שוק וחברות סביב פעילות המיגון של פלסן</div>
+    <div class="sd-subs">
+    <div class="sd-sub todo"><span>מיגון פלטפורמות</span><span class="st">בהמשך</span></div>
+    <div class="sd-sub todo"><span>מיגון ימי</span><span class="st">בהמשך</span></div>
+    <div class="sd-sub todo"><span>מיגון אישי</span><span class="st">בהמשך</span></div>
+    <div class="sd-sub todo"><span>מיגון שקוף</span><span class="st">בהמשך</span></div>
+    </div>
+  </div>
+  <div class="ftr">
+    <div class="pageno"></div>
+    <div class="src">מסמך עבודה פנימי</div>
+    <div class="proj">פלסן סאסא — אסטרטגיה | מצגת עבודה</div>
+  </div>
+</section></div>
+
+<!-- ================= SLIDE : SECTION DIVIDER 02 ================= -->
+<div class="slide-wrap"><section class="slide" id="s-div-sm">
+  <div class="sd"></div>
+  <div class="sd-num">02</div>
+  <div class="sd-body">
+    <div class="sd-kick">ציר עבודה 02</div>
+    <div class="sd-title">ניהול חתימה</div>
+    <div class="sd-line"></div>
+    <div class="sd-desc">השוק והחברות בתחום ניהול החתימה וההסוואה הרב-ספקטרלית</div>
+    <div class="sd-subs">
+    <div class="sd-sub done"><span>מיפוי חברות</span><span class="st">בפרק זה</span></div>
+    <div class="sd-sub todo"><span>מומנטום שוק — 2023 מול 2026</span><span class="st">בהמשך</span></div>
+    </div>
+  </div>
+  <div class="ftr">
+    <div class="pageno"></div>
+    <div class="src">מסמך עבודה פנימי</div>
+    <div class="proj">פלסן סאסא — אסטרטגיה | מצגת עבודה</div>
+  </div>
+</section></div>
+
+<!-- ================= SLIDE : SUBSECTION DIVIDER 02.A ================= -->
+<div class="slide-wrap"><section class="slide" id="s-sub-sm-map">
+  <div class="ssd">
+    <div class="k">ציר עבודה 02 · ניהול חתימה</div>
+    <div class="bar"></div>
+    <h2>מיפוי חברות</h2>
+    <div class="q">ניתוח עומק של תשע החברות שנבחרו בתהליך הסינון — מי הן, מה הן מציעות, ואיזה חלק של הספקטרום כל אחת מכסה</div>
+    <div class="scope">מסגרת הסינון · תמונת-על השוואתית · כיסוי ספקטרלי · מפת מוצרים · תשעה פרופילי חברה</div>
+  </div>
+  <div class="ftr">
+    <div class="pageno"></div>
+    <div class="src">מסמך עבודה פנימי</div>
+    <div class="proj">פלסן סאסא — אסטרטגיה | מצגת עבודה</div>
   </div>
 </section></div>
 
@@ -281,7 +429,7 @@ ul.story li .dim { color: var(--c-text-muted); }
 <div class="slide-wrap"><section class="slide" id="s-scope">
   <div class="hdr">
     <div class="hdr-titles">
-      <div class="kicker">מסגרת הפרויקט ותהליך הסינון</div>
+      <div class="kicker">02 | מסגרת הפרויקט ותהליך הסינון</div>
       <h1 class="title">בניית בנק חברות מטרה בניהול חתימה — מ-37 חברות רלוונטיות לתשע נבחרות לניתוח עומק</h1>
     </div>
     <img class="bdo-logo" src="@@IMG:bdo-logo.png@@" alt="BDO Consulting — Strategy Growth &amp; Innovation">
@@ -339,7 +487,7 @@ ul.story li .dim { color: var(--c-text-muted); }
   <div class="ftr">
     <div class="pageno"></div>
     <div class="src">מקור: תהליך הסינון של צוות הפרויקט; חוברות המיפוי של פלסן (מפת החברות; מאגר תשע החברות)</div>
-    <div class="proj">פלסן סאסא — ניהול חתימה | מיפוי חברות</div>
+    <div class="proj">פלסן סאסא — אסטרטגיה | מצגת עבודה</div>
   </div>
 </section></div>
 
@@ -347,7 +495,7 @@ ul.story li .dim { color: var(--c-text-muted); }
 <div class="slide-wrap"><section class="slide" id="s-table">
   <div class="hdr">
     <div class="hdr-titles">
-      <div class="kicker">תמונת-על השוואתית</div>
+      <div class="kicker">02 | תמונת-על השוואתית</div>
       <h1 class="title">תשע החברות במבט אחד — ארבע שחקניות הסוואה ייעודיות וחמש חברות עם ניהול חתימה בתוך עסק רחב יותר</h1>
     </div>
     <img class="bdo-logo" src="@@IMG:bdo-logo.png@@" alt="BDO Consulting — Strategy Growth &amp; Innovation">
@@ -480,7 +628,7 @@ ul.story li .dim { color: var(--c-text-muted); }
   <div class="ftr">
     <div class="pageno"></div>
     <div class="src">מקור: מאגר תשע החברות של פלסן (אתרי חברות, הודעות תוכנית, הערכות צד-שלישי); מאגרי חברות חיצוניים</div>
-    <div class="proj">פלסן סאסא — ניהול חתימה | מיפוי חברות</div>
+    <div class="proj">פלסן סאסא — אסטרטגיה | מצגת עבודה</div>
   </div>
 </section></div>
 
@@ -488,7 +636,7 @@ ul.story li .dim { color: var(--c-text-muted); }
 <div class="slide-wrap"><section class="slide" id="s-spectrum">
   <div class="hdr">
     <div class="hdr-titles">
-      <div class="kicker">כיסוי ספקטרלי</div>
+      <div class="kicker">02 | כיסוי ספקטרלי</div>
       <h1 class="title">כיסוי אופטי-תרמי הוא המכנה המשותף; יכולת מכ״ם מגיעה משש חברות — חלקה מסויג או ממוקד-יישום</h1>
     </div>
     <img class="bdo-logo" src="@@IMG:bdo-logo.png@@" alt="BDO Consulting — Strategy Growth &amp; Innovation">
@@ -566,7 +714,7 @@ ul.story li .dim { color: var(--c-text-muted); }
   <div class="ftr">
     <div class="pageno"></div>
     <div class="src">מקור: מאגר תשע החברות של פלסן — פירוט ספקטרלי ברמת מוצר; סיווג צוות הפרויקט</div>
-    <div class="proj">פלסן סאסא — ניהול חתימה | מיפוי חברות</div>
+    <div class="proj">פלסן סאסא — אסטרטגיה | מצגת עבודה</div>
   </div>
 </section></div>
 
@@ -574,7 +722,7 @@ ul.story li .dim { color: var(--c-text-muted); }
 <div class="slide-wrap"><section class="slide" id="s-landscape">
   <div class="hdr">
     <div class="hdr-titles">
-      <div class="kicker">מפת מוצרים וטכנולוגיות</div>
+      <div class="kicker">02 | מפת מוצרים וטכנולוגיות</div>
       <h1 class="title">מערכות רכב, רשתות וטקסטיל מרכיבים את עיקר ההיצע; יכולת אקטיבית / אדפטיבית קיימת בשתי חברות בלבד</h1>
     </div>
     <img class="bdo-logo" src="@@IMG:bdo-logo.png@@" alt="BDO Consulting — Strategy Growth &amp; Innovation">
@@ -599,7 +747,7 @@ ul.story li .dim { color: var(--c-text-muted); }
   <div class="ftr">
     <div class="pageno"></div>
     <div class="src">מקור: מאגר תשע החברות של פלסן (סיווג משפחות מוצר)</div>
-    <div class="proj">פלסן סאסא — ניהול חתימה | מיפוי חברות</div>
+    <div class="proj">פלסן סאסא — אסטרטגיה | מצגת עבודה</div>
   </div>
 </section></div>
 
@@ -607,7 +755,7 @@ ul.story li .dim { color: var(--c-text-muted); }
 <div class="slide-wrap"><section class="slide" id="s-ametrine">
   <div class="hdr">
     <div class="hdr-titles">
-      <div class="kicker">פרופיל חברה · ליבת העסק</div>
+      <div class="kicker">02 | פרופיל חברה · ליבת העסק</div>
       <h1 class="title">Ametrine Technologies — שחקנית הסוואה ייעודית עם מוצרי פלטפורמה בשטח ופעילות מול לקוחות ממשל בארה״ב</h1>
     </div>
     <img class="bdo-logo" src="@@IMG:bdo-logo.png@@" alt="BDO Consulting — Strategy Growth &amp; Innovation">
@@ -671,7 +819,7 @@ ul.story li .dim { color: var(--c-text-muted); }
   <div class="ftr">
     <div class="pageno"></div>
     <div class="src">מקור: אתר Ametrine הרשמי; רישומי חוזים פדרליים בארה״ב; מאגר תשע החברות של פלסן. טווח ההכנסות — הערכת צד-שלישי.</div>
-    <div class="proj">פלסן סאסא — ניהול חתימה | מיפוי חברות</div>
+    <div class="proj">פלסן סאסא — אסטרטגיה | מצגת עבודה</div>
   </div>
 </section></div>
 
@@ -679,7 +827,7 @@ ul.story li .dim { color: var(--c-text-muted); }
 <div class="slide-wrap"><section class="slide" id="s-eltics">
   <div class="hdr">
     <div class="hdr-titles">
-      <div class="kicker">פרופיל חברה · ליבת העסק</div>
+      <div class="kicker">02 | פרופיל חברה · ליבת העסק</div>
       <h1 class="title">Eltics / Black Fox — ידע ייחודי בהסוואה תרמית אקטיבית; העדויות ברובן היסטוריות והסטטוס הנוכחי אינו ברור</h1>
     </div>
     <img class="bdo-logo" src="@@IMG:bdo-logo.png@@" alt="BDO Consulting — Strategy Growth &amp; Innovation">
@@ -743,7 +891,7 @@ ul.story li .dim { color: var(--c-text-muted); }
   <div class="ftr">
     <div class="pageno"></div>
     <div class="src">מקור: מאגר תשע החברות של פלסן (דיווח פומבי היסטורי). אין אתר רשמי פעיל; התמונה — ערוץ עיתונאי צד-שלישי (Soldier Systems Daily, 2012).</div>
-    <div class="proj">פלסן סאסא — ניהול חתימה | מיפוי חברות</div>
+    <div class="proj">פלסן סאסא — אסטרטגיה | מצגת עבודה</div>
   </div>
 </section></div>
 
@@ -751,7 +899,7 @@ ul.story li .dim { color: var(--c-text-muted); }
 <div class="slide-wrap"><section class="slide" id="s-stg">
   <div class="hdr">
     <div class="hdr-titles">
-      <div class="kicker">פרופיל חברה · ליבת העסק</div>
+      <div class="kicker">02 | פרופיל חברה · ליבת העסק</div>
       <h1 class="title">STG Defence — הסתרה תרמית מבצעית לפלטפורמות וללוחם; השימוש בשדה הקרב באוקראינה — בדיווח החברה</h1>
     </div>
     <img class="bdo-logo" src="@@IMG:bdo-logo.png@@" alt="BDO Consulting — Strategy Growth &amp; Innovation">
@@ -821,7 +969,7 @@ ul.story li .dim { color: var(--c-text-muted); }
   <div class="ftr">
     <div class="pageno"></div>
     <div class="src">מקור: אתר STG Defence הרשמי; מאגר תשע החברות של פלסן. השימוש אצל הלקוח — בדיווח החברה.</div>
-    <div class="proj">פלסן סאסא — ניהול חתימה | מיפוי חברות</div>
+    <div class="proj">פלסן סאסא — אסטרטגיה | מצגת עבודה</div>
   </div>
 </section></div>
 
@@ -829,7 +977,7 @@ ul.story li .dim { color: var(--c-text-muted); }
 <div class="slide-wrap"><section class="slide" id="s-sterlite">
   <div class="hdr">
     <div class="hdr-titles">
-      <div class="kicker">פרופיל חברה · ליבת העסק</div>
+      <div class="kicker">02 | פרופיל חברה · ליבת העסק</div>
       <h1 class="title">Sterlite Camotech — פורטפוליו הסוואה פסיבית רחב וניסיון אספקה מדווח לזרועות הביטחון בהודו</h1>
     </div>
     <img class="bdo-logo" src="@@IMG:bdo-logo.png@@" alt="BDO Consulting — Strategy Growth &amp; Innovation">
@@ -899,7 +1047,7 @@ ul.story li .dim { color: var(--c-text-muted); }
   <div class="ftr">
     <div class="pageno"></div>
     <div class="src">מקור: אתר Sterlite Camotech וחוברת החברה; מאגר תשע החברות של פלסן. הכנסות הושמטו — אומדנים פומביים סותרים.</div>
-    <div class="proj">פלסן סאסא — ניהול חתימה | מיפוי חברות</div>
+    <div class="proj">פלסן סאסא — אסטרטגיה | מצגת עבודה</div>
   </div>
 </section></div>
 
@@ -907,7 +1055,7 @@ ul.story li .dim { color: var(--c-text-muted); }
 <div class="slide-wrap"><section class="slide" id="s-amd">
   <div class="hdr">
     <div class="hdr-titles">
-      <div class="kicker">פרופיל חברה · קו עסקי מרכזי</div>
+      <div class="kicker">02 | פרופיל חברה · קו עסקי מרכזי</div>
       <h1 class="title">Advanced Material Development — חומרים אדפטיביים לחתימת IR ומכ״ם בשלב ניסויים ביטחוניים; טרם נפרסו בשטח</h1>
     </div>
     <img class="bdo-logo" src="@@IMG:bdo-logo.png@@" alt="BDO Consulting — Strategy Growth &amp; Innovation">
@@ -971,7 +1119,7 @@ ul.story li .dim { color: var(--c-text-muted); }
   <div class="ftr">
     <div class="pageno"></div>
     <div class="src">מקור: אתר AMD הרשמי; תיעוד NPS JIFX; מאגרי חברות חיצוניים (מצבת עובדים); מאגר תשע החברות של פלסן.</div>
-    <div class="proj">פלסן סאסא — ניהול חתימה | מיפוי חברות</div>
+    <div class="proj">פלסן סאסא — אסטרטגיה | מצגת עבודה</div>
   </div>
 </section></div>
 
@@ -979,7 +1127,7 @@ ul.story li .dim { color: var(--c-text-muted); }
 <div class="slide-wrap"><section class="slide" id="s-cbg">
   <div class="hdr">
     <div class="hdr-titles">
-      <div class="kicker">פרופיל חברה · קו עסקי מרכזי</div>
+      <div class="kicker">02 | פרופיל חברה · קו עסקי מרכזי</div>
       <h1 class="title">CBG Systems — מערכת הסוואת רכב רב-ספקטרלית עם זכייה תוכניתית, בתוך עסק ימי-ביטחוני רחב</h1>
     </div>
     <img class="bdo-logo" src="@@IMG:bdo-logo.png@@" alt="BDO Consulting — Strategy Growth &amp; Innovation">
@@ -1055,7 +1203,7 @@ ul.story li .dim { color: var(--c-text-muted); }
   <div class="ftr">
     <div class="pageno"></div>
     <div class="src">מקור: אתר CBG Systems הרשמי (ניהול חתימה; הודעת LAND 400 Phase 3). ההכנסות — הערכת צד-שלישי, לא דיווח חברה.</div>
-    <div class="proj">פלסן סאסא — ניהול חתימה | מיפוי חברות</div>
+    <div class="proj">פלסן סאסא — אסטרטגיה | מצגת עבודה</div>
   </div>
 </section></div>
 
@@ -1063,7 +1211,7 @@ ul.story li .dim { color: var(--c-text-muted); }
 <div class="slide-wrap"><section class="slide" id="s-ravelin">
   <div class="hdr">
     <div class="hdr-titles">
-      <div class="kicker">פרופיל חברה · קו עסקי מרכזי</div>
+      <div class="kicker">02 | פרופיל חברה · קו עסקי מרכזי</div>
       <h1 class="title">Ravelin Defense — ניהול חתימה כיחידה ייעודית בקבוצת שרידות אמריקאית שהשלימה איחוד ב-2026</h1>
     </div>
     <img class="bdo-logo" src="@@IMG:bdo-logo.png@@" alt="BDO Consulting — Strategy Growth &amp; Innovation">
@@ -1133,7 +1281,7 @@ ul.story li .dim { color: var(--c-text-muted); }
   <div class="ftr">
     <div class="pageno"></div>
     <div class="src">מקור: אתר Ravelin Defense והודעות רשמיות; מאגר תשע החברות של פלסן. הכנסות ArmorWorks ההיסטוריות אינן מיוחסות ל-Ravelin.</div>
-    <div class="proj">פלסן סאסא — ניהול חתימה | מיפוי חברות</div>
+    <div class="proj">פלסן סאסא — אסטרטגיה | מצגת עבודה</div>
   </div>
 </section></div>
 
@@ -1141,7 +1289,7 @@ ul.story li .dim { color: var(--c-text-muted); }
 <div class="slide-wrap"><section class="slide" id="s-permali">
   <div class="hdr">
     <div class="hdr-titles">
-      <div class="kicker">פרופיל חברה · הצעה משיקה</div>
+      <div class="kicker">02 | פרופיל חברה · הצעה משיקה</div>
       <h1 class="title">Permali — קומפוזיטים ביטחוניים עם יישום חתימה מבוסס: דיכוי ענן האבק של רק״ם בתנועה</h1>
     </div>
     <img class="bdo-logo" src="@@IMG:bdo-logo.png@@" alt="BDO Consulting — Strategy Growth &amp; Innovation">
@@ -1205,7 +1353,7 @@ ul.story li .dim { color: var(--c-text-muted); }
   <div class="ftr">
     <div class="pageno"></div>
     <div class="src">מקור: אתר Permali הרשמי; פרסומי Diamorph; מאגרי חברות חיצוניים; מאגר תשע החברות של פלסן.</div>
-    <div class="proj">פלסן סאסא — ניהול חתימה | מיפוי חברות</div>
+    <div class="proj">פלסן סאסא — אסטרטגיה | מצגת עבודה</div>
   </div>
 </section></div>
 
@@ -1213,7 +1361,7 @@ ul.story li .dim { color: var(--c-text-muted); }
 <div class="slide-wrap"><section class="slide" id="s-shieldex">
   <div class="hdr">
     <div class="hdr-titles">
-      <div class="kicker">פרופיל חברה · הצעה משיקה</div>
+      <div class="kicker">02 | פרופיל חברה · הצעה משיקה</div>
       <h1 class="title">Shieldex — פלטפורמת טקסטיל מוליך שנעה ליישומים ביטחוניים רב-ספקטרליים כחומר מאפשר</h1>
     </div>
     <img class="bdo-logo" src="@@IMG:bdo-logo.png@@" alt="BDO Consulting — Strategy Growth &amp; Innovation">
@@ -1283,7 +1431,29 @@ ul.story li .dim { color: var(--c-text-muted); }
   <div class="ftr">
     <div class="pageno"></div>
     <div class="src">מקור: אתר Shieldex הרשמי; מאגרי חברות חיצוניים; מאגר תשע החברות של פלסן. ההכנסות — הערכת צד-שלישי.</div>
-    <div class="proj">פלסן סאסא — ניהול חתימה | מיפוי חברות</div>
+    <div class="proj">פלסן סאסא — אסטרטגיה | מצגת עבודה</div>
+  </div>
+</section></div>
+
+
+<!-- ================= SLIDE : SECTION DIVIDER 03 ================= -->
+<div class="slide-wrap"><section class="slide" id="s-div-veh">
+  <div class="sd"></div>
+  <div class="sd-num">03</div>
+  <div class="sd-body">
+    <div class="sd-kick">ציר עבודה 03</div>
+    <div class="sd-title">רכב</div>
+    <div class="sd-line"></div>
+    <div class="sd-desc">גודל השוק, הפוטנציאל והשחקנים בתחום הרכב</div>
+    <div class="sd-subs">
+    <div class="sd-sub todo"><span>גודל שוק ופוטנציאל (SAM / SOM)</span><span class="st">בהמשך</span></div>
+    <div class="sd-sub todo"><span>מיפוי חברות</span><span class="st">בהמשך</span></div>
+    </div>
+  </div>
+  <div class="ftr">
+    <div class="pageno"></div>
+    <div class="src">מסמך עבודה פנימי</div>
+    <div class="proj">פלסן סאסא — אסטרטגיה | מצגת עבודה</div>
   </div>
 </section></div>
 
