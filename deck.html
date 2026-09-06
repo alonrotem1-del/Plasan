@@ -273,7 +273,8 @@ sup { font-size: 15px; line-height: 0; }
 .ovw-table .qual { color: var(--c-text-muted); font-size: 15px; }
 .ovw-table td.num { font-variant-numeric: tabular-nums; }
 .ovw-table td.imp { font-weight: 600; color: var(--c-primary); }
-.ovw-note { position: absolute; right: var(--m-side); left: var(--m-side); top: 962px; font-size: 17px; color: var(--c-text-faint); line-height: 1.45; }
+.ovw-table td.mat b { font-weight: 700; color: var(--c-primary); font-size: 17px; }
+.ovw-note { position: absolute; right: var(--m-side); left: var(--m-side); top: 956px; font-size: 16px; color: var(--c-text-faint); line-height: 1.4; }
 
 /* ============================================================
    SLIDE — SPECTRUM MATRIX
@@ -318,13 +319,13 @@ sup { font-size: 15px; line-height: 0; }
    PROFILE SLIDES
    ============================================================ */
 .snap { position: absolute; right: var(--m-side); left: var(--m-side); top: 222px; border-collapse: collapse; width: 1776px; table-layout: fixed; }
-.snap th { background: var(--c-primary); color: #fff; font-size: 18px; font-weight: 600; text-align: right; padding: 9px 18px; border-left: 2px solid #fff; }
+.snap th { background: var(--c-primary); color: #fff; font-size: 17px; font-weight: 600; text-align: right; padding: 7px 14px; border-left: 2px solid #fff; }
 .snap th:last-child { border-left: none; }
-.snap td { background: var(--c-fill); font-size: 21px; padding: 12px 18px; border-left: 2px solid #fff; border-top: 2px solid #fff; line-height: 1.3; vertical-align: top; }
+.snap td { background: var(--c-fill); font-size: 19px; padding: 9px 14px; border-left: 2px solid #fff; border-top: 2px solid #fff; line-height: 1.28; vertical-align: top; }
 .snap td:last-child { border-left: none; }
 .snap td .q { color: var(--c-text-muted); font-size: 17px; }
 
-.profile-main { position: absolute; right: var(--m-side); left: var(--m-side); top: 362px; display: grid; grid-template-columns: 900px 1fr; column-gap: 44px; }
+.profile-main { position: absolute; right: var(--m-side); left: var(--m-side); top: 362px; display: grid; grid-template-columns: 860px 1fr; column-gap: 36px; }
 
 ul.story { list-style: none; }
 ul.story li { position: relative; font-size: 20px; line-height: 1.4; color: var(--c-text); padding-right: 26px; margin-bottom: 12px; }
@@ -337,11 +338,11 @@ ul.story li .dim { color: var(--c-text-muted); }
 .band-chip { font-size: 19px; font-weight: 600; color: var(--c-primary); background: var(--c-primary-tint); padding: 8px 15px; border-radius: 3px; }
 .pf-bandqual { font-size: 17px; color: var(--c-text-faint); margin-top: 10px; line-height: 1.35; }
 
-.pf-imgs .ifig { background: var(--c-fill); border: 1px solid var(--c-border); padding: 10px 12px 8px; display: flex; flex-direction: column; height: 392px; }
+.pf-imgs .ifig { background: var(--c-fill); border: 1px solid var(--c-border); padding: 6px 8px 5px; display: flex; flex-direction: column; height: 400px; }
 .pf-imgs .ifig .iimg { flex: 1; min-height: 0; background-position: center; background-size: contain; background-repeat: no-repeat; }
 .pf-imgs .ifig .icap2 { font-size: 15px; color: var(--c-text-muted); margin-top: 7px; line-height: 1.3; }
 .pf-imgs .ifig .icap2 b { color: var(--c-slate); font-weight: 600; }
-.pf-imgs .figrow { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.pf-imgs .figrow { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
 .pf-imgs .ifig.h300 { height: 300px; }
 .pf-note { background: var(--c-fill); padding: 14px 22px; margin-top: 14px; font-size: 19px; line-height: 1.42; color: var(--c-text); }
 .pf-note .nlbl { font-size: 15px; font-weight: 700; color: var(--c-text-faint); margin-bottom: 6px; }
@@ -583,78 +584,31 @@ ul.story li .dim { color: var(--c-text-muted); }
   <div class="hdr">
     <div class="hdr-titles">
       <div class="kicker">02 | תמונת-על השוואתית</div>
-      <h1 class="title">תשע החברות במבט אחד — ארבע שחקניות הסוואה ייעודיות וחמש חברות עם ניהול חתימה בתוך עסק רחב יותר</h1>
+      <h1 class="title">תשע החברות במבט אחד — לפי בשלות מסחרית: מפעילות מבצעית ותוכניתית מתועדת ועד יכולות בניסוי או היסטוריות</h1>
     </div>
     <img class="bdo-logo" src="data:image/png;base64,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" alt="BDO Consulting — Strategy Growth &amp; Innovation">
   </div>
 
   <table class="ovw-table">
     <colgroup>
-      <col style="width:236px"><col style="width:112px"><col style="width:206px">
-      <col style="width:132px"><col style="width:168px"><col style="width:348px">
-      <col style="width:204px"><col style="width:94px"><col style="width:130px"><col style="width:146px">
+      <col style="width:216px"><col style="width:100px"><col style="width:168px">
+      <col style="width:116px"><col style="width:200px"><col style="width:140px"><col style="width:300px">
+      <col style="width:168px"><col style="width:88px"><col style="width:122px"><col style="width:158px">
     </colgroup>
     <tr>
-      <th>חברה</th><th>מדינה</th><th>עיסוק עיקרי</th><th>חשיבות ניהול החתימה</th><th>קטגוריית פתרון</th>
+      <th>חברה</th><th>מדינה</th><th>עיסוק עיקרי</th><th>חשיבות ניהול החתימה</th><th>בשלות מסחרית</th><th>קטגוריית פתרון</th>
       <th>הצעה מרכזית בניהול חתימה</th><th>ספקטרום</th><th>עובדים</th><th>הכנסות</th><th>בעלות</th>
-    </tr>
-    <tr>
-      <td><div class="co">Ametrine Technologies</div></td>
-      <td>ישראל / ארה״ב</td>
-      <td class="muted">מערכות הסוואה רב-ספקטרליות</td>
-      <td class="imp">ליבת העסק</td>
-      <td class="muted">ציפויים · כיסויים</td>
-      <td class="prod"><b><span dir="ltr">Flint™</span></b> — ציפוי / מעטה פלטפורמה; כיסויי הסתרה רב-ייעודיים</td>
-      <td><span dir="ltr">VIS</span> · תרמי<sup>1</sup></td>
-      <td class="num"><span dir="ltr">~40</span></td>
-      <td class="num"><span dir="ltr">$1–15M</span><br><span class="qual">הערכה</span></td>
-      <td class="muted">פרטית</td>
-    </tr>
-    <tr>
-      <td><div class="co">Eltics / Black Fox</div></td>
-      <td>ישראל</td>
-      <td class="muted">הסוואה תרמית אקטיבית</td>
-      <td class="imp">ליבת העסק</td>
-      <td class="muted">מערכת אקטיבית</td>
-      <td class="prod"><b>Black Fox</b> — הסוואה תרמית אקטיבית לרכב יבשתי</td>
-      <td><span dir="ltr">MWIR · LWIR</span></td>
-      <td class="num"><span dir="ltr">~5</span></td>
-      <td class="muted">אין נתון</td>
-      <td class="muted">פרטית</td>
     </tr>
     <tr>
       <td><div class="co">STG Defence</div></td>
       <td>אוקראינה</td>
       <td class="muted">מערכות הסוואה והגנה מגילוי</td>
       <td class="imp">ליבת העסק</td>
+      <td class="mat"><b>מבצעי / בשטח</b><br><span class="qual">בדיווח החברה</span></td>
       <td class="muted">רשתות · כיסויים</td>
-      <td class="prod"><b>Thermal Signature Equipment Shelter</b> לפלטפורמות; מערכות ללוחם</td>
+      <td class="prod"><b>Thermal Signature Equipment Shelter</b>; מערכות ללוחם</td>
       <td><span dir="ltr" style="white-space:nowrap">NIR·SWIR·MWIR·LWIR</span> · מכ״ם<sup>2</sup></td>
       <td class="num"><span dir="ltr">51–200</span></td>
-      <td class="muted">אין נתון</td>
-      <td class="muted">פרטית</td>
-    </tr>
-    <tr>
-      <td><div class="co">Sterlite Camotech</div></td>
-      <td>הודו</td>
-      <td class="muted">ציוד הסוואה צבאי</td>
-      <td class="imp">ליבת העסק</td>
-      <td class="muted">רשתות · צבעים</td>
-      <td class="prod">רשתות <b>MSCN</b> רב-ספקטרליות; הסוואה ניידת <b>MCS</b>; צבעי <span dir="ltr">IR</span></td>
-      <td><span dir="ltr">VIS · NIR</span> · תרמי<sup>1</sup> · מכ״ם<sup>3</sup></td>
-      <td class="num"><span dir="ltr">26–50</span></td>
-      <td class="muted">אין נתון</td>
-      <td class="muted">פרטית</td>
-    </tr>
-    <tr>
-      <td><div class="co">Advanced Material Development</div></td>
-      <td>ארה״ב / בריטניה</td>
-      <td class="muted">ננו-חומרים וציפויים מתקדמים</td>
-      <td class="imp">קו עסקי מרכזי</td>
-      <td class="muted">ציפויים · <span dir="ltr">RAM</span></td>
-      <td class="prod">ציפויי <b>CHAM-NIR / ChamIR</b>; חומרי <b>ChamEM</b> למכ״ם</td>
-      <td><span dir="ltr">NIR · MWIR<sup>4</sup></span> · מכ״ם</td>
-      <td class="num"><span dir="ltr">~15</span></td>
       <td class="muted">אין נתון</td>
       <td class="muted">פרטית</td>
     </tr>
@@ -663,11 +617,38 @@ ul.story li .dim { color: var(--c-text-muted); }
       <td>אוסטרליה</td>
       <td class="muted">מערכות הגנה ימיות-ביטחוניות</td>
       <td class="imp">קו עסקי מרכזי</td>
+      <td class="mat"><b>נבחרה / בחוזה</b><br><span class="qual">תוכנית LAND 400</span></td>
       <td class="muted">מערכת רכב · רשתות</td>
-      <td class="prod"><b>SolarSigmaShield</b> — הסוואת פלטפורמה רב-ספקטרלית; רשתות</td>
+      <td class="prod"><b>SolarSigmaShield</b> — הסוואת פלטפורמה רב-ספקטרלית</td>
       <td><span dir="ltr">VIS</span> · תרמי<sup>1</sup> · מכ״ם</td>
       <td class="num"><span dir="ltr">~20</span></td>
       <td class="num"><span dir="ltr">≈$6M</span><br><span class="qual">הערכה</span></td>
+      <td class="muted">פרטית</td>
+    </tr>
+    <tr>
+      <td><div class="co">Ametrine Technologies</div></td>
+      <td>ישראל / ארה״ב</td>
+      <td class="muted">מערכות הסוואה רב-ספקטרליות</td>
+      <td class="imp">ליבת העסק</td>
+      <td class="mat"><b>מסחרית</b><br><span class="qual">הזמנות רכש ממשלתיות</span></td>
+      <td class="muted">ציפויים · כיסויים</td>
+      <td class="prod"><b><span dir="ltr">Flint™</span></b> — ציפוי / מעטה פלטפורמה; כיסויי הסתרה</td>
+      <td><span dir="ltr">VIS</span> · תרמי<sup>1</sup></td>
+      <td class="num"><span dir="ltr">~40</span></td>
+      <td class="num"><span dir="ltr">$1–15M</span><br><span class="qual">הערכה</span></td>
+      <td class="muted">פרטית</td>
+    </tr>
+    <tr>
+      <td><div class="co">Sterlite Camotech</div></td>
+      <td>הודו</td>
+      <td class="muted">ציוד הסוואה צבאי</td>
+      <td class="imp">ליבת העסק</td>
+      <td class="mat"><b>מסחרית</b><br><span class="qual">אספקה בדיווח החברה</span></td>
+      <td class="muted">רשתות · צבעים</td>
+      <td class="prod">רשתות <b>MSCN</b>; הסוואה ניידת <b>MCS</b>; צבעי <span dir="ltr">IR</span></td>
+      <td><span dir="ltr">VIS · NIR</span> · תרמי<sup>1</sup> · מכ״ם<sup>3</sup></td>
+      <td class="num"><span dir="ltr">26–50</span></td>
+      <td class="muted">אין נתון</td>
       <td class="muted">פרטית</td>
     </tr>
     <tr>
@@ -675,6 +656,7 @@ ul.story li .dim { color: var(--c-text-muted); }
       <td>ארה״ב</td>
       <td class="muted">שרידות ביטחונית וייצור</td>
       <td class="imp">קו עסקי מרכזי</td>
+      <td class="mat"><b>מסחרית</b><br><span class="qual">הדגמות; אין חוזה SM בשם</span></td>
       <td class="muted">מערכת רכב · כיסויים</td>
       <td class="prod"><b><span dir="ltr">TactiCam™</span></b> — הסוואת רכב תלת-ממדית; כיסויי הפחתת מכ״ם</td>
       <td><span dir="ltr">VIS / IR</span> · מכ״ם</td>
@@ -687,6 +669,7 @@ ul.story li .dim { color: var(--c-text-muted); }
       <td>בריטניה</td>
       <td class="muted">קומפוזיטים ביטחוניים</td>
       <td class="imp">הצעה משיקה</td>
+      <td class="mat"><b>מסחרית</b><br><span class="qual">יישום משיק</span></td>
       <td class="muted">קומפוזיטים</td>
       <td class="prod"><b>Dust Skirts</b> — דיכוי ענן האבק של רק״ם בתנועה</td>
       <td><span dir="ltr">VIS</span> · מכ״ם<sup>5</sup></td>
@@ -699,17 +682,44 @@ ul.story li .dim { color: var(--c-text-muted); }
       <td>גרמניה</td>
       <td class="muted">טקסטיל טכני מוליך</td>
       <td class="imp">הצעה משיקה</td>
+      <td class="mat"><b>מסחרית</b><br><span class="qual">חומר מאפשר</span></td>
       <td class="muted">טקסטיל · חומרים</td>
-      <td class="prod"><b>Shieldex® Zell RS CR</b> — טקסטיל מצופה-מתכת כחומר מאפשר</td>
+      <td class="prod"><b>Shieldex® Zell RS CR</b> — טקסטיל מצופה-מתכת</td>
       <td>תרמי<sup>1</sup> · <span dir="ltr">EMI</span><sup>6</sup></td>
       <td class="num"><span dir="ltr">~50</span></td>
       <td class="num"><span dir="ltr">≈$31M</span><br><span class="qual">הערכה</span></td>
       <td class="muted">משפחתית <span dir="ltr">(Statex)</span></td>
     </tr>
+    <tr>
+      <td><div class="co">Advanced Material Development</div></td>
+      <td>ארה״ב / בריטניה</td>
+      <td class="muted">ננו-חומרים וציפויים מתקדמים</td>
+      <td class="imp">קו עסקי מרכזי</td>
+      <td class="mat"><b>ניסוי / הערכה</b><br><span class="qual">FCT · JIFX</span></td>
+      <td class="muted">ציפויים · <span dir="ltr">RAM</span></td>
+      <td class="prod">ציפויי <b>CHAM-NIR / ChamIR</b>; חומרי <b>ChamEM</b> למכ״ם</td>
+      <td><span dir="ltr">NIR · MWIR<sup>4</sup></span> · מכ״ם</td>
+      <td class="num"><span dir="ltr">~15</span></td>
+      <td class="muted">אין נתון</td>
+      <td class="muted">פרטית</td>
+    </tr>
+    <tr>
+      <td><div class="co">Eltics / Black Fox</div></td>
+      <td>ישראל</td>
+      <td class="muted">הסוואה תרמית אקטיבית</td>
+      <td class="imp">ליבת העסק</td>
+      <td class="mat"><b>היסטורי / לא ברור</b><br><span class="qual">ללא פעילות מ-2023</span></td>
+      <td class="muted">מערכת אקטיבית</td>
+      <td class="prod"><b>Black Fox</b> — הסוואה תרמית אקטיבית לרכב יבשתי</td>
+      <td><span dir="ltr">MWIR · LWIR</span></td>
+      <td class="num"><span dir="ltr">~5</span></td>
+      <td class="muted">אין נתון</td>
+      <td class="muted">פרטית</td>
+    </tr>
   </table>
 
   <div class="ovw-note">
-    <sup>1</sup> תת-התחום התרמי אינו מפורט במקורות · <sup>2</sup> מכ״ם — בקווי תעופה / האנגרים בלבד · <sup>3</sup> מכ״ם — טענת חברה, לא אומתה עצמאית · <sup>4</sup> המקור מציין <span dir="ltr">"NIR / MIR"</span> · <sup>5</sup> חתימת ענן האבק בלבד · <sup>6</sup> סיכוך <span dir="ltr">RF / EMI</span> — אינו הפחתת <span dir="ltr">RCS</span> · נתוני עובדים: אומדנים ממאגרי חברות חיצוניים כאשר נמצא בסיס מהימן; אחרת טווחים · נתוני "הערכה" — אומדני צד-שלישי, לא הכנסות מדווחות
+    <sup>1</sup> תת-התחום התרמי אינו מפורט במקורות · <sup>2</sup> מכ״ם — בקווי תעופה / האנגרים בלבד · <sup>3</sup> מכ״ם — טענת חברה, לא אומתה עצמאית · <sup>4</sup> המקור מציין <span dir="ltr">"NIR / MIR"</span> · <sup>5</sup> חתימת ענן האבק בלבד · <sup>6</sup> סיכוך <span dir="ltr">RF / EMI</span> — אינו הפחתת <span dir="ltr">RCS</span> · נתוני עובדים: אומדנים ממאגרי חברות חיצוניים כאשר נמצא בסיס מהימן; אחרת טווחים · נתוני "הערכה" — אומדני צד-שלישי · בשלות מסחרית — סולם תיאורי לפי העדויות; סדר השורות — סדר קריאה אנליטי, לא דירוג
   </div>
 
   <div class="ftr">
@@ -724,7 +734,7 @@ ul.story li .dim { color: var(--c-text-muted); }
   <div class="hdr">
     <div class="hdr-titles">
       <div class="kicker">02 | כיסוי ספקטרלי</div>
-      <h1 class="title">כיסוי אופטי-תרמי הוא המכנה המשותף; יכולת מכ״ם מגיעה משש חברות — חלקה מסויג או ממוקד-יישום</h1>
+      <h1 class="title">כיסוי אופטי-תרמי הוא המכנה המשותף; שש חברות מציגות זיקה למכ״ם — אך רק בחלקן מדובר ביכולת RCS ישירה ומתועדת</h1>
     </div>
     <img class="bdo-logo" src="data:image/png;base64,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" alt="BDO Consulting — Strategy Growth &amp; Innovation">
   </div>
@@ -744,34 +754,24 @@ ul.story li .dim { color: var(--c-text-muted); }
       <th>מכ״ם / <span dir="ltr">RCS</span></th>
     </tr>
     <tr>
-      <td class="co-cell"><span class="co">Ametrine Technologies</span></td>
-      <td><span class="d"></span></td><td></td><td></td>
-      <td><span class="o"></span></td><td><span class="o"></span></td><td><sup>1</sup></td>
-    </tr>
-    <tr>
-      <td class="co-cell"><span class="co">Eltics / Black Fox</span></td>
-      <td></td><td></td><td></td>
-      <td><span class="d"></span></td><td><span class="d"></span></td><td></td>
-    </tr>
-    <tr>
       <td class="co-cell"><span class="co">STG Defence</span></td>
       <td></td><td><span class="d"></span></td><td><span class="d"></span></td>
       <td><span class="d"></span></td><td><span class="d"></span></td><td><span class="o"></span><sup>2</sup></td>
     </tr>
     <tr>
-      <td class="co-cell"><span class="co">Sterlite Camotech</span></td>
-      <td><span class="d"></span></td><td><span class="d"></span></td><td></td>
-      <td><span class="o"></span></td><td><span class="o"></span></td><td><span class="o"></span><sup>3</sup></td>
-    </tr>
-    <tr>
-      <td class="co-cell"><span class="co">Advanced Material Development</span></td>
-      <td></td><td><span class="d"></span></td><td></td>
-      <td><span class="d"></span><sup>4</sup></td><td></td><td><span class="d"></span></td>
-    </tr>
-    <tr>
       <td class="co-cell"><span class="co">CBG Systems</span></td>
       <td><span class="d"></span></td><td></td><td></td>
       <td><span class="o"></span></td><td><span class="o"></span></td><td><span class="d"></span></td>
+    </tr>
+    <tr>
+      <td class="co-cell"><span class="co">Ametrine Technologies</span></td>
+      <td><span class="d"></span></td><td></td><td></td>
+      <td><span class="o"></span></td><td><span class="o"></span></td><td><sup>1</sup></td>
+    </tr>
+    <tr>
+      <td class="co-cell"><span class="co">Sterlite Camotech</span></td>
+      <td><span class="d"></span></td><td><span class="d"></span></td><td></td>
+      <td><span class="o"></span></td><td><span class="o"></span></td><td><span class="o"></span><sup>3</sup></td>
     </tr>
     <tr>
       <td class="co-cell"><span class="co">Ravelin Defense</span></td>
@@ -787,6 +787,16 @@ ul.story li .dim { color: var(--c-text-muted); }
       <td class="co-cell"><span class="co">Shieldex</span></td>
       <td></td><td></td><td></td>
       <td><span class="o"></span><sup>6</sup></td><td><span class="o"></span><sup>6</sup></td><td><sup>6</sup></td>
+    </tr>
+    <tr>
+      <td class="co-cell"><span class="co">Advanced Material Development</span></td>
+      <td></td><td><span class="d"></span></td><td></td>
+      <td><span class="d"></span><sup>4</sup></td><td></td><td><span class="d"></span></td>
+    </tr>
+    <tr>
+      <td class="co-cell"><span class="co">Eltics / Black Fox</span></td>
+      <td></td><td></td><td></td>
+      <td><span class="d"></span></td><td><span class="d"></span></td><td></td>
     </tr>
   </table>
 
@@ -817,20 +827,17 @@ ul.story li .dim { color: var(--c-text-muted); }
   <table class="mx-table">
     <colgroup><col style="width:400px"><col style="width:229px"><col style="width:229px"><col style="width:229px"><col style="width:229px"><col style="width:229px"><col style="width:231px"></colgroup>
     <tr><th>חברה</th><th>מערכות הסוואה לרכב<span class="cnt">5 מתוך 9</span></th><th>רשתות וכיסויים<span class="cnt">5 מתוך 9</span></th><th>טקסטיל וחומרים<span class="cnt">5 מתוך 9</span></th><th>ציפויים<span class="cnt">3 מתוך 9</span></th><th><span dir="ltr">RAM</span> וקומפוזיטים<span class="cnt">2 מתוך 9</span></th><th>מערכות אקטיביות / אדפטיביות<span class="cnt">2 מתוך 9</span></th></tr>
-    <tr class="grp"><td colspan="7">ליבת העסק<span>— ניהול חתימה הוא עיסוקה המרכזי של החברה</span></td></tr>
-    <tr><td class="co-cell"><div class="co">Ametrine Technologies<small><span dir="ltr">Flint™</span></small></div></td><td><span class="dot"></span></td><td><span class="dot"></span></td><td><span class="dot"></span></td><td><span class="dot"></span></td><td></td><td></td></tr>
-    <tr><td class="co-cell"><div class="co">Eltics / Black Fox<small>Black Fox</small></div></td><td><span class="dot"></span></td><td></td><td></td><td></td><td></td><td><span class="dot"></span></td></tr>
     <tr><td class="co-cell"><div class="co">STG Defence<small>Thermal Signature Equipment Shelter</small></div></td><td></td><td><span class="dot"></span></td><td><span class="dot"></span></td><td></td><td></td><td></td></tr>
-    <tr><td class="co-cell"><div class="co">Sterlite Camotech<small>MSCN · MCS · IR paints</small></div></td><td><span class="dot"></span></td><td><span class="dot"></span></td><td><span class="dot"></span></td><td><span class="dot"></span></td><td></td><td></td></tr>
-    <tr class="grp"><td colspan="7">קו עסקי מרכזי<span>— פעילות ניהול חתימה ייעודית בתוך עסק רחב יותר</span></td></tr>
-    <tr><td class="co-cell"><div class="co">Advanced Material Development<small>CHAM-NIR · ChamIR · ChamEM</small></div></td><td></td><td></td><td></td><td><span class="dot"></span></td><td><span class="dot"></span></td><td><span class="dot"></span></td></tr>
     <tr><td class="co-cell"><div class="co">CBG Systems<small>SolarSigmaShield</small></div></td><td><span class="dot"></span></td><td><span class="dot"></span></td><td><span class="dot"></span></td><td></td><td></td><td></td></tr>
+    <tr><td class="co-cell"><div class="co">Ametrine Technologies<small><span dir="ltr">Flint™</span></small></div></td><td><span class="dot"></span></td><td><span class="dot"></span></td><td><span class="dot"></span></td><td><span class="dot"></span></td><td></td><td></td></tr>
+    <tr><td class="co-cell"><div class="co">Sterlite Camotech<small>MSCN · MCS · IR paints</small></div></td><td><span class="dot"></span></td><td><span class="dot"></span></td><td><span class="dot"></span></td><td><span class="dot"></span></td><td></td><td></td></tr>
     <tr><td class="co-cell"><div class="co">Ravelin Defense<small><span dir="ltr">TactiCam™ · Radar Reduction Shrouds</span></small></div></td><td><span class="dot"></span></td><td><span class="dot"></span></td><td></td><td></td><td></td><td></td></tr>
-    <tr class="grp"><td colspan="7">הצעה משיקה<span>— ניהול חתימה כיישום של טכנולוגיה משיקה</span></td></tr>
     <tr><td class="co-cell"><div class="co">Permali<small>Dust Skirts</small></div></td><td></td><td></td><td></td><td></td><td><span class="dot"></span></td><td></td></tr>
     <tr><td class="co-cell"><div class="co">Shieldex<small>Shieldex® Zell RS CR</small></div></td><td></td><td></td><td><span class="dot"></span></td><td></td><td></td><td></td></tr>
+    <tr><td class="co-cell"><div class="co">Advanced Material Development<small>CHAM-NIR · ChamIR · ChamEM</small></div></td><td></td><td></td><td></td><td><span class="dot"></span></td><td><span class="dot"></span></td><td><span class="dot"></span></td></tr>
+    <tr><td class="co-cell"><div class="co">Eltics / Black Fox<small>Black Fox</small></div></td><td><span class="dot"></span></td><td></td><td></td><td></td><td></td><td><span class="dot"></span></td></tr>
   </table>
-  <div class="mx-note">סימון מלא = לחברה מוצרים במשפחת הפתרון, לפי מאגר הפרויקט; מוצרי הדגל מוצגים מתחת לשם כל חברה. הגדרות המשפחות — לפי מדריך הסיווג של הפרויקט.</div>
+  <div class="mx-note">סימון מלא = לחברה מוצרים במשפחת הפתרון, לפי מאגר הפרויקט; מוצרי הדגל מוצגים מתחת לשם כל חברה. סדר השורות — לפי הבשלות המסחרית שבתמונת-העל. הגדרות המשפחות — לפי מדריך הסיווג של הפרויקט.</div>
   <div class="ftr">
     <div class="pageno">10</div>
     <div class="src">מקור: מאגר תשע החברות של פלסן (סיווג משפחות מוצר)</div>
@@ -838,25 +845,62 @@ ul.story li .dim { color: var(--c-text-muted); }
   </div>
 </section></div>
 
+<!-- ================= SLIDE : CROSS-COMPANY SYNTHESIS ================= -->
+<div class="slide-wrap"><section class="slide" id="s-synthesis">
+  <div class="hdr">
+    <div class="hdr-titles">
+      <div class="kicker">02 | סיכום רוחבי</div>
+      <h1 class="title">תשע החברות מציגות שוק לא אחיד — מפעילות מסחרית ותוכניתית מוכחת ועד טכנולוגיות בניסוי או יכולות היסטוריות</h1>
+    </div>
+    <img class="bdo-logo" src="data:image/png;base64,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" alt="BDO Consulting — Strategy Growth &amp; Innovation">
+  </div>
+  <div class="scope-grid" style="grid-template-columns: repeat(2, 1fr); top: 268px; gap: 24px;">
+    <div class="sc-tile" style="min-height: 240px;">
+      <div class="slbl">1 · הבשלות המסחרית אינה אחידה</div>
+      <div class="stxt">רק חלק מהחברות מציג עדות עדכנית בשם: שימוש מבצעי <span class="dim">(STG — בדיווח החברה)</span>, זכייה תוכניתית <span class="dim">(CBG — LAND 400)</span> והזמנות רכש ממשלתיות <span class="dim">(Ametrine)</span>. האחרות — בשלב ניסוי, הדגמות, חומר מאפשר או פעילות היסטורית</div>
+    </div>
+    <div class="sc-tile" style="min-height: 240px;">
+      <div class="slbl">2 · אופטי-תרמי הוא הליבה המשותפת</div>
+      <div class="stxt">הפחתת חתימה אופטית ותרמית היא היכולת הרחבה ביותר בקבוצה — כמעט כל תשע החברות פעילות בה, בפערי עומק ותיעוד</div>
+    </div>
+    <div class="sc-tile" style="min-height: 240px;">
+      <div class="slbl">3 · מכ״ם / RCS — עקביות נמוכה</div>
+      <div class="stxt">שש חברות מציגות זיקה למכ״ם, אך איכות העדות שונה מהותית: הפחתת <span dir="ltr">RCS</span> ישירה, טענות ממוקדות-יישום <span class="dim">(תעופה/האנגרים; ענן אבק)</span>, טענות חברה שלא אומתו — וסיכוך <span dir="ltr">RF / EMI</span> שאינו הפחתת <span dir="ltr">RCS</span> כלל. אלה אינם שקולים</div>
+    </div>
+    <div class="sc-tile" style="min-height: 240px;">
+      <div class="slbl">4 · יכולת אקטיבית / אדפטיבית — נדירה</div>
+      <div class="stxt">רק שתי חברות מציעות גישה אקטיבית / אדפטיבית — <span dir="ltr">Eltics</span> ו-<span dir="ltr">AMD</span> — והבשלות שלהן שונה מהותית: יכולת היסטורית שסטטוסה אינו ברור, מול חומרים בשלב ניסויים ביטחוניים</div>
+    </div>
+  </div>
+  <div class="method-band" style="top: 836px;">מבנה ההיצע נע בין מתמחות ניהול חתימה ייעודיות, קבוצות ביטחוניות עם פעילות ייעודית, וספקיות חומר מאפשר · תצוגה אנליטית בלבד — ללא דירוג וללא המלצת רכישה</div>
+  <div class="ftr">
+    <div class="pageno">11</div>
+    <div class="src">מקור: מאגר תשע החברות של פלסן — סיכום רוחבי של ניתוח הפרופילים, הכיסוי הספקטרלי ומפת המוצרים</div>
+    <div class="proj">פלסן סאסא — אסטרטגיה | מצגת עבודה</div>
+  </div>
+</section></div>
+
+
 <!-- ================= SLIDE : PROFILE AMETRINE ================= -->
 <div class="slide-wrap"><section class="slide" id="s-ametrine">
   <div class="hdr">
     <div class="hdr-titles">
       <div class="kicker">02 | פרופיל חברה · ליבת העסק</div>
-      <h1 class="title">Ametrine Technologies — שחקנית הסוואה ייעודית עם מוצרי פלטפורמה בשטח ופעילות מול לקוחות ממשל בארה״ב</h1>
+      <h1 class="title">Ametrine Technologies — שחקנית הסוואה ייעודית עם מוצרי פלטפורמה ופעילות רכש מול ממשל ארה״ב</h1>
     </div>
     <img class="bdo-logo" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAbsAAABtCAYAAAA4ec+YAAAACXBIWXMAABYlAAAWJQFJUiTwAAAgAElEQVR4nO1dXW4aS7ftxN87Pm+2/GBnBDgjgIzAZATGbxfJUsgELjCCEF0kPxqP4OARBEZwYAQHHizn0QwgytX2t4pstqu7q6p/6a4loXNimu7qqu69av+/+/37d+DhkTd6g0k7CILl3ej2xU++h4dH1nj3P//7f8McZ3mtPnej23WRq9sbTLK+b3Wvwd3odp7xtUqH3mByGQQBERr99wL/bcSMcxEEAZHfMgiC+aHM29NRs417jcP87Neqds+Ch0cZQGRXpGpHwo1e/tnd6HaZ54V7g0ne972FEF/inudV02p6g0knCAL1iSM2Uzzi+ZhmfwdueDpq0sZpYPDj0dmvVeaby+eTVhdrQJuMJv6snr+1eudOfy68Vu1RGxRNdhybIAhIoI3zIIECyE6HFQTPNG+yTwu9weQ4CAISrv0gCM4zvBQJ63Fez4cNykJ2zyetNt4hk3Wg+Wyf/lwc5HPn4WGL9yWasXMIjHUOJsaygHbdX4Ig+Kc3mCx7g0n3kAbfG0z60BS+ZUx0ATTF3fMBkvUAoM39sFgHms/YOXw+aV08n7T6zyetzqHN9fNJ65jm5fmkVRd54hGB/5Rwcl6FGkxi3UPVeBxAxHcPoiftZVzWgcIfN2UmsjyhSK9LZHs3up0VNxPlABEStF6JR5guFS7gW4wlRJxzxtZ4hH8f0nxc4U+LgofkUQKUSbOToJdsDsFaJ5Ag+tYbTNYg/FIB2tw/BREdB83T373BpLSbghwxFD5SMo9/OP256Jz+XAzZp3v6c0FE8DEIgoeY4V2UYI1dccGIzsPjFWUmuwAvcB0JL2DCfFYWk11vMJnCZFkmfIEJuM5mTbkp6p/+XIRGO5OfDsTnI0M9aoOyk11Qc8ILsENdFnn/RCREKEEQXBc1hhgoK0BdCW8v8tWT2GGCAozIv4hPXeVdZiijz04HepmnlIhc0yTkcwjzbt4+KhDI/ABMWk0Er1z4RPXyAcJbaaCv6Q867RP+tkt8OF7wm9x8+GLMCqQVW7+DCPCR90T3M0dw0VhsWpbC3+qREIdCdgGEWR/+iTqiAbPmTc45Z7MD8t0oK0BdN0WvoOjJ058La1/m80mLNjWtkK8HzyctXXrFB0VaiHrcHXP6c/EO5DXVnHcD35q6tkpfiXzWnk9aC5hpl+LvUekfreeTli7V6LOOuEByoQFYzyctStsYmswxrYXGp6pAc7oJCRiaa+5pcfpzYVK8gK47FZaYm9Ofi9LmquYBVzPmwvKTFihK8yLF8x0i7vNKUYCPLkz42WCLyECK6PscBMEn8RkhYGKVwrWa0ETrBDlveZnBVlG+QRDYMuQZGrPj6Dm7N9xUtUAESe9vG0J0XYMALCKubxh3KPD9t5gCC5zoFngXbpDwP8a7o9DC5sEEUiOtfdSyk2Z3N7o12l1woBZiNwW/T7cI7e5udPvO5DiY/S6Rw8RLZqVVUYQwJh9almkZINSka/WANIq4ce7ICZsZtct3nbMmRWnejW77jr8/NIxBFgoNpRm4aHgWiNMU7iO+m4r/58/ahpnxjvEOcfJp4DdJCC9Mo5Nj3uDYFxAIH8f180lrFkKaQ837E3WuAGbNnWwjwqPzi/MM8X6EAiZT/u48+mo5jhVUTAW/DhBmSTSGzd3oNrF2Z1tBJck9B/tkn1YpLdrxZeKfwhotE4yTSG6YpP4pNg39hKT3OQ8fZxkqqEAo6sLtFzC5WWm7qMbyg/1pxAVxyG/C5mFneoRmciHHAxMqPS9jnV8OGpckoo8hx8qxG5n/nk9aS0FADxS1GjOOLe7nhR1zjHvhz+1XufEIuacPXFvGfP0bdT3NfXgTpga5R2OSAIRmGJfnE4bzQzRlUlHju9FtF36KkTBPuKCRoWli6kgwWxBMN2mhbyLxu9HtELt3V/PmtEYRmt2Q5GnaVP4gMrEwgaUJEvK7smQkyHXEi2O6YQEoENZSZqSWhwptiBPdoyQ6No5H9qeGZhw6zeqNho1zjcSfu+KYtcH1JPj3W090/0VhqQcQ/K5C7GDDcpkQJ8HzPeHpWkjyTg0wX7po3bSW7bQ1KZBmW7zwpmjUJaCJdvrQXqTwVKA1/ff5pDWG5pEHvqdsRs1SS5cEEvXcyO/kb+WmIops5Hc6DVTOYejYNCbM2vvqFIrOs3MV1AefgwLS6yNQI4mWl3adSBdy2ILoMvEhYq46joT3pU5BTTA1foiwnHyBPy8PwkvbxJ6l34mTzCYqxQHf8Xc2zkQaOu6oAB92zFwoBucw1ergA1NCUGjqAZn2eoPJ6oDLEiUG5qCdoNZkI62UDGh1tgWdFdHl4QDvOub8xTr1qwQIUCqAPIZWIDX1JgivXbbABZha29COLoSWlCVB7z33BsWjX5gG5eyDt9h0yCCkfkjUsTRherIDylBBpfaLAY2onUDDG6Sk3bkQZj+vYt0g1K7DPF3XMWUFZcHaIdaDpkE0ZW5A9ZA5gjHuEehyDaJWn0w2xZo0BtWBJeojyZGfQ2prURstqYlpNT343fgaXkkfrMaE6X11DGUgO18l4I8gT0J4iXx3jlrdY95NVUGsLn6guqQhvAHMYBcaH/lVGcpSsfZEaeR0uiCNjSI/h9zAX+Me94C5l89y1OZfHiufaUmcnuwYykB2tc//UIAgdzVHJhXmLpFthRAIAnw2lj+rjRlTB5grO5rNVKGdNSJy276ywgMUjv8O/58FpAzaINDH5rPTyDDXMlDonlIC0F+vAxPzXHariDE7SrKTzzRfy0i/Yx1RhnJhLjvLylbIoD52aO1ju8tt0O9coiFhArVtifKQNL0gIYYxScsSzvNTFZAvDzlYX9gtFa3ZyQ0ThennSsDI/+N/eonLKTQ45xBmRp7vdh1RqGEbt/FAkvkDO0eDyJNMnD4KMx5l0OxcfClV37G4aiGuQsLld4WG9MN8aqvdHVy37QwgtZii8xBlVGFR5mb+LDVTilbtG7olFkgUN9k8yvdOzZd8tn2fR4EykJ2tAHqsepFfaEwuSfd5kd2qYK1OwXb36snuLYpexz0/saHAzwLSWpQG6c6YtrWCaZPXFR6hCoxxVCzmhxcPaCINgT/bkTVL64pCyc4xKKIu6rmLc7nh2PfOttZpWRzftuNwnZ9Sg/xeJpoIjpFWg6KtJHuaT0yVlyzXTj5L/STBOwhI4bbRPjrGt9ln6OhXk9qdrHjkA1M0KIzsIHRsVe1N3tF/RYHy7xzMdIEtcSEk3zZPqBQbDgT02M6RdRHzAwCtxxpNP7WkBxKZaTaXpmu5N290nYjEZhtIYf9GJuBa4wRd8mWI/jF8XDsgYpVrTKqYdug9qmarIV/L36VmjcJY+XPvuqa1QiEBKiC6mYOQrVv4+EwEE5jAdjdqe/ymJCZMhblld4ZKaXbQIJSwG6BH2goksg7pGqAwijB3SeHcQnDLGuTRwfUjixIbQBaFp3SINdNOlDaqkxVhRCQJ9Bw5fHN+vueT1gdx/11RAL2BuqIrQSAq8f0cczA1MBvOEUySFhGFBWgtvAlTj1zJLmEl+8caRtLNHcjONuDHVviXLTjIluyqllyu80M2DRKwH6IiDhGhKBuL6ua5myQYApGE0uR3HtI9YQOyipQdiFp8FBHGLU2E815lHUSrtjUpAXHzqavQI5/L1+bLiPpcYDOhNiRLW3Mm5k12Nw+8CTMcmZMdSmGpnZBre5tVTfOkXFIsstbsykZ2trvYohKXs4Lq/Wfq/97Af2SycexoBD/HNiXzXAdCOir95QH3OWYkEuWn7OPZjpqTN88ySL4dUmZNh0UI2c9Agrrrq/Pu7hfdz2dox2T6TI81mwJvwgyBE9nZ9oJLiFWOtRdLBbrn3mCytdwg2G4mbEOsS0V2qC1agpEUA5gQh+hO3mbNguW6EmnNbDQICP5LRhwKa3Y+/l7KzZnRZk0lvLOoQn4tOsfOTMhMqXHnXGPsXaH9vrBzamUK5qiN33c05tI13oOZjpjwO75J2OA3UeTZAInTPHQM+w/OBdn5Jq0RKENSeRQeUHuxzgu4tNVGKOjEwq9ma9Y7+LUgawMCgCoFCMhU7wvC3MhXnvT6Jr+3uQYE/9jVzArSs9rcIRBoLlIOdqkFqnktK3YtrV2vfSoNfaG+PJgFykp2tBPqVlEg5YQLC/OebepHGRP6FxU0T3ocJng8wpYTXfBn86A0Y54OwiNNG4a+UO7a8R0OYlCGpPIwdFE2q+4om9nQm0k8PMLBTbDLOO0MTXfHml6Nke6F55OWDPLzWl0Mykp257Bf/90bTNZIPq8rPLl4eBwmbFwExoFW0AZlJK0vDxaDMmt2CkR89yC9KiYEe3h4VBPn0MAigcAcmWKkteiA6GSE7HefWxePsgeocBDp/egNJl+pM0B5huXh4eGxg0yS/4ZqLa8tfbhZk3Vll/LstdUPIk8DEJ9q8CzNl5uii7IfCg6J7BS+UQWWu9FtXUybteuw7eFxqAhJkt8ltItWQjpQUEtXtAeKbAvk0w3McAhmTB2ue4NJXUqHuZCdf/g9PAoCFXom06LD1R/Q6mdp0KFjg0hP36DVEIdKdgE0vDr48Kz7aqFAciYoadcAr/16lAqnPxe0Gf+AjuuLkILlG3z3Fd3Yu0xLWyJCc6s5/ub05+LCE50dXM2YSdrjXyA8t+OQ4yUxhUmzyppMXI3DpFhZXqPoZp862D5H3pnvkTkQNPKa1A6zJHe9zKOqpGRRIKDucCK7lJK9+9AS+paFfDnO8ftKOmgdtaiFwTEcthuFUmlRKC5uhZJ1bfCoBy40dSw9meWIQgNUYG6j5PGpY8ufAKQ5rqh252KmtRXkcTX7JMpmMrRuUZTROEoL1GpUNTN166cq8EdqGx4eh4xSRGOimK+utYYJGqxqetXgQna2dnxbciybn9R2PLXR6hAV2Dc0U1+hF94WBY7rXMjBo4IoTYAKtDzX8mCVKysG81xUy5Mw2O7MbY8vWw3KQ29RlDpIk3s+aS3R3NPW59tI4FaoFcgPRxsK+OM8So5SRWPCF2jrcwpKqG2kARcC3zpEYloL/5JFwdqOpdJmOmhz8xCS2yDCb8Q+3x3fudqCKp5gM/EvNhSe7A4AZUwqN22ayNEgTahifjuXoBtrQY6eebYRmZ0ykAYKhduavSur2aFSx73mK8rfGseFquP3Ha/ZxaKdQ5S0R8ooY56dqxAtY/6XEyDEXdIyXFt82M55Wfw5ttrvqqqRmAhCkX5r0uQ+In8rluSpRBV8dX9lN1IPj2JQOrLzLWRe4VL7k0yYrkE6tmTXKLoTBTWoddBAqmzCHGtqJl66JB778lMeVcQh1sasNHqDydBRq3OORr0b3c56g8nW0iQ4LDgC1sXMW8meX5pajEERNRNRvV/5UGPTGFhKBM+VrGX6g2Yu1oiK9RuPlODJrkRA4IdMPDVF0k4QM0tN6Zy0uwTapDMctbpNlmXUCoasE/s9q1JSzyetOSPWx9Ofiw5Ibio2aZTG8KBLYQA5h23qVPrDGH7GN8L++aT1IjZmH6Ja3KB7AH9e/ooiEc3xnzHHYbEEPzQFnqlzeGzBA9YRQTcXVHmF5sB3NUgBpTNjJoj0O2hBBgHu6nN7SMEX5UKWY5cKJinAhWArKTAQ9i6DJfJqgXUJ4voRJqz5P6gX2/NJa4YgmijrRQObvnlIWL98T+J8t/J7m+OJtFzey7jfHGPj8HfEXDRA/r6lWQooY4CKU87cIfv6QBiuFWS2aQhyaD22IeiNvE2D6HZhG627TbCRKDvk5nCRYyPP85DozwA92eQGdKrJHd3iudMVSyYSn6FhKYdcy9ANMrRO+V7ZHO/63MT97ovFc/zF5/IlR6nIDkLfJfDhYPOEUP9ymSCUeZxihKELaV7Bz5g5EKX6zeE6VS0nF2iikIvydz2gyv9fzOy3w/NJa6ghuhFa2rTxIYF+Iyr9N+WGCpoWP+ZKQ4gKus1z1IZafjfFNWl87+iDcXN8Ut+xjylJbnG+D+z8XzXH+Yo2CVE2zU5GlJniIHft0FLmCbo/UCh9akSTIKl/kHV0JjYFLlrkNkezXhGQZJd3agXN72ekN6zJF4YUhh3pgoikX/Er+aKk74yan2o0rytoXBym2p2O2BrwlenAz7PJOFjmEWQ/5Nr46c/FGJsHjjq0M8sUpSE7CH7XZNaDIjvyS/YGkzm0FBdyD1RH45SHFiQ45z0V5E55LK8AkbrUTSX0a5bOkjfZdQ20mK5YuwUEuhYwf0rtSZKl/P0b8oLpj28kV+z/35CHxv+ZpVyh4J2oiFnvp0sZhUdjIjBj7FgHkrA4hERhmGg7FoV549DPIrqQ5rI3mIwco0K/QAPrprEmmLMh/BsuWBQRLXqoQLDJzjdkGAVospGQRGQiyMfiGdyTD0SIzyetDSOzOHPlCue8Z99JAtWaMDNC5PuB+8vw8vVDIWQHIdZOqTRRKaPsIPR5o9o0ywt9zVKIk2kU/jGXMdMbuoSW5+QrYxsDV7N2AM23cgXCDZAkkEHm66X1bkmpHWsaJI3n+aS1V8aOTJnCrDhjGyEyTcokeq69yWao5zHHb3wn8GrBiewSBCSopMm0BP9jSo1kYwGzYxzSvLcwUJpBHiaODgJnXMhGhY6TL+8RQmkepe2JDZBLzUuJbk2r8ZQ9am9jkSi9jnmfpkLrVy2NlJ+Qa4NT8osJAu2IlCV+fFWjd2sLV83ONfE5TWTlswpDGWwKRHS53DPMmR3kUCXBlRIivcEkCAmAuUyB3DhI862LsJqLZ7NUgQyawBIb8/ZSEFCba2caU2ZbHKvAtbSZILth8Ce5m8ObvyuGMubZmaJds537TV5EpwCt+Sbl07Y0nzSJLi/NtyyQprZWRBh+EZDkZjM2eazOrMg3NU2Wj8bJS5o+4473JswK4lDJ7qbCpZ8kSIP9VFSgBa6bNuFlhdw03xJhLnLOAk3gRWHQJLjbmPllWoVucyvfC0VaXLPbERxIjCevt6OO96gODpHsbmoUYUcmv4u8/JJhOBDCG9WQ6FSHAimc+yWruLFXGQVFj00Qm0OoIy+cX5k2deW++L874vjAmzCriUMiu0I1nJxBL+/nu9FtaUy1mPePGi2iaGyxAapzsVx5742QMltFQW7WYjVPpEHstSyKKIPGyetK+PJ1G8W5OH4vRcGbMKuJQyG7Umg4OUCVDrosY4AFTMcXJSrPtoLvttY7cZCATMJuRhRSzhvSh3odpd2BpCWBR/lh5frzCM0375Gm3BgPuPNaXUVR9hY/GyRPV92GvsHLPSt70A3G10ZVkyR5cEmwRQ6fb30CUAI4iI3nrRLhLVE1X9suRwG/zYQYETW5EFGjc+TN7WlRIDpZQm8TRUKaqEyOMNkxDylk4SJr9qJEcQ/HORbk9jBAWcmOXoxpxXfsG7xY00MMtqG16Q0mM5ik+jmSHtUMHB5C1ZwC0EcEIxfiu5xHEM5SBHpc4uNan9UUHfjc1HNC//2Het6xMV1qSosFKEkWtwmcaSrtrCJ+N9OQ3cqQoOQ5+6h2sma5oktfz7JcKAvZbVmFg1lFBdkKL8ASCdYH7xeAljdEtZQuPlkk1aud/dSTXDgg2DvoMKDLhW0VlS+KiihtTY3T65gqSjeGxZhlgnkQY5KcadoTmW6uZ6L7RkMz3y1NxRePAvGfnP0vLyxXRv3/uiABlsV9r0XEGD3oL1VPkwDpjdHM9ZLtbpMI1hXm7yA13yIBk+YUpnHrju4Q+qnnKsLcqLpXxD0bG2h0RmQRYsoMNUnqypGZmjBRieUmopdfUMJArtrj3e/fv+s+Bx4ZQtQIDfD/3DfEN0BrbH4Oajf8dNQM06QkRme/Vrn6GeE/6jBzpQ5LzP08LhJRFotWZbgcxtVm4+Kgc81cuoOjCsrufHGFrDEGZWp8ierEEPF7OR8qFWTGTajwie5FicYROTR0hTXaH3k4wpOdh0dClJnsPDw8/otDLhfm4eHh4eFhBE92Hh4eHh6Vhyc7Dw8PD4/Kw5Odh4eHh0fl4cnOw8PDw6Py8GTn4eHh4VF5eLLz8PDw8Kg8PNl5eHh4eFQenuw8PDw8PCoPT3YeHh4eHlZ4Ompe0OeQZq3s/ew8PDwc8XTUVPUwuVCieozLs1+rVPsmPh01j0Wdy5ezXytfwLuCeDpqTlWB8aej5uPZr1XnEO7Sk52HR8XwdNRso2uBrt0S1fDcQmANUyQ9Irof7N8L38+tesAGinfSuKLn7ezXqvTF270Z08OjQng6anZBOlF9BRvo/TaHRubhERiaJXXHHIQ502t2Hh4VATQ62WNNdcRXncB5d+4mvvMaWE0BTa2DDz0P76Jm4uzXavZ01NyyBrxb0z6ARcOTnYdHdSDbBy3Ofq32iOzpqNkXXbZbJPC8f622GDs0Wea9+aZp+3+zgic7D4/qQAqtN81Iz36txui/12B/brMGuh4ekQC5pd7JPmvEkp2m07TqLP1yN7q1ekF6g0lbdKpeojO18XkwHu5noN8bdUruDSayS3bsb23H3BtM3kSlmdxf3H1pzhuEdfTW3KcLdtfHHHAs70a3L+Kaua6L+H0b1078jFYJZHIKuZ0pfHYK3m/nUXloyQ7CZwg7biNsEnqDyau99m502404hgRRX/gKtOehaxoIOal2b2m8UviGoCs6So80ph81piHGrb3/iHt3jUqT9yXHJs8bRNjX5X264AZCMdBc9xNC2KPGn8m6KJg8V8GfdaKxjsM2BxUC+efO1e1QwMHZr5XufZLkViozFPxIx2lF+LG0iHXIfNicS73LqadvuEKkfZRmXDrwsaYdwcnOrU17eUN2EPKmgrKBMNQ3ZAdNZCh2kHHnue4NJl/vRrc2KnIjbSd7bzCZivDasOtq770iSOp0Tn1dgj/P1TSO5MQ4rqDpVZ3slpzssAHZy4HShI4HeQUY4Nr83e4q8kEUaZ9HkT4dvf7vAikS2rV7OmqOmaCfn/1aDYM/kYVDPH98A7DFGMYmpAAB2sd7fi6+223SdST6dNTs4LcKu/FZzhMRWJ99f4zxtHXvARvXVDdvT0dN/rfLiO/Crr93jPQLa66nVZ6wvhu8z5HrgedDydrdeHDurlwfNgd9dd691AMI+aQagRJIc0Oik/iGcdigBZJODJwnjuiqjkdDjSwOqa1L8MdUurYgurpBbhKvIHBfASEq363HpNqOBY6h/avPJWlKT0fNNaJIdekSdNwPCDsdLtn5OkQEIMB/8R6fi980IONi0y4wd2scL88TsA3vv7imxFLcb19zjA5d8bvd+sDfukaQUdh7oMb1A8fr5lR9pOWqpfnI50MeEwqxFjor2Tnmd82fVQ0u2PW+sLlYhqyPmoM1nvs/ZBehzTwEQfA5CIIPd6NbMpt9wL+/g5V1mGoe3C1+8wnn+QvmsAfN768dhORA41tygXwg6R6/BkHwkY15FHHvZcAU45Sfr2Jsq5DjTF9KE6SyLjCtzzUvzO65Es+out9FGRYkD2AXL+93Si87ojDn4r3cFmyZGMJEriMSiXsltCLQtNhkNzXEvwPI9e8oN47AFyTq74BNxCP7UyNGoCvIY/h52xZjIgwMrxkFJ80f82Gq8NA9/R2xqZHnnoPk4uaioebv1YzZG0w6GqIjQdiVDn741NZKRewNJnuDw7/ljoPO1ebaAv6fBjzvDSZjjSAjITmzDDCY0e7fJrhBjF33II2FWXWOzzAlck0dbI3k/ck/veTkx0q0LsBUsza0UepLLZTd/6uvLqWAnUNBR5Aazdk/mrHTZq1TsH9HEu+UCdauRib1DciZn3OBc66x/kNBrFc6v2ZIvuIKmvOM5gzHSJ/xNWmpwlQpTe7dKPIAMfExPog1UhuE3XxxUyXIQt7n67jZv0diPOch3wXwf1m/t9C65Po9wrQ6g1bdkaZrbGqWBqkwXKNc4P6WWGd5ziatl/LZSRWcJrJjIpzuRrdydyQ1so0kOs05liAOSXhjS5+P8hPF7QBtEDoHNQh4SAuJ1gUbKGkueYgKjOIII/8qAoJ4CK0kDI/wl5UlkGGk8dmQmfFFaAamsmAFX83e+wltYKlJu5Ay7I2pV84Xzj3X5C2SJjVVBAHBzgOHiGCPI+ZeamF7xEjXfTpqfob/7805zn6tppr7POe5lJyMQdrn7PeJ3Q7wo0l32FdKe2HXecE803hnYkMwM9ycbrAucp1nGv91+z0EiTQj9F124dAQ5bmGJv4faHCSdFvYlUdhJb5rQlNMC2ma9OqENNfljWnZlOjqBgOi+0yFe0tCdLSp/kgCNmQ88nkxMXeSJnSpC8wAAUki25MvGs1qG7UxgAB/FH+WhCE1uSizIv9uo0sfob9FrR/uU/4uz/QSXXGDqHe/i3lWODcwvdKch62zLg/w8r1m4jcabc0Ucue1tTyX7ti43dxM4/f7AuK1hU51JsKdGZCuRwbrgnmX/t/Ugl6qAgRmLA0CzGI3CSRo6FwUXID/z0pQRpqrILRtfeNx8ibOGiPnxyRqUz6P8hmXgle7gYaA51qnqxwOCrZkyPuPVBgwv3IO457TuHWRz9Xxe41pKUkYsjyXlZkP2qR8uE1MX32NJjFF9J7N9V8Q7CDxGrqeZmRhTZDGuuiO9eZjBpCRDD4JYB6UG44rGUihgfJ5fEkocNNA2kI7jrjk5jr2/kHYXG41eDANSJsHDjVDii5LAW809+gt1+afonzUuG9O2BvDUnSSd5LGQ7xZ5/ca00CSihNygl3OJR/uWMEIkpKqcAOC1WpXeje67YdEiDYQNLOWQTkema7Lm/VPGOhSRch2Ptw82NU8z9chIenKh8P9o5EmswpiLwjKIjjjjSYh/i2Ja0+GYMPC/VahKSHQ4vvkm3s6av5GaP8P8SkqfUret9H8ae7VJuJUd7433KNr8ZNEkJjY1DMBfH5SXW661HCDP0hGJfF7vHfIBawl0lwXwDiVgEygFPjEPpUzRUNDkIKtw192EJ7UsAchYdbkIRsAAAZJSURBVN5yXepszbBJW5HCdU8zocARsemTcx8ZmKIAzWmJoBjbAs55IIl1b2++0+6EriO7JPb5rcExmQH+wTe7WBdN7G50O0RuXdgDfw1fnq8rGIM018UyorMrdrtV1MilkHwIqTbS1hDePSc8aHtcQ3zIMeG8DuAb5HORN8jXcQty3AOE/1yjVKwQsDFinyrkl6YqW3VklyRsX+5uXJhZ3qCtKVTnJxrb+u8CaCV3o9s2EpTlOQOYHbwfzwxprUsi80YFYfS+wBQZSngIjuDBLVv/bFtpTiYajTZQBSTGTZhhVqOxeP5pLT8g+rQDs/UQ6QNF+bXl82fzfu/Nd9ptp95rHv4k2fZyF2jlZISWJJ3sVjvLKD+RzXnEOed3o9vLENOm998ZAOvScViXNy+tY6RtVSGFSVR0YyjhadahX1Otbs86ZWFKk+ugy4Fbi7nviP8qhJn4ZbGOTgnXSN63Edlp5jl1K+F7jTBpJqgMIs91bnkuXYiq9Q4FfiJJQs2kOXMwbUrzQCPmHk13NqWuRJ8GEFhiuy464e1zH/8g0lckEUF4XGN40JnRagIpb2I3VhDUe7l5EVoJJzJVPoy/E6uQotKSDBZl3IzgvmXOnIkMlPOcumb6PsQROnb0Rc00jGx0LgQPSCG2cO1Hdje6nWnSCNIwgcUFVkiSiiPDsFyySvZhs10XaITS39c60IjYLDYw8pyx88IIT7d73tR8MyHlYd8gz1DKhKj0LSkjpZ80TL7IMdjK5zSrSsVB3n+kOZx1luBIvRPHe5S8ktpKEzUrIyeUvueCHIJJLlYzjvAg7GcaoZfIZ4A0Ap2vLRRkIou5b50w2e2wQM62hK/bRVe26ajDuuieg/sDIjx6vz7FVJFwhRQK53F5dEgv0BXVDqChzA1345UDNFqeM3cetcFFgI80L4bKLWw0+JrJlBGtkNdoik3WW0+Oqa0hDyNyTCkCUt7/VUyB57HQjDdZWBZUbcy+5uGnRVgjkXomuma3oXZ2sbPcTRCZ+uBT4YtIodFtdq6X4A/JqT5Wb4r8plR7sqOph6cF65WmukBMlWbJ7lk+2BtN3tdYOPvV5mEIzSYI/vie5M5O3XusFhCjMVp1+y4AxutC99EbTEaa6iCK8F4LibPn6hiaS9GFuiN7saUBMmU9HTUfRPrBNYTWWJWbwr/brH1MFOh5/AfnVUIncePTA0JXNCy+BvkP2XxeQm7JtI+RwTyNQ/Lg4nIaFzIHkkjEYEw2GKLeZ4B3dAj/rbGmhWdSvq/3IOGxIm6YcHXyL5NN7CvZoRBzX1Ppu4F8jm+aivm7Y0joCmJqayo6nOP89xHnUjAu8hsHCMpuTL1ABU66X1DeyuQ3EmNNNXGai78NzmcTBSc7iHPEdvsuEpbrojZRupyyXU8tg7nNC9oCtRmiDzMVf99e5wUNMqOg2vwca97/azbf3+ti3kSx5RsxH020oIn66YNJIWUS9k9HzZVGyMdp/kPxzjcMxhSHmSDQ65BuE1ZmRZoHTQ7oNTYOUT+9yeq92aUeIBfqs2MUzB4xYYfddsz1+J52kd8QP5EOttf9zjU1dj0VeWhb12+LDhG12EFj7sKS93XHRyX7lwEbvKwXORId98HZvG9bzOUFCgtPY/JKS9nOKitgPm4s5OF3JO+bQhJbbFktPFM3BuffYC1NIJPddWi5mDcxHyZyN8AYbrIMjNrLs4PwucBLYLLIKzTIfLPjI4GPHLUbQ//MIxq7ZrJ7xHnjhMElgiHi7p0eps9RY4X58xKLbTKXdN0L14CcQ0VIhGsocPwHw3VSeMR6ZaXprhnJFRLFSIR39mtl8r4t8M5eyG4DJGxxjs+aSv5xZvUXnFt9dM+xyTESS/GbuO9txxm6scRaxsmER/hjbeWW3CQb+XMxpk8hc7GB7FbtfL6z+9T67LD+lyHn2+LePwrT7CJmTfj5+xivfJ74mL9jzFHvztpyneU4l+9+//4deiQSftshiatLGw0EJihdgdIl97cYnOdSjMfYNwVfDne8h/4W/jB5rReM1ZqQcD7d7nhu4pvUjD0Ob+5Nc44Xk3vR+AaXcr3yWpeQsclrB3g51nXuOSgCGOrkc8sE0G6U/HpJO+nZFohiVO9N4vUV58vk/uBXVO9qfs9kEAT/DxIcbRcM9wDZAAAAAElFTkSuQmCC" alt="BDO Consulting — Strategy Growth &amp; Innovation">
   </div>
   <table class="snap">
     <colgroup>
-      <col style="width:210px"><col style="width:440px"><col style="width:240px">
-      <col style="width:400px"><col style="width:170px"><col style="width:316px">
+      <col style="width:180px"><col style="width:360px"><col style="width:200px"><col style="width:250px">
+      <col style="width:336px"><col style="width:130px"><col style="width:320px">
     </colgroup>
-    <tr><th>מדינה</th><th>עיסוק עיקרי</th><th>חשיבות ניהול החתימה</th><th>בעלות</th><th>עובדים</th><th>הכנסות</th></tr>
+    <tr><th>מדינה</th><th>עיסוק עיקרי</th><th>חשיבות ניהול החתימה</th><th>בשלות מסחרית</th><th>בעלות</th><th>עובדים</th><th>הכנסות</th></tr>
     <tr>
       <td>ישראל / ארה״ב</td>
       <td>הסוואה וניהול חתימה רב-ספקטרלי</td>
       <td>ליבת העסק</td>
+      <td>מסחרית — הזמנות רכש ממשלתיות</td>
       <td>פרטית — <span dir="ltr" style="white-space:nowrap">Ametrine Technologies Ltd / Inc.</span></td>
       <td><span dir="ltr">~40</span></td>
       <td><span dir="ltr">$1–15M</span> <span class="q">(הערכות צד-שלישי)</span></td>
@@ -904,7 +948,7 @@ ul.story li .dim { color: var(--c-text-muted); }
     </div>
   </div>
   <div class="ftr">
-    <div class="pageno">11</div>
+    <div class="pageno">12</div>
     <div class="src">מקור: אתר Ametrine הרשמי; רישומי חוזים פדרליים בארה״ב; מאגר תשע החברות של פלסן. טווח ההכנסות — הערכת צד-שלישי.</div>
     <div class="proj">פלסן סאסא — אסטרטגיה | מצגת עבודה</div>
   </div>
@@ -921,14 +965,15 @@ ul.story li .dim { color: var(--c-text-muted); }
   </div>
   <table class="snap">
     <colgroup>
-      <col style="width:210px"><col style="width:440px"><col style="width:240px">
-      <col style="width:400px"><col style="width:170px"><col style="width:316px">
+      <col style="width:180px"><col style="width:360px"><col style="width:200px"><col style="width:250px">
+      <col style="width:336px"><col style="width:130px"><col style="width:320px">
     </colgroup>
-    <tr><th>מדינה</th><th>עיסוק עיקרי</th><th>חשיבות ניהול החתימה</th><th>בעלות</th><th>עובדים</th><th>הכנסות</th></tr>
+    <tr><th>מדינה</th><th>עיסוק עיקרי</th><th>חשיבות ניהול החתימה</th><th>בשלות מסחרית</th><th>בעלות</th><th>עובדים</th><th>הכנסות</th></tr>
     <tr>
       <td>ישראל</td>
       <td>טכנולוגיית ניהול חתימה תרמית אקטיבית</td>
       <td>ליבת העסק</td>
+      <td>היסטורי / סטטוס לא ברור</td>
       <td>פרטית</td>
       <td><span dir="ltr">~5</span></td>
       <td>אין נתון עדכני מהימן</td>
@@ -976,7 +1021,7 @@ ul.story li .dim { color: var(--c-text-muted); }
     </div>
   </div>
   <div class="ftr">
-    <div class="pageno">12</div>
+    <div class="pageno">13</div>
     <div class="src">מקור: מאגר תשע החברות של פלסן (דיווח פומבי היסטורי). אין אתר רשמי פעיל; התמונה — ערוץ עיתונאי צד-שלישי (Soldier Systems Daily, 2012).</div>
     <div class="proj">פלסן סאסא — אסטרטגיה | מצגת עבודה</div>
   </div>
@@ -993,14 +1038,15 @@ ul.story li .dim { color: var(--c-text-muted); }
   </div>
   <table class="snap">
     <colgroup>
-      <col style="width:210px"><col style="width:440px"><col style="width:240px">
-      <col style="width:400px"><col style="width:170px"><col style="width:316px">
+      <col style="width:180px"><col style="width:360px"><col style="width:200px"><col style="width:250px">
+      <col style="width:336px"><col style="width:130px"><col style="width:320px">
     </colgroup>
-    <tr><th>מדינה</th><th>עיסוק עיקרי</th><th>חשיבות ניהול החתימה</th><th>בעלות</th><th>עובדים</th><th>הכנסות</th></tr>
+    <tr><th>מדינה</th><th>עיסוק עיקרי</th><th>חשיבות ניהול החתימה</th><th>בשלות מסחרית</th><th>בעלות</th><th>עובדים</th><th>הכנסות</th></tr>
     <tr>
       <td>אוקראינה</td>
       <td>הסוואה והגנה מפני גילוי תרמי וראיית לילה</td>
       <td>ליבת העסק</td>
+      <td>מבצעי / בשטח — בדיווח החברה</td>
       <td>פרטית — הבעלות לא פורסמה</td>
       <td><span dir="ltr">51–200</span></td>
       <td>אין נתון פומבי מהימן</td>
@@ -1054,7 +1100,7 @@ ul.story li .dim { color: var(--c-text-muted); }
     </div>
   </div>
   <div class="ftr">
-    <div class="pageno">13</div>
+    <div class="pageno">14</div>
     <div class="src">מקור: אתר STG Defence הרשמי; מאגר תשע החברות של פלסן. השימוש אצל הלקוח — בדיווח החברה.</div>
     <div class="proj">פלסן סאסא — אסטרטגיה | מצגת עבודה</div>
   </div>
@@ -1071,14 +1117,15 @@ ul.story li .dim { color: var(--c-text-muted); }
   </div>
   <table class="snap">
     <colgroup>
-      <col style="width:210px"><col style="width:440px"><col style="width:240px">
-      <col style="width:400px"><col style="width:170px"><col style="width:316px">
+      <col style="width:180px"><col style="width:360px"><col style="width:200px"><col style="width:250px">
+      <col style="width:336px"><col style="width:130px"><col style="width:320px">
     </colgroup>
-    <tr><th>מדינה</th><th>עיסוק עיקרי</th><th>חשיבות ניהול החתימה</th><th>בעלות</th><th>עובדים</th><th>הכנסות</th></tr>
+    <tr><th>מדינה</th><th>עיסוק עיקרי</th><th>חשיבות ניהול החתימה</th><th>בשלות מסחרית</th><th>בעלות</th><th>עובדים</th><th>הכנסות</th></tr>
     <tr>
       <td>הודו</td>
       <td>ציוד הסוואה צבאי — רשתות, מערכות רכב וצבעים</td>
       <td>ליבת העסק</td>
+      <td>מסחרית — אספקה בדיווח החברה</td>
       <td>פרטית</td>
       <td><span dir="ltr">26–50</span></td>
       <td>אין נתון פומבי מהימן</td>
@@ -1132,7 +1179,7 @@ ul.story li .dim { color: var(--c-text-muted); }
     </div>
   </div>
   <div class="ftr">
-    <div class="pageno">14</div>
+    <div class="pageno">15</div>
     <div class="src">מקור: אתר Sterlite Camotech וחוברת החברה; מאגר תשע החברות של פלסן. הכנסות הושמטו — אומדנים פומביים סותרים.</div>
     <div class="proj">פלסן סאסא — אסטרטגיה | מצגת עבודה</div>
   </div>
@@ -1143,20 +1190,21 @@ ul.story li .dim { color: var(--c-text-muted); }
   <div class="hdr">
     <div class="hdr-titles">
       <div class="kicker">02 | פרופיל חברה · קו עסקי מרכזי</div>
-      <h1 class="title">Advanced Material Development — חומרים אדפטיביים לחתימת IR ומכ״ם בשלב ניסויים ביטחוניים; טרם נפרסו בשטח</h1>
+      <h1 class="title">Advanced Material Development — חומרים אדפטיביים לחתימת IR ומכ״ם בשלב ניסויים ביטחוניים; טרם זוהתה פריסה רחבה בשטח</h1>
     </div>
     <img class="bdo-logo" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAbsAAABtCAYAAAA4ec+YAAAACXBIWXMAABYlAAAWJQFJUiTwAAAgAElEQVR4nO1dXW4aS7ftxN87Pm+2/GBnBDgjgIzAZATGbxfJUsgELjCCEF0kPxqP4OARBEZwYAQHHizn0QwgytX2t4pstqu7q6p/6a4loXNimu7qqu69av+/+/37d+DhkTd6g0k7CILl3ej2xU++h4dH1nj3P//7f8McZ3mtPnej23WRq9sbTLK+b3Wvwd3odp7xtUqH3mByGQQBERr99wL/bcSMcxEEAZHfMgiC+aHM29NRs417jcP87Neqds+Ch0cZQGRXpGpHwo1e/tnd6HaZ54V7g0ne972FEF/inudV02p6g0knCAL1iSM2Uzzi+ZhmfwdueDpq0sZpYPDj0dmvVeaby+eTVhdrQJuMJv6snr+1eudOfy68Vu1RGxRNdhybIAhIoI3zIIECyE6HFQTPNG+yTwu9weQ4CAISrv0gCM4zvBQJ63Fez4cNykJ2zyetNt4hk3Wg+Wyf/lwc5HPn4WGL9yWasXMIjHUOJsaygHbdX4Ig+Kc3mCx7g0n3kAbfG0z60BS+ZUx0ATTF3fMBkvUAoM39sFgHms/YOXw+aV08n7T6zyetzqHN9fNJ65jm5fmkVRd54hGB/5Rwcl6FGkxi3UPVeBxAxHcPoiftZVzWgcIfN2UmsjyhSK9LZHs3up0VNxPlABEStF6JR5guFS7gW4wlRJxzxtZ4hH8f0nxc4U+LgofkUQKUSbOToJdsDsFaJ5Ag+tYbTNYg/FIB2tw/BREdB83T373BpLSbghwxFD5SMo9/OP256Jz+XAzZp3v6c0FE8DEIgoeY4V2UYI1dccGIzsPjFWUmuwAvcB0JL2DCfFYWk11vMJnCZFkmfIEJuM5mTbkp6p/+XIRGO5OfDsTnI0M9aoOyk11Qc8ILsENdFnn/RCREKEEQXBc1hhgoK0BdCW8v8tWT2GGCAozIv4hPXeVdZiijz04HepmnlIhc0yTkcwjzbt4+KhDI/ABMWk0Er1z4RPXyAcJbaaCv6Q867RP+tkt8OF7wm9x8+GLMCqQVW7+DCPCR90T3M0dw0VhsWpbC3+qREIdCdgGEWR/+iTqiAbPmTc45Z7MD8t0oK0BdN0WvoOjJ058La1/m80mLNjWtkK8HzyctXXrFB0VaiHrcHXP6c/EO5DXVnHcD35q6tkpfiXzWnk9aC5hpl+LvUekfreeTli7V6LOOuEByoQFYzyctStsYmswxrYXGp6pAc7oJCRiaa+5pcfpzYVK8gK47FZaYm9Ofi9LmquYBVzPmwvKTFihK8yLF8x0i7vNKUYCPLkz42WCLyECK6PscBMEn8RkhYGKVwrWa0ETrBDlveZnBVlG+QRDYMuQZGrPj6Dm7N9xUtUAESe9vG0J0XYMALCKubxh3KPD9t5gCC5zoFngXbpDwP8a7o9DC5sEEUiOtfdSyk2Z3N7o12l1woBZiNwW/T7cI7e5udPvO5DiY/S6Rw8RLZqVVUYQwJh9almkZINSka/WANIq4ce7ICZsZtct3nbMmRWnejW77jr8/NIxBFgoNpRm4aHgWiNMU7iO+m4r/58/ahpnxjvEOcfJp4DdJCC9Mo5Nj3uDYFxAIH8f180lrFkKaQ837E3WuAGbNnWwjwqPzi/MM8X6EAiZT/u48+mo5jhVUTAW/DhBmSTSGzd3oNrF2Z1tBJck9B/tkn1YpLdrxZeKfwhotE4yTSG6YpP4pNg39hKT3OQ8fZxkqqEAo6sLtFzC5WWm7qMbyg/1pxAVxyG/C5mFneoRmciHHAxMqPS9jnV8OGpckoo8hx8qxG5n/nk9aS0FADxS1GjOOLe7nhR1zjHvhz+1XufEIuacPXFvGfP0bdT3NfXgTpga5R2OSAIRmGJfnE4bzQzRlUlHju9FtF36KkTBPuKCRoWli6kgwWxBMN2mhbyLxu9HtELt3V/PmtEYRmt2Q5GnaVP4gMrEwgaUJEvK7smQkyHXEi2O6YQEoENZSZqSWhwptiBPdoyQ6No5H9qeGZhw6zeqNho1zjcSfu+KYtcH1JPj3W090/0VhqQcQ/K5C7GDDcpkQJ8HzPeHpWkjyTg0wX7po3bSW7bQ1KZBmW7zwpmjUJaCJdvrQXqTwVKA1/ff5pDWG5pEHvqdsRs1SS5cEEvXcyO/kb+WmIops5Hc6DVTOYejYNCbM2vvqFIrOs3MV1AefgwLS6yNQI4mWl3adSBdy2ILoMvEhYq46joT3pU5BTTA1foiwnHyBPy8PwkvbxJ6l34mTzCYqxQHf8Xc2zkQaOu6oAB92zFwoBucw1ergA1NCUGjqAZn2eoPJ6oDLEiUG5qCdoNZkI62UDGh1tgWdFdHl4QDvOub8xTr1qwQIUCqAPIZWIDX1JgivXbbABZha29COLoSWlCVB7z33BsWjX5gG5eyDt9h0yCCkfkjUsTRherIDylBBpfaLAY2onUDDG6Sk3bkQZj+vYt0g1K7DPF3XMWUFZcHaIdaDpkE0ZW5A9ZA5gjHuEehyDaJWn0w2xZo0BtWBJeojyZGfQ2prURstqYlpNT343fgaXkkfrMaE6X11DGUgO18l4I8gT0J4iXx3jlrdY95NVUGsLn6guqQhvAHMYBcaH/lVGcpSsfZEaeR0uiCNjSI/h9zAX+Me94C5l89y1OZfHiufaUmcnuwYykB2tc//UIAgdzVHJhXmLpFthRAIAnw2lj+rjRlTB5grO5rNVKGdNSJy276ywgMUjv8O/58FpAzaINDH5rPTyDDXMlDonlIC0F+vAxPzXHariDE7SrKTzzRfy0i/Yx1RhnJhLjvLylbIoD52aO1ju8tt0O9coiFhArVtifKQNL0gIYYxScsSzvNTFZAvDzlYX9gtFa3ZyQ0ThennSsDI/+N/eonLKTQ45xBmRp7vdh1RqGEbt/FAkvkDO0eDyJNMnD4KMx5l0OxcfClV37G4aiGuQsLld4WG9MN8aqvdHVy37QwgtZii8xBlVGFR5mb+LDVTilbtG7olFkgUN9k8yvdOzZd8tn2fR4EykJ2tAHqsepFfaEwuSfd5kd2qYK1OwXb36snuLYpexz0/saHAzwLSWpQG6c6YtrWCaZPXFR6hCoxxVCzmhxcPaCINgT/bkTVL64pCyc4xKKIu6rmLc7nh2PfOttZpWRzftuNwnZ9Sg/xeJpoIjpFWg6KtJHuaT0yVlyzXTj5L/STBOwhI4bbRPjrGt9ln6OhXk9qdrHjkA1M0KIzsIHRsVe1N3tF/RYHy7xzMdIEtcSEk3zZPqBQbDgT02M6RdRHzAwCtxxpNP7WkBxKZaTaXpmu5N290nYjEZhtIYf9GJuBa4wRd8mWI/jF8XDsgYpVrTKqYdug9qmarIV/L36VmjcJY+XPvuqa1QiEBKiC6mYOQrVv4+EwEE5jAdjdqe/ymJCZMhblld4ZKaXbQIJSwG6BH2goksg7pGqAwijB3SeHcQnDLGuTRwfUjixIbQBaFp3SINdNOlDaqkxVhRCQJ9Bw5fHN+vueT1gdx/11RAL2BuqIrQSAq8f0cczA1MBvOEUySFhGFBWgtvAlTj1zJLmEl+8caRtLNHcjONuDHVviXLTjIluyqllyu80M2DRKwH6IiDhGhKBuL6ua5myQYApGE0uR3HtI9YQOyipQdiFp8FBHGLU2E815lHUSrtjUpAXHzqavQI5/L1+bLiPpcYDOhNiRLW3Mm5k12Nw+8CTMcmZMdSmGpnZBre5tVTfOkXFIsstbsykZ2trvYohKXs4Lq/Wfq/97Af2SycexoBD/HNiXzXAdCOir95QH3OWYkEuWn7OPZjpqTN88ySL4dUmZNh0UI2c9Agrrrq/Pu7hfdz2dox2T6TI81mwJvwgyBE9nZ9oJLiFWOtRdLBbrn3mCytdwg2G4mbEOsS0V2qC1agpEUA5gQh+hO3mbNguW6EmnNbDQICP5LRhwKa3Y+/l7KzZnRZk0lvLOoQn4tOsfOTMhMqXHnXGPsXaH9vrBzamUK5qiN33c05tI13oOZjpjwO75J2OA3UeTZAInTPHQM+w/OBdn5Jq0RKENSeRQeUHuxzgu4tNVGKOjEwq9ma9Y7+LUgawMCgCoFCMhU7wvC3MhXnvT6Jr+3uQYE/9jVzArSs9rcIRBoLlIOdqkFqnktK3YtrV2vfSoNfaG+PJgFykp2tBPqVlEg5YQLC/OebepHGRP6FxU0T3ocJng8wpYTXfBn86A0Y54OwiNNG4a+UO7a8R0OYlCGpPIwdFE2q+4om9nQm0k8PMLBTbDLOO0MTXfHml6Nke6F55OWDPLzWl0Mykp257Bf/90bTNZIPq8rPLl4eBwmbFwExoFW0AZlJK0vDxaDMmt2CkR89yC9KiYEe3h4VBPn0MAigcAcmWKkteiA6GSE7HefWxePsgeocBDp/egNJl+pM0B5huXh4eGxg0yS/4ZqLa8tfbhZk3Vll/LstdUPIk8DEJ9q8CzNl5uii7IfCg6J7BS+UQWWu9FtXUybteuw7eFxqAhJkt8ltItWQjpQUEtXtAeKbAvk0w3McAhmTB2ue4NJXUqHuZCdf/g9PAoCFXom06LD1R/Q6mdp0KFjg0hP36DVEIdKdgE0vDr48Kz7aqFAciYoadcAr/16lAqnPxe0Gf+AjuuLkILlG3z3Fd3Yu0xLWyJCc6s5/ub05+LCE50dXM2YSdrjXyA8t+OQ4yUxhUmzyppMXI3DpFhZXqPoZp862D5H3pnvkTkQNPKa1A6zJHe9zKOqpGRRIKDucCK7lJK9+9AS+paFfDnO8ftKOmgdtaiFwTEcthuFUmlRKC5uhZJ1bfCoBy40dSw9meWIQgNUYG6j5PGpY8ufAKQ5rqh252KmtRXkcTX7JMpmMrRuUZTROEoL1GpUNTN166cq8EdqGx4eh4xSRGOimK+utYYJGqxqetXgQna2dnxbciybn9R2PLXR6hAV2Dc0U1+hF94WBY7rXMjBo4IoTYAKtDzX8mCVKysG81xUy5Mw2O7MbY8vWw3KQ29RlDpIk3s+aS3R3NPW59tI4FaoFcgPRxsK+OM8So5SRWPCF2jrcwpKqG2kARcC3zpEYloL/5JFwdqOpdJmOmhz8xCS2yDCb8Q+3x3fudqCKp5gM/EvNhSe7A4AZUwqN22ayNEgTahifjuXoBtrQY6eebYRmZ0ykAYKhduavSur2aFSx73mK8rfGseFquP3Ha/ZxaKdQ5S0R8ooY56dqxAtY/6XEyDEXdIyXFt82M55Wfw5ttrvqqqRmAhCkX5r0uQ+In8rluSpRBV8dX9lN1IPj2JQOrLzLWRe4VL7k0yYrkE6tmTXKLoTBTWoddBAqmzCHGtqJl66JB778lMeVcQh1sasNHqDydBRq3OORr0b3c56g8nW0iQ4LDgC1sXMW8meX5pajEERNRNRvV/5UGPTGFhKBM+VrGX6g2Yu1oiK9RuPlODJrkRA4IdMPDVF0k4QM0tN6Zy0uwTapDMctbpNlmXUCoasE/s9q1JSzyetOSPWx9Ofiw5Ibio2aZTG8KBLYQA5h23qVPrDGH7GN8L++aT1IjZmH6Ja3KB7AH9e/ooiEc3xnzHHYbEEPzQFnqlzeGzBA9YRQTcXVHmF5sB3NUgBpTNjJoj0O2hBBgHu6nN7SMEX5UKWY5cKJinAhWArKTAQ9i6DJfJqgXUJ4voRJqz5P6gX2/NJa4YgmijrRQObvnlIWL98T+J8t/J7m+OJtFzey7jfHGPj8HfEXDRA/r6lWQooY4CKU87cIfv6QBiuFWS2aQhyaD22IeiNvE2D6HZhG627TbCRKDvk5nCRYyPP85DozwA92eQGdKrJHd3iudMVSyYSn6FhKYdcy9ANMrRO+V7ZHO/63MT97ovFc/zF5/IlR6nIDkLfJfDhYPOEUP9ymSCUeZxihKELaV7Bz5g5EKX6zeE6VS0nF2iikIvydz2gyv9fzOy3w/NJa6ghuhFa2rTxIYF+Iyr9N+WGCpoWP+ZKQ4gKus1z1IZafjfFNWl87+iDcXN8Ut+xjylJbnG+D+z8XzXH+Yo2CVE2zU5GlJniIHft0FLmCbo/UCh9akSTIKl/kHV0JjYFLlrkNkezXhGQZJd3agXN72ekN6zJF4YUhh3pgoikX/Er+aKk74yan2o0rytoXBym2p2O2BrwlenAz7PJOFjmEWQ/5Nr46c/FGJsHjjq0M8sUpSE7CH7XZNaDIjvyS/YGkzm0FBdyD1RH45SHFiQ45z0V5E55LK8AkbrUTSX0a5bOkjfZdQ20mK5YuwUEuhYwf0rtSZKl/P0b8oLpj28kV+z/35CHxv+ZpVyh4J2oiFnvp0sZhUdjIjBj7FgHkrA4hERhmGg7FoV549DPIrqQ5rI3mIwco0K/QAPrprEmmLMh/BsuWBQRLXqoQLDJzjdkGAVospGQRGQiyMfiGdyTD0SIzyetDSOzOHPlCue8Z99JAtWaMDNC5PuB+8vw8vVDIWQHIdZOqTRRKaPsIPR5o9o0ywt9zVKIk2kU/jGXMdMbuoSW5+QrYxsDV7N2AM23cgXCDZAkkEHm66X1bkmpHWsaJI3n+aS1V8aOTJnCrDhjGyEyTcokeq69yWao5zHHb3wn8GrBiewSBCSopMm0BP9jSo1kYwGzYxzSvLcwUJpBHiaODgJnXMhGhY6TL+8RQmkepe2JDZBLzUuJbk2r8ZQ9am9jkSi9jnmfpkLrVy2NlJ+Qa4NT8osJAu2IlCV+fFWjd2sLV83ONfE5TWTlswpDGWwKRHS53DPMmR3kUCXBlRIivcEkCAmAuUyB3DhI862LsJqLZ7NUgQyawBIb8/ZSEFCba2caU2ZbHKvAtbSZILth8Ce5m8ObvyuGMubZmaJds537TV5EpwCt+Sbl07Y0nzSJLi/NtyyQprZWRBh+EZDkZjM2eazOrMg3NU2Wj8bJS5o+4473JswK4lDJ7qbCpZ8kSIP9VFSgBa6bNuFlhdw03xJhLnLOAk3gRWHQJLjbmPllWoVucyvfC0VaXLPbERxIjCevt6OO96gODpHsbmoUYUcmv4u8/JJhOBDCG9WQ6FSHAimc+yWruLFXGQVFj00Qm0OoIy+cX5k2deW++L874vjAmzCriUMiu0I1nJxBL+/nu9FtaUy1mPePGi2iaGyxAapzsVx5742QMltFQW7WYjVPpEHstSyKKIPGyetK+PJ1G8W5OH4vRcGbMKuJQyG7Umg4OUCVDrosY4AFTMcXJSrPtoLvttY7cZCATMJuRhRSzhvSh3odpd2BpCWBR/lh5frzCM0375Gm3BgPuPNaXUVR9hY/GyRPV92GvsHLPSt70A3G10ZVkyR5cEmwRQ6fb30CUAI4iI3nrRLhLVE1X9suRwG/zYQYETW5EFGjc+TN7WlRIDpZQm8TRUKaqEyOMNkxDylk4SJr9qJEcQ/HORbk9jBAWcmOXoxpxXfsG7xY00MMtqG16Q0mM5ik+jmSHtUMHB5C1ZwC0EcEIxfiu5xHEM5SBHpc4uNan9UUHfjc1HNC//2Het6xMV1qSosFKEkWtwmcaSrtrCJ+N9OQ3cqQoOQ5+6h2sma5oktfz7JcKAvZbVmFg1lFBdkKL8ASCdYH7xeAljdEtZQuPlkk1aud/dSTXDgg2DvoMKDLhW0VlS+KiihtTY3T65gqSjeGxZhlgnkQY5KcadoTmW6uZ6L7RkMz3y1NxRePAvGfnP0vLyxXRv3/uiABlsV9r0XEGD3oL1VPkwDpjdHM9ZLtbpMI1hXm7yA13yIBk+YUpnHrju4Q+qnnKsLcqLpXxD0bG2h0RmQRYsoMNUnqypGZmjBRieUmopdfUMJArtrj3e/fv+s+Bx4ZQtQIDfD/3DfEN0BrbH4Oajf8dNQM06QkRme/Vrn6GeE/6jBzpQ5LzP08LhJRFotWZbgcxtVm4+Kgc81cuoOjCsrufHGFrDEGZWp8ierEEPF7OR8qFWTGTajwie5FicYROTR0hTXaH3k4wpOdh0dClJnsPDw8/otDLhfm4eHh4eFhBE92Hh4eHh6Vhyc7Dw8PD4/Kw5Odh4eHh0fl4cnOw8PDw6Py8GTn4eHh4VF5eLLz8PDw8Kg8PNl5eHh4eFQenuw8PDw8PCoPT3YeHh4eHlZ4Ompe0OeQZq3s/ew8PDwc8XTUVPUwuVCieozLs1+rVPsmPh01j0Wdy5ezXytfwLuCeDpqTlWB8aej5uPZr1XnEO7Sk52HR8XwdNRso2uBrt0S1fDcQmANUyQ9Irof7N8L38+tesAGinfSuKLn7ezXqvTF270Z08OjQng6anZBOlF9BRvo/TaHRubhERiaJXXHHIQ502t2Hh4VATQ62WNNdcRXncB5d+4mvvMaWE0BTa2DDz0P76Jm4uzXavZ01NyyBrxb0z6ARcOTnYdHdSDbBy3Ofq32iOzpqNkXXbZbJPC8f622GDs0Wea9+aZp+3+zgic7D4/qQAqtN81Iz36txui/12B/brMGuh4ekQC5pd7JPmvEkp2m07TqLP1yN7q1ekF6g0lbdKpeojO18XkwHu5noN8bdUruDSayS3bsb23H3BtM3kSlmdxf3H1pzhuEdfTW3KcLdtfHHHAs70a3L+Kaua6L+H0b1078jFYJZHIKuZ0pfHYK3m/nUXloyQ7CZwg7biNsEnqDyau99m502404hgRRX/gKtOehaxoIOal2b2m8UviGoCs6So80ph81piHGrb3/iHt3jUqT9yXHJs8bRNjX5X264AZCMdBc9xNC2KPGn8m6KJg8V8GfdaKxjsM2BxUC+efO1e1QwMHZr5XufZLkViozFPxIx2lF+LG0iHXIfNicS73LqadvuEKkfZRmXDrwsaYdwcnOrU17eUN2EPKmgrKBMNQ3ZAdNZCh2kHHnue4NJl/vRrc2KnIjbSd7bzCZivDasOtq770iSOp0Tn1dgj/P1TSO5MQ4rqDpVZ3slpzssAHZy4HShI4HeQUY4Nr83e4q8kEUaZ9HkT4dvf7vAikS2rV7OmqOmaCfn/1aDYM/kYVDPH98A7DFGMYmpAAB2sd7fi6+223SdST6dNTs4LcKu/FZzhMRWJ99f4zxtHXvARvXVDdvT0dN/rfLiO/Crr93jPQLa66nVZ6wvhu8z5HrgedDydrdeHDurlwfNgd9dd691AMI+aQagRJIc0Oik/iGcdigBZJODJwnjuiqjkdDjSwOqa1L8MdUurYgurpBbhKvIHBfASEq363HpNqOBY6h/avPJWlKT0fNNaJIdekSdNwPCDsdLtn5OkQEIMB/8R6fi980IONi0y4wd2scL88TsA3vv7imxFLcb19zjA5d8bvd+sDfukaQUdh7oMb1A8fr5lR9pOWqpfnI50MeEwqxFjor2Tnmd82fVQ0u2PW+sLlYhqyPmoM1nvs/ZBehzTwEQfA5CIIPd6NbMpt9wL+/g5V1mGoe3C1+8wnn+QvmsAfN768dhORA41tygXwg6R6/BkHwkY15FHHvZcAU45Sfr2Jsq5DjTF9KE6SyLjCtzzUvzO65Es+out9FGRYkD2AXL+93Si87ojDn4r3cFmyZGMJEriMSiXsltCLQtNhkNzXEvwPI9e8oN47AFyTq74BNxCP7UyNGoCvIY/h52xZjIgwMrxkFJ80f82Gq8NA9/R2xqZHnnoPk4uaioebv1YzZG0w6GqIjQdiVDn741NZKRewNJnuDw7/ljoPO1ebaAv6fBjzvDSZjjSAjITmzDDCY0e7fJrhBjF33II2FWXWOzzAlck0dbI3k/ck/veTkx0q0LsBUsza0UepLLZTd/6uvLqWAnUNBR5Aazdk/mrHTZq1TsH9HEu+UCdauRib1DciZn3OBc66x/kNBrFc6v2ZIvuIKmvOM5gzHSJ/xNWmpwlQpTe7dKPIAMfExPog1UhuE3XxxUyXIQt7n67jZv0diPOch3wXwf1m/t9C65Po9wrQ6g1bdkaZrbGqWBqkwXKNc4P6WWGd5ziatl/LZSRWcJrJjIpzuRrdydyQ1so0kOs05liAOSXhjS5+P8hPF7QBtEDoHNQh4SAuJ1gUbKGkueYgKjOIII/8qAoJ4CK0kDI/wl5UlkGGk8dmQmfFFaAamsmAFX83e+wltYKlJu5Ay7I2pV84Xzj3X5C2SJjVVBAHBzgOHiGCPI+ZeamF7xEjXfTpqfob/7805zn6tppr7POe5lJyMQdrn7PeJ3Q7wo0l32FdKe2HXecE803hnYkMwM9ycbrAucp1nGv91+z0EiTQj9F124dAQ5bmGJv4faHCSdFvYlUdhJb5rQlNMC2ma9OqENNfljWnZlOjqBgOi+0yFe0tCdLSp/kgCNmQ88nkxMXeSJnSpC8wAAUki25MvGs1qG7UxgAB/FH+WhCE1uSizIv9uo0sfob9FrR/uU/4uz/QSXXGDqHe/i3lWODcwvdKch62zLg/w8r1m4jcabc0Ucue1tTyX7ti43dxM4/f7AuK1hU51JsKdGZCuRwbrgnmX/t/Ugl6qAgRmLA0CzGI3CSRo6FwUXID/z0pQRpqrILRtfeNx8ibOGiPnxyRqUz6P8hmXgle7gYaA51qnqxwOCrZkyPuPVBgwv3IO457TuHWRz9Xxe41pKUkYsjyXlZkP2qR8uE1MX32NJjFF9J7N9V8Q7CDxGrqeZmRhTZDGuuiO9eZjBpCRDD4JYB6UG44rGUihgfJ5fEkocNNA2kI7jrjk5jr2/kHYXG41eDANSJsHDjVDii5LAW809+gt1+afonzUuG9O2BvDUnSSd5LGQ7xZ5/ca00CSihNygl3OJR/uWMEIkpKqcAOC1WpXeje67YdEiDYQNLOWQTkema7Lm/VPGOhSRch2Ptw82NU8z9chIenKh8P9o5EmswpiLwjKIjjjjSYh/i2Ja0+GYMPC/VahKSHQ4vvkm3s6av5GaP8P8SkqfUret9H8ae7VJuJUd7433KNr8ZNEkJjY1DMBfH5SXW661HCDP0hGJfF7vHfIBawl0lwXwDiVgEygFPjEPpUzRUNDkIKtw192EJ7UsAchYdbkIRsAAAZJSURBVN5yXepszbBJW5HCdU8zocARsemTcx8ZmKIAzWmJoBjbAs55IIl1b2++0+6EriO7JPb5rcExmQH+wTe7WBdN7G50O0RuXdgDfw1fnq8rGIM018UyorMrdrtV1MilkHwIqTbS1hDePSc8aHtcQ3zIMeG8DuAb5HORN8jXcQty3AOE/1yjVKwQsDFinyrkl6YqW3VklyRsX+5uXJhZ3qCtKVTnJxrb+u8CaCV3o9s2EpTlOQOYHbwfzwxprUsi80YFYfS+wBQZSngIjuDBLVv/bFtpTiYajTZQBSTGTZhhVqOxeP5pLT8g+rQDs/UQ6QNF+bXl82fzfu/Nd9ptp95rHv4k2fZyF2jlZISWJJ3sVjvLKD+RzXnEOed3o9vLENOm998ZAOvScViXNy+tY6RtVSGFSVR0YyjhadahX1Otbs86ZWFKk+ugy4Fbi7nviP8qhJn4ZbGOTgnXSN63Edlp5jl1K+F7jTBpJqgMIs91bnkuXYiq9Q4FfiJJQs2kOXMwbUrzQCPmHk13NqWuRJ8GEFhiuy464e1zH/8g0lckEUF4XGN40JnRagIpb2I3VhDUe7l5EVoJJzJVPoy/E6uQotKSDBZl3IzgvmXOnIkMlPOcumb6PsQROnb0Rc00jGx0LgQPSCG2cO1Hdje6nWnSCNIwgcUFVkiSiiPDsFyySvZhs10XaITS39c60IjYLDYw8pyx88IIT7d73tR8MyHlYd8gz1DKhKj0LSkjpZ80TL7IMdjK5zSrSsVB3n+kOZx1luBIvRPHe5S8ktpKEzUrIyeUvueCHIJJLlYzjvAg7GcaoZfIZ4A0Ap2vLRRkIou5b50w2e2wQM62hK/bRVe26ajDuuieg/sDIjx6vz7FVJFwhRQK53F5dEgv0BXVDqChzA1345UDNFqeM3cetcFFgI80L4bKLWw0+JrJlBGtkNdoik3WW0+Oqa0hDyNyTCkCUt7/VUyB57HQjDdZWBZUbcy+5uGnRVgjkXomuma3oXZ2sbPcTRCZ+uBT4YtIodFtdq6X4A/JqT5Wb4r8plR7sqOph6cF65WmukBMlWbJ7lk+2BtN3tdYOPvV5mEIzSYI/vie5M5O3XusFhCjMVp1+y4AxutC99EbTEaa6iCK8F4LibPn6hiaS9GFuiN7saUBMmU9HTUfRPrBNYTWWJWbwr/brH1MFOh5/AfnVUIncePTA0JXNCy+BvkP2XxeQm7JtI+RwTyNQ/Lg4nIaFzIHkkjEYEw2GKLeZ4B3dAj/rbGmhWdSvq/3IOGxIm6YcHXyL5NN7CvZoRBzX1Ppu4F8jm+aivm7Y0joCmJqayo6nOP89xHnUjAu8hsHCMpuTL1ABU66X1DeyuQ3EmNNNXGai78NzmcTBSc7iHPEdvsuEpbrojZRupyyXU8tg7nNC9oCtRmiDzMVf99e5wUNMqOg2vwca97/azbf3+ti3kSx5RsxH020oIn66YNJIWUS9k9HzZVGyMdp/kPxzjcMxhSHmSDQ65BuE1ZmRZoHTQ7oNTYOUT+9yeq92aUeIBfqs2MUzB4xYYfddsz1+J52kd8QP5EOttf9zjU1dj0VeWhb12+LDhG12EFj7sKS93XHRyX7lwEbvKwXORId98HZvG9bzOUFCgtPY/JKS9nOKitgPm4s5OF3JO+bQhJbbFktPFM3BuffYC1NIJPddWi5mDcxHyZyN8AYbrIMjNrLs4PwucBLYLLIKzTIfLPjI4GPHLUbQ//MIxq7ZrJ7xHnjhMElgiHi7p0eps9RY4X58xKLbTKXdN0L14CcQ0VIhGsocPwHw3VSeMR6ZaXprhnJFRLFSIR39mtl8r4t8M5eyG4DJGxxjs+aSv5xZvUXnFt9dM+xyTESS/GbuO9txxm6scRaxsmER/hjbeWW3CQb+XMxpk8hc7GB7FbtfL6z+9T67LD+lyHn2+LePwrT7CJmTfj5+xivfJ74mL9jzFHvztpyneU4l+9+//4deiQSftshiatLGw0EJihdgdIl97cYnOdSjMfYNwVfDne8h/4W/jB5rReM1ZqQcD7d7nhu4pvUjD0Ob+5Nc44Xk3vR+AaXcr3yWpeQsclrB3g51nXuOSgCGOrkc8sE0G6U/HpJO+nZFohiVO9N4vUV58vk/uBXVO9qfs9kEAT/DxIcbRcM9wDZAAAAAElFTkSuQmCC" alt="BDO Consulting — Strategy Growth &amp; Innovation">
   </div>
   <table class="snap">
     <colgroup>
-      <col style="width:210px"><col style="width:440px"><col style="width:240px">
-      <col style="width:400px"><col style="width:170px"><col style="width:316px">
+      <col style="width:180px"><col style="width:360px"><col style="width:200px"><col style="width:250px">
+      <col style="width:336px"><col style="width:130px"><col style="width:320px">
     </colgroup>
-    <tr><th>מדינה</th><th>עיסוק עיקרי</th><th>חשיבות ניהול החתימה</th><th>בעלות</th><th>עובדים</th><th>הכנסות</th></tr>
+    <tr><th>מדינה</th><th>עיסוק עיקרי</th><th>חשיבות ניהול החתימה</th><th>בשלות מסחרית</th><th>בעלות</th><th>עובדים</th><th>הכנסות</th></tr>
     <tr>
       <td>ארה״ב / בריטניה</td>
       <td>ננו-חומרים וציפויים מתקדמים — הביטחון הוא אחד מכמה שווקים</td>
       <td>קו עסקי מרכזי</td>
+      <td>ניסוי / הערכה</td>
       <td>פרטית — <span dir="ltr">AMD Ltd</span> (בריטניה); <span dir="ltr">AMD Inc.</span> (ארה״ב)</td>
       <td><span dir="ltr">~15</span></td>
       <td>אין נתון פומבי מהימן</td>
@@ -1204,7 +1252,7 @@ ul.story li .dim { color: var(--c-text-muted); }
     </div>
   </div>
   <div class="ftr">
-    <div class="pageno">15</div>
+    <div class="pageno">16</div>
     <div class="src">מקור: אתר AMD הרשמי; תיעוד NPS JIFX; מאגרי חברות חיצוניים (מצבת עובדים); מאגר תשע החברות של פלסן.</div>
     <div class="proj">פלסן סאסא — אסטרטגיה | מצגת עבודה</div>
   </div>
@@ -1222,14 +1270,15 @@ ul.story li .dim { color: var(--c-text-muted); }
 
   <table class="snap">
     <colgroup>
-      <col style="width:210px"><col style="width:440px"><col style="width:240px">
-      <col style="width:400px"><col style="width:170px"><col style="width:316px">
+      <col style="width:180px"><col style="width:360px"><col style="width:200px"><col style="width:250px">
+      <col style="width:336px"><col style="width:130px"><col style="width:320px">
     </colgroup>
-    <tr><th>מדינה</th><th>עיסוק עיקרי</th><th>חשיבות ניהול החתימה</th><th>בעלות</th><th>עובדים</th><th>הכנסות</th></tr>
+    <tr><th>מדינה</th><th>עיסוק עיקרי</th><th>חשיבות ניהול החתימה</th><th>בשלות מסחרית</th><th>בעלות</th><th>עובדים</th><th>הכנסות</th></tr>
     <tr>
       <td>אוסטרליה</td>
       <td>בידוד ימי, מערכות הגנה מאש וניהול חתימה ביטחוני</td>
       <td>קו עסקי מרכזי</td>
+      <td>נבחרה / בחוזה — LAND 400</td>
       <td>פרטית — <span dir="ltr">CBG Systems Pty Ltd</span></td>
       <td><span dir="ltr">~20</span></td>
       <td><span dir="ltr">≈$6M</span> <span class="q">(הערכת צד-שלישי)</span></td>
@@ -1288,7 +1337,7 @@ ul.story li .dim { color: var(--c-text-muted); }
   </div>
 
   <div class="ftr">
-    <div class="pageno">16</div>
+    <div class="pageno">17</div>
     <div class="src">מקור: אתר CBG Systems הרשמי (ניהול חתימה; הודעת LAND 400 Phase 3). ההכנסות — הערכת צד-שלישי, לא דיווח חברה.</div>
     <div class="proj">פלסן סאסא — אסטרטגיה | מצגת עבודה</div>
   </div>
@@ -1305,14 +1354,15 @@ ul.story li .dim { color: var(--c-text-muted); }
   </div>
   <table class="snap">
     <colgroup>
-      <col style="width:210px"><col style="width:440px"><col style="width:240px">
-      <col style="width:400px"><col style="width:170px"><col style="width:316px">
+      <col style="width:180px"><col style="width:360px"><col style="width:200px"><col style="width:250px">
+      <col style="width:336px"><col style="width:130px"><col style="width:320px">
     </colgroup>
-    <tr><th>מדינה</th><th>עיסוק עיקרי</th><th>חשיבות ניהול החתימה</th><th>בעלות</th><th>עובדים</th><th>הכנסות</th></tr>
+    <tr><th>מדינה</th><th>עיסוק עיקרי</th><th>חשיבות ניהול החתימה</th><th>בשלות מסחרית</th><th>בעלות</th><th>עובדים</th><th>הכנסות</th></tr>
     <tr>
       <td>ארה״ב</td>
       <td>שרידות ביטחונית — מיגון, מושבים ממוגנים, ניהול חתימה וייצור מתכת</td>
       <td>קו עסקי מרכזי</td>
+      <td>מסחרית — הדגמות</td>
       <td>חברת פורטפוליו של <span dir="ltr">Littlejohn Capital</span></td>
       <td><span dir="ltr">201–500</span></td>
       <td>לא מאומת לאחר האיחוד</td>
@@ -1366,7 +1416,7 @@ ul.story li .dim { color: var(--c-text-muted); }
     </div>
   </div>
   <div class="ftr">
-    <div class="pageno">17</div>
+    <div class="pageno">18</div>
     <div class="src">מקור: אתר Ravelin Defense והודעות רשמיות; מאגר תשע החברות של פלסן. הכנסות ArmorWorks ההיסטוריות אינן מיוחסות ל-Ravelin.</div>
     <div class="proj">פלסן סאסא — אסטרטגיה | מצגת עבודה</div>
   </div>
@@ -1383,14 +1433,15 @@ ul.story li .dim { color: var(--c-text-muted); }
   </div>
   <table class="snap">
     <colgroup>
-      <col style="width:210px"><col style="width:440px"><col style="width:240px">
-      <col style="width:400px"><col style="width:170px"><col style="width:316px">
+      <col style="width:180px"><col style="width:360px"><col style="width:200px"><col style="width:250px">
+      <col style="width:336px"><col style="width:130px"><col style="width:320px">
     </colgroup>
-    <tr><th>מדינה</th><th>עיסוק עיקרי</th><th>חשיבות ניהול החתימה</th><th>בעלות</th><th>עובדים</th><th>הכנסות</th></tr>
+    <tr><th>מדינה</th><th>עיסוק עיקרי</th><th>חשיבות ניהול החתימה</th><th>בשלות מסחרית</th><th>בעלות</th><th>עובדים</th><th>הכנסות</th></tr>
     <tr>
       <td>בריטניה</td>
       <td>קומפוזיטים מתקדמים לביטחון ולשווקים הנדסיים</td>
       <td>הצעה משיקה</td>
+      <td>מסחרית — יישום משיק</td>
       <td>קבוצת <span dir="ltr">Diamorph</span> <span class="q">(נרכשה 2021)</span></td>
       <td><span dir="ltr">~270</span></td>
       <td>מחזור מדווח <span dir="ltr">£30M</span></td>
@@ -1438,7 +1489,7 @@ ul.story li .dim { color: var(--c-text-muted); }
     </div>
   </div>
   <div class="ftr">
-    <div class="pageno">18</div>
+    <div class="pageno">19</div>
     <div class="src">מקור: אתר Permali הרשמי; פרסומי Diamorph; מאגרי חברות חיצוניים; מאגר תשע החברות של פלסן.</div>
     <div class="proj">פלסן סאסא — אסטרטגיה | מצגת עבודה</div>
   </div>
@@ -1449,20 +1500,21 @@ ul.story li .dim { color: var(--c-text-muted); }
   <div class="hdr">
     <div class="hdr-titles">
       <div class="kicker">02 | פרופיל חברה · הצעה משיקה</div>
-      <h1 class="title">Shieldex — פלטפורמת טקסטיל מוליך שנעה ליישומים ביטחוניים רב-ספקטרליים כחומר מאפשר</h1>
+      <h1 class="title">Shieldex — פלטפורמת טקסטיל מוליך ליישומי הסתרה וסיכוך ביטחוניים — חומר מאפשר, לא מערכת הסוואה מלאה</h1>
     </div>
     <img class="bdo-logo" src="data:image/png;base64,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" alt="BDO Consulting — Strategy Growth &amp; Innovation">
   </div>
   <table class="snap">
     <colgroup>
-      <col style="width:210px"><col style="width:440px"><col style="width:240px">
-      <col style="width:400px"><col style="width:170px"><col style="width:316px">
+      <col style="width:180px"><col style="width:360px"><col style="width:200px"><col style="width:250px">
+      <col style="width:336px"><col style="width:130px"><col style="width:320px">
     </colgroup>
-    <tr><th>מדינה</th><th>עיסוק עיקרי</th><th>חשיבות ניהול החתימה</th><th>בעלות</th><th>עובדים</th><th>הכנסות</th></tr>
+    <tr><th>מדינה</th><th>עיסוק עיקרי</th><th>חשיבות ניהול החתימה</th><th>בשלות מסחרית</th><th>בעלות</th><th>עובדים</th><th>הכנסות</th></tr>
     <tr>
       <td>גרמניה</td>
       <td>טקסטיל טכני מוליך ומצופה-מתכת</td>
       <td>הצעה משיקה</td>
+      <td>מסחרית — חומר מאפשר</td>
       <td>עסק משפחתי — <span dir="ltr">Statex GmbH</span></td>
       <td><span dir="ltr">~50</span></td>
       <td><span dir="ltr">≈$31M</span> <span class="q">(הערכת צד-שלישי)</span></td>
@@ -1516,7 +1568,7 @@ ul.story li .dim { color: var(--c-text-muted); }
     </div>
   </div>
   <div class="ftr">
-    <div class="pageno">19</div>
+    <div class="pageno">20</div>
     <div class="src">מקור: אתר Shieldex הרשמי; מאגרי חברות חיצוניים; מאגר תשע החברות של פלסן. ההכנסות — הערכת צד-שלישי.</div>
     <div class="proj">פלסן סאסא — אסטרטגיה | מצגת עבודה</div>
   </div>
@@ -1538,7 +1590,7 @@ ul.story li .dim { color: var(--c-text-muted); }
     </div>
   </div>
   <div class="ftr">
-    <div class="pageno">20</div>
+    <div class="pageno">21</div>
     <div class="src">מסמך עבודה פנימי</div>
     <div class="proj">פלסן סאסא — אסטרטגיה | מצגת עבודה</div>
   </div>
@@ -1555,7 +1607,7 @@ ul.story li .dim { color: var(--c-text-muted); }
     <div class="scope">משפך ההערכה · SAM לפי גיאוגרפיה · SOM לפלסן · אתגרי ההערכה · נספח פרויקטים מפורט</div>
   </div>
   <div class="ftr">
-    <div class="pageno">21</div>
+    <div class="pageno">22</div>
     <div class="src">מסמך עבודה פנימי</div>
     <div class="proj">פלסן סאסא — אסטרטגיה | מצגת עבודה</div>
   </div>
@@ -1590,7 +1642,7 @@ ul.story li .dim { color: var(--c-text-muted); }
     </div>
   </div>
   <div class="ftr">
-    <div class="pageno">22</div>
+    <div class="pageno">23</div>
     <div class="src">מקור: "גודל שוק ופוטנציאל שוק הרכב" — ניתוח ה-Bottom-up העדכני. ההערכה בוצעה על בסיס המכרזים המזוהים בכל טריטוריה.</div>
     <div class="proj">פלסן סאסא — אסטרטגיה | מצגת עבודה</div>
   </div>
@@ -1652,7 +1704,7 @@ ul.story li .dim { color: var(--c-text-muted); }
   </div>
   <div class="sam-note">רכבים לשנה, לפי טריטוריה; המספר המשני — סה״כ לשלוש שנים · ההערכה בוצעה על בסיס המכרזים המזוהים בכל טריטוריה · פירוט הפרויקטים — בנספח</div>
   <div class="ftr">
-    <div class="pageno">23</div>
+    <div class="pageno">24</div>
     <div class="src">מקור: "גודל שוק ופוטנציאל שוק הרכב" — ניתוח ה-Bottom-up העדכני. ההערכה בוצעה על בסיס המכרזים המזוהים בכל טריטוריה.</div>
     <div class="proj">פלסן סאסא — אסטרטגיה | מצגת עבודה</div>
   </div>
@@ -1697,7 +1749,7 @@ ul.story li .dim { color: var(--c-text-muted); }
   <div class="som-total">בסה״כ: פוטנציאל לכ-<b><span dir="ltr">180</span> רכבים</b> בהיקף של כ-<b><span dir="ltr">60</span> מיליון $</b> בשנה <span style="font-weight:400">(כ-<span dir="ltr">350</span> אלף $ לרכב בממוצע)</span></div>
   <div class="som-note">הערה: המספרים מתייחסים לפוטנציאל כללי רב-שנתי ולא לאירוע נקודתי</div>
   <div class="ftr">
-    <div class="pageno">24</div>
+    <div class="pageno">25</div>
     <div class="src">מקור: "גודל שוק ופוטנציאל שוק הרכב" — ניתוח ה-Bottom-up העדכני. ההערכה בוצעה על בסיס המכרזים המזוהים בכל טריטוריה.</div>
     <div class="proj">פלסן סאסא — אסטרטגיה | מצגת עבודה</div>
   </div>
@@ -1728,7 +1780,7 @@ ul.story li .dim { color: var(--c-text-muted); }
   </div>
   <div class="method-band" style="top: 730px;">הערה: המספרים מתייחסים לפוטנציאל כללי רב-שנתי ולא לאירוע נקודתי — אלו הנחות המחשה של הפוטנציאל, לא המלצה</div>
   <div class="ftr">
-    <div class="pageno">25</div>
+    <div class="pageno">26</div>
     <div class="src">מקור: "גודל שוק ופוטנציאל שוק הרכב" — ניתוח ה-Bottom-up העדכני. ההערכה בוצעה על בסיס המכרזים המזוהים בכל טריטוריה.</div>
     <div class="proj">פלסן סאסא — אסטרטגיה | מצגת עבודה</div>
   </div>
@@ -1744,7 +1796,7 @@ ul.story li .dim { color: var(--c-text-muted); }
     <div class="scope">צפון אמריקה · מרכז ומזרח אירופה · מערב אירופה · מיוחדות · דרום אמריקה</div>
   </div>
   <div class="ftr">
-    <div class="pageno">26</div>
+    <div class="pageno">27</div>
     <div class="src">מסמך עבודה פנימי</div>
     <div class="proj">פלסן סאסא — אסטרטגיה | מצגת עבודה</div>
   </div>
@@ -1765,7 +1817,7 @@ ul.story li .dim { color: var(--c-text-muted); }
     <tr><td class="co">ארה״ב</td><td>רכבים טקטיים ממוגנים למשטרות</td><td>משטרה</td><td class="n"><span dir="ltr">150</span></td><td class="n"><span dir="ltr">50</span></td><td class="n"><span dir="ltr">300,000</span></td><td class="n"><span dir="ltr">45,000,000</span></td><td>כן</td><td>כן</td></tr><tr><td class="co">קנדה</td><td>LUVP</td><td>צבא</td><td class="n"><span dir="ltr">200</span></td><td class="n"><span dir="ltr">67</span></td><td class="n"><span dir="ltr">250,000</span></td><td class="n"><span dir="ltr">50,000,000</span></td><td>כן</td><td>כן</td></tr><tr><td class="co">קנדה</td><td>LFE</td><td>צבא</td><td class="n"><span dir="ltr">220</span></td><td class="n"><span dir="ltr">73</span></td><td class="n"><span dir="ltr">200,000</span></td><td class="n"><span dir="ltr">44,000,000</span></td><td>לא</td><td>כן</td></tr><tr><td class="co">קנדה</td><td>רכבים טקטיים ממוגנים למשטרות</td><td>משטרה</td><td class="n"><span dir="ltr">60</span></td><td class="n"><span dir="ltr">20</span></td><td class="n"><span dir="ltr">300,000</span></td><td class="n"><span dir="ltr">18,000,000</span></td><td>כן</td><td>כן</td></tr><tr class="tot"><td class="co">סה״כ</td><td>—</td><td>—</td><td class="n"><span dir="ltr">630</span></td><td class="n"><span dir="ltr">210</span></td><td class="n">—</td><td class="n">—</td><td>—</td><td>—</td></tr>
   </table>
   <div class="ftr">
-    <div class="pageno">27</div>
+    <div class="pageno">28</div>
     <div class="src">מקור: "גודל שוק ופוטנציאל שוק הרכב" — ניתוח ה-Bottom-up העדכני. ההערכה בוצעה על בסיס המכרזים המזוהים בכל טריטוריה.</div>
     <div class="proj">פלסן סאסא — אסטרטגיה | מצגת עבודה</div>
   </div>
@@ -1786,7 +1838,7 @@ ul.story li .dim { color: var(--c-text-muted); }
     <tr><td class="co">Czechia</td><td>Future Special Forces Mobility Expansion</td><td>צבא</td><td class="n"><span dir="ltr">80</span></td><td class="n"><span dir="ltr">40</span></td><td class="n"><span dir="ltr">200,000</span></td><td class="n"><span dir="ltr">16,000,000</span></td><td>כן, קל</td><td>דורש פיתוח</td></tr><tr><td class="co">Czechia</td><td>Heavy Protected Mobility Vehicle Requirement (Potential)</td><td>צבא</td><td class="n"><span dir="ltr">150</span></td><td class="n"><span dir="ltr">50</span></td><td class="n"><span dir="ltr">450,000</span></td><td class="n"><span dir="ltr">67,500,000</span></td><td>כן</td><td>דורש פיתוח</td></tr><tr><td class="co">Hungary</td><td>Airborne / SOF LTV Program</td><td>צבא</td><td class="n"><span dir="ltr">100</span></td><td class="n"><span dir="ltr">33</span></td><td class="n"><span dir="ltr">200,000</span></td><td class="n"><span dir="ltr">20,000,000</span></td><td>Optional</td><td>דורש פיתוח</td></tr><tr><td class="co">Poland</td><td>Future Airborne / Reconnaissance Vehicle</td><td>צבא</td><td class="n"><span dir="ltr">200</span></td><td class="n"><span dir="ltr">50</span></td><td class="n"><span dir="ltr">200,000</span></td><td class="n"><span dir="ltr">40,000,000</span></td><td>Mixed</td><td>דורש פיתוח</td></tr><tr><td class="co">Poland</td><td>GLADIUS UAV System</td><td>צבא</td><td class="n"><span dir="ltr">192</span></td><td class="n"><span dir="ltr">64</span></td><td class="n"><span dir="ltr">500,000</span></td><td class="n"><span dir="ltr">96,000,000</span></td><td>כן</td><td>דורש פיתוח</td></tr><tr><td class="co">Poland</td><td>PEGAZ Re-Launch</td><td>צבא</td><td class="n"><span dir="ltr">200</span></td><td class="n"><span dir="ltr">50</span></td><td class="n"><span dir="ltr">350,000</span></td><td class="n"><span dir="ltr">70,000,000</span></td><td>כן</td><td>מוצר קיים</td></tr><tr><td class="co">Poland</td><td>Sat-Com Vehicle</td><td>צבא</td><td class="n"><span dir="ltr">140</span></td><td class="n"><span dir="ltr">47</span></td><td class="n"><span dir="ltr">300,000</span></td><td class="n"><span dir="ltr">42,000,000</span></td><td>כן</td><td>מוצר קיים</td></tr><tr><td class="co">Slovakia</td><td>Future Protected Mobility Requirement</td><td>צבא</td><td class="n"><span dir="ltr">150</span></td><td class="n"><span dir="ltr">50</span></td><td class="n"><span dir="ltr">350,000</span></td><td class="n"><span dir="ltr">52,500,000</span></td><td>כן</td><td>דורש פיתוח</td></tr><tr><td class="co">Romania</td><td>SOF Air-Mobile Anti-Tank Vehicle Expansion</td><td>צבא</td><td class="n"><span dir="ltr">100</span></td><td class="n"><span dir="ltr">33</span></td><td class="n"><span dir="ltr">200,000</span></td><td class="n"><span dir="ltr">20,000,000</span></td><td>כן (מיגון קל)</td><td>דורש פיתוח</td></tr><tr><td class="co">Romania</td><td>SPYDER VSHORAD</td><td>צבא</td><td class="n"><span dir="ltr">62</span></td><td class="n"><span dir="ltr">21</span></td><td class="n"><span dir="ltr">450,000</span></td><td class="n"><span dir="ltr">27,900,000</span></td><td>לא</td><td>מוצר קיים</td></tr><tr class="tot"><td class="co">סה״כ</td><td>—</td><td>—</td><td class="n"><span dir="ltr">1,374</span></td><td class="n"><span dir="ltr">458</span></td><td class="n">—</td><td class="n">—</td><td>—</td><td>—</td></tr>
   </table>
   <div class="ftr">
-    <div class="pageno">28</div>
+    <div class="pageno">29</div>
     <div class="src">מקור: "גודל שוק ופוטנציאל שוק הרכב" — ניתוח ה-Bottom-up העדכני. ההערכה בוצעה על בסיס המכרזים המזוהים בכל טריטוריה.</div>
     <div class="proj">פלסן סאסא — אסטרטגיה | מצגת עבודה</div>
   </div>
@@ -1807,7 +1859,7 @@ ul.story li .dim { color: var(--c-text-muted); }
     <tr><td class="co">UK</td><td>PSNI Landrover replacement</td><td>PSNI</td><td class="n"><span dir="ltr">100</span></td><td class="n"><span dir="ltr">50</span></td><td class="n"><span dir="ltr">125,000</span></td><td class="n"><span dir="ltr">12,500,000</span></td><td>—</td><td>דורש פיתוח</td></tr><tr><td class="co">UK</td><td>Civil Nuclear Constabulary</td><td>CNC</td><td class="n"><span dir="ltr">10</span></td><td class="n"><span dir="ltr">3</span></td><td class="n"><span dir="ltr">400,000</span></td><td class="n"><span dir="ltr">4,000,000</span></td><td>PAS 300</td><td>מוצר קיים</td></tr><tr><td class="co">UK</td><td>UK Marines — Nuclear protection</td><td>MOD</td><td class="n"><span dir="ltr">20</span></td><td class="n"><span dir="ltr">5</span></td><td class="n"><span dir="ltr">400,000</span></td><td class="n"><span dir="ltr">8,000,000</span></td><td><span dir="ltr">STANAG L2?</span></td><td>מוצר קיים</td></tr><tr><td class="co">UK</td><td>UK SF</td><td>MOD</td><td class="n"><span dir="ltr">4</span></td><td class="n"><span dir="ltr">1</span></td><td class="n"><span dir="ltr">400,000</span></td><td class="n"><span dir="ltr">1,600,000</span></td><td><span dir="ltr">PAS 300 L2?</span></td><td>מוצר קיים</td></tr><tr><td class="co">UK</td><td>UK Police Counter Terrorist</td><td>משטרה</td><td class="n"><span dir="ltr">6</span></td><td class="n"><span dir="ltr">2</span></td><td class="n"><span dir="ltr">400,000</span></td><td class="n"><span dir="ltr">2,400,000</span></td><td>PAS 300 (כמו Met Police)</td><td>מוצר קיים</td></tr><tr><td class="co">פינלנד</td><td>אטמוס</td><td>צבא</td><td class="n"><span dir="ltr">12</span></td><td class="n"><span dir="ltr">4</span></td><td class="n"><span dir="ltr">350,000</span></td><td class="n"><span dir="ltr">4,200,000</span></td><td>כן</td><td>מוצר קיים</td></tr><tr><td class="co">פינלנד</td><td>40 המשך</td><td>צבא</td><td class="n"><span dir="ltr">12</span></td><td class="n"><span dir="ltr">4</span></td><td class="n"><span dir="ltr">600,000</span></td><td class="n"><span dir="ltr">7,200,000</span></td><td>כן</td><td>מוצר קיים</td></tr><tr><td class="co">Greece</td><td>New Wheeled General Purpose Vehicle Program (Agenda 2030)</td><td>צבא</td><td class="n"><span dir="ltr">400</span></td><td class="n"><span dir="ltr">100</span></td><td class="n"><span dir="ltr">400,000</span></td><td class="n"><span dir="ltr">160,000,000</span></td><td>Mixed</td><td>מוצר קיים</td></tr><tr><td class="co">Greece</td><td>4x4 to Hellenic Army SF</td><td>צבא</td><td class="n"><span dir="ltr">55</span></td><td class="n"><span dir="ltr">27</span></td><td class="n"><span dir="ltr">350,000</span></td><td class="n"><span dir="ltr">19,250,000</span></td><td>כן</td><td>מוצר קיים</td></tr><tr><td class="co">Greece</td><td>NMT2</td><td>צבא</td><td class="n"><span dir="ltr">51</span></td><td class="n"><span dir="ltr">17</span></td><td class="n"><span dir="ltr">500,000</span></td><td class="n"><span dir="ltr">25,500,000</span></td><td>כן</td><td>מוצר קיים</td></tr><tr><td class="co">Greece</td><td>ברקים</td><td>צבא</td><td class="n"><span dir="ltr">10</span></td><td class="n"><span dir="ltr">3</span></td><td class="n"><span dir="ltr">480,000</span></td><td class="n"><span dir="ltr">4,800,000</span></td><td>כן</td><td>דורש פיתוח</td></tr><tr class="tot"><td class="co">סה״כ</td><td>—</td><td>—</td><td class="n"><span dir="ltr">680</span></td><td class="n"><span dir="ltr">227</span></td><td class="n">—</td><td class="n">—</td><td>—</td><td>—</td></tr>
   </table>
   <div class="ftr">
-    <div class="pageno">29</div>
+    <div class="pageno">30</div>
     <div class="src">מקור: "גודל שוק ופוטנציאל שוק הרכב" — ניתוח ה-Bottom-up העדכני. ההערכה בוצעה על בסיס המכרזים המזוהים בכל טריטוריה.</div>
     <div class="proj">פלסן סאסא — אסטרטגיה | מצגת עבודה</div>
   </div>
@@ -1829,7 +1881,7 @@ ul.story li .dim { color: var(--c-text-muted); }
   </table>
   <div class="vx-note2">שורת הסה״כ (55 רכבים לשנה) — כפי שמופיעה בטבלת המקור; שקף ה-SAM המסכם מציג 50 לשנה (150 ÷ 3)</div>
   <div class="ftr">
-    <div class="pageno">30</div>
+    <div class="pageno">31</div>
     <div class="src">מקור: "גודל שוק ופוטנציאל שוק הרכב" — ניתוח ה-Bottom-up העדכני. ההערכה בוצעה על בסיס המכרזים המזוהים בכל טריטוריה.</div>
     <div class="proj">פלסן סאסא — אסטרטגיה | מצגת עבודה</div>
   </div>
@@ -1850,7 +1902,7 @@ ul.story li .dim { color: var(--c-text-muted); }
     <tr><td class="co">אקוודור</td><td>רכב ממוגן 4X4</td><td>צבא</td><td class="n"><span dir="ltr">120</span></td><td class="n"><span dir="ltr">40</span></td><td class="n"><span dir="ltr">600,000</span></td><td class="n"><span dir="ltr">72,000,000</span></td><td>כן</td><td>מוצר קיים</td></tr><tr><td class="co">אקוודור</td><td>רכב ממוגן 4X4</td><td>צבא</td><td class="n"><span dir="ltr">120</span></td><td class="n"><span dir="ltr">40</span></td><td class="n"><span dir="ltr">600,000</span></td><td class="n"><span dir="ltr">72,000,000</span></td><td>כן</td><td>מוצר קיים</td></tr><tr><td class="co">ארגנטינה</td><td>IBEX</td><td>משטרה</td><td class="n"><span dir="ltr">20</span></td><td class="n"><span dir="ltr">7</span></td><td class="n"><span dir="ltr">330,000</span></td><td class="n"><span dir="ltr">6,600,000</span></td><td>כן</td><td>מוצר קיים</td></tr><tr><td class="co">ארגנטינה</td><td>טיגריס</td><td>משטרה</td><td class="n"><span dir="ltr">10</span></td><td class="n"><span dir="ltr">3</span></td><td class="n"><span dir="ltr">420,000</span></td><td class="n"><span dir="ltr">4,200,000</span></td><td>כן</td><td>מוצר קיים</td></tr><tr><td class="co">ברזיל</td><td>אטמוס</td><td>צבא</td><td class="n"><span dir="ltr">36</span></td><td class="n"><span dir="ltr">12</span></td><td class="n"><span dir="ltr">350,000</span></td><td class="n"><span dir="ltr">12,600,000</span></td><td>כן</td><td>מוצר קיים</td></tr><tr><td class="co">ברזיל</td><td>רכב ממוגן 4X4</td><td>משטרה צבאית</td><td class="n"><span dir="ltr">10</span></td><td class="n"><span dir="ltr">3</span></td><td class="n"><span dir="ltr">500,000</span></td><td class="n"><span dir="ltr">5,000,000</span></td><td>כן</td><td>מוצר קיים</td></tr><tr><td class="co">ברזיל</td><td>רכב מיגון מיקוש</td><td>משטרה צבאית</td><td class="n"><span dir="ltr">8</span></td><td class="n"><span dir="ltr">3</span></td><td class="n"><span dir="ltr">1,000,000</span></td><td class="n"><span dir="ltr">8,000,000</span></td><td>כן</td><td>דורש פיתוח</td></tr><tr><td class="co">ברזיל</td><td>רכב רמה 3</td><td>משטרה צבאית</td><td class="n"><span dir="ltr">20</span></td><td class="n"><span dir="ltr">7</span></td><td class="n"><span dir="ltr">600,000</span></td><td class="n"><span dir="ltr">12,000,000</span></td><td>כן</td><td>דורש פיתוח</td></tr><tr><td class="co">ברזיל</td><td>קיט לרכב ממוגן (IBEX)</td><td>משטרה</td><td class="n"><span dir="ltr">240</span></td><td class="n"><span dir="ltr">80</span></td><td class="n"><span dir="ltr">80,000</span></td><td class="n"><span dir="ltr">19,200,000</span></td><td>—</td><td>מוצר קיים</td></tr>
   </table>
   <div class="ftr">
-    <div class="pageno">31</div>
+    <div class="pageno">32</div>
     <div class="src">מקור: "גודל שוק ופוטנציאל שוק הרכב" — ניתוח ה-Bottom-up העדכני. ההערכה בוצעה על בסיס המכרזים המזוהים בכל טריטוריה.</div>
     <div class="proj">פלסן סאסא — אסטרטגיה | מצגת עבודה</div>
   </div>
@@ -1872,7 +1924,7 @@ ul.story li .dim { color: var(--c-text-muted); }
   </table>
   <div class="vx-note2">שורת הסה״כ — כפי שמופיעה במקור</div>
   <div class="ftr">
-    <div class="pageno">32</div>
+    <div class="pageno">33</div>
     <div class="src">מקור: "גודל שוק ופוטנציאל שוק הרכב" — ניתוח ה-Bottom-up העדכני. ההערכה בוצעה על בסיס המכרזים המזוהים בכל טריטוריה.</div>
     <div class="proj">פלסן סאסא — אסטרטגיה | מצגת עבודה</div>
   </div>
