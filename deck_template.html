@@ -1,4 +1,4 @@
-<title>Plasan Master Deck</title>
+<title>Plasan Signature Management</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
@@ -369,6 +369,11 @@ ul.story li .dim { color: var(--c-text-muted); }
 .pf-note .nlbl { font-size: 15px; font-weight: 700; color: var(--c-text-faint); margin-bottom: 6px; }
 
 .pf-evidence { position: absolute; right: var(--m-side); left: var(--m-side); top: 826px; }
+.ev-list { display: grid; grid-template-columns: 1fr 1fr; column-gap: 44px; row-gap: 9px; }
+.ev-item { position: relative; padding-right: 22px; font-size: 18px; line-height: 1.3; color: var(--c-text); }
+.ev-item::before { content: ""; position: absolute; right: 0; top: 8px; width: 9px; height: 9px; background: var(--c-primary); }
+.ev-item b { font-weight: 600; color: var(--c-primary); }
+.ev-item .dim { color: var(--c-text-muted); }
 .ev-tiles { display: grid; grid-template-columns: repeat(3, 1fr); column-gap: 24px; }
 .ev-tile { background: var(--c-fill); padding: 14px 22px 16px; border-top: 3px solid var(--c-primary); }
 .ev-tile .elbl { font-size: 17px; font-weight: 700; color: var(--c-primary); margin-bottom: 6px; }
@@ -626,7 +631,7 @@ ul.story li .dim { color: var(--c-text-muted); }
       <td class="mat"><b>מסחרית</b><br><span class="qual">עדות רכש ממשלתי ארה״ב</span></td>
       <td class="muted">ציפויים · כיסויים · לוחם</td>
       <td class="prod"><b><span dir="ltr">Flint™</span></b> — מעטה פלטפורמה; כיסויי הסתרה; מערכות לוחם</td>
-      <td><span dir="ltr">VIS</span> · תרמי<sup>1</sup></td>
+      <td><span dir="ltr">VIS</span> · תרמי<sup>1</sup> · מכ״ם<sup>7</sup></td>
       <td class="num"><span dir="ltr">~40</span></td>
       <td class="num"><span dir="ltr">$1–15M</span><br><span class="qual">הערכה</span></td>
       <td class="muted">פרטית</td>
@@ -660,7 +665,7 @@ ul.story li .dim { color: var(--c-text-muted); }
   </table>
 
   <div class="ovw-note">
-    <sup>1</sup> תת-התחום התרמי אינו מפורט במקורות · <sup>2</sup> מכ״ם — בקווי תעופה / האנגרים בלבד · <sup>3</sup> מכ״ם — טענת חברה, לא אומתה עצמאית · <sup>4</sup> המקור מציין <span dir="ltr">"NIR / MIR"</span> · <sup>5</sup> חתימת ענן האבק בלבד · <sup>6</sup> סיכוך <span dir="ltr">RF / EMI</span> — אינו הפחתת <span dir="ltr">RCS</span> · נתוני עובדים: אומדנים ממאגרי חברות חיצוניים כאשר נמצא בסיס מהימן; אחרת טווחים · נתוני "הערכה" — אומדני צד-שלישי · בשלות מסחרית — בשלות ההצעה בניהול חתימה (לא שלב המימון התאגידי); סדר השורות עולה מהבשלות הנמוכה לגבוהה — סדר קריאה אנליטי, לא דירוג
+    <sup>1</sup> תת-התחום התרמי אינו מפורט במקורות · <sup>2</sup> מכ״ם — בקווי תעופה / האנגרים בלבד · <sup>3</sup> מכ״ם — טענת חברה, לא אומתה עצמאית · <sup>4</sup> המקור מציין <span dir="ltr">"NIR / MIR"</span> · <sup>5</sup> חתימת ענן האבק בלבד · <sup>6</sup> סיכוך <span dir="ltr">RF / EMI</span> — אינו הפחתת <span dir="ltr">RCS</span> · <sup>7</sup> מכ״ם — טענת חברה בכיסויים בלבד · נתוני עובדים: אומדנים ממאגרי חברות חיצוניים כאשר נמצא בסיס מהימן; אחרת טווחים · נתוני "הערכה" — אומדני צד-שלישי · בשלות מסחרית — בשלות ההצעה בניהול חתימה (לא שלב המימון התאגידי); סדר השורות עולה מהבשלות הנמוכה לגבוהה — סדר קריאה אנליטי, לא דירוג
   </div>
 
   <div class="ftr">
@@ -676,7 +681,7 @@ ul.story li .dim { color: var(--c-text-muted); }
   <div class="hdr">
     <div class="hdr-titles">
       <div class="kicker">חלק 1 | כיסוי ספקטרלי</div>
-      <h1 class="title">כיסוי אופטי-תרמי הוא המכנה המשותף; שש חברות מציגות זיקה למכ״ם — אך רק בחלקן מדובר ביכולת RCS ישירה ומתועדת</h1>
+      <h1 class="title">כיסוי אופטי-תרמי הוא המכנה המשותף; שבע חברות מציגות זיקה למכ״ם — אך רק בחלקן מדובר ביכולת RCS ישירה ומתועדת</h1>
     </div>
     <img class="bdo-logo" src="@@IMG:bdo-logo.png@@" alt="BDO Consulting — Strategy Growth &amp; Innovation">
   </div>
@@ -728,7 +733,7 @@ ul.story li .dim { color: var(--c-text-muted); }
     <tr>
       <td class="co-cell"><span class="co">Ametrine Technologies</span></td>
       <td><span class="d"></span></td><td></td><td></td>
-      <td><span class="o"></span></td><td><span class="o"></span></td><td><sup>1</sup></td>
+      <td><span class="o"></span></td><td><span class="o"></span></td><td><span class="o"></span><sup>1</sup></td>
     </tr>
     <tr>
       <td class="co-cell"><span class="co">CBG Systems</span></td>
@@ -747,7 +752,7 @@ ul.story li .dim { color: var(--c-text-muted); }
     <span class="o"></span> מסויג — תחום תרמי ללא פירוט תת-תחום (מסומן על <span dir="ltr">MWIR</span> ו-<span dir="ltr">LWIR</span>) או כפוף להערה
   </div>
   <div class="sx-notes">
-    <sup>1</sup> יכולת מכ״ם / <span dir="ltr">RCS</span> לא מאומתת בחומרי המוצר הנוכחיים · <sup>2</sup> מתועד בעיקר בקווי תעופה / האנגרים · <sup>3</sup> טענת חברה, לא אומתה עצמאית · <sup>4</sup> המקור מציין <span dir="ltr">"NIR / MIR"</span> · <sup>5</sup> חתימת ענן האבק של רק״ם נע בלבד · <sup>6</sup> על בסיס יישומי הסתרה של טקסטיל מצופה-מתכת; סיכוך <span dir="ltr">RF / EMI</span> אינו נספר כיכולת מכ״ם / <span dir="ltr">RCS</span> · תחומים מוצגים רק כאשר קיימת עדות מוצר; אין הערכת ביצועים
+    <sup>1</sup> מכ״ם — טענת חברה בכיסויי הסתרה ייעודיים בלבד (לא <span dir="ltr">Flint</span> / מערכות הלוחם); לא אומתה עצמאית ·<sup>2</sup> מתועד בעיקר בקווי תעופה / האנגרים · <sup>3</sup> טענת חברה, לא אומתה עצמאית · <sup>4</sup> המקור מציין <span dir="ltr">"NIR / MIR"</span> · <sup>5</sup> חתימת ענן האבק של רק״ם נע בלבד · <sup>6</sup> על בסיס יישומי הסתרה של טקסטיל מצופה-מתכת; סיכוך <span dir="ltr">RF / EMI</span> אינו נספר כיכולת מכ״ם / <span dir="ltr">RCS</span> · תחומים מוצגים רק כאשר קיימת עדות מוצר; אין הערכת ביצועים
   </div>
 
   <div class="ftr">
@@ -809,7 +814,7 @@ ul.story li .dim { color: var(--c-text-muted); }
     </div>
     <div class="sc-tile" style="min-height: 240px;">
       <div class="slbl">3 · מכ״ם / RCS — עקביות נמוכה</div>
-      <div class="stxt">שש חברות מציגות זיקה למכ״ם, אך איכות העדות שונה מהותית: הפחתת <span dir="ltr">RCS</span> ישירה, טענות ממוקדות-יישום <span class="dim">(תעופה/האנגרים; ענן אבק)</span>, טענות חברה שלא אומתו — וסיכוך <span dir="ltr">RF / EMI</span> שאינו הפחתת <span dir="ltr">RCS</span> כלל. אלה אינם שקולים</div>
+      <div class="stxt">שבע חברות מציגות זיקה למכ״ם, אך איכות העדות שונה מהותית: הפחתת <span dir="ltr">RCS</span> ישירה, טענות ממוקדות-יישום <span class="dim">(תעופה/האנגרים; ענן אבק)</span>, טענות חברה שלא אומתו — וסיכוך <span dir="ltr">RF / EMI</span> שאינו הפחתת <span dir="ltr">RCS</span> כלל. אלה אינם שקולים</div>
     </div>
     <div class="sc-tile" style="min-height: 240px;">
       <div class="slbl">4 · יכולת אקטיבית / אדפטיבית — נדירה</div>
@@ -1290,7 +1295,7 @@ ul.story li .dim { color: var(--c-text-muted); }
   <div class="hdr">
     <div class="hdr-titles">
       <div class="kicker">חלק 1 | פרופיל חברה · ליבת העסק</div>
-      <h1 class="title">Ametrine Technologies — שחקנית הסוואה ייעודית עם מוצרי פלטפורמה ופעילות רכש מול ממשל ארה״ב</h1>
+      <h1 class="title">Ametrine Technologies — חברת ניהול חתימה ייעודית עם פעילות רכש חוזרת מול ממשל ארה״ב; פתרונות ללוחם, לציוד ולפלטפורמות</h1>
     </div>
     <img class="bdo-logo" src="@@IMG:bdo-logo.png@@" alt="BDO Consulting — Strategy Growth &amp; Innovation">
   </div>
@@ -1314,46 +1319,47 @@ ul.story li .dim { color: var(--c-text-muted); }
     <div class="pf-story">
       <div class="sec-bar">הסיפור בקצרה</div>
       <ul class="story">
-        <li>חברת ניהול חתימה <b>ייעודית</b> — כל העסק ממוקד בהסוואה רב-ספקטרלית לפלטפורמות ולציוד</li>
-        <li><b><span dir="ltr">Flint™</span></b> — ציפוי / מעטה רב-שכבתי לפלטפורמות ניידות להפחתת החתימה האופטית והתרמית; לצדו כיסויי הסתרה רב-ייעודיים ומערכות ללוחם <span class="dim">(Poncho Elite, ACCUS — משניים לפוקוס הרכב של סקירה זו)</span></li>
-        <li>פעילות מול לקוחות ממשל בארה״ב: <b>ONR</b>, זרוע המחקר של צבא ארה״ב <span dir="ltr">(RDECOM)</span> ו-<span dir="ltr">USSOCOM</span> — כולל הזמנה שכללה כיסוי הסוואה ב-2024 וחוזה מו״פ של <span dir="ltr">$18M</span> ב-2025</li>
-        <li>הפורטפוליו ממוקד אופטי-תרמי; יכולת מכ״ם / <span dir="ltr">RCS</span> לא מאומתת בחומרי המוצר הנוכחיים</li>
-        <li>רלוונטיות לפלסן: פוקוס דומה בפלטפורמות יבשתיות, בסדר גודל קטן — כ-40 עובדים ומכירות מוערכות של <span dir="ltr">$1–15M</span></li>
+        <li>חברת ניהול חתימה <b>ייעודית</b> בשלושה תחומי מוצר: <b>מערכות לוחם</b> <span class="dim" dir="ltr">(Advanced Camouflage Combat Uniform™ · Poncho / Hobey Elite)</span> · <b>כיסויי הסתרה ומחבואים</b> <span class="dim" dir="ltr">(Multirole Concealment Covers)</span> · <b>הסוואת פלטפורמות</b> <span class="dim" dir="ltr">(Flint™)</span> — לא "חברת <span dir="ltr">Flint</span>" בלבד</li>
+        <li>הרלוונטי ביותר לפלסן: <b><span dir="ltr">Flint™</span></b> — ציפוי / מעטה רב-שכבתי מרוסס לפלטפורמות ניידות להפחתת חתימות נצפות <span class="dim">(בהגדרת החברה — רב-ספקטרלי; התחומים אינם מפורטים ברמת המוצר; תואם CARC)</span></li>
+        <li>הבחנה חשובה: האחיזה המסחרית מוכחת <b>ברמת החברה</b> — החזקה ביותר במערכות הלוחם ובכיסויים; ל-<span dir="ltr">Flint</span> עצמו לא זוהתה עדות פומבית לפריסה מסחרית בקנה מידה פלטפורמי — נדרש אימות נפרד</li>
       </ul>
       <div class="pf-bands">
         <span class="blbl">תחומי חתימה</span>
         <span class="band-chip">אופטי (VIS)</span><span class="band-chip">תרמי (IR)</span>
       </div>
-      <div class="pf-bandqual">תת-התחום התרמי אינו מפורט במקורות; מכ״ם / RCS לא מאומת</div>
+      <div class="pf-bandqual">בכיסויי הסתרה ייעודיים — טענת חברה גם למכ״ם / RF; לא ב-Flint ולא במערכות הלוחם, ולא אומתה עצמאית</div>
     </div>
     <div class="pf-imgs">
-      <div class="sec-bar">מוצר ויישום</div>
-      <div class="ifig">
-        <div class="iimg" style="background-image:url('@@IMG:ametrine-flint-jltv.jpg@@')"></div>
-        <div class="icap2"><b><span dir="ltr">Flint™</span> על רכב JLTV.</b> מקור: <span dir="ltr" style="white-space:nowrap">ametrine.tech</span> — ספריית המדיה הרשמית</div>
+      <div class="sec-bar">מוצר ויישום — שלושת התחומים</div>
+      <div class="figrow" style="grid-template-columns: 1fr 0.82fr 1.18fr;">
+        <div class="ifig">
+          <div class="iimg" style="background-image:url('@@IMG:ametrine-flint-jltv.jpg@@')"></div>
+          <div class="icap2"><b>פלטפורמה: <span dir="ltr">Flint™</span> על JLTV.</b> מקור: <span dir="ltr" style="white-space:nowrap">ametrine.tech</span></div>
+        </div>
+        <div class="ifig">
+          <div class="iimg" style="background-image:url('@@IMG:ametrine-poncho-elite.jpg@@')"></div>
+          <div class="icap2"><b>לוחם: Poncho Elite.</b> מקור: <span dir="ltr" style="white-space:nowrap">ametrine.tech</span></div>
+        </div>
+        <div class="ifig">
+          <div class="iimg" style="background-image:url('@@IMG:ametrine-vehicle-hide.jpg@@')"></div>
+          <div class="icap2"><b>כיסוי / מחבוא: Vehicle Hide.</b> מקור: <span dir="ltr" style="white-space:nowrap">ametrine.tech</span></div>
+        </div>
       </div>
     </div>
   </div>
   <div class="pf-evidence">
     <div class="sec-bar">עדות מסחרית / פעילות אחרונה</div>
-    <div class="ev-tiles">
-      <div class="ev-tile">
-        <div class="elbl">לקוחות ממשל בארה״ב</div>
-        <div class="etxt"><b>ONR</b>, זרוע המחקר של צבא ארה״ב <span dir="ltr">(RDECOM)</span> ו-<span dir="ltr">USSOCOM</span></div>
-      </div>
-      <div class="ev-tile">
-        <div class="elbl">2024 — הזמנת ONR</div>
-        <div class="etxt">הזמנה של <span dir="ltr">≈$250K</span> הכוללת <b>כיסוי הסוואה</b> — אות מוצר ישיר</div>
-      </div>
-      <div class="ev-tile">
-        <div class="elbl">2025 — חוזה מו״פ מ-ONR</div>
-        <div class="etxt"><b><span dir="ltr">$18M</span></b>; התכולה לא פורטה פומבית — לא ניתן לייחסו במלואו להסוואה</div>
-      </div>
+    <div class="ev-list">
+      <div class="ev-item"><b>מ-2020 — חוזה מסגרת <span dir="ltr">(IDIQ)</span> של צבא ארה״ב</b> לביגוד ניהול חתימה ללוחם <span class="dim">(Natick / DEVCOM)</span>, עם סדרת הזמנות <span dir="ltr">2020–2023</span> — עוגן הרכש המרכזי</div>
+      <div class="ev-item"><b>2021 — הזמנת אספקה של <span dir="ltr">≈$5.6M</span></b> תחת חוזה המסגרת — מערכות לוחם <span class="dim">(רישום חוזים פדרלי משני)</span></div>
+      <div class="ev-item"><b>2024 — הזמנת ONR של <span dir="ltr">≈$250K</span></b> — כיסוי הסוואה ומבנה <span dir="ltr">X-Hangar</span> <span class="dim">(ONR — Office of Naval Research, גוף המו״פ של הצי האמריקאי)</span></div>
+      <div class="ev-item"><b>2025 — חוזה מו״פ מ-ONR בהיקף של עד <span dir="ltr">~$18M</span></b> — תקרת חוזה; התכולה הפומבית אינה מפורטת ולכן לא ניתן לייחס את מלוא הסכום למוצר מסוים או ל-<span dir="ltr">Flint</span></div>
+      <div class="ev-item"><b>2019 — חוזה למחבוא תרמי דו-אישי</b> <span class="dim">(Navy / NRL)</span> — עדות מוקדמת בתחום הכיסויים והמחבואים</div>
     </div>
   </div>
   <div class="ftr">
     <div class="pageno"></div>
-    <div class="src">מקור: אתר Ametrine הרשמי; רישומי חוזים פדרליים בארה״ב; מאגר תשע החברות של פלסן. טווח ההכנסות — הערכת צד-שלישי.</div>
+    <div class="src">מקור: אתר Ametrine הרשמי ועלוני מוצר; רישומי חוזים פדרליים (USAspending; מראות FPDS משניות); מאגר תשע החברות של פלסן. טווח ההכנסות — הערכת צד-שלישי.</div>
     <div class="proj">פלסן סאסא — הפחתת חתימה | מצגת עבודה</div>
   </div>
 </section></div>

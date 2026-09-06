@@ -111,6 +111,22 @@
       "source_url": "https://soldiersystems.net/wp-content/uploads/2012/02/eltics_stealth_test1.jpg",
       "source_page": "https://soldiersystems.net/2012/02/05/eltics-black-fox-thermal-mimicry-system/",
       "source_type": "THIRD-PARTY EDITORIAL image (Soldier Systems Daily, 2012) — exception to the official-sources-only rule, explicitly approved by the project owner on 2026-09-01; credited on-slide. Image carries an ELTICS watermark and originates from the company's historical demonstration material. defense-update.com (the dataset's cited source) is behind a Cloudflare challenge and was not retrievable."
+    },
+    {
+      "slide": "s-ametrine",
+      "file": "assets/images/ametrine-poncho-elite.jpg",
+      "status": "embedded",
+      "source_url": "https://ametrine.tech/wp-content/uploads/2024/04/Ametrine-Poncho-Long-Elite-Front.jpg",
+      "source_page": "https://ametrine.tech/",
+      "source_type": "official company website (product imagery)"
+    },
+    {
+      "slide": "s-ametrine",
+      "file": "assets/images/ametrine-vehicle-hide.jpg",
+      "status": "embedded",
+      "source_url": "https://ametrine.tech/wp-content/uploads/2024/05/Ametrine-Vehicle-Hide-1.jpg",
+      "source_page": "https://ametrine.tech/",
+      "source_type": "official company website (product imagery)"
     }
   ],
   "data_sources": [
