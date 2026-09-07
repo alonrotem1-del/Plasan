@@ -127,6 +127,14 @@
       "source_url": "https://ametrine.tech/wp-content/uploads/2024/05/Ametrine-Vehicle-Hide-1.jpg",
       "source_page": "https://ametrine.tech/",
       "source_type": "official company website (product imagery)"
+    },
+    {
+      "slide": "s-permali",
+      "file": "assets/images/permali-challenger2-land.jpg",
+      "status": "embedded",
+      "source_url": "https://www.permali.co.uk/wp-content/uploads/2026/01/Challenger-2-VCOPS-20250513-0043-Ex-Hedgehog-1084.jpg",
+      "source_page": "https://www.permali.co.uk/land-defence-composites/",
+      "source_type": "official company website (Land Defence page)"
     }
   ],
   "data_sources": [
