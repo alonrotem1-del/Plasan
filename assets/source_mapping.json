@@ -40,18 +40,11 @@
       "source_type": "official company website (official WordPress media library, title 'GMV Cover')"
     },
     {
-      "slide": "s-stg (7)",
+      "slide": "s-stg (16)",
       "file": "assets/images/stg-equipment-shelter.jpg",
       "status": "embedded",
       "source_url": "https://stg-defence.com/wp-content/uploads/2025/07/ukrittja_perevagy_en.jpg",
-      "source_type": "official company website (official equipment-shelter page; alt 'Thermal Signature Equipment Shelter')"
-    },
-    {
-      "slide": "s-stg (7)",
-      "file": "assets/images/stg-thermal-view.jpg",
-      "status": "embedded",
-      "source_url": "https://stg-defence.com/wp-content/uploads/2026/06/ukrittja_1_864x916-scaled.jpg",
-      "source_type": "official company website (official equipment-shelter page (thermal-imager demonstration))"
+      "source_type": "official company website (company rendering, Equipment Shelter page)"
     },
     {
       "slide": "s-amd (9)",
@@ -61,18 +54,12 @@
       "source_type": "official company website (official news imagery (ChamIR patent announcement))"
     },
     {
-      "slide": "s-cbg (10)",
+      "slide": "s-cbg (9)",
       "file": "assets/images/cbg-redback-solarsigmashield.jpg",
       "status": "embedded",
-      "source_url": "https://www.cbgsystems.com/wp-content/uploads/2024/07/RedBack-IFV-with-SolarSigmaShield-MCS.jpg",
-      "source_type": "official company website (official LAND 400 Phase 3 announcement page)"
-    },
-    {
-      "slide": "s-cbg (10)",
-      "file": "assets/images/cbg-solarsigmashield-vehicle.jpg",
-      "status": "embedded",
-      "source_url": "https://assets.cbgsystems.com/uploads/2017/05/Solarshield-on-vehicle_DSC01063.jpg",
-      "source_type": "official company website (official Signature Management / Mobile Camouflage page)"
+      "source_url": "https://assets.cbgsystems.com/uploads/2024/07/RedBack-IFV-with-SolarSigmaShield-MCS.jpg",
+      "source_type": "official company website (LAND 400 Phase 3 announcement image, 1725x963)",
+      "source_page": "https://cbgsystems.com/land-400-phase-3-solarsigmashield-for-redback/"
     },
     {
       "slide": "s-ravelin (11)",
@@ -177,6 +164,22 @@
       "source_url": "https://sterlitecamotech.com/wp-content/uploads/2024/11/MSCN-Row-4.1-min.jpg",
       "source_type": "official company website (product page image)",
       "source_page": "https://sterlitecamotech.com/our-products/multispectral-camouflage-nets/"
+    },
+    {
+      "slide": "s-cbg (9)",
+      "file": "assets/images/cbg-sss-turret-desert.jpg",
+      "status": "embedded",
+      "source_url": "https://assets.cbgsystems.com/uploads/2017/05/MG_2890.jpg",
+      "source_page": "https://cbgsystems.com/signature-management/mobile-camouflage/",
+      "source_type": "official company website (Mobile Camouflage page gallery)"
+    },
+    {
+      "slide": "s-stg (16)",
+      "file": "assets/images/stg-thermal-pair.jpg",
+      "status": "embedded (composite of two official images, side by side)",
+      "source_url": "https://stg-defence.com/wp-content/uploads/2026/06/ukrittja_1_864x916-scaled.jpg | https://stg-defence.com/wp-content/uploads/2026/06/ukrittja_2_636x496_left-scaled.jpg",
+      "source_page": "https://stg-defence.com/en/ukrittja-tehniki-stealth/",
+      "source_type": "official company website (Equipment Shelter use-case gallery, thermal frames)"
     }
   ],
   "data_sources": [
