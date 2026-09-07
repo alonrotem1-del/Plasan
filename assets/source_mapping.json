@@ -54,20 +54,6 @@
       "source_type": "official company website (official equipment-shelter page (thermal-imager demonstration))"
     },
     {
-      "slide": "s-sterlite (8)",
-      "file": "assets/images/sterlite-mscn-net.jpg",
-      "status": "embedded",
-      "source_url": "https://sterlitecamotech.com/wp-content/uploads/2024/11/Row-1-MSCN.1-1-min.png",
-      "source_type": "official company website (official products page, MSCN row)"
-    },
-    {
-      "slide": "s-sterlite (8)",
-      "file": "assets/images/sterlite-paint-application.jpg",
-      "status": "embedded",
-      "source_url": "https://sterlitecamotech.com/wp-content/uploads/2024/11/Row-4-Paint.1-min.png",
-      "source_type": "official company website (official products page, camouflage-paints row)"
-    },
-    {
       "slide": "s-amd (9)",
       "file": "assets/images/amd-chamir-news.jpg",
       "status": "embedded",
@@ -167,6 +153,30 @@
       "source_url": "https://cdn.prod.website-files.com/6a16fe34637817a22a6797b7/6a16fe34637817a22a679926_HMMWV%20TactiCam%20Close%20up%20shot%20at%20AUSA%202025%201.jpg",
       "source_page": "https://ravelindefense.com/",
       "source_type": "official company website (ravelindefense.com CDN); Close-up of 3D TactiCam tiles, AUSA 2025"
+    },
+    {
+      "slide": "s-sterlite (15)",
+      "file": "assets/images/sterlite-mcs-tank-skirt.jpg",
+      "status": "embedded",
+      "source_url": "https://sterlitecamotech.com/wp-content/uploads/2024/11/Row-5-MISC.1-min.png",
+      "source_type": "official company website (product page image)",
+      "source_page": "https://sterlitecamotech.com/our-products/"
+    },
+    {
+      "slide": "s-sterlite (15)",
+      "file": "assets/images/sterlite-mcs-apc-wrapped.jpg",
+      "status": "embedded",
+      "source_url": "https://sterlitecamotech.com/wp-content/uploads/2024/11/Row-1.1-min.jpg",
+      "source_type": "official company website (product page image)",
+      "source_page": "https://sterlitecamotech.com/our-products/mobile-camouflage-system-mcs/"
+    },
+    {
+      "slide": "s-sterlite (15)",
+      "file": "assets/images/sterlite-mscn-desert-vehicle.jpg",
+      "status": "embedded",
+      "source_url": "https://sterlitecamotech.com/wp-content/uploads/2024/11/MSCN-Row-4.1-min.jpg",
+      "source_type": "official company website (product page image)",
+      "source_page": "https://sterlitecamotech.com/our-products/multispectral-camouflage-nets/"
     }
   ],
   "data_sources": [
