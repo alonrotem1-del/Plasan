@@ -135,6 +135,38 @@
       "source_url": "https://www.permali.co.uk/wp-content/uploads/2026/01/Challenger-2-VCOPS-20250513-0043-Ex-Hedgehog-1084.jpg",
       "source_page": "https://www.permali.co.uk/land-defence-composites/",
       "source_type": "official company website (Land Defence page)"
+    },
+    {
+      "slide": "s-ravelin-1/2",
+      "file": "assets/images/ravelin-jltv-natc.jpg",
+      "status": "embedded",
+      "source_url": "https://cdn.prod.website-files.com/6a16fe34637817a22a6797b7/6a16fe34637817a22a67992e_JLTV%20Action%20Shot%20Side%20View_NATC%202023%201.jpg",
+      "source_page": "https://ravelindefense.com/",
+      "source_type": "official company website (ravelindefense.com CDN); JLTV on test track, NATC 2023 (Land domain page)"
+    },
+    {
+      "slide": "s-ravelin-1/2",
+      "file": "assets/images/ravelin-fvmt-plant.jpg",
+      "status": "embedded",
+      "source_url": "https://cdn.prod.website-files.com/6a16fe34637817a22a6797b7/6a16fe34637817a22a6798d2_FVMT-Top%20View.webp",
+      "source_page": "https://ravelindefense.com/",
+      "source_type": "official company website (ravelindefense.com CDN); Aerial of the FVMT Green Bay plant"
+    },
+    {
+      "slide": "s-ravelin-1/2",
+      "file": "assets/images/ravelin-tacticam-hmmwv-desert.jpg",
+      "status": "embedded",
+      "source_url": "https://cdn.prod.website-files.com/6a16fe34637817a22a6797b7/6a32f5254c3d4a360cd4ad34_TactiCam_desert%20camo.jpg",
+      "source_page": "https://ravelindefense.com/",
+      "source_type": "official company website (ravelindefense.com CDN); HMMWV clad in TactiCam 3D panels"
+    },
+    {
+      "slide": "s-ravelin-1/2",
+      "file": "assets/images/ravelin-tacticam-closeup-2025.jpg",
+      "status": "embedded",
+      "source_url": "https://cdn.prod.website-files.com/6a16fe34637817a22a6797b7/6a16fe34637817a22a679926_HMMWV%20TactiCam%20Close%20up%20shot%20at%20AUSA%202025%201.jpg",
+      "source_page": "https://ravelindefense.com/",
+      "source_type": "official company website (ravelindefense.com CDN); Close-up of 3D TactiCam tiles, AUSA 2025"
     }
   ],
   "data_sources": [
