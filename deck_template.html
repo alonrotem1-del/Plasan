@@ -319,6 +319,10 @@ sup { font-size: 15px; line-height: 0; }
 .mx-table td.co-cell { text-align: right; padding: 5px 16px; }
 .mx-table .co { font-weight: 700; color: var(--c-text); font-size: 21px; line-height: 1.2; }
 .mx-table .co small { display: block; font-weight: 500; color: var(--c-text-muted); font-size: 16px; margin-top: 2px; }
+.mx-table .role { display: inline-block; font-size: 15px; font-weight: 600; padding: 1px 8px; border-radius: 3px; margin-left: 6px; vertical-align: 1px; }
+.mx-table .role.sys { background: var(--c-primary-tint); color: var(--c-primary); }
+.mx-table .role.mat { box-shadow: inset 0 0 0 1.5px var(--c-slate-mid); color: var(--c-slate); }
+.mx-table .role.cmp { box-shadow: inset 0 0 0 1.5px var(--c-hairline); color: var(--c-text-muted); }
 .mx-table .dot { display: inline-block; width: 20px; height: 20px; background: var(--c-primary); border-radius: 2px; }
 .mx-table tr.grp td { background: var(--c-primary-tint); color: var(--c-primary); font-size: 19px; font-weight: 700; padding: 5px 16px; text-align: right; }
 .mx-table tr.grp td span { font-weight: 400; color: var(--c-slate-mid); margin-right: 14px; font-size: 17px; }
@@ -583,13 +587,13 @@ ul.story li .dim { color: var(--c-text-muted); }
     <tr>
       <td><div class="co">Shieldex</div></td>
       <td class="muted stage">פרטית ותיקה — משפחתית</td>
-      <td class="mat"><b>מסחרית</b><br><span class="qual">חומר מאפשר</span></td>
+      <td class="mat"><b>מסחרית</b><br><span class="qual">מוצרים מסחריים; ללא רכש SM פומבי מזוהה</span></td>
       <td>גרמניה</td>
       <td class="muted">טקסטיל טכני מוליך</td>
       <td class="imp">הצעה משיקה</td>
       <td class="muted">טקסטיל · חומרים</td>
       <td class="prod"><b>Shieldex® Zell RS CR</b> — טקסטיל מצופה-מתכת</td>
-      <td>תרמי<sup>1</sup> · <span dir="ltr">EMI</span><sup>6</sup></td>
+      <td><span dir="ltr">VIS · NIR</span> · תרמי · <span dir="ltr">EMI</span><sup>6</sup></td>
       <td class="num"><span dir="ltr">≈$31M</span><br><span class="qual">הערכה</span></td>
       <td class="num"><span dir="ltr">~50</span></td>
       <td class="muted">משפחתית <span dir="ltr">(Statex)</span></td>
@@ -697,7 +701,7 @@ ul.story li .dim { color: var(--c-text-muted); }
   <div class="hdr">
     <div class="hdr-titles">
       <div class="kicker">חלק 1 | כיסוי ספקטרלי</div>
-      <h1 class="title">כיסוי אופטי-תרמי הוא המכנה המשותף; שבע חברות מציגות זיקה למכ״ם — אך רק בחלקן מדובר ביכולת RCS ישירה ומתועדת</h1>
+      <h1 class="title">כיסוי אופטי-תרמי הוא המכנה המשותף; שמונה חברות מציגות זיקה למכ״ם — אך רק בחלקן מדובר ביכולת RCS ישירה ומתועדת</h1>
     </div>
     <img class="bdo-logo" src="@@IMG:bdo-logo.png@@" alt="BDO Consulting — Strategy Growth &amp; Innovation">
   </div>
@@ -733,8 +737,8 @@ ul.story li .dim { color: var(--c-text-muted); }
     </tr>
     <tr>
       <td class="co-cell"><span class="co">Shieldex</span></td>
-      <td></td><td></td><td></td>
-      <td class="t-thm"><span class="o"></span><sup>6</sup></td><td class="t-thm"><span class="o"></span><sup>6</sup></td><td class="t-rad"><sup>6</sup></td>
+      <td><span class="d"></span></td><td><span class="d"></span></td><td></td>
+      <td class="t-thm"><span class="d"></span></td><td class="t-thm"><span class="d"></span></td><td class="t-rad"><span class="o"></span><sup>6</sup></td>
     </tr>
     <tr>
       <td class="co-cell"><span class="co">Permali</span></td>
@@ -769,11 +773,12 @@ ul.story li .dim { color: var(--c-text-muted); }
   </table>
 
   <div class="sx-legend">
-    <span class="d"></span> מתועד במקורות החברה או בתיעוד תוכנית&nbsp;&nbsp;&nbsp;
-    <span class="o"></span> מסויג — תחום תרמי ללא פירוט תת-תחום (מסומן על <span dir="ltr">MWIR</span> ו-<span dir="ltr">LWIR</span>) או כפוף להערה
+    <span class="d"></span> <b>מתועד במפורש</b> — קיימת עדות ישירה ליכולת בתחום הספציפי&nbsp;&nbsp;&nbsp;&nbsp;
+    <span class="o"></span> <b>זיקה מתועדת</b> — קיימת עדות ליכולת רלוונטית, אך לא מספיק כדי לאמת את הכיסוי הספציפי במלואו&nbsp;&nbsp;&nbsp;&nbsp;
+    ללא סימון — לא זוהתה עדות מספקת
   </div>
   <div class="sx-notes">
-    <sup>1</sup> מכ״ם — טענת חברה בכיסויי הסתרה ייעודיים בלבד (לא <span dir="ltr">Flint</span> / מערכות הלוחם); לא אומתה עצמאית ·<sup>2</sup> מתועד בעיקר בקווי תעופה / האנגרים · <sup>3</sup> טענת חברה, לא אומתה עצמאית · <sup>4</sup> <span dir="ltr">ChamIR</span> — בקרת פליטה ב-<span dir="ltr">IR</span> התרמי; מקורות מוקדמים מציינים <span dir="ltr">"NIR / MIR"</span> · <sup>5</sup> חתימת ענן האבק של רק״ם נע בלבד · <sup>6</sup> על בסיס יישומי הסתרה של טקסטיל מצופה-מתכת; סיכוך <span dir="ltr">RF / EMI</span> אינו נספר כיכולת מכ״ם / <span dir="ltr">RCS</span> · תחומים מוצגים רק כאשר קיימת עדות מוצר; אין הערכת ביצועים
+    <sup>1</sup> מכ״ם — טענת חברה בכיסויי הסתרה ייעודיים בלבד (לא <span dir="ltr">Flint</span> / מערכות הלוחם); לא אומתה עצמאית ·<sup>2</sup> מתועד בעיקר בקווי תעופה / האנגרים · <sup>3</sup> טענת חברה, לא אומתה עצמאית · <sup>4</sup> <span dir="ltr">ChamIR</span> — בקרת פליטה ב-<span dir="ltr">IR</span> התרמי; מקורות מוקדמים מציינים <span dir="ltr">"NIR / MIR"</span> · <sup>5</sup> חתימת ענן האבק של רק״ם נע בלבד · <sup>6</sup> מכ״ם — זיקה דרך סיכוך <span dir="ltr">RF / EMI</span> של הטקסטיל (תחום ה-<span dir="ltr">GHz</span>); אינו הוכחה להפחתת <span dir="ltr">RCS</span> של פלטפורמה · תחומים מוצגים רק כאשר קיימת עדות מוצר; אין הערכת ביצועים
   </div>
 
   <div class="ftr">
@@ -795,18 +800,18 @@ ul.story li .dim { color: var(--c-text-muted); }
   </div>
   <table class="mx-table">
     <colgroup><col style="width:400px"><col style="width:229px"><col style="width:229px"><col style="width:229px"><col style="width:229px"><col style="width:229px"><col style="width:231px"></colgroup>
-    <tr><th>חברה</th><th>מערכות הסוואה לרכב<span class="cnt">5 מתוך 9</span></th><th>רשתות וכיסויים<span class="cnt">5 מתוך 9</span></th><th>טקסטיל וחומרים<span class="cnt">5 מתוך 9</span></th><th>ציפויים<span class="cnt">3 מתוך 9</span></th><th><span dir="ltr">RAM</span> וקומפוזיטים<span class="cnt">2 מתוך 9</span></th><th>מערכות אקטיביות / אדפטיביות<span class="cnt">2 מתוך 9</span></th></tr>
-    <tr><td class="co-cell"><div class="co">Eltics / Black Fox<small>Black Fox</small></div></td><td><span class="dot"></span></td><td></td><td></td><td></td><td></td><td><span class="dot"></span></td></tr>
-    <tr><td class="co-cell"><div class="co">Advanced Material Development<small>CHAM-NIR · ChamIR · ChamEM</small></div></td><td></td><td></td><td></td><td><span class="dot"></span></td><td><span class="dot"></span></td><td><span class="dot"></span></td></tr>
-    <tr><td class="co-cell"><div class="co">Shieldex<small>Shieldex® Zell RS CR</small></div></td><td></td><td></td><td><span class="dot"></span></td><td></td><td></td><td></td></tr>
-    <tr><td class="co-cell"><div class="co">Permali<small>Dust Skirts</small></div></td><td></td><td></td><td></td><td></td><td><span class="dot"></span></td><td></td></tr>
-    <tr><td class="co-cell"><div class="co">Ravelin Defense<small><span dir="ltr">TactiCam™ · Radar Reduction Shrouds</span></small></div></td><td><span class="dot"></span></td><td><span class="dot"></span></td><td></td><td></td><td></td><td></td></tr>
-    <tr><td class="co-cell"><div class="co">Sterlite Camotech<small>MSCN · MCS · IR paints</small></div></td><td><span class="dot"></span></td><td><span class="dot"></span></td><td><span class="dot"></span></td><td><span class="dot"></span></td><td></td><td></td></tr>
-    <tr><td class="co-cell"><div class="co">Ametrine Technologies<small><span dir="ltr">Flint™ · Poncho Elite · Concealment Covers</span></small></div></td><td><span class="dot"></span></td><td><span class="dot"></span></td><td><span class="dot"></span></td><td><span class="dot"></span></td><td></td><td></td></tr>
-    <tr><td class="co-cell"><div class="co">CBG Systems<small>SolarSigmaShield</small></div></td><td><span class="dot"></span></td><td><span class="dot"></span></td><td><span class="dot"></span></td><td></td><td></td><td></td></tr>
-    <tr><td class="co-cell"><div class="co">STG Defence<small>Thermal Signature Equipment Shelter</small></div></td><td></td><td><span class="dot"></span></td><td><span class="dot"></span></td><td></td><td></td><td></td></tr>
+    <tr><th>חברה</th><th>מערכות הסוואה לרכב<span class="cnt">5 מתוך 9</span></th><th>רשתות וכיסויים<span class="cnt">5 מתוך 9</span></th><th>טקסטיל וחומרים<span class="cnt">6 מתוך 9</span></th><th>ציפויים<span class="cnt">3 מתוך 9</span></th><th><span dir="ltr">RAM</span> וקומפוזיטים<span class="cnt">2 מתוך 9</span></th><th>מערכות אקטיביות / אדפטיביות<span class="cnt">2 מתוך 9</span></th></tr>
+    <tr><td class="co-cell"><div class="co">Eltics / Black Fox<small><span class="role sys">מערכת</span> Black Fox</small></div></td><td><span class="dot"></span></td><td></td><td></td><td></td><td></td><td><span class="dot"></span></td></tr>
+    <tr><td class="co-cell"><div class="co">Advanced Material Development<small><span class="role mat">חומר מאפשר</span> CHAM-NIR · ChamIR · ChamEM</small></div></td><td></td><td></td><td><span class="dot"></span></td><td><span class="dot"></span></td><td><span class="dot"></span></td><td><span class="dot"></span></td></tr>
+    <tr><td class="co-cell"><div class="co">Shieldex<small><span class="role mat">חומר מאפשר</span> Shieldex® Zell RS CR</small></div></td><td></td><td></td><td><span class="dot"></span></td><td></td><td></td><td></td></tr>
+    <tr><td class="co-cell"><div class="co">Permali<small><span class="role cmp">רכיב פלטפורמה</span> Dust Skirts</small></div></td><td></td><td></td><td></td><td></td><td><span class="dot"></span></td><td></td></tr>
+    <tr><td class="co-cell"><div class="co">Ravelin Defense<small><span class="role sys">מערכת</span> <span dir="ltr">TactiCam™ · Radar Reduction Shrouds</span></small></div></td><td><span class="dot"></span></td><td><span class="dot"></span></td><td></td><td></td><td></td><td></td></tr>
+    <tr><td class="co-cell"><div class="co">Sterlite Camotech<small><span class="role sys">מערכת</span> MSCN · MCS · IR paints</small></div></td><td><span class="dot"></span></td><td><span class="dot"></span></td><td><span class="dot"></span></td><td><span class="dot"></span></td><td></td><td></td></tr>
+    <tr><td class="co-cell"><div class="co">Ametrine Technologies<small><span class="role sys">מערכת</span> <span dir="ltr">Flint™ · Poncho Elite · Concealment Covers</span></small></div></td><td><span class="dot"></span></td><td><span class="dot"></span></td><td><span class="dot"></span></td><td><span class="dot"></span></td><td></td><td></td></tr>
+    <tr><td class="co-cell"><div class="co">CBG Systems<small><span class="role sys">מערכת</span> SolarSigmaShield</small></div></td><td><span class="dot"></span></td><td><span class="dot"></span></td><td><span class="dot"></span></td><td></td><td></td><td></td></tr>
+    <tr><td class="co-cell"><div class="co">STG Defence<small><span class="role sys">מערכת</span> Thermal Signature Equipment Shelter</small></div></td><td></td><td><span class="dot"></span></td><td><span class="dot"></span></td><td></td><td></td><td></td></tr>
   </table>
-  <div class="mx-note">סימון מלא = לחברה מוצרים במשפחת הפתרון, לפי אתרי החברות ועלוני המוצר הרשמיים; מוצרי הדגל מוצגים מתחת לשם כל חברה. סדר השורות — לפי הבשלות המסחרית שבתמונת-העל. הגדרות המשפחות — לפי מדריך הסיווג של הפרויקט.</div>
+  <div class="mx-note">סימון מלא = לחברה מוצרים במשפחת הפתרון, לפי אתרי החברות ועלוני המוצר הרשמיים; מוצרי הדגל מוצגים מתחת לשם כל חברה. סדר השורות — לפי הבשלות המסחרית שבתמונת-העל. הגדרות המשפחות — לפי מדריך הסיווג של הפרויקט. תווית התפקיד: <b>מערכת</b> — פתרון הסוואה ברמת מערכת / פלטפורמה; <b>חומר מאפשר</b> — טקסטיל, ציפוי או חומר המשולב בפתרונות של אחרים; <b>רכיב פלטפורמה</b> — רכיב מותקן בעל אפקט חתימה ממוקד.</div>
   <div class="ftr">
     <div class="pageno"></div>
     <div class="src">מקור: אתרי החברות ועלוני המוצר הרשמיים; סיווג משפחות המוצר — מדריך הסיווג של צוות הפרויקט</div>
@@ -835,7 +840,7 @@ ul.story li .dim { color: var(--c-text-muted); }
     </div>
     <div class="sc-tile" style="min-height: 240px;">
       <div class="slbl">3 · מכ״ם / RCS — עקביות נמוכה</div>
-      <div class="stxt">שבע חברות מציגות זיקה למכ״ם, אך איכות העדות שונה מהותית: הפחתת <span dir="ltr">RCS</span> ישירה, טענות ממוקדות-יישום <span class="dim">(תעופה/האנגרים; ענן אבק)</span>, טענות חברה שלא אומתו — וסיכוך <span dir="ltr">RF / EMI</span> שאינו הפחתת <span dir="ltr">RCS</span> כלל. אלה אינם שקולים</div>
+      <div class="stxt">שמונה חברות מציגות זיקה למכ״ם, אך איכות העדות שונה מהותית: הפחתת <span dir="ltr">RCS</span> ישירה, טענות ממוקדות-יישום <span class="dim">(תעופה/האנגרים; ענן אבק)</span>, טענות חברה שלא אומתו — וסיכוך <span dir="ltr">RF / EMI</span> שאינו הפחתת <span dir="ltr">RCS</span> כלל. אלה אינם שקולים</div>
     </div>
     <div class="sc-tile" style="min-height: 240px;">
       <div class="slbl">4 · יכולת אקטיבית / אדפטיבית — נדירה</div>
@@ -882,7 +887,7 @@ ul.story li .dim { color: var(--c-text-muted); }
       <ul class="story">
         <li>חברת טכנולוגיה ביטחונית ישראלית שפיתחה פתרון <b>אקטיבי</b> לניהול חתימה תרמית של כלי רכב צבאיים — ניהול החתימה הוא ליבת הפעילות</li>
         <li><b>Black Fox</b> — לוחות תרמיים מבוקרים המשנים את החתימה התרמית הנראית של הרכב ומתאימים אותה לרקע — שונה מהותית מרשתות, ציפויים וכיסויים פסיביים; אחת משתי הגישות האקטיביות / אדפטיביות בלבד במיפוי <span class="dim">(לצד AMD)</span></li>
-        <li>הישות עדיין קיימת ברישומים <span class="dim">(התאגדה 2006)</span>, אך לא זוהתה פעילות מסחרית פומבית בתחום ב-<span dir="ltr">2020–2026</span> והיקף הפעילות העסקית כיום אינו ברור; אין אתר רשמי פעיל וטביעת הרגל הדיגיטלית מצומצמת — אות, לא הוכחה לסגירה</li>
+        <li>הטכנולוגיה ייחודית ורלוונטית קונספטואלית לפלסן <span class="dim">(גישה אקטיבית לפלטפורמות יבשתיות)</span> — אך העדויות הפומביות הן מעידן האב-טיפוס <span class="dim">(סביב 2012)</span>, ומצבה המסחרי הנוכחי של החברה אינו ברור</li>
       </ul>
       <div class="pf-bands">
         <span class="blbl">תחומי חתימה</span>
@@ -899,20 +904,12 @@ ul.story li .dim { color: var(--c-text-muted); }
     </div>
   </div>
   <div class="pf-evidence">
-    <div class="sec-bar">עדות מסחרית / פעילות אחרונה</div>
-    <div class="ev-tiles">
-      <div class="ev-tile">
-        <div class="elbl">הדגמות (היסטוריות)</div>
-        <div class="etxt">הדגמות שדה על רכב צבאי דווחו בעבר — <b>הדגמה אינה פריסה מבצעית</b></div>
-      </div>
-      <div class="ev-tile">
-        <div class="elbl">לקוחות / פריסה</div>
-        <div class="etxt">לא זוהה לקוח מבצעי בשם ולא רכש ייצור משמעותי</div>
-      </div>
-      <div class="ev-tile">
-        <div class="elbl">פעילות בתחום, <span dir="ltr">2020–2026</span></div>
-        <div class="etxt">לא זוהה אירוע רכש או פעילות מסחרית פומבית בתחום ניהול החתימה בשנים <span dir="ltr">2020–2026</span></div>
-      </div>
+    <div class="sec-bar">עדויות מסחריות / פעילות אחרונה</div>
+    <div class="ev-list">
+      <div class="ev-item"><b>הדגמות היסטוריות (סביב 2012):</b> הדגמות שדה ואבות-טיפוס על רכב צבאי דווחו — <b>הדגמה אינה פריסה מבצעית</b></div>
+      <div class="ev-item"><b>לקוחות / פריסה:</b> לא זוהה לקוח מבצעי בשם ולא רכש ייצור משמעותי</div>
+      <div class="ev-item"><b>סטטוס תאגידי:</b> הישות ממשיכה להתקיים ברישומים הפומביים <span class="dim">(התאגדה 2006)</span>; לא זוהה ערוץ מוצר רשמי פעיל; היקף הפעילות והמסחור כיום אינם ברורים — אות, לא הוכחה לסגירה</div>
+      <div class="ev-item"><b><span dir="ltr">2020–2026</span>:</b> לא זוהה אירוע רכש או פעילות מסחרית פומבית בתחום ניהול החתימה בשנים <span dir="ltr">2020–2026</span></div>
     </div>
   </div>
   <div class="ftr">
@@ -954,7 +951,7 @@ ul.story li .dim { color: var(--c-text-muted); }
       <ul class="story" style="font-size:18px; line-height:1.32;">
         <li style="margin-bottom:8px;">חברת ננו-חומרים בריטית <span class="dim">(הוקמה 2017 למסחור טכנולוגיית חומרים דו-ממדיים שפותחה באוניברסיטת סאסקס)</span>. חברת האם פועלת בשווקים אזרחיים <span class="dim">(מדעי החיים, אנרגיה, תעשייה, אריזה חכמה)</span>; <b>הפעילות הביטחונית מרוכזת ב-<span dir="ltr">AMD Inc.</span></b> — הזרוע האמריקאית</li>
         <li style="margin-bottom:8px;"><b>שכבה פונקציונלית, לא מערכת הסוואה שלמה</b> — ציפוי או חומר לשילוב במשטח או במבנה הקומפוזיט של הפלטפורמה</li>
-        <li style="margin-bottom:8px;"><b>ChamIR</b> — התקן המווסת פליטת <span dir="ltr">IR</span> מפלטפורמות ומלוחמים <span class="dim">(בניסוח החברה: ירידה משמעותית בטמפרטורה הנראית; פתרון בר-הדפסה)</span> · <b>CHAM-NIR</b> — ויסות ההחזריות בתחום ה-<span dir="ltr">NIR</span> · <b>ChamEM</b> — חומרים בולעי מכ״ם <span dir="ltr">(RAM)</span>, ציפויים וקומפוזיטים — הפחתת <span dir="ltr">RCS</span> אמיתית, לא סיכוך <span dir="ltr">EMI</span></li>
+        <li style="margin-bottom:8px;"><b>ChamIR</b> — התקן המווסת דינמית את פליטת ה-<span dir="ltr">IR</span> מפלטפורמות ומלוחמים <span class="dim">(בניסוח החברה: ירידה בטמפרטורה הנראית; בר-הדפסה)</span> · <b>CHAM-NIR</b> — ויסות ההחזריות בתחום ה-<span dir="ltr">NIR</span> · <b>ChamEM</b> — חומרים בולעי מכ״ם <span dir="ltr">(RAM)</span>, ציפויים וקומפוזיטים — הפחתת <span dir="ltr">RCS</span> אמיתית, לא סיכוך <span dir="ltr">EMI</span></li>
         <li style="margin-bottom:8px;">התאמה טכנולוגית מובהקת מול בשלות מוגבלת: <b><span dir="ltr">ChamIR — TRL 4</span></b> לפי חומרי <span dir="ltr">NPS JIFX</span> (2025) — אימות רכיב במעבדה; מימון ובחינות ביטחוניות חוזרות מאז 2020, ללא עדות להזמנת ייצור או פריסה</li>
       </ul>
       <div class="pf-bands">
@@ -968,15 +965,15 @@ ul.story li .dim { color: var(--c-text-muted); }
       <div class="relv" style="margin-top:0;">
         <div class="ri"><b>הלוגיקה:</b> &nbsp;משטח מיגון או דופן רכב &nbsp;<b>+</b>&nbsp; ציפוי / חומר <span dir="ltr">AMD</span> &nbsp;<b>=</b>&nbsp; יכולת ניהול חתימה המשולבת בפלטפורמה עצמה — ב-<span dir="ltr">IR</span> ובמכ״ם, ללא מערכת הסוואה נפרדת</div>
       </div>
-      <div class="ifig" style="height:214px; margin-top:12px;">
+      <div class="ifig" style="height:194px; margin-top:12px;">
         <div class="iimg" style="background-image:url('@@IMG:amd-chamir-news.jpg@@')"></div>
         <div class="icap2"><b>התמונה הנלווית להודעת הפטנט של ChamIR.</b> אילוסטרציה מטעם החברה — לא צילום מוצר. מקור: <span dir="ltr" style="white-space:nowrap">amdnano-usa.com</span></div>
       </div>
-      <div class="pf-note" style="margin-top:12px;"><div class="nlbl">מימון — אינו הכנסות</div>גיוסי הון מדווחים על-ידי החברה: מעל <span dir="ltr">£1.5M</span>, ובנוסף סבב <span dir="ltr">£2M</span> <span class="dim">(יולי 2023)</span></div>
+      <div class="pf-note" style="margin-top:12px;"><div class="nlbl">מימון — אינו הכנסות</div>מדווח על-ידי החברה: מעל <span dir="ltr">£1.5M</span>, ובנוסף סבב <span dir="ltr">£2M</span> <span class="dim">(יולי 2023)</span>; סבב <span dir="ltr">seed</span> <span dir="ltr">≈£750K</span> (2018) — <span class="dim">לפי מאגרי צד-שלישי</span></div>
     </div>
   </div>
   <div class="pf-evidence" style="top: 824px;">
-    <div class="sec-bar">עדות מסחרית / פעילות אחרונה</div>
+    <div class="sec-bar">עדויות מסחריות / פעילות אחרונה</div>
     <div class="ev-list" style="font-size:15.5px; line-height:1.28; row-gap:8px; grid-template-columns: 1fr 1fr 1fr; column-gap:30px;">
       <div class="ev-item"><b><span dir="ltr">2020–2021</span> — צבא ארה״ב:</b> פיתוח ממומן והרחבת שת״פ <span class="dim">(ARL Picatinny)</span> סביב מחזיר-תדר מטא-חומרי מודפס — בקרת חתימה אלקטרומגנטית</div>
       <div class="ev-item"><b>2021 — בריטניה <span dir="ltr">(DASA / Dstl)</span>:</b> מימון <span dir="ltr">Open Call</span> להוכחת היתכנות של התקן <span dir="ltr">CAMIR</span> מבוסס גרפן — שליטה בפליטות <span dir="ltr">IR</span></div>
@@ -999,39 +996,41 @@ ul.story li .dim { color: var(--c-text-muted); }
   <div class="hdr">
     <div class="hdr-titles">
       <div class="kicker">חלק 1 | פרופיל חברה · הצעה משיקה</div>
-      <h1 class="title">Shieldex — פלטפורמת טקסטיל מוליך ליישומי הסתרה וסיכוך ביטחוניים — חומר מאפשר, לא מערכת הסוואה מלאה</h1>
+      <h1 class="title">Shieldex (Statex GmbH) — טקסטיל מצופה-מתכת לסיכוך רב-ספקטרלי; חומר מאפשר למערכות הסוואה, לא מערכת שלמה</h1>
     </div>
     <img class="bdo-logo" src="@@IMG:bdo-logo.png@@" alt="BDO Consulting — Strategy Growth &amp; Innovation">
   </div>
   <table class="snap">
     <colgroup>
-      <col style="width:180px"><col style="width:360px"><col style="width:200px"><col style="width:250px">
-      <col style="width:336px"><col style="width:130px"><col style="width:320px">
+      <col style="width:170px"><col style="width:330px"><col style="width:180px"><col style="width:300px">
+      <col style="width:376px"><col style="width:110px"><col style="width:310px">
     </colgroup>
     <tr><th>מדינה</th><th>עיסוק עיקרי</th><th>חשיבות ניהול החתימה</th><th>בשלות מסחרית</th><th>בעלות</th><th>עובדים</th><th>הכנסות</th></tr>
     <tr>
       <td>גרמניה</td>
-      <td>טקסטיל טכני מוליך ומצופה-מתכת</td>
+      <td>טקסטיל טכני מצופה-מתכת; הביטחון — יישום אחד מני רבים</td>
       <td>הצעה משיקה</td>
-      <td>מסחרית — חומר מאפשר</td>
-      <td>עסק משפחתי — <span dir="ltr">Statex GmbH</span></td>
+      <td>מסחרית — ללא רכש <span dir="ltr">SM</span> פומבי מזוהה</td>
+      <td>עסק משפחתי — <span dir="ltr">Statex GmbH</span> <span class="q">(המותג המסחרי: Shieldex)</span></td>
       <td><span dir="ltr">~50</span></td>
-      <td><span dir="ltr">≈$31M</span> <span class="q">(הערכת צד-שלישי)</span></td>
+      <td><span dir="ltr">≈$31M</span> <span class="q">(אומדן צד-שלישי)</span></td>
     </tr>
   </table>
   <div class="profile-main">
     <div class="pf-story">
       <div class="sec-bar">הסיפור בקצרה</div>
-      <ul class="story">
-        <li>עסק משפחתי גרמני <span class="dim">(Statex, ברמן; המותג — Shieldex)</span> — יצרנית מובילה של חוטים ובדים מצופי-מתכת למגוון תעשיות מאז 1978; ניהול החתימה הוא יישום ביטחוני משיק — <b>ספקית חומר מאפשר</b>, לא מערכות הסוואה</li>
-        <li>ההצעה הרלוונטית: <b>Shieldex® Zell RS CR</b> — טקסטיל מצופה-מתכת המשמש ביישומי הסתרה וסיכוך צבאיים — רכיב חומר בפתרונות של אחרים, לא מערכת הסוואת רכב שלמה</li>
-        <li>הבחנה מהותית: סיכוך <span dir="ltr">RF / EMI</span> אינו הפחתת חתך מכ״ם <span dir="ltr">(RCS)</span> — לא אומתה טענת <span dir="ltr">RCS</span> ברמת מוצר</li>
+      <ul class="story" style="font-size:18px; line-height:1.32;">
+        <li style="margin-bottom:8px;">יצרנית גרמנית משפחתית <span class="dim">(ברמן, מאז 1978)</span> של טקסטיל טכני מצופה-מתכת: ציפוי בדים וחוטים בכסף, נחושת, ניקל ובדיל יוצר בדים בעלי תפקוד חשמלי, אלקטרומגנטי ותרמי</li>
+        <li style="margin-bottom:8px;">המוצרים משרתים שווקים רבים <span class="dim">(סיכוך EMC, חישה וחימום, רפואה והיגיינה)</span>; ניהול חתימה צבאי הוא יישום אחד של פלטפורמת חומרים רחבה — <b>חברת חומר מאפשר, לא בית מערכות הסוואה</b></li>
+        <li style="margin-bottom:8px;">היכולת הרלוונטית: <b>סיכוך רב-ספקטרלי מבוסס-טקסטיל</b> — בניסוח החברה, מאור נראה ו-<span dir="ltr">IR</span> ועד תחום ה-<span dir="ltr">GHz</span>; המתועד ביותר — <span dir="ltr">VIS · NIR · MWIR · LWIR</span>; <span dir="ltr">RF / EM</span> — זיקה מסויגת</li>
+        <li style="margin-bottom:8px;">מוצרים: <b>Shieldex® Zell RS CR</b> — בד מוליך מצופה כסף, נחושת ובדיל לסיכוך <span dir="ltr">IR</span> ואלקטרומגנטי · <b><span dir="ltr">Bremen RS UK MIL IR</span></b> — טקסטיל צבאי להפחתת חתימת <span dir="ltr">IR</span></li>
+        <li style="margin-bottom:8px;">הרלוונטיות לפלסן: <b>שכבת טקסטיל פונקציונלית קלה</b> לשילוב בכיסויי רכב, במערכות הסוואה ובפתרונות פלטפורמה — בשונה מ-<span dir="ltr">AMD</span> <span class="dim">(ציפוי / חומר המשולב במשטח המיגון עצמו)</span></li>
       </ul>
       <div class="pf-bands">
         <span class="blbl">תחומי חתימה</span>
-        <span class="band-chip">תרמי (IR)</span><span class="band-chip">סיכוך RF / EMI</span>
+        <span class="band-chip">אופטי (VIS)</span><span class="band-chip">NIR</span><span class="band-chip">MWIR / LWIR</span><span class="band-chip">סיכוך RF / EMI</span>
       </div>
-      <div class="pf-bandqual">סיכוך EMI / RF אינו הפחתת חתך מכ״ם (RCS); לא אומתה טענת RCS ברמת מוצר</div>
+      <div class="pf-bandqual">סיכוך <span dir="ltr">RF / EMI</span> אינו הפחתת <span dir="ltr">RCS</span> של פלטפורמה — מכ״ם מוצג כזיקה מתועדת בלבד</div>
     </div>
     <div class="pf-imgs">
       <div class="sec-bar">מוצר ויישום</div>
@@ -1047,26 +1046,18 @@ ul.story li .dim { color: var(--c-text-muted); }
       </div>
     </div>
   </div>
-  <div class="pf-evidence">
-    <div class="sec-bar">עדות מסחרית / פעילות אחרונה</div>
-    <div class="ev-tiles">
-      <div class="ev-tile">
-        <div class="elbl">2024 — מיצוב</div>
-        <div class="etxt">משפחת פתרונות <b>Multispectral Shielding</b> ייעודית לשוק הצבאי — אות שוק, לא חוזה שנחשף</div>
-      </div>
-      <div class="ev-tile">
-        <div class="elbl">לקוחות</div>
-        <div class="etxt">לא זוהה לקוח צבאי עדכני בשמו בתחום ניהול החתימה</div>
-      </div>
-      <div class="ev-tile">
-        <div class="elbl">חוזק הפלטפורמה</div>
-        <div class="etxt">מומחיות סיכוך <span dir="ltr">RF / EMI</span> מבוססת ביישומים תעשייתיים וביטחוניים</div>
-      </div>
+  <div class="pf-evidence" style="top: 846px;">
+    <div class="sec-bar">עדויות מסחריות / פעילות אחרונה</div>
+    <div class="ev-list">
+      <div class="ev-item"><b>2024 — מיצוב מפורש של <span dir="ltr">Multispectral Shielding</span></b> ליישומי הגנה מודרניים <span class="dim">(כלי רכב, מתקנים ניידים וציוד אישי; איומי VIS / IR ומזל״טים)</span> — <b>מיצוב מוצר ושוק, לא אירוע רכש</b></div>
+      <div class="ev-item"><b><span dir="ltr">2020–2026</span>:</b> לא זוהה אירוע רכש, חוזה, ניסוי בתשלום או פעילות מסחרית פומבית מזוהה בתחום ניהול החתימה — היעדר עדות פומבית אינו הוכחה להיעדר לקוחות או מכירות</div>
+      <div class="ev-item"><b>לקוחות:</b> לא זוהה לקוח צבאי בשם בתחום ניהול החתימה; בסיס הלקוחות הרחב של החברה — תעשייה, אלקטרוניקה ורפואה <span class="dim">(סיכוך EMC וטקסטיל פונקציונלי)</span></div>
+      <div class="ev-item"><b>הבסיס הטכנולוגי:</b> מומחיות מטליזציה וסיכוך <span dir="ltr">EMI / RFI</span> מבוססת ביישומים תעשייתיים וביטחוניים — התשתית להצעה הרב-ספקטרלית</div>
     </div>
   </div>
   <div class="ftr">
     <div class="pageno"></div>
-    <div class="src">מקור: אתר Shieldex הרשמי (Multispectral Shielding; עמוד החברה). ההכנסות — הערכת צד-שלישי ממאגרי חברות, לא דיווח חברה.</div>
+    <div class="src">מקור: אתר Shieldex הרשמי — עמודי Military &amp; Defence, Multispectral Shielding (נובמבר 2024) ו-Zell RS CR; מצבת העובדים והמחזור — אומדני צד-שלישי, לא דיווח חברה.</div>
     <div class="proj">פלסן סאסא — הפחתת חתימה | מצגת עבודה</div>
   </div>
 </section></div>
@@ -1103,7 +1094,7 @@ ul.story li .dim { color: var(--c-text-muted); }
       <ul class="story">
         <li style="font-size:18px; line-height:1.32; margin-bottom:9px;">יצרנית בריטית של קומפוזיטים וחומרים מתקדמים <span class="dim">(גלוסטר)</span>, עם פעילות ביטחונית משמעותית במיגון יבשתי, אווירי וימי — הפחתת החתימה היא <b>יישום משיק</b> בתוך סל פתרונות רחב</li>
         <li style="font-size:18px; line-height:1.32; margin-bottom:9px;">נרכשה ב-2021 על-ידי <b>Diamorph</b> — קבוצת חומרים מתקדמים בריטית הפעילה בקומפוזיטים, חומרים הנדסיים ומיגון / חומרים עתירי ביצועים</li>
-        <li style="font-size:18px; line-height:1.32; margin-bottom:9px;">יכולות מיגון ושרידות: <b>יבשה</b> — מיגון רכב קומפוזיטי, מיגון-על, חיפויי ספול והגנת הדף · <b>אוויר</b> — מיגון בליסטי למסוקים ולמטוסים · <b>ים</b> — מיגון בליסטי ימי · <b><span dir="ltr">BattleJacket™</span></b> — הגנה אוטמת-עצמית למכלי דלק</li>
+        <li style="font-size:18px; line-height:1.32; margin-bottom:9px;">יכולות מיגון ושרידות: <b>יבשה</b> — מיגון רכב קומפוזיטי, מיגון-על, חיפויי ספול והגנת הדף · <b>אוויר</b> — מיגון בליסטי למסוקים ולמטוסים · <b>ים</b> — מיגון בליסטי ומבני הגנה קומפוזיטיים לכלי שיט · <b><span dir="ltr">BattleJacket™</span></b> — הגנה אוטמת-עצמית למכלי דלק</li>
         <li style="font-size:18px; line-height:1.32; margin-bottom:9px;">ההצעה בניהול חתימה: <b>Dust Skirts / Dust Guards</b> — דיכוי ענן האבק של רק״ם בתנועה, המפחית את החתימה הנראית ואת חתימת המכ״ם של הענן — לא את ה-<span dir="ltr">RCS</span> של הרכב עצמו</li>
         <li style="font-size:18px; line-height:1.32; margin-bottom:9px;">מעניינת לא רק כשחקנית נישה בהפחתת חתימה, אלא כחברת קומפוזיטים ומיגון החופפת ישירות לעולמות הליבה של פלסן <span class="dim">(תצפית אנליטית — לא המלצת רכישה)</span></li>
       </ul>
@@ -1128,7 +1119,7 @@ ul.story li .dim { color: var(--c-text-muted); }
     </div>
   </div>
   <div class="pf-evidence">
-    <div class="sec-bar">עדות מסחרית / פעילות אחרונה</div>
+    <div class="sec-bar">עדויות מסחריות / פעילות אחרונה</div>
     <div class="ev-tiles">
       <div class="ev-tile">
         <div class="elbl">סדר גודל (מדווח)</div>
@@ -1376,7 +1367,7 @@ ul.story li .dim { color: var(--c-text-muted); }
     </div>
   </div>
   <div class="pf-evidence" style="top: 772px;">
-    <div class="sec-bar">עדות מסחרית / פעילות אחרונה</div>
+    <div class="sec-bar">עדויות מסחריות / פעילות אחרונה</div>
     <div class="ev-list" style="font-size:17px;">
       <div class="ev-item"><b>מ-2020 — חוזה מסגרת <span dir="ltr">(IDIQ)</span> של צבא ארה״ב</b> לביגוד ניהול חתימה ללוחם; הזמנות חוזרות: <span dir="ltr">≈$5.6M (2021)</span> · <span dir="ltr">≈$8.9M (2024)</span> · <span dir="ltr" style="white-space:nowrap">≈$4.3M (Hobey Elite, 2024)</span> · <span dir="ltr">≈$3.9M (2025)</span> <span class="dim">(רישומים משניים; לא אומתו במקור פדרלי ראשוני)</span></div>
       <div class="ev-item"><b>2021 / 2023 — הזמנות ONR / NRL</b> <span class="dim">(ONR — Office of Naval Research, גוף המו״פ של הצי האמריקאי)</span>: <span dir="ltr">≈$177K</span> למערכת הסוואה רב-ספקטרלית; <span dir="ltr">≈$150K</span> לכיסוי CNELS ותמיכת ניסוי שדה</div>
