@@ -49,6 +49,14 @@ def style_run(r, spec, rtl, scale=1.0):
     if spec.get('sup'):
         rPr.set('baseline', '30000' if spec['sup'] > 0 else '-25000')
     r.font.color.rgb = RGBColor.from_string(spec['c'])
+    if spec.get('bg'):
+        # a chip inside a table cell: PowerPoint's run highlight is the only
+        # per-run background a cell can carry.  Schema order puts it after the
+        # fill and before the font faces, which is where it lands here.
+        hl = rPr.makeelement(qn('a:highlight'), {})
+        clr = hl.makeelement(qn('a:srgbClr'), {'val': spec['bg']})
+        hl.append(clr)
+        rPr.append(hl)
     for tag, face in (('a:latin', FONT), ('a:ea', FONT_EA), ('a:cs', FONT)):
         el = rPr.find(qn(tag))
         if el is None:

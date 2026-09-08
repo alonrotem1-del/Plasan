@@ -123,6 +123,18 @@ fs.mkdirSync(path.join(OUT, 'img'), { recursive: true });
           const va = cs.verticalAlign;
           const dirEl = el.closest('[dir]');
           const isLtr = ltr > 0 || (dirEl && dirEl.getAttribute('dir') === 'ltr');
+          // Inside a table cell a chip cannot get its own shape (it would land
+          // on top of the cell), so the colour travels with the run and comes
+          // out as a PowerPoint text highlight instead.
+          let bg = null;
+          if (el.closest('table')) {
+            for (let a = el; a && a !== node.parentElement.closest('td, th'); a = a.parentElement) {
+              const acs = getComputedStyle(a);
+              if (!isInlineDisp(acs.display)) break;
+              const c = col(acs.backgroundColor);
+              if (c) { bg = c; break; }
+            }
+          }
           paras[paras.length - 1].push({
             txt: t,
             sz: R(parseFloat(cs.fontSize)),
@@ -130,6 +142,7 @@ fs.mkdirSync(path.join(OUT, 'img'), { recursive: true });
             c: col(cs.color) || '000000',
             sup: va === 'super' ? 1 : (va === 'sub' ? -1 : 0),
             ltr: isLtr ? 1 : 0,
+            ...(bg ? { bg } : {}),
           });
           return;
         }
