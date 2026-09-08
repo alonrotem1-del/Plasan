@@ -362,12 +362,14 @@ sup { font-size: 21px; line-height: 0; }
 .mm-card li::before { content: ""; position: absolute; right: 0; top: 13px; width: 10px; height: 10px;
   background: var(--c-primary); }
 .mm-card.alt li::before { background: var(--c-slate-mid); }
-.mm-tri { position: absolute; right: var(--m-side); left: var(--m-side); top: 764px;
-  background: var(--c-primary); color: #fff; padding: 26px 40px; display: flex;
-  align-items: center; gap: 30px; }
-.mm-tri .tt { font-size: 34px; font-weight: 800; flex: none; }
-.mm-tri .td { font-size: 26px; line-height: 1.4; color: rgba(255,255,255,.9); }
-.mm-scope { position: absolute; right: var(--m-side); left: var(--m-side); top: 896px;
+/* the four dimensions each method examines separately */
+.mm-dims { position: absolute; right: var(--m-side); left: var(--m-side); top: 716px; }
+.mm-dims .dhd { font-size: 26px; font-weight: 700; color: var(--c-slate); margin-bottom: 14px; }
+.mm-dims .drow { display: grid; grid-template-columns: repeat(4, 1fr); column-gap: 26px; }
+.mm-dims .dim { background: var(--c-fill); border-top: 4px solid var(--c-primary); padding: 16px 22px 14px; }
+.mm-dims .dn { font-size: 28px; font-weight: 800; color: var(--c-primary); }
+.mm-dims .dw { font-size: 24px; line-height: 1.32; color: var(--c-text-muted); margin-top: 4px; }
+.mm-scope { position: absolute; right: var(--m-side); left: var(--m-side); top: 894px;
   font-size: 24px; line-height: 1.4; color: var(--c-text-muted); }
 .mm-scope b { color: var(--c-slate); }
 
@@ -388,9 +390,44 @@ sup { font-size: 21px; line-height: 0; }
   background: var(--c-primary-tint); padding: 28px 38px; font-size: 28px; line-height: 1.42; color: var(--c-text); }
 .mm-take b { color: var(--c-primary); font-weight: 700; }
 
+/* --- definition box --- */
+.mm-def { position: absolute; right: var(--m-side); left: var(--m-side);
+  display: grid; grid-template-columns: 1fr 1fr; column-gap: 34px; }
+.mm-def .d { background: var(--c-fill); border-right: 6px solid var(--c-primary); padding: 20px 26px 18px; }
+.mm-def .d.alt { border-right-color: var(--c-red); }
+.mm-def .dt { font-size: 27px; font-weight: 800; color: var(--c-primary); }
+.mm-def .d.alt .dt { color: var(--c-red); }
+.mm-def .dx { font-size: 24px; line-height: 1.36; color: var(--c-text); margin-top: 6px; }
+.mm-def .dx b { color: var(--c-slate); font-weight: 700; }
+
+/* --- independent research findings --- */
+.mm-tot { position: absolute; right: var(--m-side); left: var(--m-side); top: 244px;
+  display: grid; grid-template-columns: repeat(3, 1fr); column-gap: 40px; }
+.mm-tot .t { background: var(--c-fill); border-top: 5px solid var(--c-primary); padding: 20px 30px 18px; }
+.mm-tot .tv { font-size: 68px; font-weight: 800; color: var(--c-primary); line-height: 1.15; }
+.mm-tot .tl { font-size: 27px; font-weight: 700; color: var(--c-text); margin-top: 2px; }
+.mm-tot .tq { font-size: 24px; color: var(--c-text-muted); line-height: 1.3; margin-top: 4px; }
+.mm-yr { position: absolute; right: var(--m-side); left: var(--m-side); top: 460px; }
+.mm-yr .yhd { font-size: 26px; font-weight: 700; color: var(--c-slate); margin-bottom: 14px; }
+.mm-yr .yrow { display: grid; grid-template-columns: repeat(4, 1fr); column-gap: 34px; }
+.mm-yr .y { background: var(--c-fill); border-top: 4px solid var(--c-border); padding: 18px 26px 16px; }
+.mm-yr .y.ytd { border-top-color: var(--c-primary); background: var(--c-primary-tint); }
+.mm-yr .yy { font-size: 30px; font-weight: 800; color: var(--c-slate); }
+.mm-yr .y.ytd .yy { color: var(--c-primary); }
+.mm-yr .yp { display: flex; align-items: baseline; gap: 12px; margin-top: 12px; }
+.mm-yr .yn { font-size: 46px; font-weight: 800; color: var(--c-primary); line-height: 1.15; }
+.mm-yr .yt { font-size: 24px; color: var(--c-text-muted); line-height: 1.28; }
+.mm-yr .ynote { font-size: 24px; color: var(--c-text-muted); line-height: 1.3; margin-top: 12px;
+  padding-top: 10px; border-top: 1px solid var(--c-border); }
+.mm-progs { position: absolute; right: var(--m-side); left: var(--m-side); top: 816px; }
+.mm-progs .phd { font-size: 26px; font-weight: 700; color: var(--c-slate); margin-bottom: 12px; }
+.mm-progs .plist { display: flex; flex-wrap: wrap; gap: 12px 14px; }
+.mm-progs .pch { font-size: 25px; font-weight: 600; color: var(--c-primary);
+  background: var(--c-primary-tint); padding: 8px 18px; }
+
 /* --- annual chart --- */
-.mm-chart { position: absolute; right: var(--m-side); left: var(--m-side); top: 274px; height: 452px; }
-.mm-chart .cplot { position: absolute; right: 96px; left: 0; top: 0; height: 380px;
+.mm-chart { position: absolute; right: var(--m-side); left: var(--m-side); top: 244px; height: 424px; }
+.mm-chart .cplot { position: absolute; right: 96px; left: 0; top: 0; height: 352px;
   border-bottom: 2px solid var(--c-border); display: flex; align-items: flex-end;
   justify-content: space-between; direction: rtl; }
 .mm-chart .cgrid { position: absolute; right: 0; left: 0; border-top: 1px dashed #DDE3E7; }
@@ -407,11 +444,11 @@ sup { font-size: 21px; line-height: 0; }
   background: var(--c-red); border-radius: 50%; }
 .mm-chart .dval { position: absolute; left: 0; right: 0; text-align: center;
   font-size: 25px; font-weight: 700; color: var(--c-red); }
-.mm-chart .cx { position: absolute; right: 96px; left: 0; top: 388px; display: flex;
+.mm-chart .cx { position: absolute; right: 96px; left: 0; top: 360px; display: flex;
   justify-content: space-between; direction: rtl; }
 .mm-chart .cx div { width: 168px; text-align: center; font-size: 26px; font-weight: 600; color: var(--c-text); }
 .mm-chart .cx div.ytd { color: var(--c-slate-mid); }
-.mm-legend { position: absolute; right: var(--m-side); left: var(--m-side); top: 756px;
+.mm-legend { position: absolute; right: var(--m-side); left: var(--m-side); top: 700px;
   display: flex; gap: 44px; align-items: center; font-size: 25px; color: var(--c-text); }
 .mm-legend .k { display: inline-block; width: 22px; height: 22px; vertical-align: -3px; margin-left: 10px; }
 .mm-legend .k.bar { background: var(--c-primary); }
@@ -476,6 +513,10 @@ sup { font-size: 21px; line-height: 0; }
   padding: 12px 26px; display: inline-block; }
 .mm-scale .band.alt { background: var(--c-slate-mid); }
 .mm-scale .row { display: grid; grid-template-columns: repeat(3, 1fr); column-gap: 34px; margin-top: 20px; }
+.mm-scale .row.four { grid-template-columns: repeat(4, 1fr); column-gap: 26px; }
+.mm-scale .row.four .tile { padding: 20px 22px 18px; }
+.mm-scale .row.four .tnum { font-size: 46px; }
+.mm-scale .row.four .tname { font-size: 26px; }
 .mm-scale .tile { background: var(--c-fill); padding: 20px 28px 18px; border-top: 5px solid var(--c-primary); }
 .mm-scale .tile.pipe { border-top-color: var(--c-slate-mid); background: #F4F6F7; }
 .mm-scale .tnum { font-size: 54px; font-weight: 800; color: var(--c-primary); line-height: 1.2; }
@@ -512,8 +553,8 @@ sup { font-size: 21px; line-height: 0; }
    10.5 pt scale the client approved. */
 #s-div-mm .sd-sub .st,
 #s-mm-method .kicker, #s-mm-broader .kicker, #s-mm-activity .kicker,
-#s-mm-pipeline .kicker, #s-mm-prog-eu .kicker, #s-mm-prog-row .kicker,
-#s-mm-scale .kicker, #s-mm-visual .kicker, #s-mm-conclusion .kicker,
+#s-mm-indep .kicker, #s-mm-pipeline .kicker, #s-mm-prog-eu .kicker, #s-mm-prog-row .kicker,
+#s-mm-scale .kicker, #s-mm-conclusion .kicker,
 .mm-table td.pg small, .mm-table .stg { font-size: 24px; }
 
 /* ============================================================
@@ -1850,7 +1891,7 @@ tr.gband td .gs { font-weight: 400; color: var(--c-slate); margin-right: 12px; f
     <div class="sd-line"></div>
     <div class="sd-desc">אינדיקציות להתפתחות הביקוש והפעילות המסחרית, <span dir="ltr">2020–2026</span></div>
     <div class="sd-subs">
-    <div class="sd-sub done"><span>שתי מתודולוגיות · התרחבות בסיס הפעילות · פעילות רכש לאורך זמן · מדרג הבשלות המסחרית · תוכניות נבחרות · סדרי גודל · מסקנות</span><span class="st">בפרק זה</span></div>
+    <div class="sd-sub done"><span>שתי מתודולוגיות · התרחבות בסיס הפעילות · פעילות רכש לאורך זמן · ממצאי המחקר העצמאי · מעבר מביקוש לרכש · תוכניות נבחרות · סדרי גודל · מסקנות</span><span class="st">בפרק זה</span></div>
     </div>
   </div>
   <div class="ftr">
@@ -1866,44 +1907,47 @@ tr.gband td .gs { font-weight: 400; color: var(--c-slate); margin-right: 12px; f
   <div class="hdr">
     <div class="hdr-titles">
       <div class="kicker">חלק ב׳ | מתודולוגיה</div>
-      <h1 class="title">שני מסלולי מחקר עצמאיים — מלמטה למעלה מהספקים, ומלמעלה למטה מהרוכשים</h1>
+      <h1 class="title">שני מסלולי מחקר עצמאיים בוחנים את התפתחות השוק מזוויות שונות</h1>
     </div>
     <img class="bdo-logo" src="@@IMG:bdo-logo.png@@" alt="BDO Consulting — Strategy Growth &amp; Innovation">
   </div>
 
-  <div class="mm-lead">הניתוח בוחן <b>ביקוש, הזמנות, רוחב הרכש והיקפי העסקאות</b> — ולא אומדן שווי שוק. שני המסלולים פועלים על יקומי חיפוש שונים; ההשוואה ביניהם היא <b>טריאנגולציה של כיוון</b>, לא השוואת מספרי אירועים.</div>
+  <div class="mm-lead">מסלול אחד מתחיל <b>מהספקים והמוצרים</b>, והשני <b>מהרוכשים, התוכניות ואירועי הרכש</b>. כל מסלול עומד בפני עצמו ונבחן לאורך זמן בתוך מסד הנתונים שלו; מספרי האירועים שלהם אינם ברי-השוואה ואינם מאוחדים.</div>
   <div class="mm-methods">
     <div class="mm-card">
-      <div class="mc-tag">מסלול 1</div>
+      <div class="mc-tag">מסלול 1 · <span dir="ltr">ABLE</span></div>
       <div class="mc-name">מיפוי מבוסס-ספקים</div>
-      <div class="mc-sub">מלמטה למעלה — מהספק אל הרוכש</div>
+      <div class="mc-sub">מלמטה למעלה — <span dir="ltr">Bottom-up / Supplier-led</span></div>
       <ul>
-        <li>יקום ספקים רחב בתחום ניהול החתימה</li>
-        <li>איתור פעילות רכש סביב ספקים ומוצרים</li>
-        <li>הצלבה מול אבני-דרך רכש בצד הרוכש</li>
-        <li>מסד ברמת האירוע הבודד, וקישור לשרשרת רכש</li>
+        <li>יוצא מהספקים והמוצרים הרלוונטיים בתחום</li>
+        <li>מאתר סביבם פעילות רכש ופעילות מסחרית</li>
+        <li>עוקב אחר הפעילות לאורך <span dir="ltr">2020–2026</span></li>
       </ul>
     </div>
     <div class="mm-card alt">
-      <div class="mc-tag">מסלול 2</div>
+      <div class="mc-tag">מסלול 2 · מחקר עצמאי</div>
       <div class="mc-name">מחקר מבוסס-אירועים</div>
-      <div class="mc-sub">מלמעלה למטה — מהרוכש אל הספק</div>
+      <div class="mc-sub">מלמעלה למטה — <span dir="ltr">Top-down / Event-led</span></div>
       <ul>
-        <li>חיפוש שיצא מרוכשים, מכרזים, תוכניות ופלטפורמות</li>
-        <li>רשימת הספקים שימשה כבדיקת שלמות בדיעבד</li>
-        <li>בסיס ראיות שני ובלתי תלוי</li>
-        <li>אותה תקופה — <span dir="ltr">2020–2026</span></li>
+        <li>יוצא מרוכשים, צבאות, תוכניות, פלטפורמות ומכרזים</li>
+        <li>מזהה פעילות ניהול חתימה באופן בלתי תלוי</li>
+        <li>עוקב אחר הפעילות לאורך <span dir="ltr">2020–2026</span></li>
       </ul>
     </div>
   </div>
-  <div class="mm-tri">
-    <div class="tt">טריאנגולציה</div>
-    <div class="td">השאלה אינה האם שני המסלולים מפיקים אותו מספר אירועים — אלא האם שניהם, באופן בלתי תלוי, מצביעים על אותו כיוון בשוק</div>
+  <div class="mm-dims">
+    <div class="dhd">ארבעת הממדים שנבחנים בשני המסלולים</div>
+    <div class="drow">
+      <div class="dim"><div class="dn">ביקוש</div><div class="dw"><span dir="ltr">RFI / RFQ / RFP</span> · מכרזים</div></div>
+      <div class="dim"><div class="dn">רכש בפועל</div><div class="dw">הזמנות · זכיות · עסקאות מסחריות</div></div>
+      <div class="dim"><div class="dn">רוחב</div><div class="dw">רוכשים · מדינות · תוכניות</div></div>
+      <div class="dim"><div class="dn">היקף</div><div class="dw">כמויות וערכי עסקה שפורסמו</div></div>
+    </div>
   </div>
-  <div class="mm-scope"><b>תיחום:</b> ניהול חתימה והסוואה ברמת הפלטפורמה, כולל פתרונות רב-ספקטרליים ופתרונות מכ״ם / <span dir="ltr">RCS</span>. אינו כולל הסוואת לוחם בלבד, צביעה חזותית בלבד או ציוד תומך ללא ביצועים ספקטרליים מתועדים.</div>
+  <div class="mm-scope"><b>תיחום:</b> ניהול חתימה והסוואה ברמת הפלטפורמה, כולל פתרונות רב-ספקטרליים ופתרונות מכ״ם / <span dir="ltr">RCS</span>. אינו כולל הסוואת לוחם בלבד, צביעה חזותית בלבד או ציוד תומך ללא ביצועים ספקטרליים מתועדים. &nbsp;<b>הערה:</b> בכל מסלול בוצעו בדיקת תיחום וניכוי כפילויות; <span dir="ltr">2026</span> הוא נתון חלקי עד <span dir="ltr">8.9.2026</span>. זהו אומדן מומנטום — לא אומדן שווי שוק ולא חישוב <span dir="ltr">CAGR</span>.</div>
   <div class="ftr">
     <div class="pageno"></div>
-    <div class="src">הערה מתודולוגית: שני המסלולים כיסו את 2020–2026 ואוחדו לבסיס ניתוח אחד; המקור העובדתי לכל אירוע הוא רכש ממשלתי, משרדי הגנה, הודעות ספקים או דיווחי רגולציה</div>
+    <div class="src">כל מסלול נשמר כמסד נתונים נפרד ונבחן בתוך עצמו; המקור העובדתי לכל אירוע הוא רכש ממשלתי, משרדי הגנה, הודעות ספקים או רגולציה</div>
     <div class="proj">פלסן סאסא — הפחתת חתימה | מצגת עבודה</div>
   </div>
 </section></div>
@@ -1939,7 +1983,7 @@ tr.gband td .gs { font-weight: 400; color: var(--c-slate); margin-right: 12px; f
       <div class="pnote">התרחבות גיאוגרפית — מאירופה ומצפון אמריקה אל אסיה ואוקיאניה</div>
     </div>
   </div>
-  <div class="mm-take"><b>הממצא המבני:</b> מספר האירועים השנתי דומה בין 2020 ל-2026 <span class="dim">(14 מול 16)</span> — אך ב-2020 הם נבעו משתי שרשראות רכש בלבד, ואילו ב-<span dir="ltr">2026 YTD</span> מאחת-עשרה. השינוי אינו בנפח הפעילות אלא ב<b>פיזורה</b>: יותר תוכניות עצמאיות, יותר רוכשים ויותר מדינות.</div>
+  <div class="mm-take"><b>הממצא המבני:</b> מספר האירועים השנתי דומה בין 2020 ל-2026 <span class="dim">(14 מול 16)</span> — אך ב-2020 הם נבעו משתי שרשראות רכש בלבד, ואילו ב-<span dir="ltr">2026 YTD</span> מאחת-עשרה. השינוי הבולט אינו במספר האירועים השנתי אלא ב<b>פיזורם</b> — על פני יותר תהליכי רכש, רוכשים ומדינות.</div>
   <div class="ftr">
     <div class="pageno"></div>
     <div class="src">מקורות: הודעות רכש ומכרזים ממשלתיים, פרסומי משרדי הגנה וסוכנויות חימוש, הודעות ספקים ודיווחי רגולציה — 2020 עד 8.9.2026</div>
@@ -1986,10 +2030,76 @@ tr.gband td .gs { font-weight: 400; color: var(--c-slate); margin-right: 12px; f
     <span><span class="k dot"></span>מתוכם — הזמנות בפועל</span>
     <span><span class="k ytd"></span><span dir="ltr">2026</span> — נתוני שנה חלקית עד 8.9.2026, ללא השלמה לשנה מלאה</span>
   </div>
-  <div class="mm-take">הנפח השנתי יציב יחסית לאורך התקופה, ומספר ההזמנות בפועל <b>אינו עולה באופן מונוטוני</b>. יחד עם זאת, אירועי השנים האחרונות מתחלקים בין <b>מספר גדול בהרבה של שרשראות רכש עצמאיות</b> — ולכן התמונה הרלוונטית להנהלה היא פיזור, לא קצב.</div>
+  <div class="mm-def" style="top: 752px;">
+    <div class="d">
+      <div class="dt">מהו "אירוע"?</div>
+      <div class="dx">אבן-דרך פומבית ומתועדת בתהליך ביקוש או רכש — <span dir="ltr">RFI</span>, מכרז, ניסוי, בחירת ספק, זכייה, הסכם מסגרת או הזמנה. <b>אירועים מאותו תהליך מקושרים לשרשרת רכש אחת ואינם עסקאות נפרדות.</b></div>
+    </div>
+    <div class="d alt">
+      <div class="dt">מהן "הזמנות בפועל"?</div>
+      <div class="dx">תת-קבוצה מתוך האירועים המייצגת רכש מחייב בלבד. <b>אינן כוללות</b> פניות לשוק, מכרזים ללא זכייה, ניסויים, בחירת ספק ללא רכש, תקרות מסגרת ללא משיכה, פיתוח ממומן ואופציות שטרם מומשו.</div>
+    </div>
+  </div>
+  <div class="mm-note" style="top: 950px;">הפעילות קיימת לאורך כל התקופה; מספר ההזמנות בפועל <b>אינו עולה באופן מונוטוני</b>, ואירועי השנים האחרונות מתחלקים בין מספר גדול בהרבה של תהליכי רכש עצמאיים.</div>
   <div class="ftr">
     <div class="pageno"></div>
-    <div class="src">אבני-דרך במחזור רכש אחד (מכרז ← הערכה ← זכייה ← הזמנה) נספרות כאירועי פעילות אך משויכות לשרשרת אחת ואינן עסקאות נפרדות. 2026 — עד 8.9.2026</div>
+    <div class="src">סיווג "הזמנה בפועל" נקבע לפי סיווג בסיס הנתונים המאושר. הנתונים לא חושבו מחדש. 2026 — נתון חלקי עד 8.9.2026</div>
+    <div class="proj">פלסן סאסא — הפחתת חתימה | מצגת עבודה</div>
+  </div>
+</section></div>
+
+
+<!-- ================= PART 2 : INDEPENDENT RESEARCH ================= -->
+<div class="slide-wrap"><section class="slide" id="s-mm-indep">
+  <div class="hdr">
+    <div class="hdr-titles">
+      <div class="kicker">חלק ב׳ | ממצאי המחקר העצמאי</div>
+      <h1 class="title">המחקר העצמאי מצביע גם הוא על התרחבות הפעילות בשנים האחרונות</h1>
+    </div>
+    <img class="bdo-logo" src="@@IMG:bdo-logo.png@@" alt="BDO Consulting — Strategy Growth &amp; Innovation">
+  </div>
+
+  <div class="mm-tot">
+    <div class="t"><div class="tv">42</div><div class="tl">אירועים כשירים</div><div class="tq">אבני-דרך פומביות בתיחום, <span dir="ltr">2020–2026 YTD</span></div></div>
+    <div class="t"><div class="tv">18</div><div class="tl">הזמנות בפועל</div><div class="tq">רכש מחייב מתוך האירועים הכשירים</div></div>
+    <div class="t"><div class="tv">32</div><div class="tl">צירופי משפחה × שנה</div><div class="tq">מדד לרוחב הכיסוי — אינו מספר עסקאות</div></div>
+  </div>
+
+  <div class="mm-yr">
+    <div class="yhd">פירוט שנתי — הראיות המתועדות במסלול זה זמינות מ-<span dir="ltr">2023</span> ואילך</div>
+    <div class="yrow">
+      <div class="y"><div class="yy"><span dir="ltr">2023</span></div>
+        <div class="yp"><span class="yn">3</span><span class="yt">חברות פעילות</span></div>
+        <div class="yp"><span class="yn">2</span><span class="yt">הזמנות בפועל</span></div></div>
+      <div class="y"><div class="yy"><span dir="ltr">2024</span></div>
+        <div class="yp"><span class="yn">7</span><span class="yt">חברות פעילות</span></div>
+        <div class="yp"><span class="yn">5</span><span class="yt">הזמנות בפועל</span></div></div>
+      <div class="y"><div class="yy"><span dir="ltr">2025</span></div>
+        <div class="yp"><span class="yn">5</span><span class="yt">חברות פעילות</span></div>
+        <div class="yp"><span class="yn">2</span><span class="yt">הזמנות בפועל</span></div></div>
+      <div class="y ytd"><div class="yy"><span dir="ltr">2026 YTD</span></div>
+        <div class="yp"><span class="yn">5</span><span class="yt">חברות פעילות</span></div>
+        <div class="yp"><span class="yn">6</span><span class="yt">הזמנות בפועל</span></div></div>
+    </div>
+    <div class="ynote">ב-<span dir="ltr">2025</span> מספר ההזמנות נמוך יחסית, אך ראיות הביקוש והתהליכים הפתוחים באותה שנה חזקות יותר. לשנים <span dir="ltr">2020–2022</span> אין במסלול זה סדרה שנתית מאומתת, ולא הושלמו ערכים חסרים.</div>
+  </div>
+
+  <div class="mm-progs">
+    <div class="phd">תוכניות ואירועים שזוהו במסלול זה</div>
+    <div class="plist">
+      <span class="pch"><span dir="ltr">CBG · LAND 8116</span></span>
+      <span class="pch"><span dir="ltr">CBG · LAND 400 Ph.3 / Redback</span></span>
+      <span class="pch"><span dir="ltr">Sterlite · MSCN</span> — צבא הודו</span>
+      <span class="pch"><span dir="ltr">Fibrotex · ULCANS</span></span>
+      <span class="pch"><span dir="ltr">Miranda / Lubawa · BERBERYS</span></span>
+      <span class="pch"><span dir="ltr">Ametrine</span></span>
+      <span class="pch"><span dir="ltr">BCB</span> — ניסויים</span>
+      <span class="pch"><span dir="ltr">DECPT</span> — פיתוח</span>
+    </div>
+  </div>
+  <div class="ftr">
+    <div class="pageno"></div>
+    <div class="src">מסלול זה נשמר כמסד נתונים נפרד; אין להשוות את מספר האירועים שלו למסלול 1 — יקומי החיפוש שונים. 2026 — עד 8.9.2026</div>
     <div class="proj">פלסן סאסא — הפחתת חתימה | מצגת עבודה</div>
   </div>
 </section></div>
@@ -1999,17 +2109,17 @@ tr.gband td .gs { font-weight: 400; color: var(--c-slate); margin-right: 12px; f
 <div class="slide-wrap"><section class="slide" id="s-mm-pipeline">
   <div class="hdr">
     <div class="hdr-titles">
-      <div class="kicker">חלק ב׳ | מדרג הבשלות המסחרית</div>
-      <h1 class="title">הביקוש בשנים האחרונות מתורגם בפועל לשלבי זכייה והזמנה — לא נעצר בשלב הבחינה</h1>
+      <div class="kicker">חלק ב׳ | מביקוש לרכש</div>
+      <h1 class="title">מביקוש לרכש — מספר תהליכים מתועדים התקדמו בשנים האחרונות לשלבי זכייה והזמנה</h1>
     </div>
     <img class="bdo-logo" src="@@IMG:bdo-logo.png@@" alt="BDO Consulting — Strategy Growth &amp; Innovation">
   </div>
 
   <div class="mm-pipe">
-    <div class="sarr">כיוון הבשלות המסחרית</div>
+    <div class="sarr">מביקוש לרכש בפועל</div>
     <div class="stage s1"><div class="sname">ביקוש</div><div class="swhat">מכרז · <span dir="ltr">RFQ / RFP</span> · הזמנה למשא ומתן</div></div>
     <div class="stage s2"><div class="sname">הערכה</div><div class="swhat">ניסויי אב-טיפוס · בחירת ספק</div></div>
-    <div class="stage s3"><div class="sname">מסחרי</div><div class="swhat">זכייה · הסכם מסגרת · הזמנה בפועל</div></div>
+    <div class="stage s3"><div class="sname">רכש בפועל</div><div class="swhat">זכייה · הסכם מסגרת · הזמנה</div></div>
   </div>
   <div class="mm-chains">
     <div class="mm-chain"><div class="cn">FENRIR<small>צרפת · <span dir="ltr">DGA</span></small></div><div class="steps"><span class="st">מסגרת 8 שנים (2022)</span><span class="ar">←</span><span class="st on">הזמנה: 3,000 רשתות (2024)</span></div></div>
@@ -2019,7 +2129,7 @@ tr.gband td .gs { font-weight: 400; color: var(--c-slate); margin-right: 12px; f
     <div class="mm-chain"><div class="cn">SMT<small>גרמניה · <span dir="ltr">BAAINBw</span></small></div><div class="steps"><span class="st">תחרות (2024)</span><span class="ar">←</span><span class="st">אישור תקציבי (11.2025)</span><span class="ar">←</span><span class="st on">זכייה (12.2025)</span></div></div>
     <div class="mm-chain"><div class="cn">WISŁA<small>פולין · סוכנות החימוש</small></div><div class="steps"><span class="st">זכייה שלב 1 (2021)</span><span class="ar">←</span><span class="st">מימוש אופציה (2022)</span><span class="ar">←</span><span class="st">תיקון חוזה (2023)</span><span class="ar">←</span><span class="st on"><span dir="ltr">WISŁA II</span> (2026)</span></div></div>
   </div>
-  <div class="mm-note" style="top: 906px;">בכל אחת מהשרשראות לעיל ניתן לעקוב אחר מעבר מתועד משלב הביקוש אל שלב מסחרי. אבני-הדרך שייכות למחזור רכש אחד ואינן עסקאות נפרדות.</div>
+  <div class="mm-note" style="top: 906px;">בכל אחד מהתהליכים לעיל ניתן לעקוב אחר מעבר מתועד משלב הביקוש אל רכש בפועל. אבני-הדרך שייכות לאותו תהליך רכש ואינן עסקאות נפרדות. אין בכך דירוג בשלות של השוק.</div>
   <div class="ftr">
     <div class="pageno"></div>
     <div class="src">מקורות: <span dir="ltr">DGA / Ministère des Armées</span> · <span dir="ltr">GeM</span> ופרסומי מכרז הודיים · <span dir="ltr">armasuisse</span> · משרד ההגנה ההולנדי · <span dir="ltr">BAAINBw</span> ודיוני ועדת התקציב של הבונדסטג · דיווחי <span dir="ltr">ESPI</span> של <span dir="ltr">Lubawa</span></div>
@@ -2071,14 +2181,14 @@ tr.gband td .gs { font-weight: 400; color: var(--c-slate); margin-right: 12px; f
     <colgroup><col style="width:250px"><col style="width:140px"><col style="width:300px"><col style="width:210px"><col style="width:200px"><col style="width:300px"><col style="width:376px"></colgroup>
     <tr><th>תוכנית / מכרז</th><th>מדינה</th><th>מוצר / דרישה</th><th>שלב ושנה</th><th>ספק</th><th>היקף מדווח</th><th>ספקטרום</th></tr>
     <tr><td class="pg">MSCN<small>מכרז <span dir="ltr">GeM</span>, פרייאגראג׳</small></td><td>הודו</td><td>רשתות רב-ספקטרליות</td><td><span class="stg ord">זכייה</span> <span dir="ltr">2025→2026</span></td><td><span dir="ltr">Sterlite Camotech</span></td><td>1,622 רשתות · <span dir="ltr">₹21.15 crore</span></td><td>רב-ספקטרלי · הפס לא פורט</td></tr>
-    <tr><td class="pg"><span dir="ltr">LAND 400</span> ש׳ 3<small><span dir="ltr">Redback IFV</span></small></td><td>אוסטרליה</td><td><span dir="ltr">MCS</span> לרק״ם</td><td><span class="stg ord">חוזה ספק</span> <span dir="ltr">2024</span></td><td><span dir="ltr">CBG Systems</span></td><td>129 רכבים · לא פורסם</td><td><span dir="ltr">IR · Radar</span> · רב-ספקטרלי</td></tr>
+    <tr><td class="pg"><span dir="ltr">LAND 400</span> ש׳ 3<small><span dir="ltr">Redback IFV</span></small></td><td>אוסטרליה</td><td><span dir="ltr">MCS</span> לרק״ם</td><td><span class="stg ord">חוזה ספק</span> <span dir="ltr">2024</span></td><td><span dir="ltr">CBG Systems</span></td><td>129 רכבים בתוכנית · כמות <span dir="ltr">MCS</span> בחוזה לא פורסמה</td><td><span dir="ltr">IR · Radar</span> · רב-ספקטרלי</td></tr>
     <tr><td class="pg"><span dir="ltr">LAND 8116</span> ש׳ 1<small><span dir="ltr">AS9 / AS10</span></small></td><td>אוסטרליה</td><td><span dir="ltr">MCS</span> לתותח ולרכב חילוץ</td><td><span class="stg fw">בחירת ספק</span> <span dir="ltr">2021→2022</span></td><td><span dir="ltr">CBG Systems</span></td><td><span dir="ltr">9 AS9 + 5 AS10</span></td><td>רב-ספקטרלי · כולל תרמי</td></tr>
     <tr><td class="pg"><span dir="ltr">ULCANS Inc. I</span><small><span dir="ltr">Woodland Type I</span></small></td><td>ארה״ב</td><td>רשתות הסוואה</td><td><span class="stg ord">הזמנת אספקה</span> <span dir="ltr">2020</span></td><td><span dir="ltr">Fibrotex</span></td><td><span dir="ltr">$5.01M</span></td><td dir="ltr" style="text-align:right">VIS·NIR·SWIR·תרמי·Radar</td></tr>
   </table>
-  <div class="mm-note" style="top: 668px;"><b>קריאת הטבלה:</b> "זכייה" ו"הזמנה" הן אבני-דרך מסחריות ממשיות; "מסגרת" ו"בחירת ספק" אינן ערך שהוזמן בפועל. ערכי אופציה ותקרות מסגרת אינם נכללים בעמודת הערך.</div>
+  <div class="mm-note" style="top: 668px;"><b>קריאת הטבלה:</b> "זכייה" ו"הזמנה" הן אבני-דרך מסחריות ממשיות; "מסגרת" ו"בחירת ספק" אינן ערך שהוזמן בפועל. מספר הרכבים בתוכנית הוא היקף התוכנית המדווח — לא כמות מערכות שהוזמנה.</div>
   <div class="mm-find" style="top: 760px;">
     <div class="f"><div class="fn">רמת המערכת</div><div class="ft">שתיים מארבע התוכניות הן מערכות הסוואה <b>ברמת הפלטפורמה</b> — רק״ם ותותחנות — ולא רשתות ברמת היחידה בלבד.</div></div>
-    <div class="f"><div class="fn">מחזור חיים אחד</div><div class="ft">שתי תוכניות <span dir="ltr">LAND</span> האוסטרליות הן <b>מסלול אחד של אותו ספק בשני שלבים</b>, ואינן נספרות כשתי עסקאות נפרדות.</div></div>
+    <div class="f"><div class="fn">תוכניות נפרדות</div><div class="ft"><span dir="ltr">LAND 8116</span> (<span dir="ltr">AS9 / AS10</span>) ו-<span dir="ltr">LAND 400</span> שלב 3 (<span dir="ltr">Redback</span>) הן <b>תוכניות רכש נפרדות</b>, גם כאשר אותו ספק נבחר בשתיהן.</div></div>
   </div>
   <div class="ftr">
     <div class="pageno"></div>
@@ -2107,60 +2217,22 @@ tr.gband td .gs { font-weight: 400; color: var(--c-slate); margin-right: 12px; f
     </div>
     <div class="row">
       <div class="tile"><div class="tnum"><span dir="ltr">1,000+</span></div><div class="tname">כיסויים · <span dir="ltr">PLN 67.5M</span></div><div class="tsub">פולין — הזמנה מובטחת 2023</div></div>
-      <div class="tile"><div class="tnum">129</div><div class="tname">רכבי <span dir="ltr">Redback</span></div><div class="tsub">אוסטרליה — <span dir="ltr">LAND 400</span> ש׳ 3, 2024</div></div>
+      <div class="tile"><div class="tnum">14</div><div class="tname">מנות <span dir="ltr">MSTS</span></div><div class="tsub">שווייץ — החלטת זכייה 2025 · ערך לא פורסם</div></div>
       <div class="tile"><div class="tnum"><span dir="ltr">$5.01M</span></div><div class="tname">הזמנת <span dir="ltr">ULCANS</span></div><div class="tsub">ארה״ב — הזמנת אספקה 2020</div></div>
     </div>
   </div>
   <div class="mm-scale" style="top: 734px;">
-    <div class="band alt">מסגרות ו-<span dir="ltr">pipeline</span> — אינם ערך שהוזמן</div>
-    <div class="row">
-      <div class="tile pipe"><div class="tnum"><span dir="ltr">~€580M</span></div><div class="tname">היקף מסגרת <span dir="ltr">SMT</span></div><div class="tsub">גרמניה — מתוכה <span dir="ltr">~€48M</span> במשיכה הראשונה</div></div>
+    <div class="band alt">מסגרות, תקרות והיקפי תוכנית — אינם ערך שהוזמן</div>
+    <div class="row four">
+      <div class="tile pipe"><div class="tnum"><span dir="ltr">~€580M</span></div><div class="tname">היקף מסגרת <span dir="ltr">SMT</span></div><div class="tsub">גרמניה · משיכה ראשונה <span dir="ltr">~€48M</span></div></div>
       <div class="tile pipe"><div class="tnum"><span dir="ltr">PLN 135M</span></div><div class="tname">תקרת <span dir="ltr">BERBERYS</span></div><div class="tsub">כולל אופציה שטרם מומשה</div></div>
       <div class="tile pipe"><div class="tnum"><span dir="ltr">$480M</span></div><div class="tname">תקרת <span dir="ltr">IDIQ</span> — <span dir="ltr">ULCANS</span></div><div class="tsub">תקרת חוזה-אב, לא מכירות</div></div>
+      <div class="tile pipe"><div class="tnum">129</div><div class="tname">רכבי <span dir="ltr">Redback</span></div><div class="tsub">היקף תוכנית · לא כמות שהוזמנה</div></div>
     </div>
   </div>
   <div class="ftr">
     <div class="pageno"></div>
-    <div class="src">אין לסכם מטבעות שונים לכדי סך שוק. ערכי מסגרת, תקרות ואופציות מוצגים בנפרד מהזמנות בפועל. מקורות: <span dir="ltr">DGA · GeM · Lubawa ESPI · BAAINBw · CBG Systems · GovTribe</span></div>
-    <div class="proj">פלסן סאסא — הפחתת חתימה | מצגת עבודה</div>
-  </div>
-</section></div>
-
-
-<!-- ================= PART 2 : VISUAL EXAMPLES ================= -->
-<div class="slide-wrap"><section class="slide" id="s-mm-visual">
-  <div class="hdr">
-    <div class="hdr-titles">
-      <div class="kicker">חלק ב׳ | דוגמאות חזותיות</div>
-      <h1 class="title">שלוש תוכניות מתועדות — מערכת הסוואה ניידת מותקנת על פלטפורמה מבצעית</h1>
-    </div>
-    <img class="bdo-logo" src="@@IMG:bdo-logo.png@@" alt="BDO Consulting — Strategy Growth &amp; Innovation">
-  </div>
-
-  <div class="mm-figs">
-    <div class="mm-fig">
-      <div class="fim" style="background-image:url('@@IMG:cbg-redback-solarsigmashield.jpg@@')"></div>
-      <div class="fttl"><span dir="ltr">LAND 400</span> שלב 3 — <span dir="ltr">Redback</span></div>
-      <div class="fmeta">אוסטרליה · חוזה ספק 2024 · 129 רכבים<br>ספקטרום: <span dir="ltr">IR · Radar</span> · רב-ספקטרלי</div>
-      <div class="fsrc">מקור: <span dir="ltr">cbgsystems.com</span> — הודעת התוכנית</div>
-    </div>
-    <div class="mm-fig">
-      <div class="fim" style="background-image:url('@@IMG:cbg-sss-turret-desert.jpg@@')"></div>
-      <div class="fttl"><span dir="ltr">LAND 8116</span> שלב 1 — <span dir="ltr">AS9 / AS10</span></div>
-      <div class="fmeta">אוסטרליה · בחירת ספק 2021, ייצור 2022<br>ספקטרום: רב-ספקטרלי כולל תרמי</div>
-      <div class="fsrc">מקור: <span dir="ltr">cbgsystems.com</span> — עמוד המוצר</div>
-    </div>
-    <div class="mm-fig">
-      <div class="fim" style="background-image:url('@@IMG:sterlite-mscn-desert-vehicle.jpg@@')"></div>
-      <div class="fttl"><span dir="ltr">MSCN</span> — צבא הודו</div>
-      <div class="fmeta">הודו · מכרז 2025 ← זכייה 2026 · 1,622 רשתות<br>ספקטרום: רב-ספקטרלי — הפס לא פורט</div>
-      <div class="fsrc">מקור: <span dir="ltr">sterlitecamotech.com</span> — עמוד המוצר</div>
-    </div>
-  </div>
-  <div class="mm-take" style="top: 856px;">שלוש התוכניות ממחישות את המשותף לפעילות בשנים האחרונות: <b>מערכת הסוואה המותקנת על פלטפורמה מבצעית ספציפית</b> — ולא חומר או רשת כללית.</div>
-  <div class="ftr">
-    <div class="pageno"></div>
-    <div class="src">התמונות הן חומר רשמי של הספקים, ואומתו כשייכות לתוכניות המוצגות. לא נעשה שימוש בתצלומי מלאי או בתמונות שזהות המוצר בהן אינה ודאית</div>
+    <div class="src">אין לסכם מטבעות שונים לכדי סך שוק, ואין להמיר היקף תוכנית לכמות שהוזמנה. מקורות: <span dir="ltr">DGA · GeM · Lubawa ESPI · BAAINBw · armasuisse · CBG Systems · GovTribe</span></div>
     <div class="proj">פלסן סאסא — הפחתת חתימה | מצגת עבודה</div>
   </div>
 </section></div>
@@ -2171,24 +2243,24 @@ tr.gband td .gs { font-weight: 400; color: var(--c-slate); margin-right: 12px; f
   <div class="hdr">
     <div class="hdr-titles">
       <div class="kicker">חלק ב׳ | מסקנות הנהלה</div>
-      <h1 class="title">ארבעה ממצאים מרכזיים משני מסלולי המחקר</h1>
+      <h1 class="title">ארבעה ממצאים מרכזיים העולים משני מסלולי המחקר</h1>
     </div>
     <img class="bdo-logo" src="@@IMG:bdo-logo.png@@" alt="BDO Consulting — Strategy Growth &amp; Innovation">
   </div>
 
   <div class="mm-find">
-    <div class="f"><div class="fn">01</div><div class="ft">הראיות מצביעות על <b>התרחבות ברורה של בסיס הפעילות</b> — יותר רוכשים, מדינות ותוכניות פעילות בשנים האחרונות, גם כאשר הנפח השנתי דומה.</div></div>
-    <div class="f"><div class="fn">02</div><div class="ft">השוק מציג <b>פעילות מסחרית ממשית לאורך כל התקופה</b>, הכוללת הזמנות חוזרות, חוזים והסכמי מסגרת רב-שנתיים — ולא שוק של מו״פ והדגמות בלבד.</div></div>
-    <div class="f"><div class="fn">03</div><div class="ft">בשנים האחרונות נראים במקביל <b><span dir="ltr">pipeline</span> חדש והתקדמות של דרישות קיימות</b> אל שלבי זכייה והזמנה — במספר מדינות ובמספר תוכניות במקביל.</div></div>
-    <div class="f"><div class="fn">04</div><div class="ft">קיימות עסקאות ותוכניות בהיקפים משמעותיים, אך <b>פערי דיווח אינם מאפשרים להסיק באופן מהימן</b> על שיעור הגידול הכולל בשווי או במספר היחידות בשוק.</div></div>
+    <div class="f"><div class="fn">01</div><div class="ft">קיימות ראיות ברורות לכך שהפעילות הגלויה בשוק <b>התרחבה על פני יותר רוכשים, מדינות ותוכניות</b> בשנים האחרונות.</div></div>
+    <div class="f"><div class="fn">02</div><div class="ft">הרכש המסחרי <b>ממשי לאורך כל התקופה</b> — הזמנות בפועל, זכיות, הסכמי מסגרת ורכש חוזר — ולא שוק של מו״פ והדגמות בלבד.</div></div>
+    <div class="f"><div class="fn">03</div><div class="ft">השנים האחרונות כוללות <b>גם אותות ביקוש חדשים וגם התקדמות מתועדת של דרישות קיימות</b> אל שלבי זכייה והזמנה.</div></div>
+    <div class="f"><div class="fn">04</div><div class="ft">הכמויות והערכים שפורסמו מעידים על <b>היקף מסחרי משמעותי</b>, אך רמת הגילוי אינה מספיקה כדי לחשב <b>שיעור צמיחה מהימן</b> ביחידות או בערך ברמת השוק.</div></div>
   </div>
   <div class="mm-final">
     <div class="fl">שורה תחתונה</div>
-    <div class="fx">קיימות אינדיקציות משמעותיות למומנטום חיובי ולהתרחבות השוק — אך אין בסיס מספיק לכימות שיעור הצמיחה הכולל</div>
+    <div class="fx">קיימות אינדיקציות משמעותיות למומנטום חיובי ולהתרחבות השוק — בעיקר דרך התרחבות בסיס הביקוש והפעילות המסחרית — אך אין בסיס מספיק לכימות שיעור הצמיחה הכולל</div>
   </div>
   <div class="ftr">
     <div class="pageno"></div>
-    <div class="src">שני מסלולי מחקר בלתי תלויים, 2020 עד 8.9.2026; המקור העובדתי לכל אירוע הוא רכש ממשלתי, משרדי הגנה, הודעות ספקים או רגולציה</div>
+    <div class="src">שני מסלולי מחקר עצמאיים, כל אחד במסד נתונים נפרד, 2020 עד 8.9.2026; המקור העובדתי לכל אירוע הוא רכש ממשלתי, משרדי הגנה, הודעות ספקים או רגולציה</div>
     <div class="proj">פלסן סאסא — הפחתת חתימה | מצגת עבודה</div>
   </div>
 </section></div>
