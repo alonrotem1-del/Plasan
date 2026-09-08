@@ -7,7 +7,7 @@ const { chromium } = require('playwright'); const path = require('path');
   console.log(await p.evaluate(() => {
     const s = document.getElementById('s-cbg'), m = s.querySelector('.profile-main');
     const o = [];
-    for (const w of [900, 940, 980, 1020, 1060, 1110]) {
+    for (const w of [1020, 1100, 1180, 1260, 1340, 1420]) {
       m.style.gridTemplateColumns = w + 'px 1fr';
       const st = s.querySelector('.pf-story'), im = s.querySelector('.pf-imgs');
       const deep = (c) => { const cr = c.getBoundingClientRect(); let d = 0;

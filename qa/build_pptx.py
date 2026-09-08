@@ -4,7 +4,7 @@
 Geometry is 1:1 with the HTML deck (1920x1080 px -> 13.333x7.5 in, 6350 EMU/px,
 1 px = 0.5 pt).  Text stays text, tables stay tables, shapes stay shapes.
 """
-import json, os, sys
+import json, os, re, sys
 from pptx import Presentation
 from pptx.util import Emu, Pt
 from pptx.dml.color import RGBColor
@@ -163,8 +163,9 @@ def add_table(sl, o):
         cell.margin_left, cell.margin_right = E(pl), E(pr)
         cell.vertical_anchor = ANCH[cd['va']]
         set_cell_borders(cell)
-        fill_text(cell.text_frame, cd['paras'] or [[]], cd['al'], cd['rtl'], cd['lh'],
-                  cd.get('sc', 1.0))
+        # No cell-level shrinking: the 12pt floor is a hard constraint, so a
+        # tight cell wraps or grows rather than dropping below it.
+        fill_text(cell.text_frame, cd['paras'] or [[]], cd['al'], cd['rtl'], cd['lh'])
 
 
 IMG = {}
@@ -200,5 +201,45 @@ for s in data['slides']:
             tf.vertical_anchor = MSO_ANCHOR.TOP
             fill_text(tf, o['paras'], o['al'], o['rtl'], o['lh'])
 
+# The theme still ships PowerPoint's default Calibri; anything typed into the
+# deck later would inherit it.  Point the theme at Arial too, for both the
+# latin and the complex-script (Hebrew) slots.
+theme = prs.part.package.part_related_by  # noqa: F841  (kept for clarity)
+for part in prs.part.package.iter_parts():
+    if part.partname.endswith('theme1.xml') or '/theme/' in str(part.partname):
+        blob = part.blob.decode('utf-8')
+        for slot in ('majorFont', 'minorFont'):
+            i = blob.index('<a:%s>' % slot)
+            j = blob.index('</a:%s>' % slot, i)
+            head = blob[i:j]
+            head = re.sub(r'<a:latin typeface="[^"]*"', '<a:latin typeface="%s"' % FONT, head)
+            head = re.sub(r'<a:ea typeface="[^"]*"', '<a:ea typeface="%s"' % FONT, head)
+            head = re.sub(r'<a:cs typeface="[^"]*"', '<a:cs typeface="%s"' % FONT, head)
+            # the stock theme maps Hebrew to Times New Roman; anything typed
+            # into the deck later would silently pick that up
+            head = re.sub(r'(<a:font script="Hebr" typeface=")[^"]*"',
+                          r'\g<1>%s"' % FONT, head)
+            blob = blob[:i] + head + blob[j:]
+        part._blob = blob.encode('utf-8')
+    if hasattr(part, 'element') and ('slideMaster' in str(part.partname) or
+                                     'slideLayout' in str(part.partname)):
+        # no autofit anywhere: the point sizes in this deck are a hard floor
+        for el in part.element.iter(qn('a:normAutofit')):
+            el.tag = qn('a:noAutofit')
+            for k in list(el.attrib):
+                del el.attrib[k]
+
 prs.save(DST)
+
+# Belt and braces: rewrite the saved package so no autofit survives anywhere.
+# python-pptx keeps the stock master's <a:normAutofit/> in its own part.
+import zipfile, shutil
+_tmp = DST + '.tmp'
+with zipfile.ZipFile(DST) as _zin, zipfile.ZipFile(_tmp, 'w', zipfile.ZIP_DEFLATED) as _zout:
+    for _it in _zin.infolist():
+        _data = _zin.read(_it.filename)
+        if _it.filename.endswith('.xml') and b'normAutofit' in _data:
+            _data = re.sub(rb'<a:normAutofit[^>]*/>', b'<a:noAutofit/>', _data)
+        _zout.writestr(_it, _data)
+shutil.move(_tmp, DST)
 print('saved', DST, len(prs.slides.__iter__.__self__._sldIdLst), 'slides')
