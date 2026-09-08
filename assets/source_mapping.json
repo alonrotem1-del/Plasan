@@ -18,14 +18,6 @@
       "source_type": "official company website (Multispectral Shielding application page, product preview)"
     },
     {
-      "slide": "s-shieldex (13)",
-      "file": "assets/images/shieldex-shielding-tent.jpg",
-      "status": "embedded",
-      "source_url": "https://www.shieldex.de/wp-content/uploads/2021/04/Shieldex-EMV-Zelt.png",
-      "source_page": "https://www.shieldex.de/en/applications/multispectral-shielding/",
-      "source_type": "official company website (Multispectral Shielding application page, product preview)"
-    },
-    {
       "slide": "s-ametrine (5)",
       "file": "assets/images/ametrine-flint-jltv.jpg",
       "status": "embedded",
@@ -180,6 +172,14 @@
       "source_url": "https://stg-defence.com/wp-content/uploads/2026/06/ukrittja_1_864x916-scaled.jpg | https://stg-defence.com/wp-content/uploads/2026/06/ukrittja_2_636x496_left-scaled.jpg",
       "source_page": "https://stg-defence.com/en/ukrittja-tehniki-stealth/",
       "source_type": "official company website (Equipment Shelter use-case gallery, thermal frames)"
+    },
+    {
+      "slide": "s-shieldex",
+      "file": "assets/images/shieldex-military-multispectral.jpg",
+      "status": "embedded",
+      "source_url": "https://www.shieldex.de/wp-content/uploads/2024/10/Application_Military_Shieldex.png",
+      "source_page": "https://www.shieldex.de/en/applications/multispectral-shielding/",
+      "source_type": "official company website (Multispectral Shielding application image)"
     }
   ],
   "data_sources": [
