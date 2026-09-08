@@ -146,6 +146,32 @@ fs.mkdirSync(path.join(OUT, 'img'), { recursive: true });
           spacer(adv, pf, node.parentElement);
           return;
         }
+        // inline chips (background pill / inset-shadow outline) still need a
+        // shape behind their text.  Skip inside tables: there the rect would be
+        // emitted after the table and cover the cell text.
+        if (isInlineDisp(cs.display) && !node.closest('table')) {
+          const bg = col(cs.backgroundColor);
+          const bwid = parseFloat(cs.borderTopWidth) || 0;
+          const bcol = col(cs.borderTopColor);
+          let line = bwid > 0 && bcol ? { c: bcol, w: R(bwid) } : null;
+          if (!line && cs.boxShadow && cs.boxShadow.includes('inset')) {
+            const sc2 = col(cs.boxShadow);
+            const lens = cs.boxShadow.match(/(-?[\d.]+)px/g) || [];
+            const sw = lens.length >= 4 ? Math.abs(parseFloat(lens[3])) : 0;
+            if (sc2 && sw > 0) line = { c: sc2, w: R(sw) };
+          }
+          if (bg || line) {
+            const rr = node.getBoundingClientRect();
+            if (rr.width > 1 && rr.height > 1) {
+              const rad = parseFloat(cs.borderTopLeftRadius) || 0;
+              ops.push({
+                t: 'rect', x: R(rr.left - base.left), y: R(rr.top - base.top),
+                w: R(rr.width), h: R(rr.height), fill: bg, line,
+                rad: rad > 0 ? Math.min(0.5, rad / Math.min(rr.width, rr.height)) : 0,
+              });
+            }
+          }
+        }
         const ml = parseFloat(cs.marginLeft) || 0, mr = parseFloat(cs.marginRight) || 0;
         const rtlCtx = getComputedStyle(node.parentElement).direction === 'rtl';
         const lead = rtlCtx ? mr : ml, trail = rtlCtx ? ml : mr;
@@ -183,10 +209,41 @@ fs.mkdirSync(path.join(OUT, 'img'), { recursive: true });
       const fs = parseFloat(cs.fontSize);
       let lh = cs.lineHeight === 'normal' ? 1.2 : parseFloat(cs.lineHeight) / fs;
       const alk = al === 'center' ? 'ctr' : al === 'right' ? 'r' : 'l';
+      const mal = al === 'center' ? 'center' : al;
+      // A Range rect is only as wide as the longest laid-out line, so a wrapped
+      // paragraph reports less than the width it actually wrapped at and
+      // PowerPoint re-wraps narrower than the browser did.  For multi-line
+      // groups take the block container's content box instead — but not when a
+      // sibling marker shares the line box, since it owns part of that width.
+      const fsAll = Math.max(...paras.map((q) => Math.max(...q.map((z) => z.sz), 0)), 1);
+      const multiline = r.height > 1.6 * fsAll * lh;
+      let bx = r.left - base.left, bw = r.width;
+      if (multiline && !isInlineDisp(cs.display) &&
+          ![...container.children].some((el) => markerOf(el, base))) {
+        const cb = container.getBoundingClientRect();
+        const cl = cb.left + (parseFloat(cs.borderLeftWidth) || 0) + (parseFloat(cs.paddingLeft) || 0);
+        const cr2 = cb.right - (parseFloat(cs.borderRightWidth) || 0) - (parseFloat(cs.paddingRight) || 0);
+        if (cr2 - cl >= r.width - 0.5 && cl <= r.left + 0.5 && cr2 >= r.right - 0.5) {
+          bx = cl - base.left; bw = cr2 - cl;
+        }
+      }
+      // Readability first: never shrink the type to make it fit.  Instead find
+      // the smallest extra box width that keeps the same number of lines the
+      // browser laid out; the anchored edge stays put, the box grows outward.
+      let wpad = 0;
+      // measH returns a block height (line boxes); r.height comes from a Range
+      // and excludes the half-leading above the first line and below the last.
+      // Convert before comparing, otherwise every block looks one notch short.
+      const hlim = r.height + Math.max(0, lh - 1.15) * fsAll + Math.max(2, r.height * 0.02);
+      for (const pad of [0, 4, 8, 14, 20, 28, 38, 50, 64]) {
+        wpad = pad;
+        if (measH(paras, bw + 2 + pad, lh, rtl, mal, 1).h <= hlim) break;
+      }
       ops.push({
-        t: 'text', x: R(r.left - base.left), y: R(r.top - base.top), w: R(r.width), h: R(r.height),
-        al: alk, rtl: rtl ? 1 : 0, lh: R(lh), paras,
-        sc: fitScale(paras, r.width + 2, r.height, lh, rtl, al === 'center' ? 'center' : al),
+        t: 'text', x: R(bx), y: R(r.top - base.top), w: R(bw), h: R(r.height),
+        cls: (container.className || '') + ' ' + container.tagName.toLowerCase(),
+        al: alk, rtl: rtl ? 1 : 0, lh: R(lh), paras, wpad,
+        sc: fitScale(paras, bw + 2 + wpad, hlim, lh, rtl, mal),
       });
     }
 
@@ -300,6 +357,7 @@ fs.mkdirSync(path.join(OUT, 'img'), { recursive: true });
               return a === 'center' ? 'ctr' : a === 'right' ? 'r' : 'l';
             })(),
             rtl: cs.direction === 'rtl' ? 1 : 0,
+            cls: (c.className || '') + ' ' + c.tagName.toLowerCase() + ' ' + (c.closest('table') || {className:''}).className,
             lh: R(cs.lineHeight === 'normal' ? 1.2 : parseFloat(cs.lineHeight) / parseFloat(cs.fontSize)),
             pad: [R(parseFloat(cs.paddingTop)), R(parseFloat(cs.paddingRight)), R(parseFloat(cs.paddingBottom)), R(parseFloat(cs.paddingLeft))],
             paras: (function () {
@@ -352,6 +410,8 @@ fs.mkdirSync(path.join(OUT, 'img'), { recursive: true });
         if (ch.nodeType !== 1) continue;
         const ccs = getComputedStyle(ch);
         if (ccs.display === 'none') continue;
+        // an inline <img> (e.g. the cover lockup) still has to become a picture
+        if (ch.tagName === 'IMG') { flush(); await walk(ch, ops, base); continue; }
         if (isInlineDisp(ccs.display)) {
           const mk = markerOf(ch, base);
           if (mk) { flush(); ops.push(mk); continue; }

@@ -67,8 +67,12 @@ def fill_text(tf, paras, al, rtl, lh, scale=1.0):
         if rtl:
             pPr.set('rtl', '1')
         p.alignment = ALIGN[al]
-        if lh and abs(lh - 1.0) > 0.01:
-            p.line_spacing = lh
+        # Exact leading in points, mirroring the CSS line box.  A percentage
+        # would be resolved against the font's own line height, which differs
+        # between PowerPoint and the browser and makes paragraphs drift.
+        pfs = max((r['sz'] for r in para), default=16)
+        if lh:
+            p.line_spacing = Pt(round(pfs * lh * 0.5, 2))
         p.space_before = Pt(0)
         p.space_after = Pt(0)
         for spec in para:
@@ -179,13 +183,22 @@ for s in data['slides']:
         elif o['t'] == 'table':
             add_table(sl, o)
         elif o['t'] == 'text':
-            fs = max((r['sz'] for para in o['paras'] for r in para), default=16) * float(o.get('sc', 1.0))
+            # readability first: analytical text keeps its designed size and is
+            # allowed to wrap; the box grows instead of the type shrinking.
+            fs = max((r['sz'] for para in o['paras'] for r in para), default=16)
             lead = max(0.0, (o['lh'] - 1.0)) * fs / 2.0   # CSS half-leading above line 1
-            tb = sl.shapes.add_textbox(E(o['x']), E(o['y'] - lead), E(o['w'] + 2), E(o['h'] + lead + 4))
+            sc = float(o.get('sc', 1.0))
+            need = o['h'] / sc if sc > 0 else o['h']
+            # grow the box, never the type: the anchored edge stays where the
+            # browser put it and the box expands away from it.
+            wp = float(o.get('wpad', 0))
+            x = o['x'] - wp if o['al'] == 'r' else (o['x'] - wp / 2.0 if o['al'] == 'ctr' else o['x'])
+            tb = sl.shapes.add_textbox(E(x), E(o['y'] - lead), E(o['w'] + 2 + wp),
+                                       E(max(o['h'], need) + lead + 4))
             tf = tb.text_frame
             tf.margin_left = tf.margin_right = tf.margin_top = tf.margin_bottom = 0
             tf.vertical_anchor = MSO_ANCHOR.TOP
-            fill_text(tf, o['paras'], o['al'], o['rtl'], o['lh'], float(o.get('sc', 1.0)))
+            fill_text(tf, o['paras'], o['al'], o['rtl'], o['lh'])
 
 prs.save(DST)
 print('saved', DST, len(prs.slides.__iter__.__self__._sldIdLst), 'slides')
