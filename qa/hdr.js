@@ -6,7 +6,7 @@ const { chromium } = require('playwright'); const path = require('path');
   await p.evaluate(() => document.fonts.ready); await p.waitForTimeout(200);
   console.log(await p.evaluate(() => {
     const o = [];
-    for (const w of [1340, 1420, 1480, 1520, 1560]) {
+    for (const w of [1440, 1470, 1490, 1510, 1530]) {
       document.querySelectorAll('.hdr-titles').forEach((e) => e.style.maxWidth = w + 'px');
       let mx = 0, worst = '';
       document.querySelectorAll('.slide').forEach((s) => {

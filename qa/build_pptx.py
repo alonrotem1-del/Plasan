@@ -16,7 +16,8 @@ from copy import deepcopy
 SRC = sys.argv[1]
 DST = sys.argv[2]
 PX = 6350                      # EMU per deck pixel
-FONT = 'Arial'                 # metric-stable Hebrew+Latin font on Windows/Mac
+FONT = 'Calibri'               # latin + complex-script face, as in the client's file
+FONT_EA = 'Arial'              # east-asian slot, likewise
 LRE, PDF_ = '‪', '‬'  # LTR embedding for Latin inside RTL text
 NOSTYLE = '{2D5ABB26-0587-4C30-8999-92F81FD0307C}'  # "No Style, No Grid"
 
@@ -48,12 +49,12 @@ def style_run(r, spec, rtl, scale=1.0):
     if spec.get('sup'):
         rPr.set('baseline', '30000' if spec['sup'] > 0 else '-25000')
     r.font.color.rgb = RGBColor.from_string(spec['c'])
-    for tag in ('a:latin', 'a:ea', 'a:cs'):
+    for tag, face in (('a:latin', FONT), ('a:ea', FONT_EA), ('a:cs', FONT)):
         el = rPr.find(qn(tag))
         if el is None:
             el = rPr.makeelement(qn(tag), {})
             rPr.append(el)
-        el.set('typeface', FONT)
+        el.set('typeface', face)
 
 
 def fill_text(tf, paras, al, rtl, lh, scale=1.0):
@@ -213,7 +214,7 @@ for part in prs.part.package.iter_parts():
             j = blob.index('</a:%s>' % slot, i)
             head = blob[i:j]
             head = re.sub(r'<a:latin typeface="[^"]*"', '<a:latin typeface="%s"' % FONT, head)
-            head = re.sub(r'<a:ea typeface="[^"]*"', '<a:ea typeface="%s"' % FONT, head)
+            head = re.sub(r'<a:ea typeface="[^"]*"', '<a:ea typeface="%s"' % FONT_EA, head)
             head = re.sub(r'<a:cs typeface="[^"]*"', '<a:cs typeface="%s"' % FONT, head)
             # the stock theme maps Hebrew to Times New Roman; anything typed
             # into the deck later would silently pick that up

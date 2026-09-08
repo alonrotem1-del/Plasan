@@ -235,7 +235,9 @@ fs.mkdirSync(path.join(OUT, 'img'), { recursive: true });
       // and excludes the half-leading above the first line and below the last.
       // Convert before comparing, otherwise every block looks one notch short.
       const hlim = r.height + Math.max(0, lh - 1.15) * fsAll + Math.max(2, r.height * 0.02);
-      for (const pad of [0, 4, 8, 14, 20, 28, 38, 50, 64]) {
+      // a floor of 16px absorbs the few percent by which the rendering font
+      // can differ from the measuring font, so a line does not re-wrap
+      for (const pad of [16, 22, 30, 40, 52, 66, 80]) {
         wpad = pad;
         if (measH(paras, bw + 2 + pad, lh, rtl, mal, 1).h <= hlim) break;
       }
