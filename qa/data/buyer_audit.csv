@@ -1,0 +1,38 @@
+﻿Raw buyer name,Canonical buyer name,Country,Reason for merge,Rows
+"Air Force Test Center / 412th Test Wing, U.S. Air Force",Air Force Test Center,USA,with and without the 412th Test Wing sub-label,5
+Air Force Test Center / USAF,Air Force Test Center,USA,with and without the 412th Test Wing sub-label,3
+BAAINBw / Bundeswehr,BAAINBw,Germany,"BAAINBw, its full German name, and the Bundestag budget-approval milestone for the same BAAINBw SMT procurement (event family DE-SMT-2024-25)",1
+German Bundestag Budget Committee (Haushaltsausschuss) / BAAINBw,BAAINBw,Germany,"BAAINBw, its full German name, and the Bundestag budget-approval milestone for the same BAAINBw SMT procurement (event family DE-SMT-2024-25)",1
+German Federal Office of Bundeswehr Equipment (BAAINBw),BAAINBw,Germany,"BAAINBw, its full German name, and the Bundestag budget-approval milestone for the same BAAINBw SMT procurement (event family DE-SMT-2024-25)",1
+Belgian Ministry of Defence,Belgian Ministry of Defence,Belgium,no merge - single form,2
+British Army Armoured Cavalry and Engineer units,British Army Armoured Cavalry and Engineer units,United Kingdom,no merge - single form,1
+Direction générale de l'armement (DGA),DGA,France,straight vs curly apostrophe in the French name,1
+Direction générale de l’armement (DGA),DGA,France,straight vs curly apostrophe in the French name,1
+Confidential domestic contractor from PGZ Group,Domestic contractor from PGZ Group (undisclosed),Poland,"same undisclosed-buyer descriptor with and without ""Confidential""; the two rows fall in different years, so this merge changes no annual figure",1
+Domestic contractor from PGZ Group,Domestic contractor from PGZ Group (undisclosed),Poland,"same undisclosed-buyer descriptor with and without ""Confidential""; the two rows fall in different years, so this merge changes no annual figure",1
+Indian Ministry of Defence / Department of Military Affairs / Army,Indian Ministry of Defence / Department of Military Affairs / Army,India,no merge - single form,2
+Luxembourg defence procurement authority,Luxembourg defence procurement authority,Luxembourg,no merge - single form,1
+NAVSUP / U.S. Navy,NAVSUP WSS,USA,NAVSUP / NAVSUP WSS / NAVSUP Weapon Systems Support are one contracting body,1
+NAVSUP WSS / U.S. Navy,NAVSUP WSS,USA,NAVSUP / NAVSUP WSS / NAVSUP Weapon Systems Support are one contracting body,4
+NAVSUP Weapon Systems Support / U.S. Navy,NAVSUP WSS,USA,NAVSUP / NAVSUP WSS / NAVSUP Weapon Systems Support are one contracting body,1
+"NAVSUP Weapon Systems Support, U.S. Navy",NAVSUP WSS,USA,NAVSUP / NAVSUP WSS / NAVSUP Weapon Systems Support are one contracting body,3
+NIWC Atlantic / U.S. Navy,NIWC Atlantic / U.S. Navy,USA,no merge - single form,1
+NSWC Dahlgren Division / U.S. Navy,NSWC Dahlgren Division / U.S. Navy,USA,no merge - single form,4
+Netherlands Ministry of Defence,Netherlands Ministry of Defence,Netherlands,no merge - single form,2
+Armament Agency (Agencja Uzbrojenia) / Polish MoD,Polish Armament Agency / Inspectorate,Poland,"the Armament Agency succeeded the Armament Inspectorate - one state procurement body, Polish and English naming plus a State Treasury suffix",1
+"Armament Agency (formerly Armament Inspectorate), Polish MoD",Polish Armament Agency / Inspectorate,Poland,"the Armament Agency succeeded the Armament Inspectorate - one state procurement body, Polish and English naming plus a State Treasury suffix",1
+"Armament Inspectorate (Inspektorat Uzbrojenia), Polish MoD",Polish Armament Agency / Inspectorate,Poland,"the Armament Agency succeeded the Armament Inspectorate - one state procurement body, Polish and English naming plus a State Treasury suffix",1
+"Armament Inspectorate (Inspektorat Uzbrojenia), Polish MoD, for the State Treasury",Polish Armament Agency / Inspectorate,Poland,"the Armament Agency succeeded the Armament Inspectorate - one state procurement body, Polish and English naming plus a State Treasury suffix",1
+Polish State / Armament Agency,Polish Armament Agency / Inspectorate,Poland,"the Armament Agency succeeded the Armament Inspectorate - one state procurement body, Polish and English naming plus a State Treasury suffix",1
+Polish defense prime / state procurement chain,Polish defense prime / state procurement chain,Poland,no merge - single form,1
+Swedish Defence Materiel Administration (FMV),Swedish Defence Materiel Administration (FMV),Sweden,no merge - single form,1
+U.S. Air Force / Moody AFB,U.S. Air Force / Moody AFB,USA,no merge - single form,1
+U.S. Army / USMC,U.S. Army / USMC,USA,no merge - single form,2
+U.S. Army DEVCOM / Army Contracting Command,U.S. Army DEVCOM / Army Contracting Command,USA,no merge - single form,1
+"ACC Aberdeen Proving Ground (Natick) / PEO CS&CSS, U.S. Army",U.S. Army PEO CS&CSS (ACC-APG),USA,"ampersand vs plain spelling, with and without the ACC-APG contracting office",12
+"ACC Aberdeen Proving Ground / PEO CSCSS, U.S. Army",U.S. Army PEO CS&CSS (ACC-APG),USA,"ampersand vs plain spelling, with and without the ACC-APG contracting office",11
+U.S. Army PEO CSCSS,U.S. Army PEO CS&CSS (ACC-APG),USA,"ampersand vs plain spelling, with and without the ACC-APG contracting office",13
+"Office of Naval Research / Naval Research Laboratory, U.S. Navy",U.S. Naval Research Laboratory / ONR,USA,NRL with and without its ONR parent label,1
+U.S. Naval Research Laboratory,U.S. Naval Research Laboratory / ONR,USA,NRL with and without its ONR parent label,2
+U.S. Naval Research Laboratory / ONR,U.S. Naval Research Laboratory / ONR,USA,NRL with and without its ONR parent label,2
+armasuisse,armasuisse,Switzerland,no merge - single form,3
