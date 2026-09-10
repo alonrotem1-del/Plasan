@@ -267,6 +267,14 @@ def prog_slides():
             qty = ('%s %s' % (format(int(float(q)), ','), QTY.get(f['unit'], f['unit']))
                    if q else 'לא פורסם')
             vs = ' · '.join(money(k, v) for k, v in sorted(f['val'].items())) or 'לא פורסם'
+            stage_cell = ('<span class="stg %s">%s</span>' % (sc, sl))
+            if fid == 'AME-CNELS-XHANGAR-2023-25':
+                # 98.7% of this family's disclosed value is a firm-fixed-price R&D
+                # award, not procurement: the row says so rather than letting the
+                # family total read as order value.
+                stage_cell = ('<span class="stg ord">הזמנה בפועל · 1</span> '
+                              '<span class="stg ev">פיתוח / אימות · 3</span>')
+                vs = '~$0.25M הזמנה בפועל<small>~$18.36M פיתוח / אימות</small>'
             cl = ''
             if f['ceil']:
                 cl = '<small>תקרת מסגרת: %s — אינה מכירה</small>' % ' · '.join(
@@ -278,23 +286,23 @@ def prog_slides():
                 note = '<small>זכייה ממקור משני</small>'
             rows += ('    <tr><td>%s</td><td class="pg">%s<small dir="ltr" style="text-align:right">%s</small></td>'
                      '<td>%s</td><td>%s</td><td>%s</td>'
-                     '<td><span class="stg %s">%s</span><small><span dir="ltr">%s</span></small></td>'
+                     '<td>%s<small><span dir="ltr">%s</span></small></td>'
                      '<td>%s%s</td><td>%s%s</td></tr>\n'
-                     % (CO[f['country']], prog, fid, buyer, sup, prod, sc, sl, yrs, qty, note, vs, cl))
+                     % (CO[f['country']], prog, fid, buyer, sup, prod, stage_cell, yrs, qty, note, vs, cl))
         out.append('<div class="slide-wrap"><section class="slide tall-ftr" id="s-mm-prog-%d">\n' % n
                    + hdr('חלק ב׳ | כל משפחות הרכש ב-<span dir="ltr">Land-core</span> · %d מתוך 3' % n,
                          'כל 34 התוכניות ומשפחות הרכש — %s' % name)
-                   + '\n  <table class="mm-fam" style="top: 200px;">\n'
+                   + '\n  <table class="mm-fam" style="top: 190px;">\n'
                      '    <colgroup><col style="width:112px"><col style="width:326px"><col style="width:236px">'
                      '<col style="width:214px"><col style="width:242px"><col style="width:224px">'
                      '<col style="width:200px"><col style="width:222px"></colgroup>\n'
                      '    <tr><th>מדינה</th><th>תוכנית / דרישת רכש</th><th>רוכש</th><th>ספק</th>'
-                     '<th>מוצר / פתרון</th><th>שלב / שנים</th><th>כמות שפורסמה</th><th>שווי שפורסם</th></tr>\n'
+                     '<th>מוצר / פתרון</th><th>שלב / שנים</th><th>כמות שפורסמה</th><th>שווי פומבי באירועי המשפחה</th></tr>\n'
                    + rows + '  </table>\n'
                    + FTR % ('מקור: גיליון <span dir="ltr">Programme Families</span> שבמאגר האירועים המאוחד — 34 משפחות '
                             '<span dir="ltr">Land-core</span> ב-3 שקפים. שורה אחת לכל משפחת רכש ולא לכל אירוע; תקרות מסגרת '
-                            'ומכסות מכרז אינן מוצגות כמכירה. שווי = סכום הערכים שפורסמו באירועי המשפחה, לכל מטבע בנפרד. '
-                            '2026 — חלקי')
+                            'ומכסות מכרז אינן מוצגות כמכירה. השווי הוא סכום הערכים שפורסמו באירועי המשפחה, לכל מטבע בנפרד — '
+                            'וכולל גם אירועים שאינם הזמנה בפועל. 2026 — חלקי')
                    + '</section></div>\n')
     assert len(seen) == 34 and len(set(seen)) == 34, len(seen)
     assert set(seen) == set(by), set(by) ^ set(seen)

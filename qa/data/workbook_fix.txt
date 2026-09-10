@@ -1,0 +1,18 @@
+AFTER THE CORRECTION
+  retained lifecycle events             143  expected  143   OK
+  Land-core events                      115  expected  115   OK
+  contextual events                      28  expected   28   OK
+  Land-core Actual Orders                76  expected   76   OK
+  Land-core programme families           34  expected   34   OK
+  total retained programme families      45  expected   45   OK
+  Programme Families sheet rows          45  expected   45   OK
+    of which core rows                   34  expected   34   OK
+    of which contextual rows             11  expected   11   OK
+  sheet ids == Master Events ids          0  expected    0   OK
+  core events summed in sheet           115  expected  115   OK
+  actual orders summed in sheet          76  expected   76   OK
+  Annual Metrics sheet unchanged       OK
+  Master Events sheet unchanged        OK
+  existing family rows 1-49 unchanged  OK
+
+saved: out/Plasan_Signature_Management_Authoritative_Event_Database_2020_2026_FINAL.xlsx
