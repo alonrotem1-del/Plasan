@@ -14,7 +14,7 @@ FAM = json.load(open(D + '/fam.json', encoding='utf-8'))
 YRS = ['2020', '2021', '2022', '2023', '2024', '2025', '2026']
 FTR = ('  <div class="ftr">\n    <div class="pageno"></div>\n'
        '    <div class="src">%s</div>\n'
-       '    <div class="proj">פלסן סאסא — הפחתת חתימה | מצגת עבודה</div>\n  </div>\n')
+       '    <div class="proj">פלסן סאסא - הפחתת חתימה</div>\n  </div>\n')
 LOGO = ('    <img class="bdo-logo" src="@@IMG:bdo-logo.png@@" '
         'alt="BDO Consulting — Strategy Growth &amp; Innovation">\n')
 
@@ -29,7 +29,7 @@ def xaxis(cls='dx'):
     out = ['  <div class="%s">\n' % cls]
     for y in YRS[:-1]:
         out.append('      <div>%s</div>\n' % y)
-    out.append('      <div class="ytd"><span dir="ltr">2026 YTD</span></div>\n    </div>\n')
+    out.append('      <div class="ytd">2026<small>YTD - שנה חלקית</small></div>\n    </div>\n')
     return ''.join(out)
 
 
@@ -40,7 +40,7 @@ def activity():
     K, H = 9, 360                      # px per unit; one shared zero-based axis
     cols = []
     for i in range(7):
-        ytd = ' ytd' if i == 6 else ''
+        ytd = ''
         cols.append('      <div class="dc%s"><div class="b prg" style="height:%dpx">'
                     '<div class="bl">%d</div></div><div class="b ord" style="height:%dpx">'
                     '<div class="bl">%d</div></div></div>\n'
@@ -56,7 +56,7 @@ def activity():
                    % (K * v, v) for v in (10, 20, 30))
     return ('<div class="slide-wrap"><section class="slide" id="s-mm-activity">\n'
             + hdr('חלק ב׳ | פעילות שנתית',
-                  'מספר ההזמנות עולה בחלק מהשנים — אך נותר תנודתי ומושפע ממספר תוכניות גדולות')
+                  'הפעילות הפומבית בשוק עלתה משמעותית מאז 2024 - אך ההזמנות נותרו תנודתיות ומרוכזות')
             + '\n  <div class="mm-duo" style="top: 232px; height: 434px;">\n'
               '    <div class="dp" style="height: %dpx;">\n' % H
             + grid + ''.join(cols)
@@ -66,34 +66,33 @@ def activity():
             + '  </div>\n'
             + '  <div class="mm-legend" style="top: 668px;">\n'
               '    <span><span class="k bar"></span>הזמנות בפועל</span>\n'
-              '    <span><span class="k prg"></span>תוכניות / משפחות רכש פעילות</span>\n'
-              '    <span><span class="k dot"></span>סה״כ אירועי <span dir="ltr">Land-core</span></span>\n'
-              '    <span><span class="k ytd"></span><span dir="ltr">2026</span> — נתון חלקי לשנה שוטפת</span>\n'
+              '    <span><span class="k prg"></span>תוכניות פעילות</span>\n'
+              '    <span><span class="k dot"></span>סה״כ אירועים במיקוד יבשתי</span>\n'
               '  </div>\n'
             + '  <div class="mm-conc" style="top: 722px;">\n'
               '    <div class="c"><div class="cy">2020</div><div class="ct">92.9% מההזמנות — <span dir="ltr">ULCANS</span></div></div>\n'
               '    <div class="c"><div class="cy">2021</div><div class="ct">80.0% מההזמנות — <span dir="ltr">ULCANS</span></div></div>\n'
               '    <div class="c"><div class="cy">2025</div><div class="ct">72.2% מההזמנות — <span dir="ltr">Japan MEDS</span></div></div>\n'
               '  </div>\n'
-            + '  <div class="mm-take" style="top: 844px;">סך האירועים גדל, אך <b>מספר ההזמנות נותר תנודתי</b>: '
-              'תוכנית אחת יכולה לייצר מספר אירועים והזמנות לאורך זמן, ולכן מספר ההזמנות לבדו אינו מדד לרוחב השוק.</div>\n'
-            + FTR % ('מקור: מאגר האירועים המאוחד — 115 אירועי <span dir="ltr">Land-core</span> ב-34 תוכניות / משפחות רכש; '
-                     'ניתוח BDO על בסיס מקורות רכש ציבוריים ומקורות חברה. 2026 — נתון חלקי לשנה שוטפת')
+            + '  <div class="mm-take" style="top: 844px;">מספר ההזמנות תנודתי יחסית, בעוד <b>סך האירועים ומספר התוכניות הפעילות '
+              'מצביעים על מגמת עלייה בשנים האחרונות</b>.</div>\n'
+            + FTR % ('מקור: מאגר האירועים המאוחד - 115 אירועים במיקוד יבשתי ב-34 תוכניות נבדלות; '
+                     'ניתוח BDO על בסיס מקורות רכש ציבוריים ומקורות חברה. 2026 - שנה חלקית (YTD)')
             + '</section></div>\n')
 
 
 # ---------------------------------------------------------------- 2. breadth
 def breadth():
-    panels = [('תוכניות / משפחות רכש פעילות', 'תוכנית עם לפחות אירוע אחד באותה שנה', SER['Active Programme Families']),
+    panels = [('תוכניות פעילות', 'תוכנית עם לפחות אירוע אחד באותה שנה', SER['Active Programme Families']),
               ('ספקים פעילים', 'ספקים נבדלים עם אירוע מתועד', SER['Active Suppliers']),
               ('רוכשים ייחודיים', 'רוכשים לאחר איחוד שמות', SER['Unique Canonical Buyers']),
               ('מדינות', 'מדינות רוכשות נבדלות', SER['Countries'])]
     out = ['  <div class="mm-sm" style="top: 244px; row-gap: 26px;">\n']
     for name, sub, vals in panels:
         k = 72.0 / max(vals)
-        bars = ''.join('        <div class="sc%s"><div class="sn">%d</div>'
+        bars = ''.join('        <div class="sc"><div class="sn">%d</div>'
                        '<div class="sb" style="height:%dpx"></div></div>\n'
-                       % (' ytd' if i == 6 else '', v, max(3, int(round(k * v))))
+                       % (v, max(3, int(round(k * v))))
                        for i, v in enumerate(vals))
         xs = ''.join('        <div%s>%s</div>\n' % (' class="ytd"' if i == 6 else '',
                                                     'YTD' if i == 6 else y[2:])
@@ -104,18 +103,18 @@ def breadth():
     out.append('  </div>\n')
     fo = COMP['first_observed']
     chips = ''.join('      <div class="fc%s"><div class="fy">%s</div><div class="fv">%d</div></div>\n'
-                    % (' ytd' if i == 6 else '', 'YTD 26' if i == 6 else YRS[i], v)
+                    % ('', '2026 YTD' if i == 6 else YRS[i], v)
                     for i, v in enumerate(fo))
     return ('<div class="slide-wrap"><section class="slide" id="s-mm-broader">\n'
             + hdr('חלק ב׳ | רוחב הפעילות',
                   'במקביל לתנודתיות בהזמנות, בסיס הפעילות מתרחב על פני יותר תוכניות, ספקים, רוכשים ומדינות')
             + '\n' + ''.join(out)
             + '  <div class="mm-first" style="top: 818px;">\n    <div class="fh">תוכניות שנצפו לראשונה במאגר באותה שנה '
-              '<span class="fq">— סכום השנים: 34 משפחות הרכש</span></div>\n    <div class="fr">\n'
+              '<span class="fq">- סכום השנים: 34 התוכניות</span></div>\n    <div class="fr">\n'
             + chips + '    </div>\n  </div>\n'
-            + FTR % ('מקור: גיליון <span dir="ltr">Annual Metrics</span> שבמאגר האירועים המאוחד, משוחזר ברמת השורה מ-115 '
-                     'אירועי ה-<span dir="ltr">Land-core</span>. "נצפו לראשונה" = האירוע הפומבי הראשון שאותר, לא מועד ההשקה. '
-                     '2026 — נתון חלקי לשנה שוטפת; ירידה במדד חלקי אינה התכווצות')
+            + FTR % ('מקור: מאגר האירועים המאוחד, משוחזר ברמת השורה מ-115 האירועים במיקוד יבשתי. '
+                     '"נצפו לראשונה" = האירוע הפומבי הראשון שאותר, לא מועד ההשקה. '
+                     '2026 - שנה חלקית (YTD); ירידה במדד חלקי אינה התכווצות')
             + '</section></div>\n')
 
 
@@ -123,18 +122,18 @@ def breadth():
 def composition():
     c = COMP['comp']
     rows = [('הזמנות בפועל', c['orders'], ' class="ord"'),
-            ('אותות ביקוש פורמליים', c['demand'], ''),
-            ('פיתוח / אימות', c['dev'], ''),
+            ('אותות ביקוש פורמליים<small dir="ltr">(RFI / RFQ / RFP / Tender)</small>', c['demand'], ''),
+            ('פיתוח / אימות<small dir="ltr">(R&amp;D / Trial / Evaluation)</small>', c['dev'], ''),
             ('אבני דרך מסחריות אחרות', c['other'], '')]
     tot = [sum(r[1][i] for r in rows) for i in range(7)]
     body = ''
     for name, vals, cls in rows:
-        cells = ''.join('<td%s>%d</td>' % (' class="ytd"' if i == 6 else '', v) for i, v in enumerate(vals))
+        cells = ''.join('<td>%d</td>' % v for i, v in enumerate(vals))
         body += '    <tr%s><td>%s</td>%s<td class="sum">%d</td></tr>\n' % (cls, name, cells, sum(vals))
-    cells = ''.join('<td%s>%d</td>' % (' class="ytd"' if i == 6 else '', v) for i, v in enumerate(tot))
-    body += '    <tr class="tot"><td>סה״כ אירועי <span dir="ltr">Land-core</span></td>%s<td class="sum">%d</td></tr>\n' % (cells, sum(tot))
-    hdrs = ''.join('<th%s>%s</th>' % (' class="ytd"' if i == 6 else '',
-                                      '<span dir="ltr">2026 YTD</span>' if i == 6 else y)
+    cells = ''.join('<td>%d</td>' % v for i, v in enumerate(tot))
+    body += '    <tr class="tot"><td>סה״כ אירועים במיקוד יבשתי</td>%s<td class="sum">%d</td></tr>\n' % (cells, sum(tot))
+    hdrs = ''.join('<th%s>%s</th>' % ('',
+                                      '2026 YTD' if i == 6 else y)
                    for i, y in enumerate(YRS))
     return ('<div class="slide-wrap"><section class="slide" id="s-mm-comp">\n'
             + hdr('חלק ב׳ | הרכב הפעילות',
@@ -142,18 +141,16 @@ def composition():
             + '\n  <table class="mm-comp" style="top: 262px;">\n'
               '    <colgroup><col style="width:436px"><col><col><col><col><col><col><col><col style="width:176px"></colgroup>\n'
               '    <tr><th>שלב במחזור החיים</th>%s<th class="sum">סה״כ</th></tr>\n%s  </table>\n' % (hdrs, body)
-            + '  <div class="mm-def" style="top: 604px;">\n'
-              '    <div class="d"><div class="dt">הזמנה בפועל</div><div class="dx">רכישה ממשית — הזמנת אספקה, משיכה מתוך חוזה או חוזה ייצור חתום</div></div>\n'
-              '    <div class="d"><div class="dt">אות ביקוש פורמלי</div><div class="dx">מכרז, בקשת מידע או הודעת כוונה — הביקוש פורסם, טרם נרכש</div></div>\n'
-              '  </div>\n'
-              '  <div class="mm-def" style="top: 742px;">\n'
-              '    <div class="d"><div class="dt">פיתוח / אימות</div><div class="dx">מו״פ ממומן, ניסוי או בחינת ביצועים — לפני רכש ייצור</div></div>\n'
+            + '  <div class="mm-def" style="top: 676px; grid-template-columns: repeat(4, 1fr); column-gap: 24px;">\n'
+              '    <div class="d"><div class="dt">הזמנה בפועל</div><div class="dx">רכישה ממשית - הזמנת אספקה, משיכה מתוך חוזה או חוזה ייצור חתום</div></div>\n'
+              '    <div class="d"><div class="dt">אות ביקוש פורמלי</div><div class="dx">הביקוש פורסם, טרם נרכש</div></div>\n'
+              '    <div class="d"><div class="dt">פיתוח / אימות</div><div class="dx">מו״פ ממומן, ניסוי או בחינה - לפני רכש ייצור</div></div>\n'
               '    <div class="d"><div class="dt">אבן דרך מסחרית אחרת</div><div class="dx">הסכם מסגרת, בחירת ספק, אספקה או אבן דרך פומבית אחרת</div></div>\n'
               '  </div>\n'
-              '  <div class="mm-take" style="top: 876px;">שלבי הביקוש, הפיתוח והמסגרות מקדימים את ההזמנות — '
+              '  <div class="mm-take" style="top: 850px;">שלבי הביקוש, הפיתוח והמסגרות מקדימים את ההזמנות - '
               '<b>ולכן התרחבות בסיס הפעילות יכולה להופיע לפני צמיחה עקבית בהזמנות</b>.</div>\n'
-            + FTR % ('מקור: 115 אירועי ה-<span dir="ltr">Land-core</span> שבמאגר האירועים המאוחד, לפי סיווג שלב מחזור החיים שבמאגר. '
-                     'סכום הקטגוריות בכל שנה שווה לסך אירועי ה-<span dir="ltr">Land-core</span> באותה שנה. 2026 — נתון חלקי לשנה שוטפת')
+            + FTR % ('מקור: 115 האירועים במיקוד יבשתי שבמאגר האירועים המאוחד, לפי סיווג שלב מחזור החיים שבמאגר. '
+                     'סכום הקטגוריות בכל שנה שווה לסך האירועים במיקוד יבשתי באותה שנה. 2026 - שנה חלקית (YTD)')
             + '</section></div>\n')
 
 
@@ -174,31 +171,31 @@ LBL = {
  'DK-SAAB-MCS-IKK':          ('הסוואת רק״ם', 'Danish FMI / Army', 'Saab Barracuda', 'MCS לרק״ם'),
  'FI-ATMIS-GTD26':           ('GTD26', 'Griffin Tech Days', 'BCB International', 'רשתות רב-ספקטרליות'),
  'FR-FENRIR':                ('FENRIR', 'DGA', 'Saab Barracuda', 'רשתות למפקדות ולרכב'),
- 'FR-HT4-2024':              ('HT4 — Prix de l’Audace', 'DGA / AID', 'PGM Précision', 'טקסטיל תרמי'),
- 'DE-SMT-2024-25':           ('SMT — הסוואה נייחת', 'BAAINBw', 'Sioen Industries', 'רשתות וציוד תומך'),
- 'IN-GEM-5756973':           ('MSCN — מכרז GeM', 'צבא הודו', 'Sterlite Camotech', 'רשתות רב-ספקטרליות'),
+ 'FR-HT4-2024':              ('HT4 - Prix de l’Audace', 'DGA / AID', 'PGM Précision', 'טקסטיל תרמי'),
+ 'DE-SMT-2024-25':           ('SMT - הסוואה נייחת', 'BAAINBw', 'Sioen Industries', 'רשתות וציוד תומך'),
+ 'IN-GEM-5756973':           ('MSCN - מכרז GeM', 'צבא הודו', 'Sterlite Camotech', 'רשתות רב-ספקטרליות'),
  'JP-MEDS':                  ('MEDS', 'משרד ההגנה היפני / JGSDF', 'NAS / Fibrotex', 'רשתות הסוואה אלקטרומגנטית'),
  'LU-BARRACUDA-2026':        ('משאיות Scania MLST', 'רכש ההגנה של לוקסמבורג', 'Saab Barracuda', 'MCS לרכב'),
  'NL-SAAB-MCS-2026':         ('Fennek · PzH2000NL · CV90', 'משרד ההגנה ההולנדי', 'Saab Barracuda', 'MCS לרכב'),
  'NORDIC-SAAB-MCS-2026':     ('בחינה נורדית משותפת', 'Norwegian FMA', 'Saab Barracuda', 'MCS לרכב'),
  'NO-SAAB-MCS-4600002386':   ('מסגרת 4600002386', 'Norwegian FMA', 'Saab Barracuda', 'MCS לרכב'),
  'PL-BERBERYS-2023':         ('BERBERYS', 'Armament Agency', 'Miranda Textiles', 'כיסויים רב-תחומיים'),
- 'PL-BERBERYS-WB-2024':      ('BERBERYS — WB', 'WB Electronics', 'Miranda Textiles', 'כיסויים רב-ספקטרליים'),
- 'PL-BERBERYS-ZMT-2024':     ('BERBERYS 2024–2028', 'ZM Tarnów', 'Miranda Textiles', 'כיסויים רב-ספקטרליים'),
+ 'PL-BERBERYS-WB-2024':      ('BERBERYS - WB', 'WB Electronics', 'Miranda Textiles', 'כיסויים רב-ספקטרליים'),
+ 'PL-BERBERYS-ZMT-2024':     ('BERBERYS 2024-2028', 'ZM Tarnów', 'Miranda Textiles', 'כיסויים רב-ספקטרליים'),
  'PL-MIR-COVERS-2025':       ('כיסויי הסוואה לפלטפורמה', 'קבלן מקומי (חסוי)', 'Miranda Textiles', 'כיסויים רב-תחומיים'),
  'PL-MIR-COVERS-2026':       ('כיסויי הסוואה לפלטפורמה', 'קבלן מקבוצת PGZ', 'Miranda Textiles', 'כיסויים רב-תחומיים'),
  'PL-NAREW-CAMO':            ('NAREW', 'תעשייה ביטחונית פולנית', 'Lubawa', 'הסוואה והטעיה'),
  'PL-WISLA-CAMO':            ('WISŁA שלב 1', 'Armament Agency', 'Miranda Textiles', 'הסוואה והטעיה'),
  'PL-WISLA-II-CAMO':         ('WISŁA II', 'Armament Agency', 'Lubawa', 'הסוואה והטעיה'),
  'SE-FMV-MCS-2023':          ('מסגרת הסוואה קשורת-אובייקט', 'Swedish FMV', 'Saab Barracuda', 'MCS לרכב'),
- 'SE-FMV-MSN-2020':          ('UH-2020-256 — MSN', 'Swedish FMV', 'Saab Barracuda', 'רשתות רב-ספקטרליות'),
+ 'SE-FMV-MSN-2020':          ('UH-2020-256 - MSN', 'Swedish FMV', 'Saab Barracuda', 'רשתות רב-ספקטרליות'),
  'CH-MSTS-2025':             ('MSTS', 'armasuisse', 'SSZ · Saro · Saab', 'מערכות הסוואה'),
  'UK-ATMIS-TRIAL-2026':      ('ניסויי שדה מבצעיים', 'British Army', 'BCB International', 'רשתות רב-ספקטרליות'),
  'AMD-CHAMEM':               ('ChamEM · ChamEM FCT', 'Dstl · U.S. OSD FCT', 'Advanced Material Development', 'חומר להפחתת מכ״ם'),
  'AME-CNELS-XHANGAR-2023-25':('CNELS · X-Hangar', 'U.S. NRL / ONR', 'Ametrine Technologies', 'רשתות וכיסויי הסתרה'),
  'AWE-TACTICAM-2021':        ('מחקר TactiCam', 'צבא ארה״ב (Natick)', 'ArmorWorks Enterprises', 'הסוואת רכב תלת-ממדית'),
  'DEC-W911NF2490001':        ('W911NF2490001', 'צבא ארה״ב', 'DECPT', 'מו״פ הסוואה'),
- 'FIB-USAF-FA483024P0076':   ('ערכות הסוואה — Moody AFB', 'חיל האוויר האמריקאי', 'Fibrotex', 'ערכות הסוואה'),
+ 'FIB-USAF-FA483024P0076':   ('ערכות הסוואה - Moody AFB', 'חיל האוויר האמריקאי', 'Fibrotex', 'ערכות הסוואה'),
  'ULCANS-IDV-W911QY18D0210': ('ULCANS', 'צבא ארה״ב (PEO CS&amp;CSS)', 'Fibrotex', 'רשתות הסוואה קלות'),
  'US-AMET-FLINT-MESH-2026':  ('W912CH26P0033', 'צבא ארה״ב', 'Ametrine Technologies', 'ציפוי Flint לרכב'),
  'US-AMET-VEH-MESH-2026':    ('W912CH26P0031', 'צבא ארה״ב', 'Ametrine Technologies', 'רשת לרכב'),
@@ -260,7 +257,7 @@ def prog_slides():
             f, seen = by[fid], seen + [fid]
             prog, buyer, sup, prod = LBL[fid]
             sc, sl = stage(f)
-            yrs = str(f['y0']) if f['y0'] == f['y1'] else '%s–%s' % (f['y0'], f['y1'])
+            yrs = str(f['y0']) if f['y0'] == f['y1'] else '%s-%s' % (f['y0'], f['y1'])
             if f['y1'] == 2026:
                 yrs += ' YTD'
             q = f['qty']
@@ -277,11 +274,11 @@ def prog_slides():
                 vs = '~$0.25M הזמנה בפועל<small>~$18.36M פיתוח / אימות</small>'
             cl = ''
             if f['ceil']:
-                cl = '<small>תקרת מסגרת: %s — אינה מכירה</small>' % ' · '.join(
+                cl = '<small>תקרת מסגרת: %s - אינה מכירה</small>' % ' · '.join(
                     money(k, v) for v, k in f['ceil'])
             note = ''
             if fid == 'JP-MEDS':
-                note = '<small>26,000 מערכות — היקף תוכנית מדווח, לא כמות חוזית מאומתת</small>'
+                note = '<small>26,000 מערכות - היקף תוכנית מדווח, לא כמות חוזית מאומתת</small>'
             if fid == 'IN-GEM-5756973':
                 note = '<small>זכייה ממקור משני</small>'
             rows += ('    <tr><td>%s</td><td class="pg">%s<small dir="ltr" style="text-align:right">%s</small></td>'
@@ -290,8 +287,8 @@ def prog_slides():
                      '<td>%s%s</td><td>%s%s</td></tr>\n'
                      % (CO[f['country']], prog, fid, buyer, sup, prod, stage_cell, yrs, qty, note, vs, cl))
         out.append('<div class="slide-wrap"><section class="slide tall-ftr" id="s-mm-prog-%d">\n' % n
-                   + hdr('חלק ב׳ | כל משפחות הרכש ב-<span dir="ltr">Land-core</span> · %d מתוך 3' % n,
-                         'כל 34 התוכניות ומשפחות הרכש — %s' % name)
+                   + hdr('חלק ב׳ | תוכניות במיקוד יבשתי · %d מתוך 3' % n,
+                         '34 התוכניות שנמצאו במיקוד יבשתי: %s' % name)
                    + '\n  <table class="mm-fam" style="top: 190px;">\n'
                      '    <colgroup><col style="width:112px"><col style="width:326px"><col style="width:236px">'
                      '<col style="width:214px"><col style="width:242px"><col style="width:224px">'
@@ -299,10 +296,9 @@ def prog_slides():
                      '    <tr><th>מדינה</th><th>תוכנית / דרישת רכש</th><th>רוכש</th><th>ספק</th>'
                      '<th>מוצר / פתרון</th><th>שלב / שנים</th><th>כמות שפורסמה</th><th>שווי פומבי באירועי המשפחה</th></tr>\n'
                    + rows + '  </table>\n'
-                   + FTR % ('מקור: גיליון <span dir="ltr">Programme Families</span> שבמאגר האירועים המאוחד — 34 משפחות '
-                            '<span dir="ltr">Land-core</span> ב-3 שקפים. שורה אחת לכל משפחת רכש ולא לכל אירוע; תקרות מסגרת '
-                            'ומכסות מכרז אינן מוצגות כמכירה. השווי הוא סכום הערכים שפורסמו באירועי המשפחה, לכל מטבע בנפרד — '
-                            'וכולל גם אירועים שאינם הזמנה בפועל. 2026 — חלקי')
+                   + FTR % ('מקור: מאגר האירועים המאוחד - 34 התוכניות במיקוד יבשתי ב-3 שקפים. שורה אחת לכל תוכנית ולא לכל '
+                            'אירוע; תקרות מסגרת ומכסות מכרז אינן מוצגות כמכירה. השווי הוא סכום הערכים שפורסמו באירועי התוכנית, '
+                            'לכל מטבע בנפרד - וכולל גם אירועים שאינם הזמנה בפועל. 2026 - שנה חלקית (YTD)')
                    + '</section></div>\n')
     assert len(seen) == 34 and len(set(seen)) == 34, len(seen)
     assert set(seen) == set(by), set(by) ^ set(seen)
