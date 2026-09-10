@@ -8,7 +8,7 @@ import json, os, re, sys
 from pptx import Presentation
 from pptx.util import Emu, Pt
 from pptx.dml.color import RGBColor
-from pptx.enum.shapes import MSO_SHAPE
+from pptx.enum.shapes import MSO_SHAPE, MSO_CONNECTOR
 from pptx.enum.text import MSO_ANCHOR, PP_ALIGN, MSO_AUTO_SIZE
 from pptx.oxml.ns import qn
 from copy import deepcopy
@@ -186,6 +186,11 @@ for s in data['slides']:
     for o in s['ops']:
         if o['t'] == 'rect':
             add_rect(sl, o)
+        elif o['t'] == 'line':
+            cn = sl.shapes.add_connector(MSO_CONNECTOR.STRAIGHT, E(o['x1']), E(o['y1']),
+                                         E(o['x2']), E(o['y2']))
+            cn.line.color.rgb = RGBColor.from_string(o['c'])
+            cn.line.width = Pt(o['w'] * 0.5)
         elif o['t'] == 'pic':
             p = IMG.get(o['img'])
             if p:

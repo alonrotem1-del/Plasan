@@ -1,0 +1,64 @@
+master event rows           : 143 (expect 143)
+land-core (Core Inclusion=Y): 115 (expect 115)
+contextual                  : 28 (expect 28)
+land-core actual orders     : 76 (expect 76)
+land-core families          : 34 (expect 34)
+all retained families       : 45 (expect 45)
+event ids unique            : True
+
+ANNUAL SERIES   recomputed from Master Events | Annual Metrics sheet
+                                 2020    2021    2022    2023    2024    2025    2026
+Total Core Events                  17       8       8       8      19      33      22   MATCH
+Actual Orders                      14       5       6       5      13      18      15   MATCH
+Active Programme Families           4       3       5       5      13       9      14   MATCH
+Programmes with >=1 Order           2       2       3       3       9       4       9   MATCH
+Active Suppliers                    4       3       5       4      10       9       9   MATCH
+Unique Canonical Buyers             4       2       5       5      11      10      12   MATCH
+Countries                           4       2       4       4       8       8      10   MATCH
+Development / Validation            1       3       1       2       4       4       4   MATCH
+Other Commercial Milestones         2       0       1       1       2      11       3   MATCH
+
+lifecycle categories sum to Total Core Events per year: True
+sum of Total Core Events   : 115 (expect 115)
+sum of Actual Orders       : 76 (expect 76)
+
+EVENT TYPE x actual-order flag, land core
+  Order                                          order=Yes   37
+  Production order                               order=Yes   14
+  Contract Award                                 order=Yes    7
+  Funded Development                             order=No     6
+  Call-off order                                 order=Yes    5
+  Tender                                         order=No     4
+  Framework / IDIQ                               order=No     4
+  Contract                                       order=Yes    4
+  Other                                          order=No     3
+  Production contract                            order=Yes    3
+  Delivery / fielding                            order=No     3
+  Funded R&D                                     order=No     2
+  Order                                          order=No     2
+  Verification / validation contract             order=No     2
+  Trial / Evaluation                             order=No     2
+  Product Selection                              order=No     2
+  Purchase order                                 order=Yes    2
+  Contract award                                 order=Yes    1
+  Study                                          order=No     1
+  Contract Option / Extension                    order=Yes    1
+  Production supply contract                     order=Yes    1
+  Evaluation / recognition                       order=No     1
+  Tender / solicitation                          order=No     1
+  Sources sought                                 order=No     1
+  Notice of intent / special notice              order=No     1
+  Invitation procedure                           order=No     1
+  Contract Award                                 order=No     1
+  Initial call-off order                         order=Yes    1
+  Trial / evaluation                             order=No     1
+  Demonstration / evaluation                     order=No     1
+
+PRODUCTION vs DEVELOPMENT, land core
+  Production Procurement                          76
+  Development / Validation                        19
+  Demand                                           7
+  Framework                                        4
+  Other public event                               3
+  Delivery / Programme Milestone                   3
+  Selection                                        3

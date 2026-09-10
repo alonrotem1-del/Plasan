@@ -409,6 +409,24 @@ fs.mkdirSync(path.join(OUT, 'img'), { recursive: true });
         ops.push({ t: 'pic', x: R(r.left - base.left), y: R(r.top - base.top), w: R(r.width), h: R(r.height), img: imgId(el.src) });
         return;
       }
+      // A chart line is the one thing a box model cannot express, so it is
+      // authored as <svg class="mm-poly"> and travels as straight segments —
+      // real lines in the HTML, real connectors in the .pptx.
+      if (el.tagName === 'svg' && el.classList.contains('mm-poly')) {
+        const r = el.getBoundingClientRect();
+        for (const ln of el.querySelectorAll('line')) {
+          const st = getComputedStyle(ln);
+          ops.push({
+            t: 'line',
+            x1: R(r.left - base.left + parseFloat(ln.getAttribute('x1'))),
+            y1: R(r.top - base.top + parseFloat(ln.getAttribute('y1'))),
+            x2: R(r.left - base.left + parseFloat(ln.getAttribute('x2'))),
+            y2: R(r.top - base.top + parseFloat(ln.getAttribute('y2'))),
+            c: col(st.stroke) || 'ED1A3B', w: parseFloat(st.strokeWidth) || 3,
+          });
+        }
+        return;
+      }
       await paintBox(el, ops, base);
       // bullet pseudo-squares
       if (el.matches('ul.story li') || el.matches('.ev-item')) {
