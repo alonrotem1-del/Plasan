@@ -268,7 +268,7 @@ sup { font-size: 21px; line-height: 0; }
 .ovw-table td.num { font-variant-numeric: tabular-nums; }
 .ovw-table td.imp { font-weight: 600; color: var(--c-primary); }
 .ovw-table td.mat b { font-weight: 700; color: var(--c-primary); font-size: calc(21px * var(--ovw-k)); }
-.ovw-note { position: absolute; right: var(--m-side); left: var(--m-side); top: 903px; font-size: 16.5px; color: var(--c-text-faint); line-height: 1.28; }
+.ovw-note { position: absolute; right: var(--m-side); left: var(--m-side); top: 894px; font-size: 20px; color: var(--c-text-faint); line-height: 1.3; }
 
 /* ============================================================
    SLIDE — SPECTRUM MATRIX
@@ -292,11 +292,11 @@ sup { font-size: 21px; line-height: 0; }
 .sx-table .d { display: inline-block; width: 22px; height: 22px; background: var(--c-primary); border-radius: 3px; vertical-align: middle; }
 .sx-table .o { display: inline-block; width: 22px; height: 22px; border: 3px solid var(--c-slate-mid); border-radius: 3px; vertical-align: middle; background: none; }
 .sx-table sup { font-size: 21px; color: var(--c-text-muted); margin-right: 5px; vertical-align: super; }
-.sx-legend { position: absolute; right: var(--m-side); left: var(--m-side); top: 792px; font-size: 21px; color: var(--c-text-muted); line-height: 1.3; }
+.sx-legend { position: absolute; right: var(--m-side); left: var(--m-side); top: 828px; font-size: 21px; color: var(--c-text-muted); line-height: 1.3; }
 .sx-legend .d, .sx-legend .o { vertical-align: -4px; margin-left: 8px; }
 .sx-legend .d { display: inline-block; width: 20px; height: 20px; background: var(--c-primary); border-radius: 3px; }
 .sx-legend .o { display: inline-block; width: 20px; height: 20px; border: 3px solid var(--c-slate-mid); border-radius: 3px; }
-.sx-notes { position: absolute; right: var(--m-side); left: var(--m-side); top: 832px; font-size: 21px; color: var(--c-text-faint); line-height: 1.28; }
+.sx-notes { position: absolute; right: var(--m-side); left: var(--m-side); top: 868px; font-size: 21px; color: var(--c-text-faint); line-height: 1.28; }
 
 /* ============================================================
    SLIDE — PRODUCT-FAMILY LANDSCAPE
@@ -733,9 +733,9 @@ sup { font-size: 21px; line-height: 0; }
    source floor).  Scoped by id so the company-profile section keeps the
    10.5 pt scale the client approved. */
 #s-div-mm .sd-sub .st,
-#s-mm-method .kicker, #s-mm-read .kicker, #s-mm-broader .kicker, #s-mm-activity .kicker,
-#s-mm-indep .kicker, #s-mm-prog-eu .kicker, #s-mm-prog-row .kicker,
-#s-mm-scale .kicker, #s-mm-conclusion .kicker,
+#s-mm-method .kicker, #s-mm-glance .kicker, #s-mm-activity .kicker,
+#s-mm-broader .kicker, #s-mm-comp .kicker, #s-mm-prog .kicker,
+#s-mm-conclusion .kicker,
 .mm-table td small, .mm-table td.pg small, .mm-table .stg { font-size: 24px; }
 
 /* ============================================================
@@ -814,9 +814,109 @@ tr.gband td .gs { font-weight: 400; color: var(--c-slate); margin-right: 12px; f
 .cmp-table td.co small { display: block; font-weight: 500; font-size: calc(21px * var(--cmp-k)); color: var(--c-text-muted); margin-top: 1px; line-height: 1.3; }
 .cmp-table td b { font-weight: 600; color: var(--c-primary); }
 .cmp-table td .dim { color: var(--c-text-muted); }
+
+/* ============================================================
+   SLIDE — SCOPE EVOLUTION (previous work vs this work)
+   RTL: the earlier scope sits on the right and is read first;
+   the arrow points left, towards the widened scope.
+   ============================================================ */
+.evo { position: absolute; right: var(--m-side); left: var(--m-side); top: 278px;
+  display: grid; grid-template-columns: 1fr 104px 1fr; align-items: stretch; }
+.evo .p { background: var(--c-fill); border-top: 6px solid var(--c-slate-mid); padding: 46px 52px 54px; }
+.evo .p.now { background: var(--c-primary-tint); border-top-color: var(--c-primary); }
+.evo .lbl { font-size: 26px; font-weight: 700; color: var(--c-slate-mid); }
+.evo .p.now .lbl { color: var(--c-primary); }
+.evo .hd { font-size: 40px; font-weight: 800; color: var(--c-slate); margin-top: 4px; line-height: 1.3; }
+.evo .p.now .hd { color: var(--c-primary); }
+.evo .tx { font-size: 34px; line-height: 1.5; color: var(--c-text); margin-top: 32px;
+  padding-top: 30px; border-top: 1px solid var(--c-border); }
+.evo .ar { display: flex; align-items: center; justify-content: center;
+  font-size: 54px; font-weight: 300; color: var(--c-slate-mid); direction: ltr; }
+.evo-band { position: absolute; right: var(--m-side); left: var(--m-side); top: 774px;
+  background: var(--c-primary); color: #fff; padding: 34px 44px; font-size: 34px;
+  font-weight: 700; line-height: 1.38; }
+
+/* ---------- screening slide: research question + assumptions ---------- */
+.q-band { position: absolute; right: var(--m-side); left: var(--m-side); top: 244px;
+  background: var(--c-primary); color: #fff; padding: 22px 34px 24px; }
+.q-band .ql { font-size: 24px; font-weight: 700; color: rgba(255,255,255,.72); margin-bottom: 6px; }
+.q-band .qx { font-size: 32px; font-weight: 700; line-height: 1.34; }
+#s-scope .scope-grid { top: 424px; grid-template-columns: repeat(5, 1fr); gap: 18px; }
+#s-scope .fun-box .fn { font-size: 66px; }
+#s-scope .sc-tile { min-height: 150px; padding: 16px 20px 18px; }
+#s-scope .fun-strip { grid-template-columns: 1fr 44px 1fr 44px 1fr 44px 1.06fr; }
+
+/* ---------- overview table: screening decision column ---------- */
+.ovw-table td.stt { text-align: right; }
+.ovw-table .go { display: inline-block; font-weight: 700; color: var(--c-primary);
+  background: var(--c-primary-tint); padding: 1px 9px; border-radius: 3px; }
+.ovw-table .no { display: inline-block; font-weight: 700; color: var(--c-red);
+  background: #FBE3E7; padding: 1px 9px; border-radius: 3px; }
+.ovw-table .rsn { display: block; color: var(--c-red); margin-top: 1px; line-height: 1.16; }
+.ovw-table tr.out td { background: #F5F7F8; color: var(--c-text-faint); }
+.ovw-table tr.out td.imp { color: var(--c-slate-mid); }
+.ovw-table tr.out .co { color: var(--c-text-muted); }
+.ovw-table tr.out td.mat b, .ovw-table tr.out .prod b { color: var(--c-slate-mid); }
+
+/* ---------- Part 2: unified database box on the methodology slide ---------- */
+.mm-db { position: absolute; right: var(--m-side); left: var(--m-side); top: 636px; }
+.mm-db .dbh { background: var(--c-primary); color: #fff; padding: 16px 34px;
+  font-size: 28px; font-weight: 700; text-align: center; }
+.mm-db .dbr { display: grid; grid-template-columns: repeat(3, 1fr); column-gap: 4px; }
+.mm-db .dbc { background: var(--c-fill); padding: 22px 30px 20px; text-align: center; }
+.mm-db .dbn { font-size: 66px; font-weight: 800; color: var(--c-primary); line-height: 1.16; }
+.mm-db .dbl { font-size: 26px; font-weight: 700; color: var(--c-text); line-height: 1.28; }
+.mm-arrow { position: absolute; right: var(--m-side); left: var(--m-side); text-align: center;
+  font-size: 34px; color: var(--c-slate-mid); }
+.mm-recon { position: absolute; right: var(--m-side); left: var(--m-side); top: 556px;
+  background: var(--c-fill); border-top: 4px solid var(--c-slate-mid); padding: 14px 34px;
+  font-size: 27px; font-weight: 600; color: var(--c-slate); text-align: center; }
+
+/* ---------- Part 2: market at a glance ---------- */
+.mm-big { position: absolute; right: var(--m-side); left: var(--m-side); top: 262px;
+  display: grid; grid-template-columns: repeat(3, 1fr); column-gap: 40px; }
+.mm-big .g { background: var(--c-fill); border-top: 6px solid var(--c-primary); padding: 34px 40px 32px; }
+.mm-big .gn { font-size: 128px; font-weight: 800; color: var(--c-primary); line-height: 1.24; }
+.mm-big .gl { font-size: 32px; font-weight: 700; color: var(--c-text); margin-top: 2px; line-height: 1.3; }
+.mm-big .gs { font-size: 25px; color: var(--c-text-muted); line-height: 1.32; margin-top: 8px;
+  padding-top: 10px; border-top: 1px solid var(--c-border); }
+.mm-ext { position: absolute; right: var(--m-side); left: var(--m-side); top: 664px;
+  display: grid; grid-template-columns: 1fr 1fr; column-gap: 0; }
+.mm-ext .x { background: #F4F6F7; border-top: 5px solid var(--c-slate-mid); padding: 24px 34px 22px; }
+.mm-ext .x.warn { background: #FDF2F4; border-top-color: var(--c-red); }
+.mm-ext .xl { font-size: 24px; font-weight: 700; color: var(--c-slate-mid); margin-bottom: 6px; }
+.mm-ext .x.warn .xl { color: var(--c-red); }
+.mm-ext .xt { font-size: 27px; line-height: 1.38; color: var(--c-text); }
+.mm-ext .xt b { font-weight: 800; color: var(--c-slate); }
+
+/* ---------- Part 2: concentration callouts under the annual chart ---------- */
+.mm-conc { position: absolute; right: var(--m-side); left: var(--m-side);
+  display: grid; grid-template-columns: repeat(3, 1fr); column-gap: 30px; direction: ltr; }
+.mm-conc .c { background: #FDF2F4; border-top: 5px solid var(--c-red); padding: 16px 24px 15px; direction: rtl; }
+.mm-conc .cy { font-size: 24px; font-weight: 700; color: var(--c-red); }
+.mm-conc .ct { font-size: 27px; font-weight: 700; color: var(--c-text); margin-top: 2px; line-height: 1.3; }
+
+/* ---------- placeholder: awaiting the final authoritative workbook ---------- */
+.pend { position: absolute; right: var(--m-side); left: var(--m-side); top: 250px; }
+.pend .ph { background: var(--c-amber); color: #fff; padding: 16px 32px;
+  font-size: 28px; font-weight: 800; }
+.pend .pb { background: #FBF6E8; border: 2px solid #EBD9A4; border-top: none; padding: 30px 38px 34px; }
+.pend .pt { font-size: 30px; line-height: 1.44; color: var(--c-text); }
+.pend .pt b { color: var(--c-primary); font-weight: 800; }
+.pend .pf { font-size: 26px; color: var(--c-text-muted); line-height: 1.4; margin-top: 22px;
+  padding-top: 18px; border-top: 1px solid #EBD9A4; }
+.pend ul { list-style: none; margin-top: 12px; }
+.pend li { position: relative; padding-right: 26px; font-size: 27px; line-height: 1.42;
+  color: var(--c-text); margin-bottom: 6px; }
+.pend li::before { content: ""; position: absolute; right: 0; top: 14px;
+  width: 10px; height: 10px; background: var(--c-amber); }
+
+/* Part 2 type floor also covers the slides added in this pass */
+#s-mm-glance .kicker, #s-mm-comp .kicker, #s-mm-prog .kicker { font-size: 24px; }
 </style>
 
-<!-- ================= SLIDE : COVER ================= -->
+
+<!-- ====== 01 · s-cover ====== -->
 <div class="slide-wrap"><section class="slide" id="s-cover">
   <div class="cv-lockup"><img class="bdo-logo" src="@@IMG:bdo-logo.png@@" alt="BDO Consulting — Strategy Growth &amp; Innovation"></div>
   <div class="cv-slab"></div>
@@ -838,6 +938,8 @@ tr.gband td .gs { font-weight: 400; color: var(--c-slate); margin-right: 12px; f
 
 
 <!-- ================= SLIDE : SECTION DIVIDER 02 ================= -->
+
+<!-- ====== 02 · s-div-sm ====== -->
 <div class="slide-wrap"><section class="slide" id="s-div-sm">
   <div class="sd"></div>
   <div class="sd-num">1</div>
@@ -845,9 +947,9 @@ tr.gband td .gs { font-weight: 400; color: var(--c-slate); margin-right: 12px; f
     <div class="sd-kick">חלק ראשון</div>
     <div class="sd-title">מיפוי חברות וניתוח עומק</div>
     <div class="sd-line"></div>
-    <div class="sd-desc">תשע החברות שנבחרו בתהליך הסינון — מה כל חברה עושה, מה בשלותה המסחרית ואיזו עדות שוק עומדת מאחוריה</div>
+    <div class="sd-desc">עשר החברות שנותחו לעומק — וחמש שנבחרו להמשך בחינה: מה כל חברה עושה, מה בשלותה המסחרית ואיזו עדות שוק עומדת מאחוריה</div>
     <div class="sd-subs">
-    <div class="sd-sub done"><span>מסגרת הסינון · תמונת-על השוואתית · כיסוי ספקטרלי · מפת מוצרים · תשעה פרופילי חברה בשלוש משפחות · למה כל חברה מעניינת לפלסן</span><span class="st">בפרק זה</span></div>
+    <div class="sd-sub done"><span>תיחום המחקר · שאלת המחקר ותהליך הסינון · תמונת-על השוואתית של עשר החברות · חמישה פרופילי עומק להמשך בחינה</span><span class="st">בפרק זה</span></div>
     </div>
   </div>
   <div class="ftr">
@@ -859,356 +961,271 @@ tr.gband td .gs { font-weight: 400; color: var(--c-slate); margin-right: 12px; f
 
 
 <!-- ================= SLIDE : SCOPE + FUNNEL ================= -->
-<div class="slide-wrap"><section class="slide" id="s-scope">
+
+<!-- ====== 03 · s-evolution ====== -->
+<div class="slide-wrap"><section class="slide" id="s-evolution">
   <div class="hdr">
     <div class="hdr-titles">
-      <div class="kicker">חלק 1 | מסגרת הפרויקט ותהליך הסינון</div>
-      <h1 class="title">בניית בנק חברות מטרה בניהול חתימה — מ-37 חברות רלוונטיות לתשע נבחרות לניתוח עומק</h1>
+      <div class="kicker">חלק 1 | תיחום המחקר</div>
+      <h1 class="title">הפעם הרחבנו את החיפוש מעבר לטכנולוגיה המשולבת במיגון</h1>
     </div>
     <img class="bdo-logo" src="@@IMG:bdo-logo.png@@" alt="BDO Consulting — Strategy Growth &amp; Innovation">
   </div>
 
-  <div class="scope-grid">
-    <div class="sc-tile">
-      <div class="slbl">המשימה</div>
-      <div class="stxt">בניית <b>בנק חברות מטרה</b> עבור פלסן בתחום ניהול החתימה וההסוואה הרב-ספקטרלית</div>
+  <div class="evo">
+    <div class="p">
+      <div class="lbl">נקודת המוצא</div>
+      <div class="hd">המחקר הקודם</div>
+      <div class="tx">חיפוש חברות וטכנולוגיות להפחתת חתימה שניתן לשלב בתוך מערכת המיגון של פלסן</div>
     </div>
-    <div class="sc-tile">
-      <div class="slbl">טכנולוגיות בתחולת הפרויקט</div>
-      <div class="stxt">הפחתת חתימה אלקטרומגנטית / מכ״ם · הסוואה אופטית ורב-ספקטרלית · הפחתת חתימה תרמית <span dir="ltr">(IR)</span></div>
-    </div>
-    <div class="sc-tile">
-      <div class="slbl">פלטפורמות</div>
-      <div class="stxt"><b>יבשתיות</b> — הפוקוס העיקרי; <b>ימיות</b> — רלוונטיות אפשרית <span class="dim">· מחוץ להיקף: חברות בפוקוס תעופתי בלבד או ללוחם הבודד בלבד</span></div>
-    </div>
-    <div class="sc-tile">
-      <div class="slbl">שאלת המחקר</div>
-      <div class="stxt">אילו מוצרים קיימים בשוק ניהול החתימה, ואילו חלקים של הספקטרום כל אחד מהם מכסה</div>
-    </div>
-    <div class="sc-tile">
-      <div class="slbl">גיאוגרפיה</div>
-      <div class="stxt">ישראל · מזרח אירופה · ארה״ב · מערב אירופה <span class="dim">· למיפוי ערך גם בהיעדר יעד מיידי</span></div>
-    </div>
-    <div class="sc-tile">
-      <div class="slbl">פרופיל גודל</div>
-      <div class="stxt">מכירות עד <span dir="ltr">$20M</span> פרופיל היעד העיקרי · גדולות יותר — רלוונטיות להשקעת מיעוט ללא שליטה <span class="dim">(עד <span dir="ltr">100M$</span>)</span></div>
+    <div class="ar">&#10094;</div>
+    <div class="p now">
+      <div class="lbl">התיחום הנוכחי</div>
+      <div class="hd">המחקר הנוכחי</div>
+      <div class="tx">הרחבת החיפוש גם ליכולות שיכולות להוות מוצר משלים לפורטפוליו של פלסן, גם אם אינן משולבות במיגון עצמו</div>
     </div>
   </div>
 
-  <div class="method-band">המתודולוגיה, קריטריוני הסינון והבחירה גובשו בעבודה משותפת עם מומחה ניהול החתימה של פלסן</div>
+  <div class="evo-band">עדיפות ניתנה לחברות עם יתרון טכנולוגי מובהק ו/או פתרון המיועד לפלטפורמה ניידת</div>
 
-  <div class="fun-strip">
+  <div class="ftr">
+    <div class="pageno"></div>
+    <div class="src">מקור: תיחום העבודה כפי שגובש על ידי צוות הפרויקט בשיתוף מומחה הפחתת החתימה של פלסן</div>
+    <div class="proj">פלסן סאסא — הפחתת חתימה | מצגת עבודה</div>
+  </div>
+</section></div>
+
+<!-- ====== 04 · s-scope ====== -->
+<div class="slide-wrap"><section class="slide" id="s-scope">
+  <div class="hdr">
+    <div class="hdr-titles">
+      <div class="kicker">חלק 1 | שאלת המחקר, הנחות העבודה ותהליך הסינון</div>
+      <h1 class="title">מ-51 חברות שאותרו לחמש חברות מעניינות להמשך בחינה</h1>
+    </div>
+    <img class="bdo-logo" src="@@IMG:bdo-logo.png@@" alt="BDO Consulting — Strategy Growth &amp; Innovation">
+  </div>
+
+  <div class="q-band">
+    <div class="ql">שאלת המחקר</div>
+    <div class="qx">מי החברות הרלוונטיות שיכולות להוסיף לפלסן יכולת בתחום הפחתת החתימה — כחלק מהמיגון או כמוצר משלים לפלטפורמה?</div>
+  </div>
+
+  <div class="scope-grid">
+    <div class="sc-tile">
+      <div class="slbl">פלטפורמות</div>
+      <div class="stxt">הפוקוס העיקרי — פלטפורמות <b>יבשתיות</b> <span class="dim">· ימיות — רלוונטיות אפשרית</span></div>
+    </div>
+    <div class="sc-tile">
+      <div class="slbl">סוג הפתרון</div>
+      <div class="stxt">עדיפות לפתרון <b>המיועד לפלטפורמה ניידת</b>, ולא לכיסוי סטטי בלבד</div>
+    </div>
+    <div class="sc-tile">
+      <div class="slbl">בידול טכנולוגי</div>
+      <div class="stxt">עדיפות לחברות עם <b>יתרון טכנולוגי מובהק</b> בתחום הפחתת החתימה</div>
+    </div>
+    <div class="sc-tile">
+      <div class="slbl">פרופיל גודל</div>
+      <div class="stxt">חברות מעל טווח הגודל המיועד נבחנות <b>כבנצ׳מרק</b> ולא כמועמדות לרכישה</div>
+    </div>
+    <div class="sc-tile">
+      <div class="slbl">מחוץ לפוקוס העיקרי</div>
+      <div class="stxt">חברות בפוקוס <b>ללוחם הבודד בלבד</b> או <b>תעופתי בלבד</b></div>
+    </div>
+  </div>
+
+  <div class="method-band" style="top: 626px;">המתודולוגיה, קריטריוני הסינון והבחירה גובשו בעבודה משותפת עם מומחה הפחתת החתימה של פלסן</div>
+
+  <div class="fun-strip" style="top: 702px;">
     <div class="fun-box">
-      <div class="fn">37</div>
-      <div class="fl">חברות רלוונטיות זוהו</div>
-      <div class="fd">מיפוי שוק מבוסס-קריטריונים של ספקיות ניהול חתימה והסוואה</div>
+      <div class="fn">51</div>
+      <div class="fl">חברות רלוונטיות שאותרו</div>
+      <div class="fd">מקבצי פלסן + שימוש בכלי <span dir="ltr">AI</span></div>
     </div>
     <div class="fun-arrow">&#10094;</div>
     <div class="fun-box">
-      <div class="fn">18</div>
-      <div class="fl">נותרו לבחינה מעמיקה</div>
-      <div class="fd">לאחר סינון חברות עם מכירות מעל <span dir="ltr">100M$</span> וסקירת הנהלת הפרויקט</div>
+      <div class="fn">37</div>
+      <div class="fl">לאחר סינון גודל והתאמה בסיסית</div>
+      <div class="fd">חברות שעברו את מסננת ההתאמה הראשונית</div>
+    </div>
+    <div class="fun-arrow">&#10094;</div>
+    <div class="fun-box">
+      <div class="fn">10</div>
+      <div class="fl">נבחרו לניתוח עומק</div>
+      <div class="fd">בסקירת המומחים והנהלת הפרויקט</div>
     </div>
     <div class="fun-arrow">&#10094;</div>
     <div class="fun-box final">
-      <div class="fn">9</div>
-      <div class="fl">נבחרו לניתוח עומק</div>
-      <div class="fd">בסקירת המומחים — והן מושא מסמך זה</div>
+      <div class="fn">5</div>
+      <div class="fl">מעניינות להמשך בחינה</div>
+      <div class="fd"><span dir="ltr">CBG Systems · Sterlite Camotech · Ravelin Defense · Spectralx · Ametrine Technologies</span></div>
     </div>
   </div>
 
   <div class="ftr">
     <div class="pageno"></div>
-    <div class="src">מקור: תהליך הסינון וקריטריוני הבחירה של צוות הפרויקט, בשיתוף מומחה ניהול החתימה של פלסן</div>
+    <div class="src">מקור: תהליך הסינון וקריטריוני הבחירה של צוות הפרויקט, בשיתוף מומחה הפחתת החתימה של פלסן</div>
     <div class="proj">פלסן סאסא — הפחתת חתימה | מצגת עבודה</div>
   </div>
 </section></div>
 
-
-<!-- ================= SLIDE : FLAT COMPARATIVE TABLE ================= -->
+<!-- ====== 05 · s-table ====== -->
 <div class="slide-wrap"><section class="slide" id="s-table">
   <div class="hdr">
     <div class="hdr-titles">
       <div class="kicker">חלק 1 | תמונת-על השוואתית — לפי משפחת פתרון</div>
-      <h1 class="title">תשע החברות במבט אחד, בשלוש משפחות פתרון: מערכות פלטפורמה · טכנולוגיות מתקדמות / אקטיביות · טקסטיל פונקציונלי וכיסויים</h1>
+      <h1 class="title">עשר החברות שנותחו לעומק, בשלוש משפחות פתרון — וחמש שנבחרו להמשך בחינה</h1>
     </div>
     <img class="bdo-logo" src="@@IMG:bdo-logo.png@@" alt="BDO Consulting — Strategy Growth &amp; Innovation">
   </div>
 
   <table class="ovw-table">
     <colgroup>
-      <col style="width:210px"><col style="width:190px"><col style="width:112px">
-      <col style="width:180px"><col style="width:120px"><col style="width:150px"><col style="width:262px">
-      <col style="width:168px"><col style="width:126px"><col style="width:104px"><col style="width:154px">
+      <col style="width:198px"><col style="width:232px"><col style="width:106px">
+      <col style="width:196px"><col style="width:124px"><col style="width:288px">
+      <col style="width:176px"><col style="width:180px"><col style="width:100px"><col style="width:176px">
     </colgroup>
     <tr>
       <th>חברה</th><th>בשלות מסחרית</th><th>מדינה</th><th>עיסוק עיקרי</th><th>חשיבות ניהול החתימה</th>
-      <th>קטגוריית פתרון</th><th>הצעה מרכזית בניהול חתימה</th><th>ספקטרום</th><th>הכנסות</th><th>עובדים</th><th>בעלות</th>
+      <th>הצעה מרכזית בניהול חתימה</th><th>ספקטרום</th><th>הכנסות</th><th>עובדים</th><th>סטטוס / סיבת אי-המשך</th>
     </tr>
-    <tr class="gband"><td colspan="11">משפחה 1 · מערכות ניהול חתימה ברמת הרכב / הפלטפורמה<span class="gs">פתרון שלם או כמעט שלם המותקן על הפלטפורמה ומיועד לניהול חתימת הרכב</span></td></tr>
+    <tr class="gband"><td colspan="10">משפחה 1 · מערכות ניהול חתימה ברמת הרכב / הפלטפורמה<span class="gs">פתרון שלם או כמעט שלם המותקן על הפלטפורמה ומיועד לניהול חתימת הרכב</span></td></tr>
     <tr>
       <td><div class="co">CBG Systems</div></td>
-      <td class="mat"><b>נבחרה / בחוזה</b><br><span class="qual">LAND 8116 · LAND 400 (Redback)</span></td>
+      <td class="mat"><b>נבחרה / בחוזה</b><br><span class="qual">LAND 8116 · LAND 400</span></td>
       <td>אוסטרליה</td>
       <td class="muted">הנדסה ימית-ביטחונית; ניהול חתימה</td>
       <td class="imp">קו עסקי מרכזי</td>
-      <td class="muted">מערכת רכב · רשתות <span class="qual">(Miranda)</span></td>
       <td class="prod"><b>SolarSigmaShield</b> — MCS רב-שכבתי לרכב; רשתות דרך Miranda</td>
       <td><span dir="ltr">VIS</span> · תרמי<sup>2</sup> · מכ״ם</td>
-      <td class="num"><span dir="ltr">$4–6M</span><br><span class="qual">אומדן צד-שלישי</span></td>
+      <td class="num"><span dir="ltr">$4–6M</span><br><span class="qual">אומדן צד-שלישי, 2026</span></td>
       <td class="num"><span dir="ltr">~30</span></td>
-      <td class="muted">פרטית; IP — לאימות</td>
+      <td class="stt"><span class="go">להעמקה</span></td>
     </tr>
     <tr>
       <td><div class="co">Sterlite Camotech</div></td>
-      <td class="mat"><b>נבחרה / בחוזה</b><br><span class="qual">רכש MSCN — צבא הודו (2026, מדווח)</span></td>
+      <td class="mat"><b>נבחרה / בחוזה</b><br><span class="qual">רכש MSCN, צבא הודו (מדווח, 2026)</span></td>
       <td>הודו</td>
       <td class="muted">הסוואה צבאית / ניהול חתימה</td>
       <td class="imp">ליבת העסק</td>
-      <td class="muted">מערכת רכב · רשתות · צבעים</td>
       <td class="prod">רשתות <b>MSCN</b>; <b>MCS</b> לרכב בתנועה; צבעי <span dir="ltr">IR</span>; פיתיונות</td>
       <td><span dir="ltr">VIS · NIR · MWIR · LWIR</span> · מכ״ם<sup>1</sup></td>
-      <td class="num"><span dir="ltr">$3–11M</span><br><span class="qual">אומדן צד-שלישי</span></td>
+      <td class="num"><span dir="ltr">$3–11M</span><br><span class="qual">אומדן צד-שלישי, 2026</span></td>
       <td class="num"><span dir="ltr">~25</span></td>
-      <td class="muted">פרטית; ישות — להבהרה</td>
+      <td class="stt"><span class="go">להעמקה</span></td>
     </tr>
     <tr>
-      <td><div class="co">Ravelin Defense<small>ArmorWorks Enterprises + Fox Valley Metal Tech</small></div></td>
+      <td><div class="co">Ravelin Defense<small>ArmorWorks + Fox Valley Metal Tech</small></div></td>
       <td class="mat"><b>מסחרית</b><br><span class="qual">ללא רכש ייצור פומבי עדכני</span></td>
       <td>ארה״ב</td>
       <td class="muted">שרידות ביטחונית וייצור</td>
       <td class="imp">קו עסקי מרכזי</td>
-      <td class="muted">מערכת רכב · כיסויים</td>
       <td class="prod"><b><span dir="ltr">TactiCam</span></b> — הסוואת רכב תלת-ממדית; כיסויי הפחתת מכ״ם</td>
       <td><span dir="ltr">VIS / IR</span> · מכ״ם</td>
-      <td class="num"><span dir="ltr">≈$50–100M</span><br><span class="qual">אומדן אינדיקטיבי</span></td>
+      <td class="num"><span dir="ltr">≈$50–100M</span><br><span class="qual">אומדן צד-שלישי, 2026</span></td>
       <td class="num"><span dir="ltr">≈315</span></td>
-      <td class="muted"><span dir="ltr">Littlejohn Capital</span></td>
+      <td class="stt"><span class="go">להעמקה</span></td>
     </tr>
-    <tr class="gband"><td colspan="11">משפחה 2 · טכנולוגיות פלטפורמה מתקדמות / אקטיביות<span class="gs">היתרון המרכזי נובע מחומרים, ציפויים, מעטפות או מנגנון אקטיבי</span></td></tr>
+    <tr>
+      <td><div class="co">Spectralx<small>לשעבר Polaris Solutions</small></div></td>
+      <td class="mat"><b>נבחרה / בחוזה</b><br><span class="qual">רכש צה״ל (מדווח, 2026)</span></td>
+      <td>ישראל</td>
+      <td class="muted">הפחתת חתימה רב-ספקטרלית — לוחם עד פלטפורמה</td>
+      <td class="imp">ליבת העסק</td>
+      <td class="prod"><b><span dir="ltr">Armadillo</span></b> — ערכת הסוואה לרכב קרב; <b><span dir="ltr">TVC</span></b> — חומר תרמי-חזותי</td>
+      <td><span dir="ltr">VIS · NIR</span> · תרמי<sup>2</sup></td>
+      <td class="muted">לא פורסם</td>
+      <td class="num"><span dir="ltr">~70–75</span></td>
+      <td class="stt"><span class="go">להעמקה</span></td>
+    </tr>
+    <tr class="gband"><td colspan="10">משפחה 2 · טכנולוגיות פלטפורמה מתקדמות / אקטיביות<span class="gs">היתרון המרכזי נובע מחומרים, ציפויים, מעטפות או מנגנון אקטיבי</span></td></tr>
     <tr>
       <td><div class="co">Ametrine Technologies</div></td>
-      <td class="mat"><b>מסחרית</b><br><span class="qual">רכש ממשלתי · הערכת פלטפורמה</span></td>
+      <td class="mat"><b>מסחרית</b><br><span class="qual">רכש ממשלתי; הערכת פלטפורמה</span></td>
       <td>ישראל / ארה״ב</td>
       <td class="muted">מערכות הסוואה רב-ספקטרליות</td>
       <td class="imp">ליבת העסק</td>
-      <td class="muted">ציפויים · כיסויים · לוחם</td>
       <td class="prod"><b><span dir="ltr">Flint</span></b> — מעטה פלטפורמה; כיסויי הסתרה; מערכות לוחם</td>
       <td><span dir="ltr">VIS</span> · תרמי<sup>2</sup></td>
-      <td class="num"><span dir="ltr">$1–15M</span><br><span class="qual">הערכה</span></td>
+      <td class="num"><span dir="ltr">$1–15M</span><br><span class="qual">אומדן צד-שלישי, 2026</span></td>
       <td class="num"><span dir="ltr">~40</span></td>
-      <td class="muted">פרטית</td>
+      <td class="stt"><span class="go">להעמקה</span></td>
     </tr>
-    <tr>
+    <tr class="out">
       <td><div class="co">Advanced Material Development</div></td>
       <td class="mat"><b>פיתוח / ניסויים</b><br><span class="qual">FCT · JIFX</span></td>
       <td>ארה״ב / בריטניה</td>
       <td class="muted">ננו-חומרים וציפויים מתקדמים</td>
       <td class="imp">קו עסקי מרכזי</td>
-      <td class="muted">ציפויים · <span dir="ltr">RAM</span></td>
       <td class="prod">ציפויי <b>CHAM-NIR / ChamIR</b>; חומרי <b>ChamEM</b> למכ״ם</td>
       <td><span dir="ltr">NIR · MWIR / LWIR<sup>3</sup></span> · מכ״ם</td>
-      <td class="num"><span dir="ltr">$1–5M</span><br><span class="qual">אומדן צד-שלישי</span></td>
-      <td class="muted">קטנה; אומדנים משתנים</td>
-      <td class="muted">פרטית</td>
+      <td class="num"><span dir="ltr">$1–5M</span><br><span class="qual">אומדן צד-שלישי, 2026</span></td>
+      <td class="muted">קטנה</td>
+      <td class="stt"><span class="no">לא להמשך</span><span class="rsn">בשלות נמוכה</span></td>
     </tr>
-    <tr>
+    <tr class="out">
       <td><div class="co">Eltics / Black Fox</div></td>
-      <td class="mat"><b>אב-טיפוס / הדגמות היסטוריות</b><br><span class="qual">סטטוס נוכחי לא ברור</span></td>
+      <td class="mat"><b>אב-טיפוס / הדגמות</b><br><span class="qual">סטטוס נוכחי לא ברור</span></td>
       <td>ישראל</td>
       <td class="muted">הסוואה תרמית אקטיבית</td>
       <td class="imp">ליבת העסק</td>
-      <td class="muted">מערכת אקטיבית</td>
       <td class="prod"><b>Black Fox</b> — הסוואה תרמית אקטיבית לרכב יבשתי</td>
       <td><span dir="ltr">MWIR · LWIR</span></td>
       <td class="muted">אין נתון</td>
       <td class="num">אין נתון</td>
-      <td class="muted">פרטית</td>
+      <td class="stt"><span class="no">לא להמשך</span><span class="rsn">פעילות מסחרית לא ברורה</span></td>
     </tr>
-    <tr class="gband"><td colspan="11">משפחה 3 · טקסטיל פונקציונלי, כיסויים ופתרונות משיקים<span class="gs">הערך המרכזי נמצא בטקסטיל, בכיסוי או ברכיב ייעודי — ולא במערכת MCS מלאה לרכב נע</span></td></tr>
-    <tr>
+    <tr class="gband"><td colspan="10">משפחה 3 · טקסטיל פונקציונלי, כיסויים ופתרונות משיקים<span class="gs">הערך המרכזי נמצא בטקסטיל, בכיסוי או ברכיב ייעודי — ולא במערכת MCS מלאה לרכב נע</span></td></tr>
+    <tr class="out">
       <td><div class="co">STG Defence</div></td>
       <td class="mat"><b>מסחרית</b><br><span class="qual">בדיווח החברה; ללא רכש רכב פומבי</span></td>
       <td>אוקראינה</td>
       <td class="muted">טקסטיל הסוואה פונקציונלי</td>
       <td class="imp">ליבת המותג הביטחוני</td>
-      <td class="muted">כיסויים סטטיים · טקסטיל</td>
       <td class="prod"><b>Equipment Shelter</b> — כיסוי סטטי לרכב; טקסטיל IRR / Stealth</td>
       <td><span dir="ltr">VIS · NIR · SWIR · MWIR · LWIR</span> · מכ״ם<sup>4</sup></td>
-      <td class="muted">לא פורסם<br><span class="qual">S.T.G. LLC ≈$4.1M (2025)</span></td>
-      <td class="muted">לא פורסם<br><span class="qual">S.T.G. LLC: 32</span></td>
-      <td class="muted"><span dir="ltr">Yurii Kyz</span> 100% <span class="qual">(S.T.G. LLC)</span></td>
+      <td class="muted">לא פורסם<br><span class="qual" dir="ltr" style="display:block;text-align:right">S.T.G. LLC ≈$4.1M, 2025</span></td>
+      <td class="muted">לא פורסם<br><span class="qual" dir="ltr" style="display:block;text-align:right">S.T.G. LLC 32</span></td>
+      <td class="stt"><span class="no">לא להמשך</span><span class="rsn">אוקראינה / נגישות</span></td>
     </tr>
-    <tr>
+    <tr class="out">
       <td><div class="co">Shieldex</div></td>
       <td class="mat"><b>מסחרית</b><br><span class="qual">ללא רכש SM פומבי מזוהה</span></td>
       <td>גרמניה</td>
       <td class="muted">טקסטיל טכני מוליך</td>
       <td class="imp">הצעה משיקה</td>
-      <td class="muted">טקסטיל · חומרים</td>
       <td class="prod"><b>Shieldex® Zell RS CR</b> — טקסטיל מצופה-מתכת</td>
       <td><span dir="ltr">VIS · NIR</span> · תרמי · <span dir="ltr">EMI</span><sup>5</sup></td>
-      <td class="num"><span dir="ltr">$5.7–11M</span><br><span class="qual">אומדנים</span></td>
+      <td class="num"><span dir="ltr">$5.7–11M</span><br><span class="qual">אומדן צד-שלישי, 2026</span></td>
       <td class="num"><span dir="ltr">~50</span></td>
-      <td class="muted">משפחתית <span dir="ltr">(Statex)</span></td>
+      <td class="stt"><span class="no">לא להמשך</span><span class="rsn">חומר מאפשר</span></td>
     </tr>
-    <tr>
+    <tr class="out">
       <td><div class="co">Permali</div></td>
-      <td class="mat"><b>מסחרית</b><br><span class="qual">יכולת מבוססת; ללא אירוע פומבי <span dir="ltr">2020–26</span></span></td>
+      <td class="mat"><b>מסחרית</b><br><span class="qual">ללא אירוע פומבי <span dir="ltr">2020–26</span></span></td>
       <td>בריטניה</td>
       <td class="muted">קומפוזיטים ביטחוניים</td>
       <td class="imp">הצעה משיקה</td>
-      <td class="muted">קומפוזיטים</td>
       <td class="prod"><b>Dust Skirts</b> — דיכוי ענן האבק של רק״ם בתנועה</td>
       <td><span dir="ltr">VIS</span> · מכ״ם<sup>6</sup></td>
       <td class="num"><span dir="ltr">£43.7M</span><br><span class="qual">מדווח (2025)</span></td>
       <td class="num"><span dir="ltr">~370</span></td>
-      <td class="muted">קבוצת <span dir="ltr">Diamorph</span></td>
+      <td class="stt"><span class="no">לא להמשך</span><span class="rsn">תחום צר בעסק</span></td>
     </tr>
 </table>
 
   <div class="ovw-note">
-    <sup>1</sup> מכ״ם — טענת מוצר מפורשת של החברה; <span dir="ltr">RCS</span> לא אומת עצמאית · <sup>2</sup> תת-התחום התרמי אינו מפורט / מופרד במקורות · <sup>3</sup> <span dir="ltr">ChamIR</span> — בקרת פליטה ב-<span dir="ltr">IR</span> התרמי · <sup>4</sup> מכ״ם — ביישומי תעופה / האנגרים בלבד; לא לכיסוי הרכב · <sup>5</sup> סיכוך <span dir="ltr">RF / EMI</span> — אינו הפחתת <span dir="ltr">RCS</span> · <sup>6</sup> חתימת ענן האבק בלבד · בשלות מסחרית — מאפיין, אינה קובעת את הסדר · סדר השורות — לפי משפחת פתרון; אינו דירוג ואינו המלצת רכישה<br><b>מונחים:</b> <b>MCS</b> — <span dir="ltr">Mobile Camouflage System</span>, מערכת הסוואה המותקנת / פועלת על פלטפורמה ניידת · <b>MSCN</b> — <span dir="ltr">Multispectral Camouflage Net</span>, רשת הסוואה רב-ספקטרלית · <b>RCS</b> — <span dir="ltr">Radar Cross Section</span>, חתך מכ״ם · <b>RAM</b> — <span dir="ltr">Radar Absorbing Material</span>, חומר בולע מכ״ם
+    <sup>1</sup> טענת מוצר מפורשת של החברה; <span dir="ltr">RCS</span> לא אומת עצמאית · <sup>2</sup> תת-התחום התרמי אינו מפורט / מופרד במקורות · <sup>3</sup> <span dir="ltr">ChamIR</span> — בקרת פליטה ב-<span dir="ltr">IR</span> התרמי · <sup>4</sup> מכ״ם — ביישומי תעופה / האנגרים בלבד · <sup>5</sup> סיכוך <span dir="ltr">RF / EMI</span>, אינו הפחתת <span dir="ltr">RCS</span> · <sup>6</sup> חתימת ענן האבק בלבד<br>
+    <b>MCS</b> — מערכת הסוואה לפלטפורמה ניידת · <b>MSCN</b> — רשת הסוואה רב-ספקטרלית · <b>RCS</b> — חתך מכ״ם · סדר השורות לפי משפחת פתרון; אינו דירוג. הסטטוס הוא החלטת סינון להמשך העבודה, לא שלילת יכולת. פירוט הבעלות והמבנה התאגידי — בפרופיל כל חברה
   </div>
 
   <div class="ftr">
     <div class="pageno"></div>
-    <div class="src">מקור: אתרי החברות ועלוני המוצר הרשמיים; הודעות תוכנית ורישומי חוזים פדרליים. אומדני הכנסות ועובדים — מאגרי חברות צד-שלישי, מסומנים ככאלה</div>
+    <div class="src">מקור: אתרי החברות ועלוני המוצר הרשמיים; הודעות תוכנית ורישומי חוזים פדרליים. אומדני הכנסות ועובדים — מאגרי חברות צד-שלישי, מסומנים ככאלה ונדלו ב-2026</div>
     <div class="proj">פלסן סאסא — הפחתת חתימה | מצגת עבודה</div>
   </div>
 </section></div>
 
-
-<!-- ================= SLIDE : SPECTRUM MATRIX ================= -->
-<div class="slide-wrap"><section class="slide" id="s-spectrum">
-  <div class="hdr">
-    <div class="hdr-titles">
-      <div class="kicker">חלק 1 | כיסוי ספקטרלי</div>
-      <h1 class="title">כיסוי אופטי־תרמי הוא המכנה המשותף; חמש חברות מציגות זיקת מכ״ם רלוונטית לרכב יבשתי, ורק בחלקן מדובר ביכולת RCS ישירה וברורה</h1>
-    </div>
-    <img class="bdo-logo" src="@@IMG:bdo-logo.png@@" alt="BDO Consulting — Strategy Growth &amp; Innovation">
-  </div>
-
-  <table class="sx-table">
-    <colgroup>
-      <col style="width:380px"><col style="width:232px"><col style="width:232px"><col style="width:232px">
-      <col style="width:232px"><col style="width:232px"><col style="width:236px">
-    </colgroup>
-    <tr class="grp">
-      <th rowspan="2">חברה</th>
-      <th colspan="3" class="g-opt">אופטי / החזרת אור<span class="gsub">כיצד המשטח מחזיר קרינה נכנסת</span></th>
-      <th colspan="2" class="g-thm">תרמי / פליטת חום<span class="gsub">חתימת החום הנפלטת מהפלטפורמה</span></th>
-      <th class="g-rad">מכ״ם / החזר ופיזור גלים<span class="gsub">חתך מכ״ם <span dir="ltr">(RCS)</span></span></th>
-    </tr>
-    <tr>
-      <th>אופטי <span dir="ltr">VIS</span><span class="rng" dir="ltr">≈0.4–0.7µm</span></th>
-      <th><span dir="ltr">NIR</span><span class="rng" dir="ltr">≈0.7–1.4µm</span></th>
-      <th><span dir="ltr">SWIR</span><span class="rng" dir="ltr">≈1–3µm</span></th>
-      <th><span dir="ltr">MWIR</span><span class="rng" dir="ltr">≈3–5µm</span></th>
-      <th><span dir="ltr">LWIR</span><span class="rng" dir="ltr">≈8–14µm</span></th>
-      <th>מכ״ם / <span dir="ltr">RCS</span></th>
-    </tr>
-    <tr class="gband"><td colspan="7">משפחה 1 · מערכות ניהול חתימה ברמת הרכב / הפלטפורמה<span class="gs">פתרון שלם או כמעט שלם המותקן על הפלטפורמה ומיועד לניהול חתימת הרכב</span></td></tr>
-    <tr>
-      <td class="co-cell"><span class="co">CBG Systems</span></td>
-      <td><span class="d"></span></td><td></td><td></td>
-      <td class="t-thm"><span class="o"></span></td><td class="t-thm"><span class="o"></span></td><td class="t-rad"><span class="d"></span></td>
-    </tr>
-    <tr>
-      <td class="co-cell"><span class="co">Sterlite Camotech</span></td>
-      <td><span class="d"></span></td><td><span class="d"></span></td><td></td>
-      <td class="t-thm"><span class="d"></span></td><td class="t-thm"><span class="d"></span></td><td class="t-rad"><span class="o"></span><sup>1</sup></td>
-    </tr>
-    <tr>
-      <td class="co-cell"><span class="co">Ravelin Defense</span></td>
-      <td><span class="d"></span></td><td></td><td></td>
-      <td class="t-thm"><span class="o"></span></td><td class="t-thm"><span class="o"></span></td><td class="t-rad"><span class="d"></span></td>
-    </tr>
-    <tr class="gband"><td colspan="7">משפחה 2 · טכנולוגיות פלטפורמה מתקדמות / אקטיביות<span class="gs">היתרון המרכזי נובע מחומרים, ציפויים, מעטפות או מנגנון אקטיבי</span></td></tr>
-    <tr>
-      <td class="co-cell"><span class="co">Ametrine Technologies</span></td>
-      <td><span class="d"></span></td><td></td><td></td>
-      <td class="t-thm"><span class="o"></span></td><td class="t-thm"><span class="o"></span></td><td class="t-rad"><span class="cue">אזכור בלבד<sup>2</sup></span></td>
-    </tr>
-    <tr>
-      <td class="co-cell"><span class="co">Advanced Material Development</span></td>
-      <td></td><td><span class="d"></span></td><td></td>
-      <td class="t-thm"><span class="d"></span><sup>3</sup></td><td class="t-thm"><span class="d"></span><sup>3</sup></td><td class="t-rad"><span class="d"></span></td>
-    </tr>
-    <tr>
-      <td class="co-cell"><span class="co">Eltics / Black Fox</span></td>
-      <td></td><td></td><td></td>
-      <td class="t-thm"><span class="d"></span></td><td class="t-thm"><span class="d"></span></td><td class="t-rad"></td>
-    </tr>
-    <tr class="gband"><td colspan="7">משפחה 3 · טקסטיל פונקציונלי, כיסויים ופתרונות משיקים<span class="gs">הערך המרכזי נמצא בטקסטיל, בכיסוי או ברכיב ייעודי — ולא במערכת MCS מלאה לרכב נע</span></td></tr>
-    <tr>
-      <td class="co-cell"><span class="co">STG Defence</span></td>
-      <td><span class="d"></span></td><td><span class="d"></span></td><td><span class="d"></span></td>
-      <td class="t-thm"><span class="d"></span></td><td class="t-thm"><span class="d"></span></td><td class="t-rad"><span class="cue">תעופה / האנגרים בלבד<sup>4</sup></span></td>
-    </tr>
-    <tr>
-      <td class="co-cell"><span class="co">Shieldex</span></td>
-      <td><span class="d"></span></td><td><span class="d"></span></td><td></td>
-      <td class="t-thm"><span class="d"></span></td><td class="t-thm"><span class="d"></span></td><td class="t-rad"><span class="cue"><span dir="ltr">EMI / RF</span> בלבד<sup>5</sup></span></td>
-    </tr>
-    <tr>
-      <td class="co-cell"><span class="co">Permali</span></td>
-      <td><span class="d"></span></td><td></td><td></td>
-      <td class="t-thm"></td><td class="t-thm"></td><td class="t-rad"><span class="d"></span><sup>6</sup></td>
-    </tr>
-</table>
-
-  <div class="sx-legend">
-    <span class="d"></span> <b>מתועד במפורש</b> — קיימת עדות ישירה ליכולת בתחום הספציפי&nbsp;&nbsp;&nbsp;&nbsp;
-    <span class="o"></span> <b>זיקה מתועדת / כיסוי חלקי</b> — קיימת אינדיקציה רלוונטית, אך הכיסוי בתחום הספציפי אינו מוכח במלואו
-  </div>
-  <div class="sx-notes">
-    <sup>1</sup> טענת מוצר מפורשת של החברה (הסוואת מכ״ם ב-<span dir="ltr">MSCN / MCS</span>); ביצועי <span dir="ltr">RCS</span> לא אומתו עצמאית — נספרת · <sup>2</sup> מכ״ם — אזכור בלבד בעלוני כיסויי ההסתרה (לא <span dir="ltr">Flint</span>); לא בוסס כיכולת לפלטפורמה יבשתית · <sup>3</sup> <span dir="ltr">ChamIR</span> — בקרת פליטה ב-<span dir="ltr">IR</span> התרמי · <sup>4</sup> מכ״ם / <span dir="ltr">RCS</span> — מתועד ביישומי תעופה / האנגרים בלבד; לא לכיסוי הרכב היבשתי · <sup>5</sup> סיכוך <span dir="ltr">RF / EMI</span> של הטקסטיל בלבד; אינו הפחתת <span dir="ltr">RCS</span> של פלטפורמה · <sup>6</sup> חתימת ענן האבק של רק״ם נע בלבד · ציון אפור = אזכור / זיקה שאינה יכולת מכ״ם לרכב יבשתי, מחוץ לספירה; <b>חמש חברות נספרות: 4 ■ + Sterlite □</b> · <b>הסימון מציג כיסוי מתועד בלבד ואינו מעיד על רמת אינטגרציה, בשלות או התאמה לפלטפורמה בתנועה</b>
-  </div>
-
-  <div class="ftr">
-    <div class="pageno"></div>
-    <div class="src">מקור: אתרי החברות ועלוני המוצר הרשמיים — פירוט ספקטרלי ברמת מוצר; הסיווג לתחומים — צוות הפרויקט</div>
-    <div class="proj">פלסן סאסא — הפחתת חתימה | מצגת עבודה</div>
-  </div>
-</section></div>
-
-
-<!-- ================= SLIDE : PRODUCT-FAMILY LANDSCAPE ================= -->
-<div class="slide-wrap"><section class="slide" id="s-landscape">
-  <div class="hdr">
-    <div class="hdr-titles">
-      <div class="kicker">חלק 1 | מפת מוצרים וטכנולוגיות</div>
-      <h1 class="title">מערכות רכב, רשתות וטקסטיל מרכיבים את עיקר ההיצע; יכולת אקטיבית / אדפטיבית קיימת בשתי חברות בלבד</h1>
-    </div>
-    <img class="bdo-logo" src="@@IMG:bdo-logo.png@@" alt="BDO Consulting — Strategy Growth &amp; Innovation">
-  </div>
-  <table class="mx-table">
-    <colgroup><col style="width:400px"><col style="width:229px"><col style="width:229px"><col style="width:229px"><col style="width:229px"><col style="width:229px"><col style="width:231px"></colgroup>
-    <tr><th>חברה</th><th>מערכות הסוואה לרכב<span class="cnt">5 מתוך 9</span></th><th>רשתות וכיסויים<span class="cnt">5 מתוך 9</span></th><th>טקסטיל וחומרים<span class="cnt">5 מתוך 9</span></th><th>ציפויים<span class="cnt">3 מתוך 9</span></th><th><span dir="ltr">RAM</span> וקומפוזיטים<span class="cnt">2 מתוך 9</span></th><th>מערכות אקטיביות / אדפטיביות<span class="cnt">2 מתוך 9</span></th></tr>
-    <tr class="gband"><td colspan="7">משפחה 1 · מערכות ניהול חתימה ברמת הרכב / הפלטפורמה<span class="gs">פתרון שלם או כמעט שלם המותקן על הפלטפורמה ומיועד לניהול חתימת הרכב</span></td></tr>
-    <tr><td class="co-cell"><div class="co">CBG Systems<small><span class="role sys">מערכת</span> SolarSigmaShield · רשתות סטטיות — דרך Miranda</small></div></td><td><span class="dot"></span></td><td><span class="dot"></span><span class="mk">Miranda</span></td><td></td><td></td><td></td><td></td></tr>
-    <tr><td class="co-cell"><div class="co">Sterlite Camotech<small><span class="role sys">מערכת</span> MSCN · MCS · IR paints</small></div></td><td><span class="dot"></span></td><td><span class="dot"></span></td><td><span class="dot"></span></td><td><span class="dot"></span></td><td></td><td></td></tr>
-    <tr><td class="co-cell"><div class="co">Ravelin Defense<small><span class="role sys">מערכת</span> <span dir="ltr">TactiCam™ · Radar Reduction Shrouds</span></small></div></td><td><span class="dot"></span></td><td><span class="dot"></span></td><td></td><td></td><td></td><td></td></tr>
-    <tr class="gband"><td colspan="7">משפחה 2 · טכנולוגיות פלטפורמה מתקדמות / אקטיביות<span class="gs">היתרון המרכזי נובע מחומרים, ציפויים, מעטפות או מנגנון אקטיבי</span></td></tr>
-    <tr><td class="co-cell"><div class="co">Ametrine Technologies<small><span class="role sys">מערכת</span> <span dir="ltr">Flint™ · Poncho Elite · Concealment Covers</span></small></div></td><td><span class="dot"></span></td><td><span class="dot"></span></td><td><span class="dot"></span></td><td><span class="dot"></span></td><td></td><td></td></tr>
-    <tr><td class="co-cell"><div class="co">Advanced Material Development<small><span class="role mat">חומר מאפשר</span> CHAM-NIR · ChamIR · ChamEM</small></div></td><td></td><td></td><td><span class="dot"></span></td><td><span class="dot"></span></td><td><span class="dot"></span></td><td><span class="dot"></span></td></tr>
-    <tr><td class="co-cell"><div class="co">Eltics / Black Fox<small><span class="role sys">מערכת</span> Black Fox</small></div></td><td><span class="dot"></span></td><td></td><td></td><td></td><td></td><td><span class="dot"></span></td></tr>
-    <tr class="gband"><td colspan="7">משפחה 3 · טקסטיל פונקציונלי, כיסויים ופתרונות משיקים<span class="gs">הערך המרכזי נמצא בטקסטיל, בכיסוי או ברכיב ייעודי — ולא במערכת MCS מלאה לרכב נע</span></td></tr>
-    <tr><td class="co-cell"><div class="co">STG Defence<small><span class="role mat">טקסטיל פונקציונלי · כיסוי סטטי</span> Thermal Signature Equipment Shelter</small></div></td><td></td><td><span class="dot"></span></td><td><span class="dot"></span></td><td></td><td></td><td></td></tr>
-    <tr><td class="co-cell"><div class="co">Shieldex<small><span class="role mat">חומר מאפשר</span> Shieldex® Zell RS CR</small></div></td><td></td><td></td><td><span class="dot"></span></td><td></td><td></td><td></td></tr>
-    <tr><td class="co-cell"><div class="co">Permali<small><span class="role cmp">רכיב פלטפורמה</span> Dust Skirts</small></div></td><td></td><td></td><td></td><td></td><td><span class="dot"></span><span class="mk">קומפוזיט גומי; לא RAM</span></td><td></td></tr>
-</table>
-  <div class="mx-note" style="top: 917px; font-size: 18px; line-height: 1.26;"><b>הגדרות:</b> <b>מערכות הסוואה לרכב</b> — מערכת שלמה / אינטגרטיבית ברמת הפלטפורמה · <b>רשתות וכיסויים</b> — רשתות, כיסויים או מחסות הסוואה, סטטיים או ניידים · <b>טקסטיל וחומרים</b> — טקסטיל / חומר מאפשר המשולב בפתרון של אחר · <b>ציפויים</b> — ציפוי / צבע פונקציונלי למשטח להפחתת חתימה · <b><span dir="ltr">RAM</span> וקומפוזיטים</b> — חומר בולע מכ״ם או קומפוזיט שממלא בעצמו פונקציית ניהול חתימה (לא עסק קומפוזיטים רחב) · <b>אקטיביות / אדפטיביות</b> — טכנולוגיה המשנה / שולטת דינמית בחתימה הנצפית, ולא חומר פסיבי מותאם-שטח בלבד. <b>תוויות התפקיד:</b> מערכת — פתרון ברמת מערכת / פלטפורמה; חומר מאפשר / טקסטיל פונקציונלי — חומר המשולב בפתרונות של אחרים, או כיסוי סטטי; רכיב פלטפורמה — רכיב מותקן בעל אפקט חתימה ממוקד. הסימון מציג משפחות מוצר מתועדות בלבד ואינו מעיד על בשלות או על התאמה לפלטפורמה בתנועה; CBG — רשתות סטטיות דרך הסכם סוכנות עם Miranda.</div>
-  <div class="ftr">
-    <div class="pageno"></div>
-    <div class="src">מקור: אתרי החברות ועלוני המוצר הרשמיים; סיווג משפחות המוצר — מדריך הסיווג של צוות הפרויקט</div>
-    <div class="proj">פלסן סאסא — הפחתת חתימה | מצגת עבודה</div>
-  </div>
-</section></div>
-
-
-<!-- ================= SLIDE : PROFILE CBG SYSTEMS ================= -->
+<!-- ====== 06 · s-cbg ====== -->
 <div class="slide-wrap"><section class="slide tall-ftr" id="s-cbg">
   <div class="hdr">
     <div class="hdr-titles">
@@ -1230,7 +1247,7 @@ tr.gband td .gs { font-weight: 400; color: var(--c-slate); margin-right: 12px; f
       <td>נבחרה / בחוזה — <span dir="ltr">LAND 8116</span> (AS9 / AS10) · <span dir="ltr">LAND 400</span> (Redback)</td>
       <td style="font-size:21px;">פרטית — <span dir="ltr">CBG Systems Pty Ltd</span> <span class="q" style="font-size:21px;">(ACN 096 508 897)</span>; ישות קשורה: <span dir="ltr">CBG Systems International Pty Ltd</span> — <span class="q" style="font-size:21px;">מיקום ה-IP, העובדים והחוזים לאימות</span></td>
       <td><span dir="ltr">~30</span> <span class="q">(29 בדיווח החברה — RAP, 2022)</span></td>
-      <td><span dir="ltr">~$4–6M</span> <span class="q">(אומדני <span dir="ltr">D&amp;B / ZoomInfo</span>)</span></td>
+      <td><span dir="ltr">~$4–6M</span> <span class="q">(אומדן <span dir="ltr">D&amp;B / ZoomInfo</span>, נדלה 2026 — לא הכנסה מדווחת)</span></td>
     </tr>
   </table>
   <div class="profile-main" style="top: 338px; grid-template-columns: 1020px 1fr;">
@@ -1269,18 +1286,20 @@ tr.gband td .gs { font-weight: 400; color: var(--c-slate); margin-right: 12px; f
       <div class="ev-item"><b><span dir="ltr">LAND 400</span> שלב 3 — <span dir="ltr">Redback IFV</span>:</b> חוזה SolarSigmaShield עם <span dir="ltr">Hanwha Defence Australia</span> — <b>הודעת CBG, יולי 2024</b> (ללא כמות / ערך); "כל 129 הרכבים" — תקשורת ביטחונית <span class="dim">(AMR, ADM)</span>; ממשלת טסמניה: "חוזה האספקה הביטחוני הגדול בתולדות טסמניה"</div>
       <div class="ev-item"><b>ההבחנה הניהולית:</b> בניגוד ל-Sterlite, שם עדות הרכש החזקה נוגעת לרשתות MSCN, ל-CBG חוזים בשם על <b>מערכת ה-MCS לרכב עצמה</b></div>
       <div class="ev-item"><b>בשלות:</b> נבחרה / בחוזה — לא "מבצעית" עד לאישור אספקה / פריסה של SolarSigmaShield עצמה</div>
-      <div class="ev-item"><b>גודל:</b> כ-30 עובדים <span class="dim">(29 בדיווח החברה — Reconciliation Action Plan, 2022)</span> ומחזור מוערך <span dir="ltr">$4–6M</span> <span class="dim">(D&amp;B; ZoomInfo / RocketReach)</span> — הוכחה מסחרית ברמת הרכב חזקה ביחס לגודל החברה</div>
+      <div class="ev-item"><b>גודל:</b> כ-30 עובדים <span class="dim">(29 בדיווח החברה — Reconciliation Action Plan, 2022)</span> ומחזור מוערך <span dir="ltr">$4–6M</span> <span class="dim">(אומדן <span dir="ltr">D&amp;B; ZoomInfo / RocketReach</span>, נדלה 2026; אינו דוח כספי מבוקר)</span> — הוכחה מסחרית ברמת הרכב חזקה ביחס לגודל החברה</div>
     </div>
   </div>
   <div class="ftr">
     <div class="pageno"></div>
-    <div class="src">מקור: אתר CBG Systems הרשמי (עמודי מוצר; הודעות 13.5.2022 ו-8.7.2024; teaming עם Rheinmetall Canada 2014; עלון SolarΣShield של Rheinmetall Canada; ISO 9001); Asian Military Review / ADM (129 רכבים); ממשלת טסמניה (ספט׳ 2024); Reconciliation Action Plan של CBG (2022) — 29 עובדים; הכנסות — D&amp;B $4.36M, ZoomInfo / RocketReach $6M; ערך החוזים לא פורסם.</div>
+    <div class="src">מקור: אתר CBG Systems הרשמי (עמודי מוצר; הודעות 13.5.2022 ו-8.7.2024; teaming עם Rheinmetall Canada 2014; עלון SolarΣShield של Rheinmetall Canada; ISO 9001); Asian Military Review / ADM (129 רכבים); ממשלת טסמניה (ספט׳ 2024); Reconciliation Action Plan של CBG (2022) — 29 עובדים; הכנסות — אומדני צד-שלישי שנדלו ב-2026: D&amp;B $4.36M, ZoomInfo / RocketReach $6M; החברה אינה מפרסמת דוחות. ערך החוזים לא פורסם.</div>
     <div class="proj">פלסן סאסא — הפחתת חתימה | מצגת עבודה</div>
   </div>
 </section></div>
 
 
 <!-- ================= SLIDE : PROFILE STERLITE ================= -->
+
+<!-- ====== 07 · s-sterlite ====== -->
 <div class="slide-wrap"><section class="slide tall-ftr" id="s-sterlite">
   <div class="hdr">
     <div class="hdr-titles">
@@ -1301,8 +1320,8 @@ tr.gband td .gs { font-weight: 400; color: var(--c-slate); margin-right: 12px; f
       <td>ליבת העסק</td>
       <td>נבחרה / בחוזה — רכש MSCN של צבא הודו <span class="q">(2026, מדווח)</span></td>
       <td style="font-size:21px;">בהובלת המייסד; ברישומים — <span dir="ltr">Sole Proprietorship</span>; <span dir="ltr">Sterlite Camotech India Pvt Ltd</span> הוקמה במאי 2024 — <span class="q" style="font-size:21px;">העברת הפעילות / IP / החוזים טרם אומתה</span></td>
-      <td><span dir="ltr">~25</span> <span class="q">(אומדן חיצוני)</span></td>
-      <td><span dir="ltr">~$3–11M</span> <span class="q">(אומדן צד-שלישי; אומדנים פומביים שונים מהותית)</span></td>
+      <td><span dir="ltr">~25</span> <span class="q">(אומדן צד-שלישי, נדלה 2026)</span></td>
+      <td><span dir="ltr">~$3–11M</span> <span class="q">(אומדן צד-שלישי, נדלה 2026; אומדנים פומביים שונים מהותית)</span></td>
     </tr>
   </table>
   <div class="profile-main" style="top: 336px; grid-template-columns: 940px 1fr;">
@@ -1358,155 +1377,151 @@ tr.gband td .gs { font-weight: 400; color: var(--c-slate); margin-right: 12px; f
 
 
 <!-- ================= SLIDE : PROFILE RAVELIN 1 — COMPANY ================= -->
-<div class="slide-wrap"><section class="slide tall-ftr" id="s-ravelin-1">
+
+<!-- ====== 08 · s-ravelin ====== -->
+<div class="slide-wrap"><section class="slide tall-ftr" id="s-ravelin">
   <div class="hdr">
     <div class="hdr-titles">
-      <div class="kicker">חלק 1 | פרופיל חברה · משפחה 1: מערכות ברמת הפלטפורמה · קו עסקי מרכזי — שקף 1 מתוך 2: מי היא Ravelin</div>
-      <h1 class="title">Ravelin Defense — האיחוד של ArmorWorks Enterprises ו-Fox Valley Metal Tech: שרידות וייצור ביטחוני עם חפיפה רחבה לליבת פלסן</h1>
+      <div class="kicker">חלק 1 | פרופיל חברה · משפחה 1: מערכות ברמת הפלטפורמה · קו עסקי מרכזי</div>
+      <h1 class="title">Ravelin Defense — שרידות, מיגון וייצור ביטחוני, עם <span dir="ltr">TactiCam</span> כפתרון הפחתת חתימה ברמת הרכב</h1>
     </div>
     <img class="bdo-logo" src="@@IMG:bdo-logo.png@@" alt="BDO Consulting — Strategy Growth &amp; Innovation">
   </div>
-  <table class="snap">
+  <table class="snap" style="top: 192px;">
     <colgroup>
-      <col style="width:150px"><col style="width:360px"><col style="width:180px"><col style="width:270px">
-      <col style="width:260px"><col style="width:226px"><col style="width:330px">
+      <col style="width:110px"><col style="width:300px"><col style="width:300px"><col style="width:230px">
+      <col style="width:280px"><col style="width:210px"><col style="width:140px"><col style="width:206px">
     </colgroup>
-    <tr><th>מדינה</th><th>עיסוק עיקרי</th><th>חשיבות ניהול החתימה</th><th>בשלות מסחרית</th><th>בעלות</th><th>עובדים</th><th>הכנסות</th></tr>
+    <tr><th>מדינה</th><th>עיסוק עיקרי</th><th>מוצר הפחתת החתימה</th><th>ספקטרום מתועד</th><th>בשלות מסחרית</th><th>בעלות</th><th>עובדים</th><th>הכנסות</th></tr>
     <tr>
       <td>ארה״ב</td>
-      <td>שרידות ביטחונית וייצור — מיגון, קומפוזיטים, מושבים, ייצור מתכת ימי</td>
-      <td>קו עסקי מרכזי</td>
+      <td>שרידות ביטחונית וייצור — מיגון, קומפוזיטים, מושבים וייצור מתכת ימי</td>
+      <td><b><span dir="ltr">TactiCam™</span></b> — הסוואה פסיבית תלת-ממדית ברמת הרכב</td>
+      <td><span dir="ltr">VIS</span> · תרמי / <span dir="ltr">IR</span> · מכ״ם <span class="q">(תת-תחומי <span dir="ltr">IR</span> לא מפורטים)</span></td>
       <td>מסחרית — קו מוצר מבוסס; ללא רכש ייצור פומבי עדכני</td>
       <td>חברת פורטפוליו של <span dir="ltr">Littlejohn Capital</span></td>
-      <td><span dir="ltr">≈315</span> <span class="q">(אומדן צד-שלישי; LinkedIn <span dir="ltr">201–500</span>)</span></td>
-      <td><span dir="ltr">≈$50–100M</span> <span class="q">(אומדן אינדיקטיבי; המאוחד אינו מפורסם)</span></td>
+      <td><span dir="ltr">≈315</span> <span class="q">(אומדן, 2026)</span></td>
+      <td><span dir="ltr">≈$50–100M</span> <span class="q">(אומדן צד-שלישי, 2026)</span></td>
     </tr>
   </table>
-  <div class="tlrow">
-    <div class="tl-box"><div class="ty">1996</div><div class="tt"><b>ArmorWorks Enterprises</b> נוסדה בצ׳נדלר, אריזונה — מיגון, קומפוזיטים קלים, הגנת הדף ושרידות רכב</div></div>
-    <div class="tl-arrow">❮</div>
-    <div class="tl-box"><div class="ty">2014</div><div class="tt"><span dir="ltr">Littlejohn Capital</span> משיגה שליטה ב-ArmorWorks Enterprises באמצעות רי-קפיטליזציה</div></div>
-    <div class="tl-arrow">❮</div>
-    <div class="tl-box"><div class="ty">מרץ 2024</div><div class="tt">ArmorWorks Enterprises רוכשת את <b><span dir="ltr">Fox Valley Metal Tech</span></b> <span class="dim">(גרין ביי)</span> — ייצור מתכת מדויק לתוכניות הצי</div></div>
-    <div class="tl-arrow">❮</div>
-    <div class="tl-box"><div class="ty">יוני 2026</div><div class="tt">ArmorWorks Enterprises ו-Fox Valley Metal Tech מאוחדות תחת המותג <b>Ravelin Defense</b></div></div>
-  </div>
-  <div class="profile-main" style="top: 473px; grid-template-columns: 1050px 1fr;">
+  <div class="method-band" style="top: 308px; font-size: 21px; padding: 10px 24px;"><b>1996</b> ArmorWorks Enterprises נוסדה באריזונה &nbsp;·&nbsp; <b>2014</b> <span dir="ltr">Littlejohn Capital</span> משיגה שליטה ברי-קפיטליזציה &nbsp;·&nbsp; <b>מרץ 2024</b> רכישת <span dir="ltr">Fox Valley Metal Tech</span> <span class="dim">(גרין ביי)</span> &nbsp;·&nbsp; <b>יוני 2026</b> שני העסקים מאוחדים תחת המותג <b>Ravelin Defense</b>; הפחתת החתימה נשמרת כהצעה ייעודית</div>
+  <div class="profile-main" style="top: 394px; grid-template-columns: 1010px 1fr;">
     <div class="pf-story">
-      <div class="sec-bar">מה החברה עושה</div>
-      <ul class="story" style="font-size:21px; line-height:1.26;">
-        <li style="margin-bottom:3px;"><b>השילוב המאוחד של שני עסקים</b>: ArmorWorks Enterprises — מיגון, קומפוזיטים קלים, הגנת צוות והדף ואינטגרציית שרידות; Fox Valley Metal Tech — ייצור מתכת מדויק לנושאות, צוללות וכלי שיט <span class="dim">(AS9100D)</span></li>
-        <li style="margin-bottom:3px;">יכולות מוצהרות: ייצור מתכת וקומפוזיטים · הגנה בליסטית · בלימת אנרגיית הדף · הנדסה — ממידול ואבות-טיפוס ועד ניסוי וייצור · ניהול חתימה <span class="dim">(TactiCam — בשקף הבא)</span></li>
-        <li style="margin-bottom:3px;">עוגן חוזי מדווח: <b>PTR</b> — הובלה ממוגנת לחיל האוויר האמריקאי, <span dir="ltr">≈$238M</span> מצטבר <span class="dim">(2019–2027; USAspending — הרשומה על שם Ravelin Defense Inc.)</span></li>
+      <div class="sec-bar">מה החברה עושה — וכיצד הפחתת החתימה משתלבת בה</div>
+      <ul class="story" style="font-size:21px; line-height:1.20;">
+        <li style="margin-bottom:3px;"><b>שני עסקים מאוחדים</b>: ArmorWorks Enterprises — מיגון, קומפוזיטים קלים, הגנת צוות והדף ואינטגרציית שרידות; Fox Valley Metal Tech — ייצור מתכת מדויק לנושאות, לצוללות ולכלי שיט. בדיווח החברה: <span dir="ltr">10,000+</span> כלי רכב שמוגנו ו-58 פטנטים אמריקאיים. עוגן חוזי מדווח מחוץ לתחום: <b>PTR</b> — הובלה ממוגנת לחיל האוויר האמריקאי, <span dir="ltr">≈$238M</span> מצטבר <span class="dim">(2019–2027; USAspending)</span></li>
+        <li style="margin-bottom:3px;"><b><span dir="ltr">TactiCam™</span></b> — יריעה תלת-ממדית פסיבית המותקנת ישירות על הרכב: תבנית גאומטרית רב-עומק המשבשת גילוי אלקטרו-אופטי ומכ״ם <b>ונשארת על הרכב בתנועה</b> — לוגיקת סינון המומחים: פתרון על רכב נע</li>
+        <li style="margin-bottom:3px;">נוספים בתחום: <b><span dir="ltr">Radar Reduction Shrouds</span></b> <span class="dim">(ללא פירוט טכני פומבי)</span> · <b><span dir="ltr">DEW Protective Applique</span></b> — סרט רב-שכבתי מ-SBIR, בעיקר הגנה מלייזר / <span dir="ltr">HPM</span> — <b>תוכנית פיתוח נפרדת מ-TactiCam</b></li>
       </ul>
-      <div class="relv" style="margin-top:2px;">
+      <div class="relv" style="margin-top:4px;">
         <div class="ri"><b>חפיפה ישירה לליבת פלסן:</b> &nbsp;<span dir="ltr">Armor + Composites + Vehicle Survivability + Integration + Signature Management</span></div>
       </div>
-      <div class="pf-note" style="margin-top:2px; padding:10px 22px; font-size:21px; line-height:1.34;"><div class="nlbl">סייג אסטרטגי</div>התאמה אסטרטגית — גבוהה ככל הנראה; אך החברה גדולה מהותית מפרופיל היעד המקורי <span class="dim">(מכירות עד ~$20M)</span>, ובעלות PE לצד איחוד buy-and-build טרי עשויים להפחית את נגישות העסקה — תצפית, לא המלצת רכישה</div>
-    </div>
-    <div class="pf-imgs">
-      <div class="sec-bar">שרידות יבשתית וייצור ימי</div>
-      <div class="figrow">
-        <div class="ifig" style="height:311px;">
-          <div class="iimg" style="background-image:url('@@IMG:ravelin-jltv-natc.jpg@@')"></div>
-          <div class="icap2"><b>JLTV במסלול ניסויים (NATC, 2023) — שרידות פלטפורמה יבשתית.</b> מקור: <span dir="ltr" style="white-space:nowrap">ravelindefense.com</span></div>
-        </div>
-        <div class="ifig" style="height:311px;">
-          <div class="iimg" style="background-image:url('@@IMG:ravelin-fvmt-plant.jpg@@')"></div>
-          <div class="icap2"><b>מפעל Fox Valley Metal Tech, גרין ביי — ייצור מתכת לתוכניות הצי.</b> מקור: <span dir="ltr" style="white-space:nowrap">ravelindefense.com</span></div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="pf-evidence" style="top: 837px; ">
-    <div class="sec-bar">סדר גודל — בדיווח החברה</div>
-    <div class="ev-tiles" style="grid-template-columns: repeat(5, 1fr); column-gap: 16px;">
-      <div class="ev-tile" style="padding:9px 16px 10px;"><div class="elbl"><span dir="ltr">10,000+</span></div><div class="etxt" style="font-size:21px;">כלי רכב שמוגנו</div></div>
-      <div class="ev-tile" style="padding:9px 16px 10px;"><div class="elbl"><span dir="ltr">3,000+</span></div><div class="etxt" style="font-size:21px;">רכבים זחליים וגלגליים כקבלן ראשי</div></div>
-      <div class="ev-tile" style="padding:9px 16px 10px;"><div class="elbl"><span dir="ltr">120,000+</span></div><div class="etxt" style="font-size:21px;">מערכות ישיבה בולמות-אנרגיה בשירות</div></div>
-      <div class="ev-tile" style="padding:9px 16px 10px;"><div class="elbl"><span dir="ltr">≈331K</span> רגל״ר</div><div class="etxt" style="font-size:21px;">4 מתקנים — אריזונה <span dir="ltr">156K</span> + ויסקונסין <span dir="ltr">175K</span></div></div>
-      <div class="ev-tile" style="padding:9px 16px 10px;"><div class="elbl"><span dir="ltr">58</span></div><div class="etxt" style="font-size:21px;">פטנטים אמריקאיים רשומים</div></div>
-    </div>
-  </div>
-  <div class="ftr">
-    <div class="pageno"></div>
-    <div class="src">מקור: אתר Ravelin Defense הרשמי (יוני 2026); רכישת Fox Valley Metal Tech (PR Newswire, מרץ 2024); USAspending — חוזה PTR. עובדים — ≈315, אומדן צד-שלישי; LinkedIn 201–500. הכנסות — אומדן אינדיקטיבי ממקורות צד-שלישי לעסקי ArmorWorks Enterprises (Zippia / LeadIQ / RocketReach / Growjo) ו-Fox Valley Metal Tech (RocketReach / Kona Equity) טרם האיחוד; המאוחדות אינן מפורסמות.</div>
-    <div class="proj">פלסן סאסא — הפחתת חתימה | מצגת עבודה</div>
-  </div>
-</section></div>
-
-
-<!-- ================= SLIDE : PROFILE RAVELIN 2 — SIGNATURE MANAGEMENT ================= -->
-<div class="slide-wrap"><section class="slide" id="s-ravelin-2">
-  <div class="hdr">
-    <div class="hdr-titles">
-      <div class="kicker">חלק 1 | פרופיל חברה · משפחה 1: מערכות ברמת הפלטפורמה · קו עסקי מרכזי — שקף 2 מתוך 2: ניהול חתימה</div>
-      <h1 class="title">Ravelin Defense — TactiCam: פתרון ברמת הרכב להפחתת חתימה מול VIS, תרמי / IR ומכ״ם; קו מוצר ייעודי שנשמר גם לאחר האיחוד</h1>
-    </div>
-    <img class="bdo-logo" src="@@IMG:bdo-logo.png@@" alt="BDO Consulting — Strategy Growth &amp; Innovation">
-  </div>
-  <table class="snap">
-    <colgroup>
-      <col style="width:200px"><col style="width:430px"><col style="width:330px"><col style="width:436px"><col style="width:380px">
-    </colgroup>
-    <tr><th>מוצר ראשי</th><th>סוג הפתרון</th><th>ספקטרום מתועד</th><th>מוצרים ותוכניות נוספים</th><th>בשלות מסחרית</th></tr>
-    <tr>
-      <td><b><span dir="ltr">TactiCam™</span></b></td>
-      <td>מערכת הסוואה פסיבית תלת-ממדית ברמת הרכב — מותקנת ישירות על הפלטפורמה ונשארת עליה בתנועה</td>
-      <td><span dir="ltr">VIS</span> · תרמי / <span dir="ltr">IR</span> · מכ״ם <span class="q">(תת-תחומי IR לא מפורטים)</span></td>
-      <td><span dir="ltr">Radar Reduction Shrouds</span>; <span dir="ltr">DEW Protective Applique</span> — מו״פ נפרד <span class="q">(SBIR)</span></td>
-      <td>מסחרית — קו מוצר מבוסס; ללא רכש ייצור פומבי עדכני</td>
-    </tr>
-  </table>
-  <div class="profile-main" style="top: 327px; grid-template-columns: 940px 1fr;">
-    <div class="pf-story">
-      <div class="sec-bar">הסיפור בקצרה</div>
-      <ul class="story" style="font-size:21px; line-height:1.26;">
-        <li style="margin-bottom:3px;">ניהול חתימה — <b>יכולת מוצר ייעודית</b> בתוך קבוצת שרידות רחבה: "מערכות פסיביות שפותחו בבית" המשלבות חומרים, ציפויים וגאומטריה להפחתת חתימת הרכב במספר ספקטרומים <span class="dim">(בניסוח החברה)</span></li>
-        <li style="margin-bottom:3px;"><b><span dir="ltr">TactiCam™</span></b> — יריעה תלת-ממדית פסיבית המותקנת ישירות על הרכב: תבנית גאומטרית רב-עומק המשבשת גילוי אלקטרו-אופטי ומכ״ם ונשארת על הרכב בתנועה — לוגיקת סינון המומחים: <b>פתרון על רכב נע</b></li>
-        <li style="margin-bottom:3px;">נוספים: <b>Radar Reduction Shrouds</b> <span class="dim">(ללא פירוט טכני פומבי)</span> · <b>DEW Protective Applique</b> — סרט רב-שכבתי מ-SBIR, בעיקר הגנה מלייזר / HPM, הדפסת VIS / IR אפשרית — <b>נפרד מ-TactiCam</b> · ArmorVision — מודעות מצב בלבד</li>
-        <li style="margin-bottom:3px;">לעומת <span dir="ltr">AMD</span> (ציפוי / חומר) ו-Shieldex (טקסטיל לכיסוי) — <b>Ravelin כבר מציעה מערכת ברמת הרכב ומשלבת אותה עם מיגון, שרידות ואינטגרציה</b></li>
-      </ul>
-      <div class="pf-bands">
-        <span class="blbl">תחומי חתימה</span>
-        <span class="band-chip">אופטי (VIS)</span><span class="band-chip">תרמי / IR — כיסוי חלקי</span><span class="band-chip">מכ״ם / RCS</span>
-      </div>
-      <div class="pf-bandqual">תת-תחומי ה-<span dir="ltr">IR</span> (<span dir="ltr">MWIR / LWIR</span>) אינם מפורטים במקורות; הפחתת מכ״ם מוצגת ברמת מוצר — עדות חזקה מהותית מסיכוך <span dir="ltr">RF / EMI</span> גנרי</div>
+      <div class="pf-note" style="margin-top:4px; padding:8px 20px 9px; font-size:21px; line-height:1.3;"><div class="nlbl">סייג אסטרטגי</div>התאמה אסטרטגית — גבוהה ככל הנראה; אך החברה גדולה מהותית מפרופיל היעד המקורי <span class="dim">(מכירות עד ~$20M)</span>, ובעלות PE לצד איחוד buy-and-build טרי עשויים להפחית את נגישות העסקה — תצפית, לא המלצת רכישה</div>
     </div>
     <div class="pf-imgs">
       <div class="sec-bar">TactiCam על הרכב</div>
       <div class="figrow" style="grid-template-columns: 1.25fr 1fr;">
-        <div class="ifig" style="height:346px;">
+        <div class="ifig" style="height:262px;">
           <div class="iimg" style="background-image:url('@@IMG:ravelin-tacticam-hmmwv-desert.jpg@@')"></div>
           <div class="icap2"><b>TactiCam על HMMWV — לוחות תלת-ממדיים על כל הרכב.</b> מקור: <span dir="ltr" style="white-space:nowrap">ravelindefense.com</span></div>
         </div>
-        <div class="ifig" style="height:346px;">
+        <div class="ifig" style="height:262px;">
           <div class="iimg" style="background-image:url('@@IMG:ravelin-tacticam-closeup-2025.jpg@@')"></div>
           <div class="icap2"><b>משטח TactiCam תלת-ממדי — תקריב (AUSA 2025).</b> מקור: <span dir="ltr" style="white-space:nowrap">ravelindefense.com</span></div>
         </div>
       </div>
     </div>
   </div>
-  <div class="pf-evidence" style="top: 736px; ">
-    <div class="sec-bar">עדויות מסחריות / פעילות אחרונה</div>
-    <div class="ev-list" style="font-size:21px; line-height:1.28; row-gap:5px; grid-template-columns: 1fr 1fr 1fr; column-gap:30px;">
-      <div class="ev-item"><b>לפני 2020 — שילובים והדגמות על פלטפורמות:</b> Stryker בדוכן <span dir="ltr">GDLS</span> (AUSA 2010) · Hyena (Modern Day Marine 2011) · <span dir="ltr">NXT 360</span> של <span dir="ltr">AM General</span> (IDEX 2019) — <b>שילוב והדגמה, לא הזמנות ייצור</b></div>
-      <div class="ev-item"><b>2021 — צבא ארה״ב, Natick:</b> התקשרות ללימוד TactiCam לשימוש הלוחם העתידי ביישום פלטפורמות <span class="dim">(VIS, תרמי / IR, מכ״ם; בפרסום החברה)</span> — חזק מהדגמת תערוכה, לא הזמנת ייצור</div>
-      <div class="ev-item"><b>אב-טיפוס הסוואה ניידת:</b> <span dir="ltr">OTA</span> מ-<span dir="ltr">RDECOM</span> לפיתוח אב-טיפוס של מערכת הסוואה ניידת <span class="dim">(רישום GovTribe; תאריך וערך לא פורסמו)</span> — אב-טיפוס, לא בחירה לייצור</div>
-      <div class="ev-item"><b>2022 — SBIR שלב I של הצבא <span dir="ltr">(W911NF-22-P-0057)</span>:</b> DEW Protective Applique, <span dir="ltr">$199,762</span> <span class="dim">(ספט׳ 2022 – מרץ 2023)</span> — תוכנית פיתוח נפרדת מ-TactiCam</div>
+  <div class="pf-evidence" style="top: 828px;">
+    <div class="sec-bar">עדויות מסחריות / פעילות אחרונה בתחום הפחתת החתימה</div>
+    <div class="ev-list" style="font-size:21px; line-height:1.2; row-gap:3px; grid-template-columns: 1fr 1fr 1fr; column-gap:30px;">
+      <div class="ev-item"><b>לפני 2020 — שילובים והדגמות:</b> Stryker בדוכן <span dir="ltr">GDLS</span> (AUSA 2010) · Hyena (2011) · <span dir="ltr">NXT 360</span> של <span dir="ltr">AM General</span> (IDEX 2019) — <b>לא הזמנות ייצור</b></div>
+      <div class="ev-item"><b>2021 — צבא ארה״ב, Natick:</b> התקשרות ללימוד TactiCam לשימוש הלוחם העתידי ביישום פלטפורמות <span class="dim">(בפרסום החברה)</span> — לא הזמנת ייצור</div>
+      <div class="ev-item"><b>אב-טיפוס הסוואה ניידת:</b> <span dir="ltr">OTA</span> מ-<span dir="ltr">RDECOM</span> לפיתוח אב-טיפוס <span class="dim">(GovTribe; תאריך וערך לא פורסמו)</span></div>
+      <div class="ev-item"><b>2022 — SBIR שלב I <span dir="ltr">(W911NF-22-P-0057)</span>:</b> DEW Protective Applique, <span dir="ltr">$199,762</span> <span class="dim">(ספט׳ 2022 – מרץ 2023)</span></div>
       <div class="ev-item"><b>2025 — שילוב על מועמד <span dir="ltr">XM30</span> של <span dir="ltr">GDLS</span></b> <span class="dim">(Griffin III)</span> — שלב אב-טיפוס; אינו חוזה TactiCam</div>
-      <div class="ev-item"><b><span dir="ltr">2023–2026</span>:</b> לא זוהה אירוע רכש, הזמנת ייצור או פריסה מבצעית פומבית חדשה בתחום — אין פירושו היעדר מכירות · <b>2026 —</b> לאחר האיחוד ניהול החתימה נשמר כהצעה ייעודית <span class="dim">(TactiCam, Shrouds)</span></div>
+      <div class="ev-item"><b><span dir="ltr">2023–2026</span>:</b> לא זוהה אירוע רכש, הזמנת ייצור או פריסה מבצעית פומבית חדשה — אין פירושו היעדר מכירות</div>
     </div>
   </div>
   <div class="ftr">
     <div class="pageno"></div>
-    <div class="src">מקור: אתר Ravelin Defense הרשמי (Signature Management, Land); AUSA Industry (יוני 2023); Defense Update (2010), Military.com (2011), Shephard (IDEX 2019), ESD (XM30, אוק׳ 2025); רשומת SBIR.gov (W911NF-22-P-0057); פרסום החברה ב-LinkedIn (Natick, 2021); GovTribe (OTA).</div>
+    <div class="src">מקור: אתר Ravelin Defense הרשמי (Signature Management, Land; יוני 2026); רכישת Fox Valley Metal Tech (PR Newswire, מרץ 2024); USAspending — חוזה PTR; SBIR.gov (W911NF-22-P-0057); פרסום החברה ב-LinkedIn (Natick, 2021); GovTribe (OTA); AUSA Industry (יוני 2023); Defense Update (2010), Military.com (2011), Shephard (IDEX 2019), ESD (XM30, אוק׳ 2025). עובדים והכנסות — אומדני צד-שלישי שנדלו ב-2026 (Zippia / LeadIQ / RocketReach / Growjo, Kona Equity); הנתונים המאוחדים אינם מפורסמים.</div>
     <div class="proj">פלסן סאסא — הפחתת חתימה | מצגת עבודה</div>
   </div>
 </section></div>
 
+<!-- ====== 09 · s-spectralx ====== -->
+<div class="slide-wrap"><section class="slide tall-ftr" id="s-spectralx">
+  <div class="hdr">
+    <div class="hdr-titles">
+      <div class="kicker">חלק 1 | פרופיל חברה · משפחה 1: מערכות ברמת הפלטפורמה · ליבת העסק</div>
+      <h1 class="title"><span dir="ltr">Spectralx</span> <span class="dim">(לשעבר <span dir="ltr">Polaris Solutions</span>)</span> — ניהול חתימה רב-ספקטרלי ישראלי, מהלוחם ועד פלטפורמות נעות; רכש צה״ל מדווח לערכת רכב</h1>
+    </div>
+    <img class="bdo-logo" src="@@IMG:bdo-logo.png@@" alt="BDO Consulting — Strategy Growth &amp; Innovation">
+  </div>
+  <table class="snap">
+    <colgroup>
+      <col style="width:150px"><col style="width:330px"><col style="width:170px"><col style="width:300px">
+      <col style="width:330px"><col style="width:150px"><col style="width:346px">
+    </colgroup>
+    <tr><th>מדינה</th><th>עיסוק עיקרי</th><th>חשיבות ניהול החתימה</th><th>בשלות מסחרית</th><th>בעלות / ישות</th><th>עובדים</th><th>הכנסות</th></tr>
+    <tr>
+      <td>ישראל <span class="q">(קיסריה; תכן בתפן)</span></td>
+      <td>ניהול חתימה רב-ספקטרלי — לוחם, רכב טקטי, פלטפורמות נעות ותשתיות</td>
+      <td>ליבת העסק</td>
+      <td>רכש צה״ל ושימוש מבצעי <span class="q">(2026, מדווח)</span></td>
+      <td>פרטית — <span dir="ltr">Spectral X Ltd</span>, לשעבר <span dir="ltr">Polaris Solutions</span>; <span class="q">בדיווח: גיבוי IAI</span></td>
+      <td><span dir="ltr">~70–75</span> <span class="q">(בדיווח)</span></td>
+      <td>לא פורסם</td>
+    </tr>
+  </table>
+  <div class="profile-main" style="top: 348px; grid-template-columns: 1010px 1fr;">
+    <div class="pf-story">
+      <div class="sec-bar">הסיפור בקצרה</div>
+      <ul class="story">
+        <li>חברת ניהול חתימה ישראלית שהקימו יוצאי יחידת מגלן כ-<span dir="ltr">Polaris Solutions</span> ומותגה מחדש ל-<span dir="ltr">Spectralx</span>; לפי דיווח 2026 — כ-<span dir="ltr">70–75</span> עובדים, קו ייצור מחוץ לישראל וחברת-בת בארה״ב</li>
+        <li><b><span dir="ltr">TVC</span> <span class="dim">(Thermal 3D Visual Concealment)</span></b> — חומר רב-שכבתי קנייני המשלב הפחתת חתימה תרמית עם שיבוש חזותי תלת-ממדי; הבסיס המשותף לרוב הפורטפוליו</li>
+        <li><b><span dir="ltr">Armadillo</span></b> — ערכת הסוואה לרכב קרב המשנה את צללית הרכב ביריעות הנפרשות בלחיצת כפתור; לפי הדיווח מכוונת בין היתר נגד מצלמות רחפן</li>
+        <li><b><span dir="ltr">SOLOMON</span></b> — פתרון בקרת החתימה המתקדם של החברה, מתואר פומבית ברמה גבוהה בלבד — <b>המנגנון וסיווג פסיבי / אקטיבי לא אומתו</b></li>
+      </ul>
+      <div class="pf-bands">
+        <span class="blbl">תחומי חתימה</span>
+        <span class="band-chip">אופטי <span dir="ltr">(VIS)</span></span><span class="band-chip"><span dir="ltr">NIR</span></span><span class="band-chip">תרמי <span dir="ltr">(IR / FIR)</span></span><span class="band-chip" style="background:none; box-shadow: inset 0 0 0 2px var(--c-slate-mid); color: var(--c-slate);">מכ״ם — לא נתמך</span>
+      </div>
+      <div class="pf-bandqual">התיעוד נוקב ב-<span dir="ltr">Visual · IR · FIR</span> ואינו מפריד <span dir="ltr">MWIR / LWIR</span>. איזכורי מכ״ם מתייחסים ל<b>הסוואת מערכות מכ״ם</b> — לא להפחתת <span dir="ltr">RCS</span> של הפלטפורמה</div>
+    </div>
+    <div class="pf-imgs">
+      <div class="sec-bar">מוצרים רלוונטיים</div>
+      <div class="mixp">
+        <div class="mix-row"><span dir="ltr">TVC</span> — חומר ההסוואה התרמי-חזותי<span class="mw w1">פסיבי</span></div>
+        <div class="mix-row"><span dir="ltr">Armadillo</span> — ערכת רכב קרב<span class="mw w1">רכב</span></div>
+        <div class="mix-row"><span dir="ltr">RAJUGA</span> — לוחות ללוחם, לציוד ולפלטפורמה<span class="mw w2">פסיבי</span></div>
+        <div class="mix-row"><span dir="ltr">SOLOMON</span> — בקרת חתימה מתקדמת<span class="mw w4">לא אומת</span></div>
+        <div class="mix-row"><span dir="ltr">HOTARU</span> — סימון כוח ידידותי בתרמי<span class="mw w4">פליטה</span></div>
+      </div>
+      <div class="pf-note"><div class="nlbl">רלוונטיות לפלסן</div>ישראלית · ניהול חתימה בליבה · יישום לרכב ולפלטפורמה נעה · הסוואה פסיבית לצד בקרת חתימה · רכש ושימוש מבצעי מדווחים</div>
+    </div>
+  </div>
+  <div class="pf-evidence" style="top: 774px; ">
+    <div class="sec-bar">עדויות מסחריות / פעילות אחרונה · ופערים לאימות</div>
+    <div class="ev-list" style="grid-template-columns: 1fr 1fr 1fr; column-gap:30px;">
+      <div class="ev-item"><b>2026 — רכש צה״ל <span class="dim">(מדווח)</span>:</b> רכישת "קומץ" ערכות <span dir="ltr">Armadillo</span> לרכבי קרב, כולל רכבים מסוג האמר — דיווח 25.5.2026</div>
+      <div class="ev-item"><b>2026 — שימוש מבצעי <span class="dim">(מדווח)</span>:</b> אמצעי הסוואה של החברה על מערכות גילוי ומצלמות תצפית בגבול הצפון — אירוע פריסה, לא עסקה נפרדת</div>
+      <div class="ev-item"><b>לקוח אמריקאי · מפא״ת:</b> לפי דיווח נמסרה מערכת הסתרה דינמית לרכב ללקוח בארה״ב <span class="dim">(לא נקוב בשם)</span>; ושיתוף פעולה עם מפא״ת מ-2011</div>
+      <div class="ev-item"><b>לאימות:</b> היחס המשפטי <span dir="ltr">Polaris → Spectral X Ltd</span> והחזקת <span dir="ltr">IAI</span> · האם <span dir="ltr">Armadillo</span> נשארת מותקנת ופועלת בנסיעה · מנגנון <span dir="ltr">SOLOMON</span></div>
+      <div class="ev-item"><b>סייג היסטורי:</b> איזכור "סוקום" בחומר פלסן הקודם מתייחס ככל הנראה ל-<span dir="ltr">Polaris Government &amp; Defense</span> — חברה אחרת; לא אומת עבור חברה זו</div>
+    </div>
+  </div>
+  <div class="ftr">
+    <div class="pageno"></div>
+    <div class="src">מקור: <span dir="ltr">Israel Hayom</span> (25.5.2026) · <span dir="ltr">Israel Defense</span> · <span dir="ltr">Jerusalem Post</span> · <span dir="ltr">Raksha Anirveda</span> · <span dir="ltr">Startup Nation Central</span> · המועצה התעשייתית מגדל תפן · אתר החברה <span dir="ltr">spectral-x.com</span> — הגישה הישירה נחסמה; הציטוטים מהאתר דרך מקורות משניים</div>
+    <div class="proj">פלסן סאסא — הפחתת חתימה | מצגת עבודה</div>
+  </div>
+</section></div>
 
-<!-- ================= SLIDE : PROFILE AMETRINE ================= -->
+<!-- ================= SLIDE : PLASAN RELEVANCE / LIMITATIONS ================= -->
+
+<!-- ====== 10 · s-ametrine ====== -->
 <div class="slide-wrap"><section class="slide" id="s-ametrine">
   <div class="hdr">
     <div class="hdr-titles">
@@ -1528,7 +1543,7 @@ tr.gband td .gs { font-weight: 400; color: var(--c-slate); margin-right: 12px; f
       <td>מסחרית — רכש ממשלתי + הערכת פלטפורמה</td>
       <td>פרטית — <span dir="ltr" style="white-space:nowrap">Ametrine Technologies Ltd / Inc.</span> <span class="q">(שלב <span dir="ltr">Series B</span> / צמיחה)</span></td>
       <td><span dir="ltr">~40</span></td>
-      <td><span dir="ltr">$1–15M</span> <span class="q">(הערכות צד-שלישי)</span></td>
+      <td><span dir="ltr">$1–15M</span> <span class="q">(אומדן צד-שלישי, נדלה 2026 — לא הכנסה מדווחת)</span></td>
     </tr>
   </table>
   <div class="profile-main" style="top: 355px; ">
@@ -1576,17 +1591,501 @@ tr.gband td .gs { font-weight: 400; color: var(--c-slate); margin-right: 12px; f
   </div>
   <div class="ftr">
     <div class="pageno"></div>
-    <div class="src">מקור: אתר Ametrine הרשמי ועלוני מוצר; רישומי חוזים פדרליים (USAspending; מראות FPDS משניות); הודעת צבא ארה״ב על MSPIX 24 (Fort Leonard Wood). ההכנסות — הערכת צד-שלישי.</div>
+    <div class="src">מקור: אתר Ametrine הרשמי ועלוני מוצר; רישומי חוזים פדרליים (USAspending; מראות FPDS משניות); הודעת צבא ארה״ב על MSPIX 24 (Fort Leonard Wood). ההכנסות — אומדן צד-שלישי שנדלה ב-2026, לא הכנסה מדווחת.</div>
     <div class="proj">פלסן סאסא — הפחתת חתימה | מצגת עבודה</div>
   </div>
 </section></div>
 
 
 <!-- ================= SLIDE : PROFILE AMD ================= -->
+
+<!-- ====== 11 · s-div-mm ====== -->
+<div class="slide-wrap"><section class="slide" id="s-div-mm">
+  <div class="sd"></div>
+  <div class="sd-num">2</div>
+  <div class="sd-body">
+    <div class="sd-kick">חלק ב׳</div>
+    <div class="sd-title">מומנטום בשוק ניהול החתימה הרב־ספקטרלי</div>
+    <div class="sd-line"></div>
+    <div class="sd-desc">אינדיקציות להתפתחות הביקוש והפעילות המסחרית, <span dir="ltr">2020–2026 YTD</span></div>
+      </div>
+  <div class="ftr">
+    <div class="pageno"></div>
+    <div class="src">מצגת עבודה</div>
+    <div class="proj">פלסן סאסא — הפחתת חתימה | מצגת עבודה</div>
+  </div>
+</section></div>
+
+
+<!-- ================= PART 2 : METHODOLOGY ================= -->
+
+<!-- ====== 12 · s-mm-method ====== -->
+<div class="slide-wrap"><section class="slide" id="s-mm-method">
+  <div class="hdr">
+    <div class="hdr-titles">
+      <div class="kicker">חלק ב׳ | מתודולוגיה</div>
+      <h1 class="title">תמונת השוק נבנתה בשתי שיטות חיפוש משלימות ואוחדה למאגר אירועים אחד</h1>
+    </div>
+    <img class="bdo-logo" src="@@IMG:bdo-logo.png@@" alt="BDO Consulting — Strategy Growth &amp; Innovation">
+  </div>
+
+  <div class="mm-methods" style="top: 240px;">
+    <div class="mm-card" style="padding: 26px 40px 28px;">
+      <div class="mc-name">מחקר מבוסס חברות</div>
+      <div class="mc-body" style="margin-top:14px;">מתחיל מחברות וממוצרים, ומאתר את הפעילות הפומבית סביבם לאורך השנים</div>
+    </div>
+    <div class="mm-card alt" style="padding: 26px 40px 28px;">
+      <div class="mc-name">מחקר מבוסס אירועים</div>
+      <div class="mc-body" style="margin-top:14px;">מתחיל מרוכשים, מתוכניות, ממכרזים ומהזמנות, וממפה את הפעילות הרלוונטית</div>
+    </div>
+  </div>
+  <div class="mm-arrow" style="top: 470px;">&#9660;</div>
+  <div class="mm-recon" style="top: 516px;">איחוד המקורות · ניכוי כפילויות · בדיקות שלמות ממוקדות</div>
+  <div class="mm-arrow" style="top: 592px;">&#9660;</div>
+
+  <div class="mm-db" style="top: 638px;">
+    <div class="dbh">מאגר האירועים המאוחד — המקור היחיד לכל הנתונים הכמותיים בפרק זה</div>
+    <div class="dbr">
+      <div class="dbc" style="padding:18px 26px 16px;">
+        <div class="dbn">143</div>
+        <div class="dbl">אירועי מחזור חיים שנשמרו</div>
+      </div>
+      <div class="dbc" style="padding:18px 26px 16px;">
+        <div class="dbn">115</div>
+        <div class="dbl">אירועי <span dir="ltr">Land-core</span></div>
+      </div>
+      <div class="dbc" style="padding:18px 26px 16px;">
+        <div class="dbn">34</div>
+        <div class="dbl">תוכניות / משפחות רכש נבדלות</div>
+      </div>
+    </div>
+  </div>
+  <div class="mm-fn" style="top: 900px;">28 אירועים נוספים נשמרו במאגר כאירועי הקשר בלבד, ואינם נכללים במדדי ה-<span dir="ltr">Land-core</span> המוצגים בפרק זה.</div>
+
+  <div class="ftr">
+    <div class="pageno"></div>
+    <div class="src">תיחום: הפחתת חתימה ברמת הפלטפורמה, כולל פתרונות רב-ספקטרליים ומכ״ם. ניתוח BDO על בסיס מקורות רכש ציבוריים ומקורות חברה. 2026 — נתון חלקי לשנה שוטפת. אומדן מומנטום, לא אומדן שווי שוק</div>
+    <div class="proj">פלסן סאסא — הפחתת חתימה | מצגת עבודה</div>
+  </div>
+</section></div>
+
+<!-- ====== 13 · s-mm-glance ====== -->
+<div class="slide-wrap"><section class="slide" id="s-mm-glance">
+  <div class="hdr">
+    <div class="hdr-titles">
+      <div class="kicker">חלק ב׳ | תמונת השוק במספרים</div>
+      <h1 class="title">הפעילות הפומבית בשוק רחבה יותר מכפי שנראה במחקר הראשוני</h1>
+    </div>
+    <img class="bdo-logo" src="@@IMG:bdo-logo.png@@" alt="BDO Consulting — Strategy Growth &amp; Innovation">
+  </div>
+
+  <div class="mm-big" style="top: 258px;">
+    <div class="g">
+      <div class="gn">115</div>
+      <div class="gl">אירועי <span dir="ltr">Land-core</span></div>
+      <div class="gs">אבני דרך פומביות מתועדות: מכרזים, פיתוחים וניסויים, מסגרות, זכיות והזמנות</div>
+    </div>
+    <div class="g">
+      <div class="gn">34</div>
+      <div class="gl">תוכניות / משפחות רכש נבדלות</div>
+      <div class="gs">כל תוכנית נספרת פעם אחת לאורך כל התקופה, גם אם ייצרה מספר אירועים והזמנות</div>
+    </div>
+    <div class="g">
+      <div class="gn">76</div>
+      <div class="gl">הזמנות בפועל</div>
+      <div class="gs">רכישה בודדת ממשית — הזמנת אספקה או משיכה מתוך חוזה קיים</div>
+    </div>
+  </div>
+
+  <div class="mm-ext" style="top: 660px;">
+    <div class="x">
+      <div class="xl">אינדיקציה חיצונית — לא נתון שאומץ על ידינו</div>
+      <div class="xt">מחקר חיצוני מ-2025 מעריך את שוק ה-<span dir="ltr">Multispectral Camouflage</span> בכ-<b><span dir="ltr">$200M</span></b> כיום וכ-<b><span dir="ltr">$550M</span></b> ב-2028 <span dir="ltr">(~40% CAGR)</span></div>
+    </div>
+    <div class="x warn">
+      <div class="xl">סייג מהותי</div>
+      <div class="xt">המחקר הוכן עבור <span dir="ltr">DECPT</span>, שחקנית בתחום; לכן האומדן מוצג כאינדיקציה חיצונית בלבד ולא כנתון שאומץ על ידינו</div>
+    </div>
+  </div>
+  <div class="mm-fn" style="top: 892px;">אין לשלב את התחזית החיצונית עם נתוני הרכש שנצפו בעבודה זו לכדי חישוב אחד — מדובר בשני מקורות בעלי מתודולוגיה ותכלית שונות.</div>
+
+  <div class="ftr">
+    <div class="pageno"></div>
+    <div class="src">מקור: ניתוח BDO על בסיס מקורות רכש ציבוריים ומקורות חברה · האומדן החיצוני: <span dir="ltr">Pickwick Capital Partners, The Market for Multispectral Camouflage, May 2025</span> — מחקר שהוכן עבור <span dir="ltr">DECPT</span>, שחקנית בשוק</div>
+    <div class="proj">פלסן סאסא — הפחתת חתימה | מצגת עבודה</div>
+  </div>
+</section></div>
+
+<!-- ====== 14 · s-mm-activity ====== -->
+<div class="slide-wrap"><section class="slide" id="s-mm-activity">
+  <div class="hdr">
+    <div class="hdr-titles">
+      <div class="kicker">חלק ב׳ | פעילות שנתית</div>
+      <h1 class="title">מספר ההזמנות עולה בחלק מהשנים — אך נותר תנודתי ומושפע ממספר תוכניות גדולות</h1>
+    </div>
+    <img class="bdo-logo" src="@@IMG:bdo-logo.png@@" alt="BDO Consulting — Strategy Growth &amp; Innovation">
+  </div>
+
+  <div class="mm-duo" style="top: 250px;">
+    <div class="dp">
+      <div class="dg" style="bottom:80px"><span class="dgl">5</span></div>
+      <div class="dg" style="bottom:160px"><span class="dgl">10</span></div>
+      <div class="dg" style="bottom:240px"><span class="dgl">15</span></div>
+      <div class="dc"><div class="b prg" style="height:64px"><div class="bl">4</div></div><div class="b ord" style="height:224px"><div class="bl">14</div></div></div>
+      <div class="dc"><div class="b prg" style="height:48px"><div class="bl">3</div></div><div class="b ord" style="height:80px"><div class="bl">5</div></div></div>
+      <div class="dc"><div class="b prg" style="height:80px"><div class="bl">5</div></div><div class="b ord" style="height:96px"><div class="bl">6</div></div></div>
+      <div class="dc"><div class="b prg" style="height:80px"><div class="bl">5</div></div><div class="b ord" style="height:80px"><div class="bl">5</div></div></div>
+      <div class="dc"><div class="b prg" style="height:208px"><div class="bl">13</div></div><div class="b ord" style="height:208px"><div class="bl">13</div></div></div>
+      <div class="dc"><div class="b prg" style="height:144px"><div class="bl">9</div></div><div class="b ord" style="height:288px"><div class="bl">18</div></div></div>
+      <div class="dc ytd"><div class="b prg" style="height:224px"><div class="bl">14</div></div><div class="b ord" style="height:240px"><div class="bl">15</div></div></div>
+    </div>
+    <div class="dx">
+      <div>2020</div>
+      <div>2021</div>
+      <div>2022</div>
+      <div>2023</div>
+      <div>2024</div>
+      <div>2025</div>
+      <div class="ytd"><span dir="ltr">2026 YTD</span></div>
+    </div>
+  </div>
+  <div class="mm-legend" style="top: 662px;">
+    <span><span class="k bar"></span>הזמנות בפועל</span>
+    <span><span class="k prg"></span>תוכניות / משפחות רכש פעילות</span>
+    <span><span class="k ytd"></span><span dir="ltr">2026</span> — נתון חלקי לשנה שוטפת, ללא השלמה לשנה מלאה</span>
+  </div>
+  <div class="mm-conc" style="top: 716px;">
+    <div class="c"><div class="cy">2020</div><div class="ct">92.9% מההזמנות — <span dir="ltr">ULCANS</span></div></div>
+    <div class="c"><div class="cy">2021</div><div class="ct">80.0% מההזמנות — <span dir="ltr">ULCANS</span></div></div>
+    <div class="c"><div class="cy">2025</div><div class="ct">72.2% מההזמנות — <span dir="ltr">Japan MEDS</span></div></div>
+  </div>
+  <div class="mm-take" style="top: 836px;">בשנים שבהן מספר ההזמנות גבוה, חלק ניכר מהן מרוכז בתוכנית אחת. לכן <b>מספר ההזמנות לבדו אינו מדד לרוחב השוק</b> — תוכנית אחת יכולה לייצר מספר אירועים והזמנות לאורך זמן.</div>
+
+  <div class="ftr">
+    <div class="pageno"></div>
+    <div class="src">מקור: מאגר האירועים המאוחד — <span dir="ltr">115</span> אירועי <span dir="ltr">Land-core</span> ב-34 תוכניות / משפחות רכש. הזמנה בפועל = עסקת רכש נפרדת. 2026 — נתון חלקי לשנה שוטפת</div>
+    <div class="proj">פלסן סאסא — הפחתת חתימה | מצגת עבודה</div>
+  </div>
+</section></div>
+
+<!-- ====== 15 · s-mm-broader ====== -->
+<div class="slide-wrap"><section class="slide" id="s-mm-broader">
+  <div class="hdr">
+    <div class="hdr-titles">
+      <div class="kicker">חלק ב׳ | רוחב הפעילות</div>
+      <h1 class="title">במקביל לתנודתיות בהזמנות, בסיס הפעילות מתרחב על פני יותר תוכניות, ספקים, רוכשים ומדינות</h1>
+    </div>
+    <img class="bdo-logo" src="@@IMG:bdo-logo.png@@" alt="BDO Consulting — Strategy Growth &amp; Innovation">
+  </div>
+
+  <div class="pend" style="top: 268px;">
+    <div class="ph">שקף פנימי — ממתין לסדרות השנתיות מתוך המאגר הסופי</div>
+    <div class="pb">
+      <div class="pt">הסדרות השנתיות הנדרשות לשקף זה נלקחות <b>ישירות מגיליון <span dir="ltr">Annual Metrics</span></b> שבמאגר הסופי, ואינן ניתנות לגזירה מהמדדים שנמסרו. הסדרות החסרות:</div>
+      <ul>
+        <li><b>ספקים פעילים</b> — סדרה שנתית <span dir="ltr">2020–2026 YTD</span></li>
+        <li><b>רוכשים קנוניים ייחודיים</b> — סדרה שנתית <span dir="ltr">2020–2026 YTD</span></li>
+        <li><b>מדינות</b> — סדרה שנתית <span dir="ltr">2020–2026 YTD</span></li>
+        <li><b>סה״כ אירועי ליבה לפי שנה</b> — נדרש גם לקו הנוסף בגרף הפעילות השנתית בשקף הקודם</li>
+      </ul>
+      <div class="pf">הסדרה של <b>תוכניות / משפחות רכש פעילות</b> <span dir="ltr">(4, 3, 5, 5, 13, 9, 14)</span> כבר מוצגת בגרף הפעילות השנתית. סדרת "תוכניות שהופיעו לראשונה במאגר" תוצג רק אם היא קיימת ומשוחזרת מהמאגר הסופי — אחרת תושמט.<br>הסדרות הישנות הוסרו מהמצגת ולא יוצגו שוב.</div>
+    </div>
+  </div>
+
+  <div class="ftr">
+    <div class="pageno"></div>
+    <div class="src">שקף עבודה פנימי — יוחלף בתוכן מלא עם קבלת הקובץ <span dir="ltr">Plasan_Signature_Management_Authoritative_Event_Database_2020_2026_FINAL.xlsx</span></div>
+    <div class="proj">פלסן סאסא — הפחתת חתימה | מצגת עבודה</div>
+  </div>
+</section></div>
+
+<!-- ====== 16 · s-mm-comp ====== -->
+<div class="slide-wrap"><section class="slide" id="s-mm-comp">
+  <div class="hdr">
+    <div class="hdr-titles">
+      <div class="kicker">חלק ב׳ | הרכב הפעילות</div>
+      <h1 class="title">לא כל אירוע הוא הזמנה — הפעילות כוללת מכרזים, פיתוחים, ניסויים, מסגרות והזמנות</h1>
+    </div>
+    <img class="bdo-logo" src="@@IMG:bdo-logo.png@@" alt="BDO Consulting — Strategy Growth &amp; Innovation">
+  </div>
+
+  <div class="pend" style="top: 268px;">
+    <div class="ph">שקף פנימי — ממתין לקטגוריות ולספירות השנתיות מתוך המאגר הסופי</div>
+    <div class="pb">
+      <div class="pt">שקף זה מציג את <b>פילוח 115 אירועי ה-<span dir="ltr">Land-core</span> לשלבי מחזור החיים</b>, לפי שנה. הקטגוריות והספירות חייבות להתקבל מהמאגר הסופי ולהשתחזר ממנו — הן אינן ניתנות לגזירה מהמדדים המצרפיים שנמסרו. הנדרש:</div>
+      <ul>
+        <li><b>שמות הקטגוריות</b> כפי שהן מסווגות במאגר הסופי <span class="dim">(לדוגמה: הזמנות בפועל · אותות ביקוש פורמליים · פיתוח / אימות · אבני דרך מסחריות נוספות)</span></li>
+        <li><b>ספירה שנתית לכל קטגוריה</b>, <span dir="ltr">2020–2026 YTD</span>, שסכומה 115</li>
+      </ul>
+      <div class="pf">טבלת 42 האירועים הקודמת הוסרה מהמצגת ולא תשוחזר. המטרה של שקף זה היא להסביר מדוע התעוררות בשוק יכולה להקדים צמיחה עקבית בהזמנות: שרשרת האירועים מתחילה במכרזים ובפיתוחים, והזמנה היא רק אחת מתחנותיה.</div>
+    </div>
+  </div>
+
+  <div class="ftr">
+    <div class="pageno"></div>
+    <div class="src">שקף עבודה פנימי — יוחלף בתוכן מלא עם קבלת הקובץ <span dir="ltr">Plasan_Signature_Management_Authoritative_Event_Database_2020_2026_FINAL.xlsx</span></div>
+    <div class="proj">פלסן סאסא — הפחתת חתימה | מצגת עבודה</div>
+  </div>
+</section></div>
+
+<!-- ====== 17 · s-mm-prog ====== -->
+<div class="slide-wrap"><section class="slide" id="s-mm-prog">
+  <div class="hdr">
+    <div class="hdr-titles">
+      <div class="kicker">חלק ב׳ | כלל התוכניות · <span dir="ltr">1–3</span></div>
+      <h1 class="title">כל 34 תוכניות ומשפחות הרכש ב-<span dir="ltr">Land-core</span> — ולא רק דוגמאות נבחרות</h1>
+    </div>
+    <img class="bdo-logo" src="@@IMG:bdo-logo.png@@" alt="BDO Consulting — Strategy Growth &amp; Innovation">
+  </div>
+
+  <div class="pend" style="top: 268px;">
+    <div class="ph">שקף פנימי — ממתין לגיליון <span dir="ltr">Programme Families</span> שבמאגר הסופי</div>
+    <div class="pb">
+      <div class="pt">שקפי התוכניות הנבחרות הוסרו. במקומם יבואו <b>2–3 שקפים המכילים את כל 34 משפחות הרכש</b>, שורה אחת לכל משפחה, עם העמודות: מדינה · תוכנית / דרישת רכש · רוכש · ספק · מוצר / פתרון · שלב / סטטוס · שנים · כמות שפורסמה · שווי שפורסם. איפה שאין נתון — "לא פורסם", ולא תא ריק.</div>
+      <ul>
+        <li>הרשימה חייבת להגיע <b>מגיליון <span dir="ltr">Programme Families</span> שבמאגר הסופי</b> — שחזור או בחירה חלקית מהמקורות הקודמים אינם קבילים</li>
+        <li>שורה אחת לכל <b>משפחת רכש</b>, לא לכל אירוע; תוכנית עם מספר הזמנות אינה מוכפלת</li>
+        <li>תקרות מסגרת אינן מוצגות כמכירה; <span dir="ltr">Japan MEDS 26,000</span> יסומן במפורש כ״היקף תוכנית מדווח — לא כמות חוזית מאומתת״</li>
+        <li>סייגי ראיות נשמרים לזכיות ממקור משני, כגון <span dir="ltr">Sterlite</span></li>
+      </ul>
+      <div class="pf">11 משפחות ההקשר הנוספות אינן חלק מ-34 משפחות ה-<span dir="ltr">Land-core</span>, ויוצגו בנפרד בנספח אם יימצא בכך ערך.</div>
+    </div>
+  </div>
+
+  <div class="ftr">
+    <div class="pageno"></div>
+    <div class="src">שקף עבודה פנימי — יוחלף ב-2–3 שקפי טבלה מלאים עם קבלת הקובץ <span dir="ltr">Plasan_Signature_Management_Authoritative_Event_Database_2020_2026_FINAL.xlsx</span></div>
+    <div class="proj">פלסן סאסא — הפחתת חתימה | מצגת עבודה</div>
+  </div>
+</section></div>
+
+<!-- ====== 18 · s-mm-conclusion ====== -->
+<div class="slide-wrap"><section class="slide" id="s-mm-conclusion">
+  <div class="hdr">
+    <div class="hdr-titles">
+      <div class="kicker">חלק ב׳ | מסקנות הנהלה</div>
+      <h1 class="title">השוק מתעורר — אך עדיין לא נמצא בשלב של צמיחה מסחרית מואצת</h1>
+    </div>
+    <img class="bdo-logo" src="@@IMG:bdo-logo.png@@" alt="BDO Consulting — Strategy Growth &amp; Innovation">
+  </div>
+
+  <div class="mm-find" style="top: 258px; row-gap: 30px;">
+    <div class="f"><div class="fn">01 · פעילות</div><div class="ft">בסיס הפעילות הפומבית רחב יותר — <b>115 אירועי <span dir="ltr">Land-core</span> ב-34 תוכניות / משפחות רכש</b>.</div></div>
+    <div class="f"><div class="fn">02 · הזמנות</div><div class="ft"><b>76 הזמנות בפועל</b> זוהו, אך הסדרה השנתית תנודתית וריכוזית בחלק מהשנים.</div></div>
+    <div class="f"><div class="fn">03 · רוחב השוק</div><div class="ft">יותר תוכניות, ספקים, רוכשים ומדינות מצביעים על <b>התרחבות בסיס הפעילות</b>.</div></div>
+    <div class="f"><div class="fn">04 · היקפים</div><div class="ft">המידע הציבורי על כמויות ושווי עדיין חלקי, ולכן <b>אין בסיס לקבוע שהיקף הרכש הכולל גדל באופן רציף</b>.</div></div>
+  </div>
+  <div class="mm-final" style="top: 690px;">
+    <div class="fl">שורה תחתונה</div>
+    <div class="fx" style="font-size: 30px;">קיימות אינדיקציות למומנטום חיובי ולהתעוררות בשוק דרך התרחבות בסיס הפעילות — יותר תוכניות / דרישות רכש, ספקים, רוכשים ומדינות — אך מספר ההזמנות עצמו אינו מציג מגמת צמיחה רציפה, ואין בסיס מספק לקבוע כי היקף ההזמנות גדל באופן עקבי</div>
+  </div>
+
+  <div class="ftr">
+    <div class="pageno"></div>
+    <div class="src">מקור: מאגר האירועים המאוחד — 143 אירועי מחזור חיים שנשמרו, מהם 115 אירועי <span dir="ltr">Land-core</span> ב-34 תוכניות / משפחות רכש. ניתוח BDO על בסיס מקורות רכש ציבוריים ומקורות חברה. 2026 — נתון חלקי לשנה שוטפת</div>
+    <div class="proj">פלסן סאסא — הפחתת חתימה | מצגת עבודה</div>
+  </div>
+</section></div>
+
+<!-- ====== 19 · s-div-apx ====== -->
+<div class="slide-wrap"><section class="slide" id="s-div-apx">
+  <div class="sd"></div>
+  <div class="sd-body">
+    <div class="sd-kick">חומר תומך</div>
+    <div class="sd-title">נספחים</div>
+    <div class="sd-line"></div>
+    <div class="sd-desc">תמונת-על השוואתית של עשר החברות · מטריצת כיסוי ספקטרלי · מפת מוצרים וטכנולוגיות · פרופילי חמש החברות שלא נבחרו להמשך בחינה</div>
+  </div>
+  <div class="ftr">
+    <div class="pageno"></div>
+    <div class="src">מצגת עבודה</div>
+    <div class="proj">פלסן סאסא — הפחתת חתימה | מצגת עבודה</div>
+  </div>
+</section></div>
+
+<!-- ====== 20 · s-plasan-fit ====== -->
+<div class="slide-wrap"><section class="slide" id="s-plasan-fit">
+  <div class="hdr">
+    <div class="hdr-titles">
+      <div class="kicker">נספח | סיכום פרופילי החברה — לפי משפחת פתרון</div>
+      <h1 class="title">עשר החברות במבט השוואתי — יתרונות ומגבלות</h1>
+    </div>
+    <img class="bdo-logo" src="@@IMG:bdo-logo.png@@" alt="BDO Consulting — Strategy Growth &amp; Innovation">
+  </div>
+  <table class="cmp-table" style="top: 150px;">
+    <colgroup><col style="width:296px"><col style="width:740px"><col style="width:740px"></colgroup>
+    <tr><th>חברה</th><th class="why">למה מעניינת לפלסן</th><th>מגבלות / מה פחות טוב</th></tr>
+    <tr class="gband"><td colspan="3">משפחה 1 · מערכות ניהול חתימה ברמת הרכב / הפלטפורמה</td></tr>
+    <tr><td class="co">CBG Systems<small>מערכת ברמת הרכב · אוסטרליה</small></td><td>חברה קטנה עם מערכת MCS ברמת הרכב, המיועדת לרכב בתנועה, והוכחה מסחרית חזקה ביחס לגודל החברה: חוזים בשם על <span dir="ltr">AS9 / AS10</span> ועל Redback. הגודל קרוב לטווח היעד המקורי של פלסן, והבסיס ההנדסי-ייצורי הרחב מוסיף יכולת ביצוע.</td><td>יש להבין במדויק את מעמד ה-IP / הרישוי של SolarSigmaShield, שכן <span dir="ltr">DRDC</span> ו-<span dir="ltr">Rheinmetall Canada</span> היו מעורבות היסטורית בפיתוח. רשתות רב-ספקטרליות סטטיות מוצעות דרך Miranda ואינן בהכרח טכנולוגיה בבעלות CBG.</td></tr>
+    <tr><td class="co">Sterlite Camotech<small>מערכת ברמת הרכב · הודו</small></td><td>חברת ניהול חתימה ממוקדת וקטנה יחסית עם פורטפוליו רחב: MCS, רשתות רב-ספקטרליות, ציפויים ופיתיונות. ה-MCS מיועד במפורש לרכב בתנועה, והזכייה המדווחת ב-MSCN בצבא הודו (2026) מספקת תיקוף מסחרי משמעותי.</td><td>ההוכחה המסחרית חזקה ל-MSCN יותר מאשר למוצר הרכב MCS עצמו. המבנה המשפטי דורש הבהרה, שכן העסק הפועל והישות <span dir="ltr">Pvt Ltd</span> שהוקמה ב-2024 טרם התיישבו זה עם זה.</td></tr>
+    <tr><td class="co">Ravelin Defense<small>מערכת ברמת הרכב · ארה״ב</small></td><td>חפיפה אסטרטגית גבוהה במיוחד עם פלסן: מיגון, קומפוזיטים, שרידות רכב, אינטגרציה וניהול חתימה. TactiCam הוא פתרון רב-ספקטרלי ברמת הרכב, ולחברה ניסיון עמוק בייצור ביטחוני ובתוכניות פלטפורמה.</td><td>Ravelin נראית גדולה מהותית מטווח הרכישה המקורי של פלסן <span class="dim">(≈315 עובדים ו-≈$50–100M לפי אומדני צד-שלישי; הנתונים המאוחדים אינם מפורסמים)</span> ונמצאת בבעלות <span dir="ltr">Littlejohn Capital</span>. האיחוד הטרי של ArmorWorks Enterprises ו-Fox Valley Metal Tech עשוי גם הוא להפחית את נגישות העסקה.</td></tr>
+    <tr><td class="co">Spectralx<small>מערכת ברמת הרכב · ישראל</small></td><td>חברת הפחתת חתימה ישראלית שהתחום הוא ליבת עסקיה, מהלוחם ועד הפלטפורמה. <span dir="ltr">Armadillo</span> היא ערכת הסוואה ייעודית לרכב קרב, ורכש צה״ל ושימוש מבצעי מדווחים מספקים תיקוף מסחרי. הקרבה הגיאוגרפית מקלה על בחינה ועל שילוב.</td><td>המשך פעולתה של <span dir="ltr">Armadillo</span> בנסיעה טרם אומת, ומנגנון <span dir="ltr">SOLOMON</span> מתואר פומבית ברמה גבוהה בלבד. יכולת מכ״ם <span dir="ltr">(RCS)</span> אינה נתמכת וההכנסות אינן מפורסמות; היחס המשפטי <span dir="ltr">Polaris → Spectral X Ltd</span> וגיבוי <span dir="ltr">IAI</span> טעונים אימות.</td></tr>
+    <tr class="gband"><td colspan="3">משפחה 2 · טכנולוגיות פלטפורמה מתקדמות / אקטיביות</td></tr>
+    <tr><td class="co">Ametrine Technologies<small>ציפוי / מעטה פלטפורמה · ישראל / ארה״ב</small></td><td>חברת ניהול חתימה ייעודית עם רכש ממשלתי אמריקאי משמעותי. Flint מספק מסלול מיושם-על-פלטפורמה להפחתת חתימה אופטית / תרמית, ורלוונטי מאוד לשילוב יכולת על פלטפורמות צבאיות.</td><td>האחיזה המסחרית חזקה ברמת החברה והמוצרים הרחבים יותר מאשר ב-Flint עצמו. יכולת מכ״ם / RCS לא בוססה.</td></tr>
+    <tr><td class="co">Advanced Material Development<small>חומרים מתקדמים · ארה״ב / בריטניה</small></td><td>ציפויים וחומרים מתקדמים שיכולים לשלב הפחתת חתימה ישירות במיגון ובמשטחי הרכב — שילוב של <span dir="ltr">NIR</span>, <span dir="ltr">IR</span> ובליעת מכ״ם אמיתית, עם מימון וניסויים חוזרים של הביטחון האמריקאי.</td><td>הבשלות הטכנולוגית והמסחרית עדיין מוגבלת. ChamIR דווח סביב <span dir="ltr">TRL 4</span>, ולא זוהתה פומבית תוכנית רכב בייצור סדרתי או מבצעית.</td></tr>
+    <tr><td class="co">Eltics / Black Fox<small>הסוואה תרמית אקטיבית · ישראל</small></td><td>אחת משתי הטכנולוגיות האקטיביות במיפוי (הסוואה תרמית אקטיבית). פוטנציאל בידול אם ניתן להבשיל את המיזוג התרמי האקטיבי ולשלבו ברכבים ממוגנים.</td><td>העדויות הן ברובן פעילות אב-טיפוס והדגמות היסטוריות. הפעילות המסחרית הנוכחית, הלקוחות ומצב הייצור אינם ברורים.</td></tr>
+    <tr class="gband"><td colspan="3">משפחה 3 · טקסטיל פונקציונלי, כיסויים ופתרונות משיקים</td></tr>
+    <tr><td class="co">STG Defence<small>טקסטיל פונקציונלי · כיסוי סטטי · אוקראינה</small></td><td>כיסוי <span dir="ltr">IR</span> פסיבי רחב מ-<span dir="ltr">NIR</span> ועד <span dir="ltr">LWIR</span> על בסיס טקסטיל פונקציונלי שפותח בסביבת הלחימה באוקראינה. פעילות הביטחון יושבת על פלטפורמת טקסטיל מבוססת <span class="dim">(S.T.G. LLC: כ-<span dir="ltr">$4.1M</span> ב-2025 ו-32 עובדים — הישות הרחבה)</span> — טווח גודל רלוונטי לפלסן.</td><td>פתרון הרכב הוא מחסה / כיסוי סטטי, לא <span dir="ltr">MCS</span> שנועד להישאר על רכב נע, ולא זוהה חוזה רכש רכב פומבי. <span dir="ltr">STG Defence</span> נראית כמותג בתוך <span dir="ltr">S.T.G. LLC</span> ולא כחברה-בת מוכחת; רכישתה עשויה לחייב את החברה האזרחית הרחבה או <span dir="ltr">carve-out</span>.</td></tr>
+    <tr><td class="co">Shieldex<small>טקסטיל מצופה-מתכת · גרמניה</small></td><td>מתמחה גרמנית ותיקה בטקסטיל מצופה-מתכת עם יכולת מתועדת ב-<span dir="ltr">VIS / NIR</span> / תרמי, שיכול להשתלב במערכות כיסוי והסוואה רחבות של פלסן.</td><td>בעיקרה ספקית חומר מאפשר ולא ספקית מערכת רכב שלמה. לא זוהה רכש צבאי פומבי בתחום ניהול החתימה, ואין לבלבל סיכוך <span dir="ltr">RF / EMI</span> עם הפחתת RCS מוכחת של רכב.</td></tr>
+    <tr><td class="co">Permali<small>קומפוזיטים · רכיב פלטפורמה · בריטניה</small></td><td>חברת קומפוזיטים מתקדמים והגנה עם חפיפה חזקה לעולם המיגון והשרידות של פלסן. Dust Skirts מספקים יישום נישתי של ניהול חתימה, ויכולות הקומפוזיטים / המיגון הרחבות עשויות ליצור רלוונטיות אסטרטגית רחבה יותר.</td><td>ניהול חתימה הוא חלק צר / משיק יחסית בעסק. לא זוהה אירוע רכש פומבי בתחום ב-<span dir="ltr">2020–2026</span>, ואפקט המכ״ם של Dust Skirts נוגע לחתימת ענן האבק של הרכב ולא להפחתת RCS של גוף הרכב.</td></tr>
+  </table>
+  <div class="ftr">
+    <div class="pageno"></div>
+    <div class="src">מקור: סיכום ניתוחי העומק בפרק זה — מבוסס על המקורות המצוינים בכל פרופיל · תצוגה השוואתית לפי משפחת פתרון: לא דירוג, לא ניקוד ולא המלצת רכישה</div>
+    <div class="proj">פלסן סאסא — הפחתת חתימה | מצגת עבודה</div>
+  </div>
+</section></div>
+
+
+
+
+
+<!-- ================= PART 2 : SECTION DIVIDER ================= -->
+
+<!-- ====== 21 · s-spectrum ====== -->
+<div class="slide-wrap"><section class="slide" id="s-spectrum">
+  <div class="hdr">
+    <div class="hdr-titles">
+      <div class="kicker">נספח | כיסוי ספקטרלי</div>
+      <h1 class="title">כיסוי אופטי־תרמי הוא המכנה המשותף; חמש חברות מציגות זיקת מכ״ם רלוונטית לרכב יבשתי, ורק בחלקן מדובר ביכולת RCS ישירה וברורה</h1>
+    </div>
+    <img class="bdo-logo" src="@@IMG:bdo-logo.png@@" alt="BDO Consulting — Strategy Growth &amp; Innovation">
+  </div>
+
+  <table class="sx-table">
+    <colgroup>
+      <col style="width:380px"><col style="width:232px"><col style="width:232px"><col style="width:232px">
+      <col style="width:232px"><col style="width:232px"><col style="width:236px">
+    </colgroup>
+    <tr class="grp">
+      <th rowspan="2">חברה</th>
+      <th colspan="3" class="g-opt">אופטי / החזרת אור<span class="gsub">כיצד המשטח מחזיר קרינה נכנסת</span></th>
+      <th colspan="2" class="g-thm">תרמי / פליטת חום<span class="gsub">חתימת החום הנפלטת מהפלטפורמה</span></th>
+      <th class="g-rad">מכ״ם / החזר ופיזור גלים<span class="gsub">חתך מכ״ם <span dir="ltr">(RCS)</span></span></th>
+    </tr>
+    <tr>
+      <th>אופטי <span dir="ltr">VIS</span><span class="rng" dir="ltr">≈0.4–0.7µm</span></th>
+      <th><span dir="ltr">NIR</span><span class="rng" dir="ltr">≈0.7–1.4µm</span></th>
+      <th><span dir="ltr">SWIR</span><span class="rng" dir="ltr">≈1–3µm</span></th>
+      <th><span dir="ltr">MWIR</span><span class="rng" dir="ltr">≈3–5µm</span></th>
+      <th><span dir="ltr">LWIR</span><span class="rng" dir="ltr">≈8–14µm</span></th>
+      <th>מכ״ם / <span dir="ltr">RCS</span></th>
+    </tr>
+    <tr class="gband"><td colspan="7">משפחה 1 · מערכות ניהול חתימה ברמת הרכב / הפלטפורמה<span class="gs">פתרון שלם או כמעט שלם המותקן על הפלטפורמה ומיועד לניהול חתימת הרכב</span></td></tr>
+    <tr>
+      <td class="co-cell"><span class="co">CBG Systems</span></td>
+      <td><span class="d"></span></td><td></td><td></td>
+      <td class="t-thm"><span class="o"></span></td><td class="t-thm"><span class="o"></span></td><td class="t-rad"><span class="d"></span></td>
+    </tr>
+    <tr>
+      <td class="co-cell"><span class="co">Sterlite Camotech</span></td>
+      <td><span class="d"></span></td><td><span class="d"></span></td><td></td>
+      <td class="t-thm"><span class="d"></span></td><td class="t-thm"><span class="d"></span></td><td class="t-rad"><span class="o"></span><sup>1</sup></td>
+    </tr>
+    <tr>
+      <td class="co-cell"><span class="co">Ravelin Defense</span></td>
+      <td><span class="d"></span></td><td></td><td></td>
+      <td class="t-thm"><span class="o"></span></td><td class="t-thm"><span class="o"></span></td><td class="t-rad"><span class="d"></span></td>
+    </tr>
+    <tr>
+      <td class="co-cell"><span class="co">Spectralx</span></td>
+      <td><span class="d"></span></td><td><span class="d"></span></td><td></td>
+      <td class="t-thm"><span class="o"></span><sup>2</sup></td><td class="t-thm"><span class="o"></span><sup>2</sup></td><td class="t-rad"></td>
+    </tr>
+    <tr class="gband"><td colspan="7">משפחה 2 · טכנולוגיות פלטפורמה מתקדמות / אקטיביות<span class="gs">היתרון המרכזי נובע מחומרים, ציפויים, מעטפות או מנגנון אקטיבי</span></td></tr>
+    <tr>
+      <td class="co-cell"><span class="co">Ametrine Technologies</span></td>
+      <td><span class="d"></span></td><td></td><td></td>
+      <td class="t-thm"><span class="o"></span></td><td class="t-thm"><span class="o"></span></td><td class="t-rad"><span class="cue">אזכור בלבד<sup>2</sup></span></td>
+    </tr>
+    <tr>
+      <td class="co-cell"><span class="co">Advanced Material Development</span></td>
+      <td></td><td><span class="d"></span></td><td></td>
+      <td class="t-thm"><span class="d"></span><sup>3</sup></td><td class="t-thm"><span class="d"></span><sup>3</sup></td><td class="t-rad"><span class="d"></span></td>
+    </tr>
+    <tr>
+      <td class="co-cell"><span class="co">Eltics / Black Fox</span></td>
+      <td></td><td></td><td></td>
+      <td class="t-thm"><span class="d"></span></td><td class="t-thm"><span class="d"></span></td><td class="t-rad"></td>
+    </tr>
+    <tr class="gband"><td colspan="7">משפחה 3 · טקסטיל פונקציונלי, כיסויים ופתרונות משיקים<span class="gs">הערך המרכזי נמצא בטקסטיל, בכיסוי או ברכיב ייעודי — ולא במערכת MCS מלאה לרכב נע</span></td></tr>
+    <tr>
+      <td class="co-cell"><span class="co">STG Defence</span></td>
+      <td><span class="d"></span></td><td><span class="d"></span></td><td><span class="d"></span></td>
+      <td class="t-thm"><span class="d"></span></td><td class="t-thm"><span class="d"></span></td><td class="t-rad"><span class="cue">תעופה / האנגרים בלבד<sup>4</sup></span></td>
+    </tr>
+    <tr>
+      <td class="co-cell"><span class="co">Shieldex</span></td>
+      <td><span class="d"></span></td><td><span class="d"></span></td><td></td>
+      <td class="t-thm"><span class="d"></span></td><td class="t-thm"><span class="d"></span></td><td class="t-rad"><span class="cue"><span dir="ltr">EMI / RF</span> בלבד<sup>5</sup></span></td>
+    </tr>
+    <tr>
+      <td class="co-cell"><span class="co">Permali</span></td>
+      <td><span class="d"></span></td><td></td><td></td>
+      <td class="t-thm"></td><td class="t-thm"></td><td class="t-rad"><span class="d"></span><sup>6</sup></td>
+    </tr>
+</table>
+
+  <div class="sx-legend">
+    <span class="d"></span> <b>מתועד במפורש</b> — קיימת עדות ישירה ליכולת בתחום הספציפי&nbsp;&nbsp;&nbsp;&nbsp;
+    <span class="o"></span> <b>זיקה מתועדת / כיסוי חלקי</b> — קיימת אינדיקציה רלוונטית, אך הכיסוי בתחום הספציפי אינו מוכח במלואו
+  </div>
+  <div class="sx-notes">
+    <sup>1</sup> טענת מוצר מפורשת של החברה (הסוואת מכ״ם ב-<span dir="ltr">MSCN / MCS</span>); ביצועי <span dir="ltr">RCS</span> לא אומתו עצמאית — נספרת · <sup>2</sup> מכ״ם — אזכור בלבד בעלוני כיסויי ההסתרה (לא <span dir="ltr">Flint</span>); לא בוסס כיכולת לפלטפורמה יבשתית · <sup>3</sup> <span dir="ltr">ChamIR</span> — בקרת פליטה ב-<span dir="ltr">IR</span> התרמי · <sup>4</sup> מכ״ם / <span dir="ltr">RCS</span> — מתועד ביישומי תעופה / האנגרים בלבד; לא לכיסוי הרכב היבשתי · <sup>5</sup> סיכוך <span dir="ltr">RF / EMI</span> של הטקסטיל בלבד; אינו הפחתת <span dir="ltr">RCS</span> של פלטפורמה · <sup>6</sup> חתימת ענן האבק של רק״ם נע בלבד · ציון אפור = אזכור / זיקה שאינה יכולת מכ״ם לרכב יבשתי, מחוץ לספירה; <b>חמש חברות נספרות: 4 ■ + Sterlite □</b> · <b>הסימון מציג כיסוי מתועד בלבד ואינו מעיד על רמת אינטגרציה, בשלות או התאמה לפלטפורמה בתנועה</b>
+  </div>
+
+  <div class="ftr">
+    <div class="pageno"></div>
+    <div class="src">מקור: אתרי החברות ועלוני המוצר הרשמיים — פירוט ספקטרלי ברמת מוצר; הסיווג לתחומים — צוות הפרויקט</div>
+    <div class="proj">פלסן סאסא — הפחתת חתימה | מצגת עבודה</div>
+  </div>
+</section></div>
+
+
+<!-- ================= SLIDE : PRODUCT-FAMILY LANDSCAPE ================= -->
+
+<!-- ====== 22 · s-landscape ====== -->
+<div class="slide-wrap"><section class="slide" id="s-landscape">
+  <div class="hdr">
+    <div class="hdr-titles">
+      <div class="kicker">נספח | מפת מוצרים וטכנולוגיות</div>
+      <h1 class="title">מערכות רכב, רשתות וטקסטיל מרכיבים את עיקר ההיצע; יכולת אקטיבית / אדפטיבית קיימת בשתי חברות בלבד</h1>
+    </div>
+    <img class="bdo-logo" src="@@IMG:bdo-logo.png@@" alt="BDO Consulting — Strategy Growth &amp; Innovation">
+  </div>
+  <table class="mx-table">
+    <colgroup><col style="width:400px"><col style="width:229px"><col style="width:229px"><col style="width:229px"><col style="width:229px"><col style="width:229px"><col style="width:231px"></colgroup>
+    <tr><th>חברה</th><th>מערכות הסוואה לרכב<span class="cnt">6 מתוך 10</span></th><th>רשתות וכיסויים<span class="cnt">5 מתוך 10</span></th><th>טקסטיל וחומרים<span class="cnt">6 מתוך 10</span></th><th>ציפויים<span class="cnt">3 מתוך 10</span></th><th><span dir="ltr">RAM</span> וקומפוזיטים<span class="cnt">2 מתוך 10</span></th><th>מערכות אקטיביות / אדפטיביות<span class="cnt">2 מתוך 10</span></th></tr>
+    <tr class="gband"><td colspan="7">משפחה 1 · מערכות ניהול חתימה ברמת הרכב / הפלטפורמה<span class="gs">פתרון שלם או כמעט שלם המותקן על הפלטפורמה ומיועד לניהול חתימת הרכב</span></td></tr>
+    <tr><td class="co-cell"><div class="co">CBG Systems<small><span class="role sys">מערכת</span> SolarSigmaShield · רשתות דרך Miranda</small></div></td><td><span class="dot"></span></td><td><span class="dot"></span><span class="mk">Miranda</span></td><td></td><td></td><td></td><td></td></tr>
+    <tr><td class="co-cell"><div class="co">Sterlite Camotech<small><span class="role sys">מערכת</span> MSCN · MCS · IR paints</small></div></td><td><span class="dot"></span></td><td><span class="dot"></span></td><td><span class="dot"></span></td><td><span class="dot"></span></td><td></td><td></td></tr>
+    <tr><td class="co-cell"><div class="co">Ravelin Defense<small><span class="role sys">מערכת</span> <span dir="ltr">TactiCam™ · Radar Shrouds</span></small></div></td><td><span class="dot"></span></td><td><span class="dot"></span></td><td></td><td></td><td></td><td></td></tr>
+    <tr><td class="co-cell"><div class="co">Spectralx<small><span class="role sys">מערכת</span> <span dir="ltr">Armadillo · TVC · RAJUGA</span></small></div></td><td><span class="dot"></span><span class="mk">סייג ניידות</span></td><td></td><td><span class="dot"></span></td><td></td><td></td><td></td></tr>
+    <tr class="gband"><td colspan="7">משפחה 2 · טכנולוגיות פלטפורמה מתקדמות / אקטיביות<span class="gs">היתרון המרכזי נובע מחומרים, ציפויים, מעטפות או מנגנון אקטיבי</span></td></tr>
+    <tr><td class="co-cell"><div class="co">Ametrine Technologies<small><span class="role sys">מערכת</span> <span dir="ltr">Flint™ · Concealment Covers</span></small></div></td><td><span class="dot"></span></td><td><span class="dot"></span></td><td><span class="dot"></span></td><td><span class="dot"></span></td><td></td><td></td></tr>
+    <tr><td class="co-cell"><div class="co">Advanced Material Development<small><span class="role mat">חומר מאפשר</span> CHAM-NIR · ChamEM</small></div></td><td></td><td></td><td><span class="dot"></span></td><td><span class="dot"></span></td><td><span class="dot"></span></td><td><span class="dot"></span></td></tr>
+    <tr><td class="co-cell"><div class="co">Eltics / Black Fox<small><span class="role sys">מערכת</span> Black Fox</small></div></td><td><span class="dot"></span></td><td></td><td></td><td></td><td></td><td><span class="dot"></span></td></tr>
+    <tr class="gband"><td colspan="7">משפחה 3 · טקסטיל פונקציונלי, כיסויים ופתרונות משיקים<span class="gs">הערך המרכזי נמצא בטקסטיל, בכיסוי או ברכיב ייעודי — ולא במערכת MCS מלאה לרכב נע</span></td></tr>
+    <tr><td class="co-cell"><div class="co">STG Defence<small><span class="role mat">טקסטיל פונקציונלי</span> Equipment Shelter</small></div></td><td></td><td><span class="dot"></span></td><td><span class="dot"></span></td><td></td><td></td><td></td></tr>
+    <tr><td class="co-cell"><div class="co">Shieldex<small><span class="role mat">חומר מאפשר</span> Shieldex® Zell RS CR</small></div></td><td></td><td></td><td><span class="dot"></span></td><td></td><td></td><td></td></tr>
+    <tr><td class="co-cell"><div class="co">Permali<small><span class="role cmp">רכיב פלטפורמה</span> Dust Skirts</small></div></td><td></td><td></td><td></td><td></td><td><span class="dot"></span><span class="mk">קומפוזיט גומי; לא RAM</span></td><td></td></tr>
+</table>
+  <div class="mx-note" style="top: 917px; font-size: 18px; line-height: 1.26;"><b>הגדרות:</b> <b>מערכות הסוואה לרכב</b> — מערכת שלמה / אינטגרטיבית ברמת הפלטפורמה · <b>רשתות וכיסויים</b> — רשתות, כיסויים או מחסות הסוואה, סטטיים או ניידים · <b>טקסטיל וחומרים</b> — טקסטיל / חומר מאפשר המשולב בפתרון של אחר · <b>ציפויים</b> — ציפוי / צבע פונקציונלי למשטח להפחתת חתימה · <b><span dir="ltr">RAM</span> וקומפוזיטים</b> — חומר בולע מכ״ם או קומפוזיט שממלא בעצמו פונקציית ניהול חתימה (לא עסק קומפוזיטים רחב) · <b>אקטיביות / אדפטיביות</b> — טכנולוגיה המשנה / שולטת דינמית בחתימה הנצפית, ולא חומר פסיבי מותאם-שטח בלבד. הסימון מציג משפחות מוצר מתועדות בלבד ואינו מעיד על בשלות או על התאמה לפלטפורמה בתנועה; CBG — רשתות סטטיות דרך הסכם סוכנות עם Miranda; Spectralx — <span dir="ltr">Armadillo</span> היא ערכת רכב, אך המשך פעולתה בנסיעה טרם אומת, ו-<span dir="ltr">SOLOMON</span> אינו מסווג כאקטיבי / אדפטיבי בהיעדר עדות למנגנון.</div>
+  <div class="ftr">
+    <div class="pageno"></div>
+    <div class="src">מקור: אתרי החברות ועלוני המוצר הרשמיים; סיווג משפחות המוצר — מדריך הסיווג של צוות הפרויקט</div>
+    <div class="proj">פלסן סאסא — הפחתת חתימה | מצגת עבודה</div>
+  </div>
+</section></div>
+
+
+<!-- ================= SLIDE : PROFILE CBG SYSTEMS ================= -->
+
+<!-- ====== 23 · s-amd ====== -->
 <div class="slide-wrap"><section class="slide" id="s-amd">
   <div class="hdr">
     <div class="hdr-titles">
-      <div class="kicker">חלק 1 | פרופיל חברה · משפחה 2: טכנולוגיות פלטפורמה מתקדמות / אקטיביות · קו עסקי מרכזי</div>
+      <div class="kicker">נספח | פרופיל חברה — לא נבחרה להמשך בחינה · משפחה 2: טכנולוגיות פלטפורמה מתקדמות / אקטיביות · קו עסקי מרכזי</div>
       <h1 class="title">Advanced Material Development — ציפויים אדפטיביים לחתימת IR ומכ״ם; מימון ובחינות ביטחוניות מתמשכים, ללא ייצור סדרתי או פריסה</h1>
     </div>
     <img class="bdo-logo" src="@@IMG:bdo-logo.png@@" alt="BDO Consulting — Strategy Growth &amp; Innovation">
@@ -1654,10 +2153,12 @@ tr.gband td .gs { font-weight: 400; color: var(--c-slate); margin-right: 12px; f
 
 
 <!-- ================= SLIDE : PROFILE ELTICS ================= -->
+
+<!-- ====== 24 · s-eltics ====== -->
 <div class="slide-wrap"><section class="slide" id="s-eltics">
   <div class="hdr">
     <div class="hdr-titles">
-      <div class="kicker">חלק 1 | פרופיל חברה · משפחה 2: טכנולוגיות פלטפורמה מתקדמות / אקטיביות · ליבת העסק</div>
+      <div class="kicker">נספח | פרופיל חברה — לא נבחרה להמשך בחינה · משפחה 2: טכנולוגיות פלטפורמה מתקדמות / אקטיביות · ליבת העסק</div>
       <h1 class="title">Eltics / Black Fox — טכנולוגיית הסוואה תרמית אקטיבית ייחודית; הפעילות המסחרית הנוכחית אינה ברורה</h1>
     </div>
     <img class="bdo-logo" src="@@IMG:bdo-logo.png@@" alt="BDO Consulting — Strategy Growth &amp; Innovation">
@@ -1718,10 +2219,12 @@ tr.gband td .gs { font-weight: 400; color: var(--c-slate); margin-right: 12px; f
 
 
 <!-- ================= SLIDE : PROFILE STG ================= -->
+
+<!-- ====== 25 · s-stg ====== -->
 <div class="slide-wrap"><section class="slide tall-ftr" id="s-stg">
   <div class="hdr">
     <div class="hdr-titles">
-      <div class="kicker">חלק 1 | פרופיל חברה · משפחה 3: טקסטיל פונקציונלי וכיסויים · ליבת המותג הביטחוני</div>
+      <div class="kicker">נספח | פרופיל חברה — לא נבחרה להמשך בחינה · משפחה 3: טקסטיל פונקציונלי וכיסויים · ליבת המותג הביטחוני</div>
       <h1 class="title">STG Defence — טקסטיל פונקציונלי אוקראיני עם כיסוי IR רחב במיוחד; פתרון הרכב הוא כיסוי סטטי, והמותג ככל הנראה חלק מ-S.T.G. LLC</h1>
     </div>
     <img class="bdo-logo" src="@@IMG:bdo-logo.png@@" alt="BDO Consulting — Strategy Growth &amp; Innovation">
@@ -1791,10 +2294,12 @@ tr.gband td .gs { font-weight: 400; color: var(--c-slate); margin-right: 12px; f
 
 
 <!-- ================= SLIDE : PROFILE SHIELDEX ================= -->
+
+<!-- ====== 26 · s-shieldex ====== -->
 <div class="slide-wrap"><section class="slide" id="s-shieldex">
   <div class="hdr">
     <div class="hdr-titles">
-      <div class="kicker">חלק 1 | פרופיל חברה · משפחה 3: טקסטיל פונקציונלי וכיסויים · הצעה משיקה</div>
+      <div class="kicker">נספח | פרופיל חברה — לא נבחרה להמשך בחינה · משפחה 3: טקסטיל פונקציונלי וכיסויים · הצעה משיקה</div>
       <h1 class="title">Shieldex (Statex GmbH) — טקסטיל מצופה-מתכת לסיכוך רב-ספקטרלי; חומר מאפשר למערכות הסוואה, לא מערכת שלמה</h1>
     </div>
     <img class="bdo-logo" src="@@IMG:bdo-logo.png@@" alt="BDO Consulting — Strategy Growth &amp; Innovation">
@@ -1863,10 +2368,12 @@ tr.gband td .gs { font-weight: 400; color: var(--c-slate); margin-right: 12px; f
 
 
 <!-- ================= SLIDE : PROFILE PERMALI ================= -->
+
+<!-- ====== 27 · s-permali ====== -->
 <div class="slide-wrap"><section class="slide" id="s-permali">
   <div class="hdr">
     <div class="hdr-titles">
-      <div class="kicker">חלק 1 | פרופיל חברה · משפחה 3: טקסטיל פונקציונלי וכיסויים · הצעה משיקה</div>
+      <div class="kicker">נספח | פרופיל חברה — לא נבחרה להמשך בחינה · משפחה 3: טקסטיל פונקציונלי וכיסויים · הצעה משיקה</div>
       <h1 class="title">Permali — חברת קומפוזיטים ומיגון מתקדמים החופפת לעולמות הליבה של פלסן; הפחתת החתימה — יישום משיק נישתי ומבוסס</h1>
     </div>
     <img class="bdo-logo" src="@@IMG:bdo-logo.png@@" alt="BDO Consulting — Strategy Growth &amp; Innovation">
@@ -1935,106 +2442,6 @@ tr.gband td .gs { font-weight: 400; color: var(--c-slate); margin-right: 12px; f
 
 
 <!-- ================= SLIDE : COMPANY PROFILE — SPECTRALX ================= -->
-<div class="slide-wrap"><section class="slide tall-ftr" id="s-spectralx">
-  <div class="hdr">
-    <div class="hdr-titles">
-      <div class="kicker">חלק 1 | פרופיל חברה · תוספת חדשה — טרם שובצה למשפחת פתרון · ליבת העסק</div>
-      <h1 class="title"><span dir="ltr">Spectralx</span> <span class="dim">(לשעבר <span dir="ltr">Polaris Solutions</span>)</span> — ניהול חתימה רב-ספקטרלי ישראלי, מהלוחם ועד פלטפורמות נעות; רכש צה״ל מדווח לערכת רכב</h1>
-    </div>
-    <img class="bdo-logo" src="@@IMG:bdo-logo.png@@" alt="BDO Consulting — Strategy Growth &amp; Innovation">
-  </div>
-  <table class="snap">
-    <colgroup>
-      <col style="width:150px"><col style="width:330px"><col style="width:170px"><col style="width:300px">
-      <col style="width:330px"><col style="width:150px"><col style="width:346px">
-    </colgroup>
-    <tr><th>מדינה</th><th>עיסוק עיקרי</th><th>חשיבות ניהול החתימה</th><th>בשלות מסחרית</th><th>בעלות / ישות</th><th>עובדים</th><th>הכנסות</th></tr>
-    <tr>
-      <td>ישראל <span class="q">(קיסריה; תכן בתפן)</span></td>
-      <td>ניהול חתימה רב-ספקטרלי — לוחם, רכב טקטי, פלטפורמות נעות ותשתיות</td>
-      <td>ליבת העסק</td>
-      <td>רכש צה״ל ושימוש מבצעי <span class="q">(2026, מדווח)</span></td>
-      <td>פרטית — <span dir="ltr">Spectral X Ltd</span>, לשעבר <span dir="ltr">Polaris Solutions</span>; <span class="q">בדיווח: גיבוי IAI</span></td>
-      <td><span dir="ltr">~70–75</span> <span class="q">(בדיווח)</span></td>
-      <td>לא פורסם</td>
-    </tr>
-  </table>
-  <div class="profile-main" style="top: 348px; grid-template-columns: 1010px 1fr;">
-    <div class="pf-story">
-      <div class="sec-bar">הסיפור בקצרה</div>
-      <ul class="story">
-        <li>חברת ניהול חתימה ישראלית שהקימו יוצאי יחידת מגלן כ-<span dir="ltr">Polaris Solutions</span> ומותגה מחדש ל-<span dir="ltr">Spectralx</span>; לפי דיווח 2026 — כ-<span dir="ltr">70–75</span> עובדים, קו ייצור מחוץ לישראל וחברת-בת בארה״ב</li>
-        <li><b><span dir="ltr">TVC</span> <span class="dim">(Thermal 3D Visual Concealment)</span></b> — חומר רב-שכבתי קנייני המשלב הפחתת חתימה תרמית עם שיבוש חזותי תלת-ממדי; הבסיס המשותף לרוב הפורטפוליו</li>
-        <li><b><span dir="ltr">Armadillo</span></b> — ערכת הסוואה לרכב קרב המשנה את צללית הרכב ביריעות הנפרשות בלחיצת כפתור; לפי הדיווח מכוונת בין היתר נגד מצלמות רחפן</li>
-        <li><b><span dir="ltr">SOLOMON</span></b> — פתרון בקרת החתימה המתקדם של החברה, מתואר פומבית ברמה גבוהה בלבד — <b>המנגנון וסיווג פסיבי / אקטיבי לא אומתו</b></li>
-      </ul>
-      <div class="pf-bands">
-        <span class="blbl">תחומי חתימה</span>
-        <span class="band-chip">אופטי <span dir="ltr">(VIS)</span></span><span class="band-chip"><span dir="ltr">NIR</span></span><span class="band-chip">תרמי <span dir="ltr">(IR / FIR)</span></span><span class="band-chip" style="background:none; box-shadow: inset 0 0 0 2px var(--c-slate-mid); color: var(--c-slate);">מכ״ם — לא נתמך</span>
-      </div>
-      <div class="pf-bandqual">התיעוד נוקב ב-<span dir="ltr">Visual · IR · FIR</span> ואינו מפריד <span dir="ltr">MWIR / LWIR</span>. איזכורי מכ״ם מתייחסים ל<b>הסוואת מערכות מכ״ם</b> — לא להפחתת <span dir="ltr">RCS</span> של הפלטפורמה</div>
-    </div>
-    <div class="pf-imgs">
-      <div class="sec-bar">מוצרים רלוונטיים</div>
-      <div class="mixp">
-        <div class="mix-row"><span dir="ltr">TVC</span> — חומר ההסוואה התרמי-חזותי<span class="mw w1">פסיבי</span></div>
-        <div class="mix-row"><span dir="ltr">Armadillo</span> — ערכת רכב קרב<span class="mw w1">רכב</span></div>
-        <div class="mix-row"><span dir="ltr">RAJUGA</span> — לוחות ללוחם, לציוד ולפלטפורמה<span class="mw w2">פסיבי</span></div>
-        <div class="mix-row"><span dir="ltr">SOLOMON</span> — בקרת חתימה מתקדמת<span class="mw w4">לא אומת</span></div>
-        <div class="mix-row"><span dir="ltr">HOTARU</span> — סימון כוח ידידותי בתרמי<span class="mw w4">פליטה</span></div>
-      </div>
-      <div class="pf-note"><div class="nlbl">רלוונטיות לפלסן</div>ישראלית · ניהול חתימה בליבה · יישום לרכב ולפלטפורמה נעה · הסוואה פסיבית לצד בקרת חתימה · רכש ושימוש מבצעי מדווחים</div>
-    </div>
-  </div>
-  <div class="pf-evidence" style="top: 774px; ">
-    <div class="sec-bar">עדויות מסחריות / פעילות אחרונה · ופערים לאימות</div>
-    <div class="ev-list" style="grid-template-columns: 1fr 1fr 1fr; column-gap:30px;">
-      <div class="ev-item"><b>2026 — רכש צה״ל <span class="dim">(מדווח)</span>:</b> רכישת "קומץ" ערכות <span dir="ltr">Armadillo</span> לרכבי קרב, כולל רכבים מסוג האמר — דיווח 25.5.2026</div>
-      <div class="ev-item"><b>2026 — שימוש מבצעי <span class="dim">(מדווח)</span>:</b> אמצעי הסוואה של החברה על מערכות גילוי ומצלמות תצפית בגבול הצפון — אירוע פריסה, לא עסקה נפרדת</div>
-      <div class="ev-item"><b>לקוח אמריקאי · מפא״ת:</b> לפי דיווח נמסרה מערכת הסתרה דינמית לרכב ללקוח בארה״ב <span class="dim">(לא נקוב בשם)</span>; ושיתוף פעולה עם מפא״ת מ-2011</div>
-      <div class="ev-item"><b>לאימות:</b> היחס המשפטי <span dir="ltr">Polaris → Spectral X Ltd</span> והחזקת <span dir="ltr">IAI</span> · האם <span dir="ltr">Armadillo</span> נשארת מותקנת ופועלת בנסיעה · מנגנון <span dir="ltr">SOLOMON</span></div>
-      <div class="ev-item"><b>סייג היסטורי:</b> איזכור "סוקום" בחומר פלסן הקודם מתייחס ככל הנראה ל-<span dir="ltr">Polaris Government &amp; Defense</span> — חברה אחרת; לא אומת עבור חברה זו</div>
-    </div>
-  </div>
-  <div class="ftr">
-    <div class="pageno"></div>
-    <div class="src">מקור: <span dir="ltr">Israel Hayom</span> (25.5.2026) · <span dir="ltr">Israel Defense</span> · <span dir="ltr">Jerusalem Post</span> · <span dir="ltr">Raksha Anirveda</span> · <span dir="ltr">Startup Nation Central</span> · המועצה התעשייתית מגדל תפן · אתר החברה <span dir="ltr">spectral-x.com</span> — הגישה הישירה נחסמה; הציטוטים מהאתר דרך מקורות משניים</div>
-    <div class="proj">פלסן סאסא — הפחתת חתימה | מצגת עבודה</div>
-  </div>
-</section></div>
-
-<!-- ================= SLIDE : PLASAN RELEVANCE / LIMITATIONS ================= -->
-<div class="slide-wrap"><section class="slide" id="s-plasan-fit">
-  <div class="hdr">
-    <div class="hdr-titles">
-      <div class="kicker">חלק 1 | סיכום פרופילי החברה — לפי משפחת פתרון</div>
-      <h1 class="title">למה כל חברה מעניינת לפלסן, ומה פחות טוב — התובנות ההשוואתיות מניתוחי העומק</h1>
-    </div>
-    <img class="bdo-logo" src="@@IMG:bdo-logo.png@@" alt="BDO Consulting — Strategy Growth &amp; Innovation">
-  </div>
-  <table class="cmp-table">
-    <colgroup><col style="width:236px"><col style="width:770px"><col style="width:770px"></colgroup>
-    <tr><th>חברה</th><th class="why">למה מעניינת לפלסן</th><th>מגבלות / מה פחות טוב</th></tr>
-    <tr class="gband"><td colspan="3">משפחה 1 · מערכות ניהול חתימה ברמת הרכב / הפלטפורמה</td></tr>
-    <tr><td class="co">CBG Systems<small>מערכת ברמת הרכב · אוסטרליה</small></td><td>חברה קטנה עם מערכת MCS ברמת הרכב, המיועדת לרכב בתנועה, והוכחה מסחרית חזקה ביחס לגודל החברה: חוזים בשם על <span dir="ltr">AS9 / AS10</span> ועל Redback. הגודל קרוב לטווח היעד המקורי של פלסן, והבסיס ההנדסי-ייצורי הרחב מוסיף יכולת ביצוע.</td><td>יש להבין במדויק את מעמד ה-IP / הרישוי של SolarSigmaShield, שכן <span dir="ltr">DRDC</span> ו-<span dir="ltr">Rheinmetall Canada</span> היו מעורבות היסטורית בפיתוח. רשתות רב-ספקטרליות סטטיות מוצעות דרך Miranda ואינן בהכרח טכנולוגיה בבעלות CBG.</td></tr>
-    <tr><td class="co">Sterlite Camotech<small>מערכת ברמת הרכב · הודו</small></td><td>חברת ניהול חתימה ממוקדת וקטנה יחסית עם פורטפוליו רחב: MCS, רשתות רב-ספקטרליות, ציפויים ופיתיונות. ה-MCS מיועד במפורש לרכב בתנועה, והזכייה המדווחת ב-MSCN בצבא הודו (2026) מספקת תיקוף מסחרי משמעותי.</td><td>ההוכחה המסחרית חזקה ל-MSCN יותר מאשר למוצר הרכב MCS עצמו. המבנה המשפטי דורש הבהרה, שכן העסק הפועל והישות <span dir="ltr">Pvt Ltd</span> שהוקמה ב-2024 טרם התיישבו זה עם זה.</td></tr>
-    <tr><td class="co">Ravelin Defense<small>מערכת ברמת הרכב · ארה״ב</small></td><td>חפיפה אסטרטגית גבוהה במיוחד עם פלסן: מיגון, קומפוזיטים, שרידות רכב, אינטגרציה וניהול חתימה. TactiCam הוא פתרון רב-ספקטרלי ברמת הרכב, ולחברה ניסיון עמוק בייצור ביטחוני ובתוכניות פלטפורמה.</td><td>Ravelin נראית גדולה מהותית מטווח הרכישה המקורי של פלסן <span class="dim">(≈315 עובדים ו-≈$50–100M לפי אומדני צד-שלישי; הנתונים המאוחדים אינם מפורסמים)</span> ונמצאת בבעלות <span dir="ltr">Littlejohn Capital</span>. האיחוד הטרי של ArmorWorks Enterprises ו-Fox Valley Metal Tech עשוי גם הוא להפחית את נגישות העסקה.</td></tr>
-    <tr class="gband"><td colspan="3">משפחה 2 · טכנולוגיות פלטפורמה מתקדמות / אקטיביות</td></tr>
-    <tr><td class="co">Ametrine Technologies<small>ציפוי / מעטה פלטפורמה · ישראל / ארה״ב</small></td><td>חברת ניהול חתימה ייעודית עם רכש ממשלתי אמריקאי משמעותי. Flint מספק מסלול מיושם-על-פלטפורמה להפחתת חתימה אופטית / תרמית, ורלוונטי מאוד לשילוב יכולת על פלטפורמות צבאיות.</td><td>האחיזה המסחרית חזקה ברמת החברה והמוצרים הרחבים יותר מאשר ב-Flint עצמו. יכולת מכ״ם / RCS לא בוססה.</td></tr>
-    <tr><td class="co">Advanced Material Development<small>חומרים וציפויים מתקדמים · ארה״ב / בריטניה</small></td><td>ציפויים וחומרים מתקדמים שיכולים לשלב הפחתת חתימה ישירות במיגון ובמשטחי הרכב. שילוב ייחודי של NIR, IR וטכנולוגיית בליעה / הפחתת מכ״ם אמיתית, עם מימון וניסויים חוזרים של הביטחון האמריקאי.</td><td>הבשלות הטכנולוגית והמסחרית עדיין מוגבלת. ChamIR דווח סביב <span dir="ltr">TRL 4</span>, ולא זוהתה פומבית תוכנית רכב בייצור סדרתי או מבצעית.</td></tr>
-    <tr><td class="co">Eltics / Black Fox<small>הסוואה תרמית אקטיבית · ישראל</small></td><td>אחת משתי הטכנולוגיות האקטיביות במיפוי (הסוואה תרמית אקטיבית). פוטנציאל בידול אם ניתן להבשיל את המיזוג התרמי האקטיבי ולשלבו ברכבים ממוגנים.</td><td>העדויות הן ברובן פעילות אב-טיפוס והדגמות היסטוריות. הפעילות המסחרית הנוכחית, הלקוחות ומצב הייצור אינם ברורים.</td></tr>
-    <tr class="gband"><td colspan="3">משפחה 3 · טקסטיל פונקציונלי, כיסויים ופתרונות משיקים</td></tr>
-    <tr><td class="co">STG Defence<small>טקסטיל פונקציונלי · כיסוי סטטי · אוקראינה</small></td><td>כיסוי IR פסיבי רחב מ-NIR ועד LWIR על בסיס טקסטיל פונקציונלי שפותח בהקשר סביבת הלחימה הנוכחית באוקראינה. אם מיפוי הישות יאומת, פעילות הביטחון יושבת על פלטפורמת טקסטיל מבוססת <span class="dim">(S.T.G. LLC: כ-<span dir="ltr">$4.1M</span> הכנסות ב-2025 ו-32 עובדים — נתוני הישות הרחבה, לא של STG Defence לבדה)</span> — טווח גודל רלוונטי לפלסן.</td><td>פתרון הרכב הוא מחסה / כיסוי סטטי deployable, לא MCS שנועד להישאר על רכב נע, ולא זוהה חוזה רכש רכב פומבי. STG Defence נראית כמותג / קו עסקי ביטחוני בתוך <span dir="ltr">S.T.G. LLC</span> ולא כחברה-בת מוכחת; רכישתה עשויה לחייב רכישת החברה הטקסטילית האזרחית הרחבה או פיצול פעילות הביטחון (carve-out).</td></tr>
-    <tr><td class="co">Shieldex<small>טקסטיל מצופה-מתכת · גרמניה</small></td><td>מתמחה גרמנית ותיקה בטקסטיל מצופה-מתכת עם יכולת ניהול חתימה מתועדת ב-<span dir="ltr">VIS / NIR</span> / תרמי. הטקסטילים הפונקציונליים הקלים שלה יכולים להשתלב במערכות כיסוי והסוואה רחבות של פלסן.</td><td>בעיקרה ספקית חומר מאפשר ולא ספקית מערכת רכב שלמה. לא זוהה רכש צבאי פומבי בתחום ניהול החתימה, ואין לבלבל סיכוך <span dir="ltr">RF / EMI</span> עם הפחתת RCS מוכחת של רכב.</td></tr>
-    <tr><td class="co">Permali<small>קומפוזיטים · רכיב פלטפורמה · בריטניה</small></td><td>חברת קומפוזיטים מתקדמים והגנה עם חפיפה חזקה לעולם המיגון והשרידות של פלסן. Dust Skirts מספקים יישום נישתי של ניהול חתימה, ויכולות הקומפוזיטים / המיגון הרחבות עשויות ליצור רלוונטיות אסטרטגית רחבה יותר.</td><td>ניהול חתימה הוא חלק צר / משיק יחסית בעסק. לא זוהה אירוע רכש פומבי בתחום ב-<span dir="ltr">2020–2026</span>, ואפקט המכ״ם של Dust Skirts נוגע לחתימת ענן האבק של הרכב ולא להפחתת RCS של גוף הרכב.</td></tr>
-  </table>
-  <div class="ftr">
-    <div class="pageno"></div>
-    <div class="src">מקור: סיכום ניתוחי העומק בפרק זה — מבוסס על המקורות המצוינים בכל פרופיל · תצוגה השוואתית לפי משפחת פתרון: לא דירוג, לא ניקוד ולא המלצת רכישה</div>
-    <div class="proj">פלסן סאסא — הפחתת חתימה | מצגת עבודה</div>
-  </div>
-</section></div>
-
 
 <script>
 (function () {
@@ -2059,464 +2466,3 @@ tr.gband td .gs { font-weight: 400; color: var(--c-slate); margin-right: 12px; f
   fit();
 })();
 </script>
-
-
-<!-- ================= PART 2 : SECTION DIVIDER ================= -->
-<div class="slide-wrap"><section class="slide" id="s-div-mm">
-  <div class="sd"></div>
-  <div class="sd-num">2</div>
-  <div class="sd-body">
-    <div class="sd-kick">חלק ב׳</div>
-    <div class="sd-title">מומנטום בשוק ניהול החתימה הרב־ספקטרלי</div>
-    <div class="sd-line"></div>
-    <div class="sd-desc">אינדיקציות להתפתחות הביקוש והפעילות המסחרית, <span dir="ltr">2020–2026 YTD</span></div>
-      </div>
-  <div class="ftr">
-    <div class="pageno"></div>
-    <div class="src">מצגת עבודה</div>
-    <div class="proj">פלסן סאסא — הפחתת חתימה | מצגת עבודה</div>
-  </div>
-</section></div>
-
-
-<!-- ================= PART 2 : METHODOLOGY ================= -->
-<div class="slide-wrap"><section class="slide" id="s-mm-method">
-  <div class="hdr">
-    <div class="hdr-titles">
-      <div class="kicker">חלק ב׳ | מתודולוגיה</div>
-      <h1 class="title">שתי שיטות מחקר בוחנות את השוק מנקודות מוצא שונות</h1>
-    </div>
-    <img class="bdo-logo" src="@@IMG:bdo-logo.png@@" alt="BDO Consulting — Strategy Growth &amp; Innovation">
-  </div>
-
-  <div class="mm-methods" style="top: 268px;">
-    <div class="mm-card">
-      <div class="mc-name">מחקר מבוסס חברות</div>
-      <div class="mc-body">מתחילים מחברות ומוצרים רלוונטיים ובוחנים את הפעילות סביבם לאורך השנים</div>
-    </div>
-    <div class="mm-card alt">
-      <div class="mc-name">מחקר מבוסס אירועים</div>
-      <div class="mc-body">מתחילים ממכרזים, רוכשים ותוכניות וממפים את הפעילות הרלוונטית לאורך השנים</div>
-    </div>
-  </div>
-  <div class="mm-oneline">בשני המחקרים נבחנים לאורך זמן: <b>ביקוש · הזמנות · רוחב הפעילות · היקפים</b></div>
-  <div class="mm-scope">המטרה היא לבחון האם שתי נקודות מוצא שונות מצביעות על אותה תמונת שוק.</div>
-  <div class="ftr">
-    <div class="pageno"></div>
-    <div class="src">תיחום: ניהול חתימה ברמת הפלטפורמה, כולל פתרונות רב־ספקטרליים ומכ״ם. 2026 — נתון חלקי עד 8.9.2026. אומדן מומנטום, לא אומדן שווי שוק</div>
-    <div class="proj">פלסן סאסא — הפחתת חתימה | מצגת עבודה</div>
-  </div>
-</section></div>
-
-
-<!-- ================= PART 2 : HOW TO READ THE DATA ================= -->
-<div class="slide-wrap"><section class="slide" id="s-mm-read">
-  <div class="hdr">
-    <div class="hdr-titles">
-      <div class="kicker">חלק ב׳ | איך לקרוא את הנתונים</div>
-      <h1 class="title">תוכנית ≠ הזמנה ≠ כמות</h1>
-    </div>
-    <img class="bdo-logo" src="@@IMG:bdo-logo.png@@" alt="BDO Consulting — Strategy Growth &amp; Innovation">
-  </div>
-
-  <div class="mm-key">
-    <div class="d"><div class="dt">תוכנית / דרישת רכש</div><div class="dd">צורך רכש אחד. יכולה לייצר כמה הזמנות וכמה אירועים, לאורך כמה שנים</div></div>
-    <div class="d"><div class="dt">הזמנה בפועל</div><div class="dd">רכישה בודדת ממשית — הזמנת אספקה או משיכה מתוך חוזה</div></div>
-    <div class="d"><div class="dt">אירוע</div><div class="dd">אבן דרך פומבית מתועדת: מכרז, ניסוי, בחירת ספק, מסגרת, זכייה או הזמנה</div></div>
-  </div>
-
-  <div class="mm-ex2">
-    <div class="c">
-      <div class="lbl">דוגמה 1 · <span dir="ltr">2020</span></div>
-      <div class="nm"><span dir="ltr">ULCANS</span></div>
-      <div class="meta">רשתות הסוואה קלות במיוחד · צבא ארה״ב <span dir="ltr">(ACC-APG / PEO CS&amp;CSS)</span> · <span dir="ltr">Fibrotex</span></div>
-      <div class="flow">
-        <div class="st"><div class="sv">1</div><div class="sk">תוכנית</div></div>
-        <div class="ar">←</div>
-        <div class="st"><div class="sv">13</div><div class="sk">הזמנות בפועל</div></div>
-        <div class="ar">←</div>
-        <div class="st"><div class="sv">1</div><div class="sk">ספק</div></div>
-        <div class="ar">←</div>
-        <div class="st"><div class="sv">1</div><div class="sk">רוכש</div></div>
-      </div>
-      <div class="cap">שווי מצרפי מדווח של 13 ההזמנות: כ-<span dir="ltr">$43.2M</span> · כמות היחידות אינה מפורסמת</div>
-      <div class="say">מספר הזמנות גבוה אינו בהכרח מעיד על שוק רחב — ב-2020 <b>כל 13 ההזמנות שזוהו היו תחת <span dir="ltr">ULCANS</span></b>.</div>
-    </div>
-    <div class="c alt">
-      <div class="lbl">דוגמה 2 · <span dir="ltr">2024</span></div>
-      <div class="nm"><span dir="ltr">FENRIR</span></div>
-      <div class="meta">רשתות הסוואה רב־ספקטרליות · <span dir="ltr">DGA</span>, צרפת · <span dir="ltr">Saab Barracuda</span></div>
-      <div class="flow">
-        <div class="st"><div class="sv">1</div><div class="sk">תוכנית</div></div>
-        <div class="ar">←</div>
-        <div class="st"><div class="sv">1</div><div class="sk">הזמנה</div></div>
-        <div class="ar">←</div>
-        <div class="st"><div class="sv">3,000</div><div class="sk">רשתות</div></div>
-        <div class="ar">←</div>
-        <div class="st"><div class="sv"><span dir="ltr">€20M</span></div><div class="sk">שווי</div></div>
-      </div>
-      <div class="cap">הזמנה אחת תחת מסגרת שנחתמה ב-2022</div>
-      <div class="say"><b>הזמנה אחת יכולה לשקף היקף מסחרי גדול מאוד.</b></div>
-    </div>
-  </div>
-
-  <div class="mm-take" style="top: 900px;">לכן נבחנים במקביל <b>מספר ההזמנות, מספר התוכניות ורוחב בסיס הפעילות</b>.</div>
-  <div class="ftr">
-    <div class="pageno"></div>
-    <div class="src">שתי הדוגמאות מתוך המחקר מבוסס החברות, 2020 עד 8.9.2026</div>
-    <div class="proj">פלסן סאסא — הפחתת חתימה | מצגת עבודה</div>
-  </div>
-</section></div>
-
-
-<!-- ================= PART 2 : ANNUAL ACTIVITY ================= -->
-<div class="slide-wrap"><section class="slide" id="s-mm-activity">
-  <div class="hdr">
-    <div class="hdr-titles">
-      <div class="kicker">חלק ב׳ | מחקר מבוסס חברות</div>
-      <h1 class="title">מספר ההזמנות אינו גדל — אך ריבוי הזמנות תחת תוכנית אחת יכול להטעות לגבי רוחב השוק</h1>
-    </div>
-    <img class="bdo-logo" src="@@IMG:bdo-logo.png@@" alt="BDO Consulting — Strategy Growth &amp; Innovation">
-  </div>
-
-  <div class="mm-duo">
-    <div class="dp">
-      <div class="dg" style="bottom:88px"><span class="dgl">4</span></div>
-      <div class="dg" style="bottom:176px"><span class="dgl">8</span></div>
-      <div class="dg" style="bottom:264px"><span class="dgl">12</span></div>
-      <div class="dc"><div class="b prg" style="height:22px"><div class="bl">1</div></div><div class="b ord" style="height:286px"><div class="bl">13</div></div></div>
-      <div class="dc"><div class="b prg" style="height:88px"><div class="bl">4</div></div><div class="b ord" style="height:176px"><div class="bl">8</div></div></div>
-      <div class="dc"><div class="b prg" style="height:44px"><div class="bl">2</div></div><div class="b ord" style="height:132px"><div class="bl">6</div></div></div>
-      <div class="dc"><div class="b prg" style="height:88px"><div class="bl">4</div></div><div class="b ord" style="height:132px"><div class="bl">6</div></div></div>
-      <div class="dc"><div class="b prg" style="height:132px"><div class="bl">6</div></div><div class="b ord" style="height:198px"><div class="bl">9</div></div></div>
-      <div class="dc"><div class="b prg" style="height:66px"><div class="bl">3</div></div><div class="b ord" style="height:110px"><div class="bl">5</div></div></div>
-      <div class="dc ytd"><div class="b prg" style="height:66px"><div class="bl">3</div></div><div class="b ord" style="height:132px"><div class="bl">6</div></div></div>
-      <div class="mm-ann" style="left: 200px; top: 62px;">13 הזמנות — כולן תחת <span dir="ltr">ULCANS</span></div>
-    </div>
-    <div class="dx">
-      <div>2020</div>
-      <div>2021</div>
-      <div>2022</div>
-      <div>2023</div>
-      <div>2024</div>
-      <div>2025</div>
-      <div class="ytd"><span dir="ltr">2026 YTD</span></div>
-    </div>
-  </div>
-  <div class="mm-legend">
-    <span><span class="k bar"></span>הזמנות בפועל</span>
-    <span><span class="k prg"></span>תוכניות שבהן הייתה לפחות הזמנה בפועל</span>
-    <span><span class="k ytd"></span><span dir="ltr">2026</span> — נתון חלקי עד 8.9.2026, ללא השלמה לשנה מלאה</span>
-  </div>
-  <div class="mm-take" style="top: 780px;">ב-2020 נרשם מספר הזמנות גבוה, אך <b>הרכש היה מרוכז בתוכנית אחת</b>; בשנים מאוחרות יותר ההזמנות נפרסות על מספר תוכניות. מספר ההזמנות עצמו <b>אינו גדל</b>.</div>
-  <div class="mm-fn">הזמנה בפועל = עסקת רכש נפרדת — הזמנת אספקה או משיכה מתוך חוזה. אותה תוכנית ואותו מוצר יכולים להיות מוזמנים שוב ושוב.</div>
-  <div class="ftr">
-    <div class="pageno"></div>
-    <div class="src">92 אירועי ליבה לאחר החרגות התיחום המאושרות, עם איחוד שמות רוכשים זהים. 2026 — עד 8.9.2026</div>
-    <div class="proj">פלסן סאסא — הפחתת חתימה | מצגת עבודה</div>
-  </div>
-</section></div>
-
-
-<!-- ================= PART 2 : BROADENING ================= -->
-<div class="slide-wrap"><section class="slide" id="s-mm-broader">
-  <div class="hdr">
-    <div class="hdr-titles">
-      <div class="kicker">חלק ב׳ | מחקר מבוסס חברות</div>
-      <h1 class="title">בסיס הפעילות מתרחב — יותר תוכניות פעילות, ספקים, רוכשים ומדינות</h1>
-    </div>
-    <img class="bdo-logo" src="@@IMG:bdo-logo.png@@" alt="BDO Consulting — Strategy Growth &amp; Innovation">
-  </div>
-
-  <div class="mm-hero">
-    <div class="hh">תוכניות / דרישות רכש פעילות</div>
-    <div class="hs">תוכנית נחשבת פעילה בשנה שבה תועד לפחות אירוע אחד השייך לה</div>
-    <div class="hp">
-      <div class="hc"><div class="hn">2</div><div class="hb" style="height:31px"><div class="hf" style="height:31px"><span class="hfn">2</span></div></div></div>
-      <div class="hc"><div class="hn">5</div><div class="hb" style="height:76px"><div class="hf" style="height:46px"><span class="hfn">3</span></div></div></div>
-      <div class="hc"><div class="hn">5</div><div class="hb" style="height:76px"><div class="hf" style="height:31px"><span class="hfn">2</span></div></div></div>
-      <div class="hc"><div class="hn">7</div><div class="hb" style="height:107px"><div class="hf" style="height:76px"><span class="hfn">5</span></div></div></div>
-      <div class="hc"><div class="hn">9</div><div class="hb" style="height:137px"><div class="hf" style="height:76px"><span class="hfn">5</span></div></div></div>
-      <div class="hc"><div class="hn">10</div><div class="hb" style="height:153px"><div class="hf" style="height:76px"><span class="hfn">5</span></div></div></div>
-      <div class="hc ytd"><div class="hn">11</div><div class="hb" style="height:168px"><div class="hf" style="height:122px"><span class="hfn">8</span></div></div></div>
-    </div>
-    <div class="hx">
-      <div>2020</div>
-      <div>2021</div>
-      <div>2022</div>
-      <div>2023</div>
-      <div>2024</div>
-      <div>2025</div>
-      <div class="ytd"><span dir="ltr">2026 YTD</span></div>
-    </div>
-    <div class="hleg"><span><i class="a"></i>סה״כ תוכניות פעילות</span><span><i class="b"></i>מתוכן — הופיעו לראשונה בבסיס הנתונים באותה שנה</span></div>
-  </div>
-  <div class="mm-sm three">
-    <div class="p">
-      <div class="ph">ספקים פעילים</div>
-      <div class="sp">
-        <div class="sc"><div class="sn">2</div><div class="sb" style="height:12px"></div></div>
-        <div class="sc"><div class="sn">5</div><div class="sb" style="height:30px"></div></div>
-        <div class="sc"><div class="sn">5</div><div class="sb" style="height:30px"></div></div>
-        <div class="sc"><div class="sn">7</div><div class="sb" style="height:42px"></div></div>
-        <div class="sc"><div class="sn">8</div><div class="sb" style="height:48px"></div></div>
-        <div class="sc"><div class="sn">11</div><div class="sb" style="height:66px"></div></div>
-        <div class="sc ytd"><div class="sn">8</div><div class="sb" style="height:48px"></div></div>
-      </div>
-      <div class="sx">
-        <div>20</div>
-        <div>21</div>
-        <div>22</div>
-        <div>23</div>
-        <div>24</div>
-        <div>25</div>
-        <div class="ytd">YTD</div>
-      </div>
-    </div>
-    <div class="p">
-      <div class="ph">רוכשים פעילים</div>
-      <div class="sp">
-        <div class="sc"><div class="sn">2</div><div class="sb" style="height:11px"></div></div>
-        <div class="sc"><div class="sn">5</div><div class="sb" style="height:28px"></div></div>
-        <div class="sc"><div class="sn">5</div><div class="sb" style="height:28px"></div></div>
-        <div class="sc"><div class="sn">8</div><div class="sb" style="height:44px"></div></div>
-        <div class="sc"><div class="sn">8</div><div class="sb" style="height:44px"></div></div>
-        <div class="sc"><div class="sn">10</div><div class="sb" style="height:55px"></div></div>
-        <div class="sc ytd"><div class="sn">12</div><div class="sb" style="height:66px"></div></div>
-      </div>
-      <div class="sx">
-        <div>20</div>
-        <div>21</div>
-        <div>22</div>
-        <div>23</div>
-        <div>24</div>
-        <div>25</div>
-        <div class="ytd">YTD</div>
-      </div>
-    </div>
-    <div class="p">
-      <div class="ph">מדינות</div>
-      <div class="sp">
-        <div class="sc"><div class="sn">2</div><div class="sb" style="height:22px"></div></div>
-        <div class="sc"><div class="sn">2</div><div class="sb" style="height:22px"></div></div>
-        <div class="sc"><div class="sn">3</div><div class="sb" style="height:33px"></div></div>
-        <div class="sc"><div class="sn">3</div><div class="sb" style="height:33px"></div></div>
-        <div class="sc"><div class="sn">4</div><div class="sb" style="height:44px"></div></div>
-        <div class="sc"><div class="sn">6</div><div class="sb" style="height:66px"></div></div>
-        <div class="sc ytd"><div class="sn">6</div><div class="sb" style="height:66px"></div></div>
-      </div>
-      <div class="sx">
-        <div>20</div>
-        <div>21</div>
-        <div>22</div>
-        <div>23</div>
-        <div>24</div>
-        <div>25</div>
-        <div class="ytd">YTD</div>
-      </div>
-    </div>
-  </div>
-  <div class="ftr">
-    <div class="pageno"></div>
-    <div class="src">"הופיעו לראשונה בבסיס" = האירוע הפומבי הראשון שאותר, לא מועד ההשקה בפועל. 2026 חלקי עד 8.9.2026 — הירידה מ-11 ספקים ל-8 אינה התכווצות</div>
-    <div class="proj">פלסן סאסא — הפחתת חתימה | מצגת עבודה</div>
-  </div>
-</section></div>
-
-
-<!-- ================= PART 2 : INDEPENDENT RESEARCH ================= -->
-<div class="slide-wrap"><section class="slide" id="s-mm-indep">
-  <div class="hdr">
-    <div class="hdr-titles">
-      <div class="kicker">חלק ב׳ | מחקר מבוסס אירועים</div>
-      <h1 class="title">מחקר מבוסס אירועים — יותר חברות פעילות בשנים האחרונות, לצד רכש ממשי</h1>
-    </div>
-    <img class="bdo-logo" src="@@IMG:bdo-logo.png@@" alt="BDO Consulting — Strategy Growth &amp; Innovation">
-  </div>
-
-  <div class="mm-sm big" style="top: 244px;">
-    <div class="p">
-      <div class="ph">חברות פעילות</div>
-      <div class="pv">חברות עם אירוע מתועד בשנה</div>
-      <div class="sp">
-        <div class="sc"><div class="sn">3</div><div class="sb" style="height:43px"></div></div>
-        <div class="sc"><div class="sn">3</div><div class="sb" style="height:43px"></div></div>
-        <div class="sc"><div class="sn">3</div><div class="sb" style="height:43px"></div></div>
-        <div class="sc"><div class="sn">3</div><div class="sb" style="height:43px"></div></div>
-        <div class="sc"><div class="sn">7</div><div class="sb" style="height:100px"></div></div>
-        <div class="sc"><div class="sn">5</div><div class="sb" style="height:71px"></div></div>
-        <div class="sc ytd"><div class="sn">5</div><div class="sb" style="height:71px"></div></div>
-      </div>
-      <div class="sx">
-        <div>20</div>
-        <div>21</div>
-        <div>22</div>
-        <div>23</div>
-        <div>24</div>
-        <div>25</div>
-        <div class="ytd">YTD</div>
-      </div>
-    </div>
-    <div class="p">
-      <div class="ph">הזמנות בפועל</div>
-      <div class="pv">רכש מחייב שזוהה בשנה</div>
-      <div class="sp">
-        <div class="sc"><div class="sn">1</div><div class="sb" style="height:17px"></div></div>
-        <div class="sc"><div class="sn">0</div><div class="sb" style="height:3px"></div></div>
-        <div class="sc"><div class="sn">2</div><div class="sb" style="height:33px"></div></div>
-        <div class="sc"><div class="sn">2</div><div class="sb" style="height:33px"></div></div>
-        <div class="sc"><div class="sn">5</div><div class="sb" style="height:83px"></div></div>
-        <div class="sc"><div class="sn">2</div><div class="sb" style="height:33px"></div></div>
-        <div class="sc ytd"><div class="sn">6</div><div class="sb" style="height:100px"></div></div>
-      </div>
-      <div class="sx">
-        <div>20</div>
-        <div>21</div>
-        <div>22</div>
-        <div>23</div>
-        <div>24</div>
-        <div>25</div>
-        <div class="ytd">YTD</div>
-      </div>
-    </div>
-  </div>
-  <table class="mm-comp" style="top: 622px;">
-    <colgroup><col style="width:436px"><col><col><col><col><col><col><col></colgroup>
-    <tr><th>הרכב האירועים</th><th>2020</th><th>2021</th><th>2022</th><th>2023</th><th>2024</th><th>2025</th><th class="ytd"><span dir="ltr">2026 YTD</span></th></tr>
-    <tr class="ord"><td>הזמנות בפועל</td><td>1</td><td>0</td><td>2</td><td>2</td><td>5</td><td>2</td><td class="ytd">6</td></tr>
-    <tr><td>אבני דרך מסחריות נוספות</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td class="ytd">1</td></tr>
-    <tr><td>מכרז / דרישת שוק</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>4</td><td class="ytd">0</td></tr>
-    <tr><td>פיתוח / ניסוי / בחינה</td><td>3</td><td>4</td><td>1</td><td>1</td><td>4</td><td>2</td><td class="ytd">2</td></tr>
-    <tr class="tot"><td>סה״כ אירועים</td><td>4</td><td>4</td><td>3</td><td>3</td><td>10</td><td>9</td><td class="ytd">9</td></tr>
-  </table>
-  <div class="mm-fn" style="top: 946px;">אבני דרך מסחריות נוספות = זכייה, מסגרת או הכנסה לשירות שאינן מסווגות כהזמנה בפועל. מספר החברות הפעילות ומספר אירועי הביקוש הם מדדים שונים.</div>
-  <div class="ftr">
-    <div class="pageno"></div>
-    <div class="src">25 מתוך 37 החברות שנבדקו לא הציגו אירוע פומבי רלוונטי בתקופה — הפעילות אינה אחידה בכל השוק. 2026 — עד 8.9.2026</div>
-    <div class="proj">פלסן סאסא — הפחתת חתימה | מצגת עבודה</div>
-  </div>
-</section></div>
-
-
-<!-- ================= PART 2 : SELECTED PROGRAMMES ================= -->
-<div class="slide-wrap"><section class="slide" id="s-mm-prog-eu">
-  <div class="hdr">
-    <div class="hdr-titles">
-      <div class="kicker">חלק ב׳ | תוכניות נבחרות · 1 מתוך 2</div>
-      <h1 class="title">תוכניות נבחרות באירופה — חמש מדינות, שישה מסלולי פעילות</h1>
-    </div>
-    <img class="bdo-logo" src="@@IMG:bdo-logo.png@@" alt="BDO Consulting — Strategy Growth &amp; Innovation">
-  </div>
-
-  <table class="mm-table" style="top: 222px;">
-    <colgroup><col style="width:250px"><col style="width:140px"><col style="width:300px"><col style="width:210px"><col style="width:200px"><col style="width:300px"><col style="width:376px"></colgroup>
-    <tr><th>תוכנית / מכרז</th><th>מדינה</th><th>מוצר / דרישה</th><th>שלב ושנה</th><th>ספק</th><th>היקף מדווח</th><th>ספקטרום</th></tr>
-    <tr><td class="pg">FENRIR<small>רשתות הסוואה רב־ספקטרליות</small></td><td>צרפת</td><td>רשתות למפקדות ולרכב</td><td><span class="stg ord">הזמנה</span> <span dir="ltr">2024</span></td><td><span dir="ltr">Saab Barracuda</span></td><td>3,000 רשתות · <span dir="ltr">€20M</span></td><td><span dir="ltr">VIS · IR · Radar</span></td></tr>
-    <tr><td class="pg">BERBERYS<small>כיסויים רב-תחומיים</small></td><td>פולין</td><td>כיסויים — קיץ וחורף</td><td><span class="stg ord">זכייה</span> <span dir="ltr">2023</span></td><td><span dir="ltr">Miranda / Lubawa</span></td><td><span dir="ltr">1,000+</span> כיסויים · <span dir="ltr">PLN 67.5M</span></td><td dir="ltr" style="text-align:right">VIS · IR/תרמי · Radar</td></tr>
-    <tr><td class="pg"><span dir="ltr">WISŁA II</span><small>הסוואה והטעיה</small></td><td>פולין</td><td>הגנה אווירית</td><td><span class="stg ord">חוזה</span> <span dir="ltr">2026</span></td><td><span dir="ltr">Lubawa</span></td><td><span dir="ltr">~PLN 586M</span> נטו<small>היקף ההסוואה וההטעיה; חוזה קונסורציום</small></td><td>לא פורט במקור</td></tr>
-    <tr><td class="pg">MSTS<small>הסוואה רב-ספקטרלית</small></td><td>שווייץ</td><td>מערכות הסוואה</td><td><span class="stg ord">החלטת זכייה</span> <span dir="ltr">2025</span></td><td><span dir="ltr">SSZ · Saro · Saab</span></td><td>14 מנות · ערך לא פורסם</td><td><span dir="ltr">VIS·NIR·SWIR·MWIR·LWIR·Radar</span></td></tr>
-    <tr><td class="pg">SMT<small>הסוואה נייחת</small></td><td>גרמניה</td><td>רשתות וציוד תומך</td><td><span class="stg ord">זכייה</span> <span dir="ltr">2024→2025</span></td><td><span dir="ltr">Sioen / SSZ</span></td><td>תקרת מסגרת: עד 219,261<small>משיכה ראשונה: <span dir="ltr">~€48M</span></small></td><td>רב-ספקטרלי · הפס לא פורט</td></tr>
-    <tr><td class="pg">MCS<small><span dir="ltr">Fennek · PzH 2000NL · CV90</span></small></td><td>הולנד</td><td>הסוואה ניידת לרכב</td><td><span class="stg ord">הזמנה</span> <span dir="ltr">2026</span></td><td><span dir="ltr">Saab Barracuda</span></td><td>מאות מערכות<small>מספר מדויק לא פורסם</small></td><td><span dir="ltr">VIS · IR · Radar</span></td></tr>
-  </table>
-  <div class="mm-note" style="top: 916px;"><b>קריאת הטבלה:</b> "זכייה" ו"הזמנה" הן אבני-דרך מסחריות ממשיות; "מסגרת" ו"בחירת ספק" אינן ערך שהוזמן בפועל. תקרות מסגרת ואופציות מוצגות ככאלה במפורש.</div>
-  <div class="ftr">
-    <div class="pageno"></div>
-    <div class="src">מקורות: <span dir="ltr">Ministère des Armées / DGA</span> · <span dir="ltr">Lubawa ESPI 09/2023, 07/2026</span> · <span dir="ltr">armasuisse</span> · <span dir="ltr">BAAINBw</span> ודיוני ועדת התקציב של הבונדסטג · משרד ההגנה ההולנדי</div>
-    <div class="proj">פלסן סאסא — הפחתת חתימה | מצגת עבודה</div>
-  </div>
-</section></div>
-
-
-<!-- ================= PART 2 : PROGRAMMES 2/2 ================= -->
-<div class="slide-wrap"><section class="slide" id="s-mm-prog-row">
-  <div class="hdr">
-    <div class="hdr-titles">
-      <div class="kicker">חלק ב׳ | תוכניות נבחרות · 2 מתוך 2</div>
-      <h1 class="title">תוכניות נבחרות באסיה, אוקיאניה וצפון אמריקה — מרשתות יחידה ועד מערכות פלטפורמה</h1>
-    </div>
-    <img class="bdo-logo" src="@@IMG:bdo-logo.png@@" alt="BDO Consulting — Strategy Growth &amp; Innovation">
-  </div>
-
-  <table class="mm-table" style="top: 222px;">
-    <colgroup><col style="width:250px"><col style="width:140px"><col style="width:300px"><col style="width:210px"><col style="width:200px"><col style="width:300px"><col style="width:376px"></colgroup>
-    <tr><th>תוכנית / מכרז</th><th>מדינה</th><th>מוצר / דרישה</th><th>שלב ושנה</th><th>ספק</th><th>היקף מדווח</th><th>ספקטרום</th></tr>
-    <tr><td class="pg">MSCN<small>מכרז <span dir="ltr">GeM</span>, פרייאגראג׳</small></td><td>הודו</td><td>רשתות רב-ספקטרליות</td><td><span class="stg ord">זכייה מדווחת</span> <span dir="ltr">2026</span></td><td><span dir="ltr">Sterlite Camotech</span></td><td>1,622 רשתות · <span dir="ltr">₹21.15 crore</span></td><td>רב-ספקטרלי · הפס לא פורט</td></tr>
-    <tr><td class="pg"><span dir="ltr">LAND 400 Phase 3</span><small><span dir="ltr">Redback IFV</span></small></td><td>אוסטרליה</td><td><span dir="ltr">MCS</span> לרק״ם</td><td><span class="stg ord">חוזה ספק</span> <span dir="ltr">2024</span></td><td><span dir="ltr">CBG Systems</span></td><td>129 רכבים בתוכנית<small>כמות מערכות <span dir="ltr">MCS</span> בחוזה לא פורסמה</small></td><td dir="ltr" style="text-align:right">רב־ספקטרלי — כולל תרמי ומכ״ם</td></tr>
-    <tr><td class="pg"><span dir="ltr">LAND 8116 Phase 1</span><small><span dir="ltr">AS9 / AS10</span></small></td><td>אוסטרליה</td><td><span dir="ltr">MCS</span> לתותח ולרכב חילוץ</td><td><span class="stg ord">חוזה / תחילת ייצור</span> <span dir="ltr">2022</span></td><td><span dir="ltr">CBG Systems</span></td><td><span dir="ltr">9 AS9 + 5 AS10</span></td><td>רב־ספקטרלי — כולל תרמי ומכ״ם</td></tr>
-    <tr><td class="pg"><span dir="ltr">ULCANS Inc. I</span><small><span dir="ltr">W911QY21F0100</span></small></td><td>ארה״ב</td><td>רשתות הסוואה</td><td><span class="stg ord">הזמנת אספקה</span> <span dir="ltr">12.2020</span></td><td><span dir="ltr">Fibrotex</span></td><td><span dir="ltr">$10.88M</span><small>דוגמה להזמנה אחת מתוך סדרת הזמנות</small></td><td dir="ltr" style="text-align:right">VIS·NIR·SWIR·תרמי·Radar</td></tr>
-  </table>
-  <div class="mm-note" style="top: 800px;"><b>קריאת הטבלה:</b> מספר הרכבים בתוכנית הוא היקף התוכנית המדווח — לא כמות מערכות שהוזמנה. <b><span dir="ltr">LAND 8116</span> ו-<span dir="ltr">LAND 400 Phase 3</span> הן תוכניות רכש נפרדות</b>, גם כאשר אותו ספק נבחר בשתיהן. <b>בבסיס המחקר מבוסס החברות זוהו 33 הזמנות בפועל תחת <span dir="ltr">ULCANS</span> בשנים <span dir="ltr">2020–2026 YTD</span>, מהן 13 ב-2020</b> — תוכנית אחת, הזמנות רבות.</div>
-  <div class="ftr">
-    <div class="pageno"></div>
-    <div class="src">מקורות: <span dir="ltr">GeM</span> ופרסומי מכרז הודיים · הודעות <span dir="ltr">CBG Systems</span> · <span dir="ltr">Australian Defence Magazine</span> · <span dir="ltr">GovTribe / U.S. Army</span> · <span dir="ltr">WorldTenders</span></div>
-    <div class="proj">פלסן סאסא — הפחתת חתימה | מצגת עבודה</div>
-  </div>
-</section></div>
-
-
-<!-- ================= PART 2 : SCALE ================= -->
-<div class="slide-wrap"><section class="slide" id="s-mm-scale">
-  <div class="hdr">
-    <div class="hdr-titles">
-      <div class="kicker">חלק ב׳ | עד כמה ניתן לכמת את הפעילות?</div>
-      <h1 class="title">המידע הפומבי מספק אינדיקציות טובות לסדרי גודל — אך אינו מלא מספיק למדידת מגמת שוק כוללת</h1>
-    </div>
-    <img class="bdo-logo" src="@@IMG:bdo-logo.png@@" alt="BDO Consulting — Strategy Growth &amp; Innovation">
-  </div>
-
-  <div class="mm-flow">
-    <div class="f"><div class="fv">92</div><div class="fk">אירועי ליבה<small>מחקר מבוסס חברות, <span dir="ltr">2020–2026 YTD</span></small></div></div>
-    <div class="fa">←</div>
-    <div class="f"><div class="fv">30</div><div class="fk">תוכניות / דרישות רכש נבדלות<small>כל תוכנית נספרת פעם אחת לאורך כל התקופה</small></div></div>
-    <div class="fa">←</div>
-    <div class="f last"><div class="fk fq">בדיקת זמינות מידע<small>האם פורסם היקף? האם פורסם שווי?</small></div></div>
-  </div>
-  <div class="mm-cov">
-    <div class="k"><div class="kn">9</div><div class="kp">30%</div><div class="kl">גם היקף וגם שווי</div></div>
-    <div class="k part"><div class="kn">2</div><div class="kp">7%</div><div class="kl">היקף בלבד</div></div>
-    <div class="k part"><div class="kn">12</div><div class="kp">40%</div><div class="kl">שווי בלבד</div></div>
-    <div class="k none"><div class="kn">7</div><div class="kp">23%</div><div class="kl">ללא היקף או שווי</div></div>
-  </div>
-  <div class="mm-take" style="top: 648px;">ב-<b>23 מתוך 30</b> התוכניות <b>(77%)</b> פורסם לפחות נתון אחד על היקף או שווי, אך רק ב-<b>9 (30%)</b> פורסמו שניהם.</div>
-  <div class="mm-ex">
-    <div class="eh">דוגמאות לתוכניות שבהן פורסמו גם היקף וגם שווי — כל סוג בנפרד, ללא סכימה בין מטבעות</div>
-    <div class="erow" style="grid-template-columns: repeat(3, 1fr);">
-      <div class="e"><div class="et">הזמנה בפועל</div><div class="en"><span dir="ltr">FENRIR</span> · 3,000 רשתות<br><span dir="ltr">€20M</span></div><div class="es">צרפת — הזמנה 2024</div></div>
-      <div class="e"><div class="et">זכייה מדווחת</div><div class="en"><span dir="ltr">MSCN</span> · 1,622 רשתות<br><span dir="ltr">₹21.15 crore</span></div><div class="es">הודו — זכייה 2026</div></div>
-      <div class="e"><div class="et">הזמנה בפועל</div><div class="en"><span dir="ltr">BERBERYS</span> · <span dir="ltr">1,000+</span> כיסויים<br><span dir="ltr">PLN 67.5M</span></div><div class="es">פולין — זכייה 2023</div></div>
-    </div>
-  </div>
-  <div class="ftr">
-    <div class="pageno"></div>
-    <div class="src">"היקף" = מידע כמותי פומבי על היקף התוכנית, כולל היקף מדווח ללא מספר יחידות מדויק; אינו כולל ספירת ספקים או מציעים. אין לסכם מטבעות או יחידות שונות לכדי סך שוק</div>
-    <div class="proj">פלסן סאסא — הפחתת חתימה | מצגת עבודה</div>
-  </div>
-</section></div>
-
-
-<!-- ================= PART 2 : CONCLUSION ================= -->
-<div class="slide-wrap"><section class="slide" id="s-mm-conclusion">
-  <div class="hdr">
-    <div class="hdr-titles">
-      <div class="kicker">חלק ב׳ | מסקנות הנהלה</div>
-      <h1 class="title">ארבעה ממצאים מרכזיים משתי שיטות המחקר</h1>
-    </div>
-    <img class="bdo-logo" src="@@IMG:bdo-logo.png@@" alt="BDO Consulting — Strategy Growth &amp; Innovation">
-  </div>
-
-  <div class="mm-find">
-    <div class="f"><div class="fn">01 · הזמנות</div><div class="ft"><b>לא זוהתה מגמת גידול במספר ההזמנות השנתי.</b> ב-2020 נרשמו 13 הזמנות — אך כולן תחת תוכנית <span dir="ltr">ULCANS</span> אחת.</div></div>
-    <div class="f"><div class="fn">02 · תוכניות פעילות</div><div class="ft">מספר התוכניות / דרישות הרכש הפעילות עלה <b>מ-2 ב-2020 ל-11 ב-<span dir="ltr">2026 YTD</span></b>. <span class="dim">8 מתוך 11 תוכניות 2026 הופיעו לראשונה בבסיס באותה שנה.</span></div></div>
-    <div class="f"><div class="fn">03 · רוחב הפעילות</div><div class="ft">הפעילות מתפרסת על פני יותר ספקים, רוכשים ומדינות: <b>ספקים פעילים</b> — 2 ב-2020, 11 ב-2025 ו-8 כבר ב-<span dir="ltr">2026 YTD</span>; <b>רוכשים</b> 2→12; <b>מדינות</b> 2→6.</div></div>
-    <div class="f"><div class="fn">04 · היקפים</div><div class="ft">קיימות תוכניות והזמנות בהיקפים מסחריים משמעותיים, אך <b>הכיסוי הכמותי והכספי חלקי</b> ולכן לא ניתן להוכיח מגמת גידול כוללת בהיקף ההזמנות.</div></div>
-  </div>
-  <div class="mm-final">
-    <div class="fl">שורה תחתונה</div>
-    <div class="fx">קיימות אינדיקציות למומנטום חיובי דרך התרחבות בסיס הפעילות — יותר תוכניות / דרישות רכש, ספקים, רוכשים ומדינות — אך מספר ההזמנות עצמו אינו מציג מגמת צמיחה, ואין בסיס מספק לקבוע כי היקף ההזמנות גדל באופן רציף</div>
-  </div>
-  <div class="ftr">
-    <div class="pageno"></div>
-    <div class="src">מחקר מבוסס חברות — 92 אירועי ליבה ב-30 תוכניות נבדלות, 2020 עד 8.9.2026. "הופיעו לראשונה בבסיס" = האירוע הפומבי הראשון שאותר</div>
-    <div class="proj">פלסן סאסא — הפחתת חתימה | מצגת עבודה</div>
-  </div>
-</section></div>
